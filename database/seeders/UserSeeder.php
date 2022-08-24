@@ -19,7 +19,7 @@ class UserSeeder extends Seeder
                 [
                     'id'=>1,
                     'type'=>"admin",
-                    'role_id'=>0,
+                    'role_id'=>1,
                     'status'=>"approved",
                     'first_name'=>"Sharif",
                     'last_name'=>"Sarkar",

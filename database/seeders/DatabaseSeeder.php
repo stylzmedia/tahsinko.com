@@ -17,6 +17,8 @@ class DatabaseSeeder extends Seeder
         $this->call(SectionDesignTypeSeeder::class);
         $this->call(SettingSeeder::class);
         $this->call(UserSeeder::class);
+        $this->call(RoleSeeder::class);
+
 
 
         // \App\Models\RequestContact::factory(5)->create();

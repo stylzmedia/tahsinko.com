@@ -95,7 +95,7 @@ class User extends Authenticatable implements MustVerifyEmail
     }
 
     public function permission($parent,$child){
-        if($this->role_id == 0){
+        if($this->role_id == 1){
             return true;
         }else{
             if(isset($this->role->permission['permission'][$parent][$child]) ){
