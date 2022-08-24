@@ -1,0 +1,19 @@
+.blog-table-header{
+    display: flex;
+    justify-content: space-between;
+}
+label.image-button {
+    padding: 10px 20px 20px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+}
+
+label.image-button i {
+    font-size: 25px;
+    margin-right: 15px;
+    position: relative;
+    top: 9px;
+}
+.image_upload, .image_upload_favicon, .image_upload_og{
+    display: none;
+}

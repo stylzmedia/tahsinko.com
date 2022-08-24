@@ -1,0 +1,76 @@
+@media (max-width: 1400px) {
+
+  }
+  /* Large Screen */
+  @media (max-width: 1260px) {
+
+  }
+  /* Tab Screen */
+  @media (max-width: 991px) {
+    .header-slider{
+        margin-top: 125px;
+    }
+
+  }
+  /* Tab Screen */
+  @media (max-width: 767px) {
+    .header-slider{
+        margin-top: 125px;
+    }
+  }
+  /* Mobile Screen */
+  @media (max-width: 575px) {
+    .logo img {
+        width: 150px;
+    }
+    .newletter_des {
+        display: block;
+      }
+    .newletter_des form {
+        position: relative;
+        width: 100%;
+        margin-top: 20px;
+    }
+    .newletter_des button {
+        padding: 0px 20px;
+    }
+    .top-bar-right {
+        display: block;
+        text-align: center;
+    }
+    .social {
+        display: flex;
+        justify-content: center;
+    }
+    .login-form{
+        width: 100%;
+        margin-top: 175px;
+    }
+
+    .header-slider{
+        margin-top: 160px;
+    }
+    .short-backgroud img {
+        height: auto;
+    }
+    .ceo-title label {
+        font-size: 25px;
+    }
+    .counter-section {
+        height: 850px;
+    }
+    .heading-title {
+        font-size: 21px;
+    }
+    .copyright-res {
+        display: block !important;
+        text-align: center;
+    }
+    .copyright2 .copyright {
+        justify-content: center;
+    }
+  }
+/* small mobile screen */
+  @media (max-width: 330px) {
+
+  }
