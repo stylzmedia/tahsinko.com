@@ -78,7 +78,9 @@
                                                         <select class="form-select" name="role">
                                                             <option>Select Role</option>
                                                             @foreach ($roles as $item)
+                                                                @if($item->id != 1)
                                                                 <option value="{{ $item->id }}">{{ $item->name }}</option>
+                                                                @endif
                                                             @endforeach
                                                         </select>
                                                     </div>

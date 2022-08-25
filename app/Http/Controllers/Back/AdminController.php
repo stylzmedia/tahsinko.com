@@ -43,7 +43,7 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-
+// dd($request->role);
         $v_data = [
             'first_name' => 'required|max:255',
             'last_name' => 'required|max:255',
@@ -57,10 +57,11 @@ class AdminController extends Controller
         }
 
         $request->validate($v_data);
-
-        $data = $request->except('password','profile');
+       //
+        $data = $request->except('password','profile','role');
 
         $data +=[
+            'role_id'=>$request->role,
             'status'=> 'approved',
             'type' => 'admin',
             'password' => Hash::make($request->password),
@@ -78,10 +79,12 @@ class AdminController extends Controller
                 'profile_image'=>$filename,
             ];
         }
+// dd($data);
         try {
             User::create($data);
             return redirect()->back()->with('success-alert', 'Admin created successfully.');
         }catch (\Exception $e){
+            //dd($e);
             return redirect()->back()->with('error-alert', 'Invalid request.');
         }
 
