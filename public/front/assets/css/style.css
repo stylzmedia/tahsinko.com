@@ -9,7 +9,7 @@ This files table contents are outlined below>>>>>
 
 *******************************************
 *******************************************
-** - Default Btn Style 
+** - Default Btn Style
 ** - Section Title Style
 ** - Navbar Area Style
 ** - Main Banner Area CSS  Style
@@ -130,7 +130,7 @@ img {
 }
 
 /*================================
-Default btn Style 
+Default btn Style
 ===================================*/
 .default-btn {
   padding: 7px 27px 12px 27px;
@@ -181,7 +181,7 @@ Default btn Style
 Default btn Style End
 ===================================*/
 /*================================
-Section Title Style 
+Section Title Style
 ===================================*/
 .section-title span {
   line-height: 0;
@@ -304,7 +304,7 @@ Navbar Area
 }
 
 .main-nav nav .navbar-nav .nav-item:hover a, .main-nav nav .navbar-nav .nav-item .active {
-  color: #da691f !important;
+  color: #EB1D36 !important;
 }
 
 .main-nav nav .navbar-nav .nav-item a {
@@ -323,11 +323,11 @@ Navbar Area
 }
 
 .main-nav nav .navbar-nav .nav-item a:hover, .main-nav nav .navbar-nav .nav-item a :focus {
-  color: #da691f !important;
+  color: #EB1D36 !important;
 }
 
 .main-nav nav .navbar-nav .nav-item a.active {
-  color: #da691f !important;
+  color: #EB1D36 !important;
 }
 
 .main-nav nav .navbar-nav .nav-item a .active::before {
@@ -364,12 +364,12 @@ Navbar Area
 
 .main-nav nav .navbar-nav .nav-item .dropdown-menu li a.active {
   border-radius: 0;
-  color: #da691f !important;
+  color: #EB1D36 !important;
   background-color: #f3f3f3;
 }
 
 .main-nav nav .navbar-nav .nav-item .dropdown-menu li a:hover, .main-nav nav .navbar-nav .nav-item .dropdown-menu li a :focus, .main-nav nav .navbar-nav .nav-item .dropdown-menu li a .active {
-  color: #da691f !important;
+  color: #EB1D36 !important;
   border-radius: 0;
   background-color: #f3f3f3;
 }
@@ -457,7 +457,7 @@ Navbar Area
 }
 
 .nav-two nav .navbar-nav .nav-item:hover a, .nav-two nav .navbar-nav .nav-item .active {
-  color: #da691f !important;
+  color: #EB1D36 !important;
 }
 
 .nav-two nav .navbar-nav .nav-item a {
@@ -489,7 +489,7 @@ Navbar Area
 }
 
 .nav-two .menu-contact .menu-contact-btn:hover {
-  color: #da691f;
+  color: #EB1D36;
 }
 
 .nav-three {
@@ -512,15 +512,15 @@ Navbar Area
 }
 
 .nav-three nav .navbar-nav .nav-item span.active {
-  color: #da691f !important;
+  color: #EB1D36 !important;
 }
 
 .nav-three nav .navbar-nav .nav-item:hover span, .nav-three nav .navbar-nav .nav-item .active {
-  color: #da691f !important;
+  color: #EB1D36 !important;
 }
 
 .nav-three nav .navbar-nav .nav-item:hover a, .nav-three nav .navbar-nav .nav-item .active {
-  color: #da691f !important;
+  color: #EB1D36 !important;
 }
 
 .nav-three nav .navbar-nav .nav-item a {
@@ -643,7 +643,7 @@ Navbar Area
 }
 
 .search-area .search-item .search-overlay.search-popup .search-form .search-button:focus {
-  color: #da691f;
+  color: #EB1D36;
 }
 
 .search-area .search-item .search-btn-2 {
@@ -654,7 +654,7 @@ Navbar Area
 }
 
 .search-area .search-item .search-btn-2:hover {
-  color: #da691f;
+  color: #EB1D36;
 }
 
 .search-area .search-item .close-btn {
@@ -727,7 +727,7 @@ Navbar Area
 }
 
 .menu-icon .menu-icon-two:hover {
-  color: #da691f;
+  color: #EB1D36;
 }
 
 .sticky-nav {
@@ -956,7 +956,7 @@ Navbar Area
 }
 
 .side-nav-responsive .side-nav-inner .side-nav .responsive-menu-contact .menu-contact-btn:hover {
-  color: #da691f;
+  color: #EB1D36;
 }
 
 /*=================================
@@ -1346,7 +1346,7 @@ Home Slider
 }
 
 .slider-item .social-link ul li:hover a {
-  color: #da691f;
+  color: #EB1D36;
 }
 
 .slider-item .social-link ul li:hover::before {
@@ -2027,7 +2027,7 @@ Inner Banner
 }
 
 .inner-banner .inner-title ul li a:hover {
-  color: #da691f;
+  color: #EB1D36;
 }
 
 .inner-bg1 {
@@ -2082,7 +2082,7 @@ Inner Banner
 Inner Banner End
 ==================================*/
 /*=================================
-About Area 
+About Area
 ====================================*/
 .about-content {
   max-width: 520px;
@@ -2519,7 +2519,7 @@ Consultation Area
 Consultation Area End
 ====================================*/
 /*=================================
-Offer Area 
+Offer Area
 ====================================*/
 .offer-card {
   margin-bottom: 50px;
@@ -2707,7 +2707,7 @@ Offer Area
 Offer Area End
 ====================================*/
 /*=================================
-Skill Area 
+Skill Area
 ====================================*/
 .skill-content {
   margin-top: 70px;
@@ -2862,7 +2862,7 @@ Skill Area
 Skill Area End
 ====================================*/
 /*=================================
-Process Area 
+Process Area
 ====================================*/
 .process-area {
   background-color: #1a1a1a;
@@ -2958,7 +2958,7 @@ Process Area
 Process Area End
 ====================================*/
 /*=================================
-Counter Area 
+Counter Area
 ====================================*/
 .counter-area {
   background-image: url(../img/shape/counter-shape.png);
@@ -2999,7 +2999,7 @@ Counter Area
 Counter Area End
 ====================================*/
 /*=================================
-Service Area 
+Service Area
 ====================================*/
 .service-area .section-title p {
   max-width: 720px;
@@ -3355,7 +3355,7 @@ Service Area
 Service Area End
 ====================================*/
 /*=================================
-Portfolio Area 
+Portfolio Area
 ====================================*/
 .portfolio-area {
   padding-top: 50px;
@@ -3737,7 +3737,7 @@ Portfolio Area
 Portfolio Area End
 ====================================*/
 /*=================================
-Testimonials Area 
+Testimonials Area
 ====================================*/
 .testimonials-area {
   position: relative;
@@ -3864,7 +3864,7 @@ Testimonials Area
 Testimonials Area End
 ====================================*/
 /*=================================
-Team Area 
+Team Area
 ====================================*/
 .team-area .section-title p {
   max-width: 695px;
@@ -5469,7 +5469,7 @@ Contact Area
 Contact Area End
 ====================================*/
 /*==================================
-User All Area 
+User All Area
 =================================*/
 .user-all-img {
   margin-bottom: 30px;
@@ -5540,7 +5540,7 @@ User All Area End
 }
 
 /*==================================
-Faq Area 
+Faq Area
 =================================*/
 .faq-accordion {
   max-width: 100%;
@@ -5623,7 +5623,7 @@ Faq Area
 Faq Area End
 =================================*/
 /*=================================
-Map Area 
+Map Area
 ====================================*/
 .map-area iframe {
   display: block;
@@ -5635,7 +5635,7 @@ Map Area
 Map Area End
 ====================================*/
 /*=================================
-Product Area 
+Product Area
 ====================================*/
 .product-area .product-topbar {
   margin-bottom: 40px;
@@ -6105,7 +6105,7 @@ Product Area
 }
 
 .product-desc .product-add .form-input-counter .plus-btn:hover {
-  color: #da691f !important;
+  color: #EB1D36 !important;
 }
 
 .product-desc .product-add .form-input-counter .minus-btn {
@@ -6123,7 +6123,7 @@ Product Area
 }
 
 .product-desc .product-add .form-input-counter .minus-btn:hover {
-  color: #da691f !important;
+  color: #EB1D36 !important;
 }
 
 .product-desc .product-add .form-input-counter input {
@@ -6362,7 +6362,7 @@ Cart Wraps Area
 }
 
 .cart-wraps-area .cart-table table tbody tr td.product-name a:hover {
-  color: #da691f !important;
+  color: #EB1D36 !important;
 }
 
 .cart-wraps-area .cart-table table tbody tr td.product-subtotal .remove {
@@ -6645,7 +6645,7 @@ Cart Wraps Area
 Cart Wraps Area End
 ===================================*/
 /*=================================
-Checkout Area 
+Checkout Area
 ===================================*/
 .checkout-area .checkout-user {
   -webkit-box-shadow: 0 5px 35px 0 rgba(0, 0, 0, 0.08);
@@ -6653,7 +6653,7 @@ Checkout Area
   background: #ffffff;
   padding: 20px 15px;
   margin-bottom: 65px;
-  border-top: 3px solid #da691f;
+  border-top: 3px solid #EB1D36;
   color: #414141;
 }
 
@@ -7023,10 +7023,17 @@ Checkout Area
 Checkout Area End
 ===================================*/
 /*=================================
-Footer Area 
+Footer Area
 ====================================*/
 .footer-bg {
-  background-color: #000000;
+  background-color: #E0DECA;
+}
+.text-footer{
+    color: #383838;
+}
+
+.text-footer a:hover{
+    color: #EB1D36 !important;
 }
 
 .footer-widget {
@@ -7379,12 +7386,12 @@ Footer Area
   color: #ffffff;
   font-weight: 500;
   font-size: 15px;
-  border-bottom: 1px solid #ffffff;
+  /* border-bottom: 1px solid #ffffff; */
 }
 
 .copyright-text-two p a:hover {
-  color: #ac4e0f;
-  border-color: #ac4e0f;
+  color: #EB1D36;
+  /* border-color: #EB1D36; */
 }
 
 /*=================================
@@ -7428,8 +7435,8 @@ Footer Area End
 /*=================================
 404 Error Area End
 ===================================*/
-/*================================== 
-Coming Soon Area 
+/*==================================
+Coming Soon Area
 ====================================*/
 .coming-soon-area {
   position: relative;
@@ -7617,11 +7624,11 @@ Coming Soon Area
   color: #dc3545 !important;
 }
 
-/*================================== 
+/*==================================
 Coming Soon Area End
 ====================================*/
 /*==============================
-Pagination Area 
+Pagination Area
 =================================*/
 .pagination-area {
   margin-top: 10px;
@@ -7666,7 +7673,7 @@ Pagination Area
 Pagination Area End
 =================================*/
 /*==================================
-Back To Top Button 
+Back To Top Button
 =====================================*/
 #toTop {
   position: fixed;
@@ -7701,10 +7708,10 @@ Back To Top Button
 }
 
 /*==============================
-Back To Top Button 
+Back To Top Button
 =================================*/
 /*==============================
-PreLoader CSS 
+PreLoader CSS
 =================================*/
 .preloader {
   background: #414141;
