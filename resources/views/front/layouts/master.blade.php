@@ -84,11 +84,11 @@
         <!-- Start Navbar Area -->
         <div class="navbar-area">
             <!-- Menu For Mobile Device -->
-            {{-- <div class="mobile-nav bg-light d-none d-md-block">
-                <a href="" class="logo">
-                    <img src="assets/img/logo/Logo-Tahsinko.png" alt="Tahsinko Logo" width="170px" height="55px">
+            <div class="mobile-nav bg-light ">
+                <a href="" class="logo ">
+                    <img class="" src="{{asset('images/logo/Logo-Tahsinko.png')}}" alt="Tahsinko Logo" width="170px" height="55px">
                 </a>
-            </div> --}}
+            </div>
 
             <!-- Menu For Desktop Device -->
             <div class="main-nav nav-two sticky-top">
@@ -116,7 +116,7 @@
                                     <a href="" class="nav-link">MAJOR COMPONENTS</a>
                                 </li>
 
-                                <li class="nav-item logo">
+                                <li class="nav-item logo ">
                                     <a href="" class="nav-link">
                                         <img src="{{asset('images/logo/Logo-Tahsinko.png')}}" alt="Tahsinko Logo" width="180px" height="65px">
                                     </a>
@@ -196,7 +196,7 @@
 
 
         <!-- Footer Area -->
-        <div class="footer-area footer-bg pt-100 pb-70">
+        <div class="footer-area footer-bg pt-100 pb-70 mt-5">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-4">
