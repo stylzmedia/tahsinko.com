@@ -29,6 +29,10 @@ class CreateSlidersTable extends Migration
             $table->string('image');
             $table->string('image_path')->nullable();
             $table->unsignedBigInteger('media_id')->nullable();
+            $table->tinyInteger('slider_type')->default(1)->comment("1=images", "2=video", "3=scripts");
+            $table->tinyInteger('bd_opacity')->comment("0=hide", "1=show");
+            $table->string('video')->nullable();
+            $table->text('slider_script')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

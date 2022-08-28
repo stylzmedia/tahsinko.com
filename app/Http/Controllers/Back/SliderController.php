@@ -75,12 +75,13 @@ class SliderController extends Controller
                 'video'=>$fileName,
             ];
         }
-        try {
-            Slider::create($data);
+        Slider::create($data);
             return response()->json(['status'=>'success','message'=>'Successfully created'],200);
-        }catch (\Exception $e){
-            return response()->json(['status'=>'error','message'=>'Invalid request'],404);
-        }
+
+        // try {
+        //             }catch (\Exception $e){
+        //     return response()->json(['status'=>'error','message'=>'Invalid request'],404);
+        // }
     }
 
     /**
