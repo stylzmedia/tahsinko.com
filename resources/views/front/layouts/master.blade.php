@@ -41,6 +41,8 @@
      <link rel="stylesheet" href="{{asset('/front/assets/css/style.css')}}">
      <!-- Responsive CSS -->
      <link rel="stylesheet" href="{{asset('/front/assets/css/responsive.css') }}">
+      <!-- Theme Dark CSS -->
+      <link rel="stylesheet" href="{{asset('/front/assets/css/theme-dark.css') }}">
 
 
     @yield('head')
@@ -196,7 +198,7 @@
 
 
         <!-- Footer Area -->
-        <div class="footer-area footer-bg pt-100 pb-70 mt-5">
+        <div class="footer-area footer-bg pt-100 pb-70">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-4">
@@ -285,6 +287,7 @@
     <script src="{{asset('/front/assets/js/owl.min.js')}}"></script>
     <!-- Magnific Popup JS -->
     <script src="{{asset('/front/assets/js/popper.min.js')}}"></script>
+    <script src="{{asset('/front/assets/js/jquery.magnific-popup.min.js')}}"></script>
     <!-- Wow Min JS -->
     <script src="{{asset('/front/assets/js/wow.min.js')}}"></script>
     <!-- Meanmenu JS -->
@@ -299,6 +302,18 @@
     <script src="{{asset('/front/assets/js/contact-form-script.js')}}"></script>
     <!-- Custom Min JS -->
     <script src="{{asset('/front/assets/js/custom.js')}}"></script>
+
+
+
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
     @yield('footer')
 </body>

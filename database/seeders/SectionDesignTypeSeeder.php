@@ -65,7 +65,7 @@ class SectionDesignTypeSeeder extends Seeder
         DB::table('section_design_types')->insert(
             [
                 'id'=>9,
-                'name'=>"Gallery",
+                'name'=>"Clients",
             ]
         );
     }

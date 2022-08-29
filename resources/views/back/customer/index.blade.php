@@ -79,10 +79,10 @@
                                             @endisset
                                         </td>
                                         <td>
-                                            @isset(auth()->user()->role->permission['permission']['customer']['edit'])
+                                            @if(auth()->user()->permission('customer','edit'))
                                             <a class="btn btn-primary btn-sm" href="{{route('back.customer.edit', $customer->id)}}"><i class="ri-edit-2-line"></i></a>
-                                            @endisset
-                                            @isset(auth()->user()->role->permission['permission']['customer']['delete'])
+                                            @endif
+                                            @if(auth()->user()->permission('customer','delete'))
                                             <form class="d-inline-block" action="{{route('back.customer.destroy', $customer->id)}}" method="POST">
                                                 @method('DELETE')
                                                 @csrf
@@ -90,7 +90,7 @@
 
                                                 <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure to remove?')"><i class="ri-delete-bin-5-line"></i></button>
                                             </form>
-                                            @endisset
+                                            @endif
                                         </td>
                                     </tr>
                                 @endforeach

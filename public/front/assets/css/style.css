@@ -192,10 +192,12 @@ Section Title Style
 }
 
 .section-title h2 {
-  font-size: 60px;
+  font-size: 35px;
   font-weight: 600;
   margin-top: 5px;
   line-height: 1.2;
+  text-align: left;
+  padding: 0;
 }
 
 .section-title p {
@@ -3361,9 +3363,15 @@ Portfolio Area
   padding-top: 50px;
 }
 
-.portfolio-area .section-title {
-  margin-bottom: 20px;
+.portfolio-area .section-title h2 {
+    font-size: 60px;
+    font-weight: 600;
+    margin-top: 5px;
+    line-height: 1.2;
+    /* color: #000000; */
 }
+
+
 
 .portfolio-tab {
   margin-top: 30px;
@@ -7860,3 +7868,235 @@ Buy Now Btn
   background-color: #94be5d;
 }
 /*# sourceMappingURL=style.css.map */
+
+
+h2{
+    text-align:center;
+    padding: 20px;
+  }
+  /* Slider */
+
+  .slick-slide {
+      margin: 0px 20px;
+  }
+
+  .slick-slide img {
+      width: 100%;
+  }
+
+  .slick-slider
+  {
+      position: relative;
+      display: block;
+      box-sizing: border-box;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+              user-select: none;
+      -webkit-touch-callout: none;
+      -khtml-user-select: none;
+      -ms-touch-action: pan-y;
+          touch-action: pan-y;
+      -webkit-tap-highlight-color: transparent;
+  }
+
+  .slick-list
+  {
+      position: relative;
+      display: block;
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
+  }
+  .slick-list:focus
+  {
+      outline: none;
+  }
+  .slick-list.dragging
+  {
+      cursor: pointer;
+      cursor: hand;
+  }
+
+  .slick-slider .slick-track,
+  .slick-slider .slick-list
+  {
+      -webkit-transform: translate3d(0, 0, 0);
+         -moz-transform: translate3d(0, 0, 0);
+          -ms-transform: translate3d(0, 0, 0);
+           -o-transform: translate3d(0, 0, 0);
+              transform: translate3d(0, 0, 0);
+  }
+
+  .slick-track
+  {
+      position: relative;
+      top: 0;
+      left: 0;
+      display: block;
+  }
+  .slick-track:before,
+  .slick-track:after
+  {
+      display: table;
+      content: '';
+  }
+  .slick-track:after
+  {
+      clear: both;
+  }
+  .slick-loading .slick-track
+  {
+      visibility: hidden;
+  }
+
+  .slick-slide
+  {
+      display: none;
+      float: left;
+      height: 100%;
+      min-height: 1px;
+  }
+  [dir='rtl'] .slick-slide
+  {
+      float: right;
+  }
+  .slick-slide img
+  {
+      display: block;
+  }
+  .slick-slide.slick-loading img
+  {
+      display: none;
+  }
+  .slick-slide.dragging img
+  {
+      pointer-events: none;
+  }
+  .slick-initialized .slick-slide
+  {
+      display: block;
+  }
+  .slick-loading .slick-slide
+  {
+      visibility: hidden;
+  }
+  .slick-vertical .slick-slide
+  {
+      display: block;
+      height: auto;
+      border: 1px solid transparent;
+  }
+  .slick-arrow.slick-hidden {
+      display: none;
+  }
+
+
+  /* Featured product */
+  .card {
+    position: relative;
+    width: 320px;
+    height: 480px;
+    background: #191919;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+
+  .card::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    width: 100%;
+    height: 100%;
+    background: #ffce00;
+    transform: skewY(345deg);
+    transition: 0.5s;
+  }
+
+  .card:hover::before {
+    top: -70%;
+    transform: skewY(390deg);
+  }
+
+  .card::after {
+    content: "CORSAIR";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-weight: 600;
+    font-size: 6em;
+    color: rgba(0, 0, 0, 0.1);
+  }
+
+  .card .imgBox {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    z-index: 1;
+  }
+  /*
+  .card .imgBox img {
+      max-width: 100%;
+
+      transition: .5s;
+  }
+
+  .card:hover .imgBox img {
+      max-width: 50%;
+
+  }
+  */
+  .card .contentBox {
+    position: relative;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 2;
+  }
+
+  .card .contentBox h3 {
+    font-size: 18px;
+    color: white;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .card .contentBox .price {
+    font-size: 24px;
+    color: white;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+
+  .card .contentBox .buy {
+    position: relative;
+    top: 100px;
+    opacity: 0;
+    padding: 10px 30px;
+    margin-top: 15px;
+    color: #000000;
+    text-decoration: none;
+    background: #ffce00;
+    border-radius: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.5s;
+  }
+
+  .card:hover .contentBox .buy {
+    top: 0;
+    opacity: 1;
+  }
+
+  .mouse {
+    height: 400px;
+    width: auto;
+  }
+
+  /* featured product end  */

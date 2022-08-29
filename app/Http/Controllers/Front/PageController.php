@@ -29,7 +29,7 @@ class PageController extends Controller
     {
         $sliders = Slider::active()->get();
         $home_sections = HomeSection::where(['status'=>1])->orderBy('position','ASC')->get();
-        $products = Product::where(['status'=>1])->orderBy('position','ASC')->take(6)->get();
+        $products = Product::where(['status'=>1])->orderBy('position','ASC')->take(4)->get();
         $projects = Portfolio::where(['status'=>1])->orderBy('position','ASC')->take(6)->get();
         $services = Service::where(['status'=>1])->orderBy('position','ASC')->take(7)->get();
         $values = Value::where(['status'=>1])->orderBy('position','ASC')->take(7)->get();
