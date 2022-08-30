@@ -17,7 +17,7 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Portfolio;
 use App\Models\Service;
-use App\Models\Value;
+use App\Models\Team;
 use App\Models\Customer;
 use App\Models\News;
 use Illuminate\Support\Carbon;
@@ -32,7 +32,7 @@ class PageController extends Controller
         $products = Product::where(['status'=>1])->orderBy('position','ASC')->take(4)->get();
         $projects = Portfolio::where(['status'=>1])->orderBy('position','ASC')->take(6)->get();
         $services = Service::where(['status'=>1])->orderBy('position','ASC')->take(7)->get();
-        $values = Value::where(['status'=>1])->orderBy('position','ASC')->take(7)->get();
+        $teams = Team::where(['status'=>1])->orderBy('position','ASC')->get();
         $testimonials = Testimonial::where(['status'=>1])->orderBy('position','ASC')->get();
         $clients = Customer::where(['status'=>1])->orderBy('position','ASC')->get();
         $newes = News::where(['status'=>1])->orderBy('position','ASC')->take(6)->get();
@@ -42,7 +42,7 @@ class PageController extends Controller
             'products',
             'projects',
             'services',
-            'values',
+            'teams',
             'testimonials',
             'clients',
             'newes'

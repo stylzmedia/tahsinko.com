@@ -17,13 +17,13 @@ class SectionDesignTypeSeeder extends Seeder
         DB::table('section_design_types')->insert(
             [
                 'id'=>1,
-                'name'=>"Text Image Card",
+                'name'=>"About",
             ]
         );
         DB::table('section_design_types')->insert(
             [
                 'id'=>2,
-                'name'=>"Publication",
+                'name'=>"News",
             ]
         );
         DB::table('section_design_types')->insert(
@@ -53,7 +53,7 @@ class SectionDesignTypeSeeder extends Seeder
         DB::table('section_design_types')->insert(
             [
                 'id'=>7,
-                'name'=>"Board Members",
+                'name'=>"Team Members",
             ]
         );
         DB::table('section_design_types')->insert(

@@ -43,7 +43,7 @@
         @foreach($home_sections as $key=>$sec)
             @if($sec->section_design_type_id==1)
                     <!-- About Area -->
-                <div class="about-area pt-100 pb-70" style="background: {{$sec->background_color}}">
+                <div class="about-area pt-100 pb-70">
                     @if($sec->text_align == 1)
                     <div class="container-fluid">
                         <div class="row">
@@ -56,8 +56,8 @@
                                     </div>
                                     <ul class="signature">
                                         <li>
-                                            <img src="{{asset('/front/assets/img/about-img/signatures2.png')}}" class="signature-img1" alt="Images">
-                                            <img src="{{asset('/front/assets/img/about-img/signatures1.png')}}" class="signature-img2" alt="Images">
+                                            <img src="{{asset('/front/assets/img/about-img/signatures.png')}}" class="signature-img1" alt="Images">
+                                            <img src="{{asset('/front/assets/img/about-img/signatures2.png')}}" class="signature-img2" alt="Images">
                                         </li>
                                         <li>
                                             <h3>Tarequl Islam</h3>
@@ -99,8 +99,8 @@
                 <!-- About Area End -->
 
             @elseif($sec->section_design_type_id==2 && count($newes))
-                {{-- News and Event --}}
-                <div class="our-news scroll-animation-section show-on-scroll" style="padding-bottom: 15px; background: {{$sec->background_color}}">
+                {{-- News --}}
+                {{-- <div class="our-news scroll-animation-section show-on-scroll" style="padding-bottom: 15px; background: {{$sec->background_color}}">
                     <div class="container" >
                         <div class="heading-title">
                             <label>{{ $sec->section_name }}</label>
@@ -135,11 +135,47 @@
                             @endforeach
                         </div>
                     </div>
+                </div> --}}
+
+                <div class="blog-area pb-70">
+                    <div class="container">
+                        <div class="section-title-two text-center">
+                            <span class="sp-before">Recent Articles</span>
+                            <h2>{{ $sec->section_name }}</h2>
+                        </div>
+                        <div class="row pt-45">
+                            @foreach ($newes as $news)
+                            <div class="
+                                    @if($sec->col == 2)
+                                        col-lg-6 col-md-6 col-sm-12
+                                    @elseif($sec->col == 3)
+                                        col-lg-4 col-md-6 col-sm-12
+                                    @elseif($sec->col == 4)
+                                        col-lg-3 col-md-6 col-sm-12
+                                    @endif
+                                ">
+                                <div class="blog-card blog-card-pb">
+                                    <a href="{{ route('news.single', $news->slug) }}">
+                                        <img src="{{ $news->img_paths['small'] }}" alt="{{ $news->title }}">
+                                    </a>
+                                    <div class="content">
+                                        <span><a href="#">Home style</a> / {{ \Carbon\Carbon::parse($news->publish_date)->format('d-m-Y')}}</span>
+                                        <h3><a href="{{ route('news.single', $news->slug) }}">{{ $news->title }}</a></h3>
+                                        <a href="{{ route('news.single', $news->slug) }}" class="learn-btn">
+                                            Read more
+                                            <i class="flaticon-right-arrow-1"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            @endforeach
+                        </div>
+                    </div>
                 </div>
-                {{-- end News and Event --}}
+                {{-- end News --}}
             @elseif($sec->section_design_type_id==3 && count($products))
                 {{-- feature products --}}
-                <div class="feature-product scroll-animation-section show-on-scroll" style="background: {{$sec->background_color}}">
+                <div class="feature-product scroll-animation-section show-on-scroll">
                     <div class="container" style="padding: 70px 0;">
                         <div class="heading-title text-white">
                             <label>{{ $sec->section_name }}</label>
@@ -176,836 +212,232 @@
                 </div>
                 {{-- end feature product --}}
             @elseif($sec->section_design_type_id==6 && count($services))
-                {{-- our service --}}
-                    <!-- Portfolio Area -->
-        <div class="portfolio-area pb-70" style="background: {{$sec->background_color}}">
-            <div class="container-fluid">
-                <div class="tab portfolio-tab">
-                    <div class="container">
-                        <div class="section-title text-white">
-                            <h2>{{ $sec->section_name }}</h2>
-                        </div>
-                        <ul class="tabs tabs-two">
-                            <li>
-                                <a href="#">All</a>
-                            </li>
-
-                            <li>
-                                <a href="#">Hospitality</a>
-                            </li>
-
-                            <li>
-                                <a href="#">Interior</a>
-                            </li>
-
-                            <li>
-                                <a href="#">Libraries</a>
-                            </li>
-
-                            <li>
-                                <a href="#">Residential</a>
-                            </li>
-
-                            <li>
-                                <a href="#">Royal</a>
-                            </li>
-
-                            <li>
-                                <a href="#">Theaters</a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="tab_content current active pt-45">
-                        <div class="tabs_item current">
-                            <div class="row">
-                                <div class="col-lg-4 col-md-6">
-                                    <div class="portfolio-list">
-                                        <a href="portfolio-details.html">
-                                            <img src="{{asset('/front/assets/img/portfolio/portfolio-list1.jpg') }}" alt="Images">
-                                        </a>
-                                        <div class="content active">
-                                            <ul>
-                                                <li>
-                                                    <a href="#">-Royal /</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Interior</a>
-                                                </li>
-                                            </ul>
-                                            <div class="title">
-                                                <h3><a href="portfolio-details.html">White House Building</a></h3>
-                                            </div>
-                                        </div>
+                <!-- Portfolio Area -->
+                    <div class="portfolio-area pb-70">
+                        <div class="container-fluid">
+                            <div class="tab portfolio-tab">
+                                <div class="container">
+                                    <div class="section-title">
+                                        <h2>Our Portfolio</h2>
                                     </div>
+                                    <ul class="tabs active">
+                                        <li class="current">
+                                            <a href="#">All</a>
+                                        </li>
+
+                                        <li>
+                                            <a href="#">Hospitality</a>
+                                        </li>
+
+                                        <li>
+                                            <a href="#">Interior</a>
+                                        </li>
+                                    </ul>
                                 </div>
 
-                                <div class="col-lg-4 col-md-6">
-                                    <div class="portfolio-list">
-                                        <a href="portfolio-details.html">
-                                            <img src="{{asset('/front/assets/img/portfolio/portfolio-list2.jpg') }}" alt="Images">
-                                        </a>
-                                        <div class="content">
-                                            <ul>
-                                                <li>
-                                                    <a href="#">-Interior /</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Royal</a>
-                                                </li>
-                                            </ul>
-                                            <div class="title">
-                                                <h3><a href="portfolio-details.html">Glass Foundation Building</a></h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                <div class="tab_content current active pt-45">
+                                    <div class="tabs_item current">
+                                        <div class="row">
+                                            <div class="col-lg-3 col-sm-6">
+                                                <div class="portfolio-item-two">
+                                                    <a href="portfolio-details.html">
+                                                        <img src="{{asset('/front/assets/img/portfolio/portfolio-item1.jpg') }}" alt="Images">
+                                                    </a>
+                                                    <div class="content">
+                                                        <div class="title">
+                                                            <h3><a href="portfolio-details.html">Royal palace</a></h3>
+                                                        </div>
 
-                                <div class="col-lg-4 col-md-6">
-                                    <div class="portfolio-list">
-                                        <a href="portfolio-details.html">
-                                            <img src="{{asset('/front/assets/img/portfolio/portfolio-list3.jpg') }}" alt="Images">
-                                        </a>
-                                        <div class="content">
-                                            <ul>
-                                                <li>
-                                                    <a href="#">-Hospitality /</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Interior</a>
-                                                </li>
-                                            </ul>
-                                            <div class="title">
-                                                <h3><a href="portfolio-details.html">Rectangle Building</a></h3>
+                                                        <ul>
+                                                            <li>
+                                                                <a href="#">-Hospitality /</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">Interior /</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">Royal</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                            <div class="col-lg-3 col-sm-6">
+                                                <div class="portfolio-item-two">
+                                                    <a href="portfolio-details.html">
+                                                        <img src="{{asset('/front/assets/img/portfolio/portfolio-item1.jpg') }}" alt="Images">
+                                                    </a>
+                                                    <div class="content">
+                                                        <div class="title">
+                                                            <h3><a href="portfolio-details.html">Royal palace</a></h3>
+                                                        </div>
 
-                                <div class="col-lg-7 col-md-6">
-                                    <div class="portfolio-list">
-                                        <a href="portfolio-details.html">
-                                            <img src="{{asset('/front/assets/img/portfolio/portfolio-list4.jpg') }}" alt="Images">
-                                        </a>
-                                        <div class="content">
-                                            <ul>
-                                                <li>
-                                                    <a href="#">-Hospitality /</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Royal /</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Interior</a>
-                                                </li>
-                                            </ul>
-                                            <div class="title">
-                                                <h3><a href="portfolio-details.html">Royal palace</a></h3>
+                                                        <ul>
+                                                            <li>
+                                                                <a href="#">-Hospitality /</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">Interior /</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">Royal</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                            <div class="col-lg-3 col-sm-6">
+                                                <div class="portfolio-item-two">
+                                                    <a href="portfolio-details.html">
+                                                        <img src="{{asset('/front/assets/img/portfolio/portfolio-item1.jpg') }}" alt="Images">
+                                                    </a>
+                                                    <div class="content">
+                                                        <div class="title">
+                                                            <h3><a href="portfolio-details.html">Royal palace</a></h3>
+                                                        </div>
 
-                                <div class="col-lg-5 col-md-6 offset-lg-0 offset-md-3">
-                                    <div class="portfolio-list">
-                                        <a href="portfolio-details.html">
-                                            <img src="{{asset('/front/assets/img/portfolio/portfolio-list5.jpg') }}" alt="Images">
-                                        </a>
-                                        <div class="content">
-                                            <ul>
-                                                <li>
-                                                    <a href="#">-Royal /</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Interior</a>
-                                                </li>
-                                            </ul>
-                                            <div class="title">
-                                                <h3><a href="portfolio-details.html">Rectangle Building</a></h3>
+                                                        <ul>
+                                                            <li>
+                                                                <a href="#">-Hospitality /</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">Interior /</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">Royal</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                                            <div class="col-lg-3 col-sm-6">
+                                                <div class="portfolio-item-two">
+                                                    <a href="portfolio-details.html">
+                                                        <img src="{{asset('/front/assets/img/portfolio/portfolio-item1.jpg') }}" alt="Images">
+                                                    </a>
+                                                    <div class="content">
+                                                        <div class="title">
+                                                            <h3><a href="portfolio-details.html">Royal palace</a></h3>
+                                                        </div>
 
-                        <div class="tabs_item">
-                            <div class="row">
-                                <div class="col-lg-4 col-md-6">
-                                    <div class="portfolio-list">
-                                        <a href="portfolio-details.html">
-                                            <img src="{{asset('/front/assets/img/portfolio/portfolio-list1.jpg') }}" alt="Images">
-                                        </a>
-                                        <div class="content">
-                                            <ul>
-                                                <li>
-                                                    <a href="#">-Royal /</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Interior</a>
-                                                </li>
-                                            </ul>
-                                            <div class="title">
-                                                <h3><a href="portfolio-details.html">White House Building</a></h3>
+                                                        <ul>
+                                                            <li>
+                                                                <a href="#">-Hospitality /</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">Interior /</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">Royal</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                </div>
 
-                                <div class="col-lg-4 col-md-6">
-                                    <div class="portfolio-list">
-                                        <a href="portfolio-details.html">
-                                            <img src="{{asset('/front/assets/img/portfolio/portfolio-list2.jpg') }}" alt="Images">
-                                        </a>
-                                        <div class="content active">
-                                            <ul>
-                                                <li>
-                                                    <a href="#">-Interior /</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Royal</a>
-                                                </li>
-                                            </ul>
-                                            <div class="title">
-                                                <h3><a href="portfolio-details.html">Glass Foundation Building</a></h3>
-                                            </div>
                                         </div>
                                     </div>
-                                </div>
 
-                                <div class="col-lg-4 col-md-6">
-                                    <div class="portfolio-list">
-                                        <a href="portfolio-details.html">
-                                            <img src="{{asset('/front/assets/img/portfolio/portfolio-list3.jpg') }}" alt="Images">
-                                        </a>
-                                        <div class="content">
-                                            <ul>
-                                                <li>
-                                                    <a href="#">-Hospitality /</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Interior</a>
-                                                </li>
-                                            </ul>
-                                            <div class="title">
-                                                <h3><a href="portfolio-details.html">Rectangle Building</a></h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                    <div class="tabs_item">
+                                        <div class="row">
+                                            <div class="col-lg-3 col-sm-6">
+                                                <div class="portfolio-item-two">
+                                                    <a href="portfolio-details.html">
+                                                        <img src="{{asset('/front/assets/img/portfolio/portfolio-item1.jpg') }}" alt="Images">
+                                                    </a>
+                                                    <div class="content active">
+                                                        <div class="title">
+                                                            <h3><a href="portfolio-details.html">Royal palace</a></h3>
+                                                        </div>
 
-                                <div class="col-lg-7 col-md-6">
-                                    <div class="portfolio-list">
-                                        <a href="portfolio-details.html">
-                                            <img src="{{asset('/front/assets/img/portfolio/portfolio-list4.jpg') }}" alt="Images">
-                                        </a>
-                                        <div class="content">
-                                            <ul>
-                                                <li>
-                                                    <a href="#">-Hospitality /</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Royal /</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Interior</a>
-                                                </li>
-                                            </ul>
-                                            <div class="title">
-                                                <h3><a href="portfolio-details.html">Royal palace</a></h3>
+                                                        <ul>
+                                                            <li>
+                                                                <a href="#">-Hospitality /</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">Interior /</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">Royal</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                </div>
 
-                                <div class="col-lg-5 col-md-6 offset-lg-0 offset-md-3">
-                                    <div class="portfolio-list">
-                                        <a href="portfolio-details.html">
-                                            <img src="{{asset('/front/assets/img/portfolio/portfolio-list5.jpg') }}" alt="Images">
-                                        </a>
-                                        <div class="content">
-                                            <ul>
-                                                <li>
-                                                    <a href="#">-Royal /</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Interior</a>
-                                                </li>
-                                            </ul>
-                                            <div class="title">
-                                                <h3><a href="portfolio-details.html">Rectangle Building</a></h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                                            <div class="col-lg-3 col-sm-6">
+                                                <div class="portfolio-item-two">
+                                                    <a href="portfolio-details.html">
+                                                        <img src="{{asset('/front/assets/img/portfolio/portfolio-item2.jpg') }}" alt="Images">
+                                                    </a>
+                                                    <div class="content">
+                                                        <div class="title">
+                                                            <h3><a href="portfolio-details.html">Glass foundation building</a></h3>
+                                                        </div>
 
-                        <div class="tabs_item">
-                            <div class="row">
-                                <div class="col-lg-4 col-md-6">
-                                    <div class="portfolio-list">
-                                        <a href="portfolio-details.html">
-                                            <img src="{{asset('/front/assets/img/portfolio/portfolio-list1.jpg') }}" alt="Images">
-                                        </a>
-                                        <div class="content">
-                                            <ul>
-                                                <li>
-                                                    <a href="#">-Royal /</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Interior</a>
-                                                </li>
-                                            </ul>
-                                            <div class="title">
-                                                <h3><a href="portfolio-details.html">White House Building</a></h3>
+                                                        <ul>
+                                                            <li>
+                                                                <a href="#">Interior /</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">Royal</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                </div>
 
-                                <div class="col-lg-4 col-md-6">
-                                    <div class="portfolio-list">
-                                        <a href="portfolio-details.html">
-                                            <img src="{{asset('/front/assets/img/portfolio/portfolio-list2.jpg') }}" alt="Images">
-                                        </a>
-                                        <div class="content">
-                                            <ul>
-                                                <li>
-                                                    <a href="#">-Interior /</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Royal</a>
-                                                </li>
-                                            </ul>
-                                            <div class="title">
-                                                <h3><a href="portfolio-details.html">Glass Foundation Building</a></h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                            <div class="col-lg-3 col-sm-6">
+                                                <div class="portfolio-item-two">
+                                                    <a href="portfolio-details.html">
+                                                        <img src="{{asset('/front/assets/img/portfolio/portfolio-item3.jpg') }}" alt="Images">
+                                                    </a>
+                                                    <div class="content">
+                                                        <div class="title">
+                                                            <h3><a href="portfolio-details.html">White house building</a></h3>
+                                                        </div>
 
-                                <div class="col-lg-4 col-md-6">
-                                    <div class="portfolio-list">
-                                        <a href="portfolio-details.html">
-                                            <img src="{{asset('/front/assets/img/portfolio/portfolio-list3.jpg') }}" alt="Images">
-                                        </a>
-                                        <div class="content active">
-                                            <ul>
-                                                <li>
-                                                    <a href="#">-Hospitality /</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Interior</a>
-                                                </li>
-                                            </ul>
-                                            <div class="title">
-                                                <h3><a href="portfolio-details.html">Rectangle Building</a></h3>
+                                                        <ul>
+                                                            <li>
+                                                                <a href="#">Royal /</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">Interior</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                </div>
 
-                                <div class="col-lg-7 col-md-6">
-                                    <div class="portfolio-list">
-                                        <a href="portfolio-details.html">
-                                            <img src="{{asset('/front/assets/img/portfolio/portfolio-list4.jpg') }}" alt="Images">
-                                        </a>
-                                        <div class="content">
-                                            <ul>
-                                                <li>
-                                                    <a href="#">-Hospitality /</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Royal /</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Interior</a>
-                                                </li>
-                                            </ul>
-                                            <div class="title">
-                                                <h3><a href="portfolio-details.html">Royal palace</a></h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                            <div class="col-lg-3 col-sm-6">
+                                                <div class="portfolio-item-two">
+                                                    <a href="portfolio-details.html">
+                                                        <img src="{{asset('/front/assets/img/portfolio/portfolio-item4.jpg') }}" alt="Images">
+                                                    </a>
+                                                    <div class="content">
+                                                        <div class="title">
+                                                            <h3><a href="portfolio-details.html">Rectangle building</a></h3>
+                                                        </div>
 
-                                <div class="col-lg-5 col-md-6 offset-lg-0 offset-md-3">
-                                    <div class="portfolio-list">
-                                        <a href="portfolio-details.html">
-                                            <img src="{{asset('/front/assets/img/portfolio/portfolio-list5.jpg') }}" alt="Images">
-                                        </a>
-                                        <div class="content">
-                                            <ul>
-                                                <li>
-                                                    <a href="#">-Royal /</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Interior</a>
-                                                </li>
-                                            </ul>
-                                            <div class="title">
-                                                <h3><a href="portfolio-details.html">Rectangle Building</a></h3>
+                                                        <ul>
+                                                            <li>
+                                                                <a href="#">-Interior /</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">Royal</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
 
-                        <div class="tabs_item">
-                            <div class="row">
-                                <div class="col-lg-4 col-md-6">
-                                    <div class="portfolio-list">
-                                        <a href="portfolio-details.html">
-                                            <img src="{{asset('/front/assets/img/portfolio/portfolio-list1.jpg') }}" alt="Images">
-                                        </a>
-                                        <div class="content">
-                                            <ul>
-                                                <li>
-                                                    <a href="#">-Royal /</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Interior</a>
-                                                </li>
-                                            </ul>
-                                            <div class="title">
-                                                <h3><a href="portfolio-details.html">White House Building</a></h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-4 col-md-6">
-                                    <div class="portfolio-list">
-                                        <a href="portfolio-details.html">
-                                            <img src="{{asset('/front/assets/img/portfolio/portfolio-list2.jpg') }}" alt="Images">
-                                        </a>
-                                        <div class="content">
-                                            <ul>
-                                                <li>
-                                                    <a href="#">-Interior /</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Royal</a>
-                                                </li>
-                                            </ul>
-                                            <div class="title">
-                                                <h3><a href="portfolio-details.html">Glass Foundation Building</a></h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-4 col-md-6">
-                                    <div class="portfolio-list">
-                                        <a href="portfolio-details.html">
-                                            <img src="{{asset('/front/assets/img/portfolio/portfolio-list3.jpg') }}" alt="Images">
-                                        </a>
-                                        <div class="content active">
-                                            <ul>
-                                                <li>
-                                                    <a href="#">-Hospitality /</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Interior</a>
-                                                </li>
-                                            </ul>
-                                            <div class="title">
-                                                <h3><a href="portfolio-details.html">Rectangle Building</a></h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-7 col-md-6">
-                                    <div class="portfolio-list">
-                                        <a href="portfolio-details.html">
-                                            <img src="{{asset('/front/assets/img/portfolio/portfolio-list4.jpg') }}" alt="Images">
-                                        </a>
-                                        <div class="content">
-                                            <ul>
-                                                <li>
-                                                    <a href="#">-Hospitality /</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Royal /</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Interior</a>
-                                                </li>
-                                            </ul>
-                                            <div class="title">
-                                                <h3><a href="portfolio-details.html">Royal palace</a></h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-5 col-md-6 offset-lg-0 offset-md-3">
-                                    <div class="portfolio-list">
-                                        <a href="portfolio-details.html">
-                                            <img src="{{asset('/front/assets/img/portfolio/portfolio-list5.jpg') }}" alt="Images">
-                                        </a>
-                                        <div class="content">
-                                            <ul>
-                                                <li>
-                                                    <a href="#">-Royal /</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Interior</a>
-                                                </li>
-                                            </ul>
-                                            <div class="title">
-                                                <h3><a href="portfolio-details.html">Rectangle Building</a></h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="tabs_item">
-                            <div class="row">
-                                <div class="col-lg-4 col-md-6">
-                                    <div class="portfolio-list">
-                                        <a href="portfolio-details.html">
-                                            <img src="{{asset('/front/assets/img/portfolio/portfolio-list1.jpg') }}" alt="Images">
-                                        </a>
-                                        <div class="content">
-                                            <ul>
-                                                <li>
-                                                    <a href="#">-Royal /</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Interior</a>
-                                                </li>
-                                            </ul>
-                                            <div class="title">
-                                                <h3><a href="portfolio-details.html">White House Building</a></h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-4 col-md-6">
-                                    <div class="portfolio-list">
-                                        <a href="portfolio-details.html">
-                                            <img src="{{asset('/front/assets/img/portfolio/portfolio-list2.jpg') }}" alt="Images">
-                                        </a>
-                                        <div class="content">
-                                            <ul>
-                                                <li>
-                                                    <a href="#">-Interior /</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Royal</a>
-                                                </li>
-                                            </ul>
-                                            <div class="title">
-                                                <h3><a href="portfolio-details.html">Glass Foundation Building</a></h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-4 col-md-6">
-                                    <div class="portfolio-list">
-                                        <a href="portfolio-details.html">
-                                            <img src="{{asset('/front/assets/img/portfolio/portfolio-list3.jpg') }}" alt="Images">
-                                        </a>
-                                        <div class="content active">
-                                            <ul>
-                                                <li>
-                                                    <a href="#">-Hospitality /</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Interior</a>
-                                                </li>
-                                            </ul>
-                                            <div class="title">
-                                                <h3><a href="portfolio-details.html">Rectangle Building</a></h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-7 col-md-6">
-                                    <div class="portfolio-list">
-                                        <a href="portfolio-details.html">
-                                            <img src="{{asset('/front/assets/img/portfolio/portfolio-list4.jpg') }}" alt="Images">
-                                        </a>
-                                        <div class="content">
-                                            <ul>
-                                                <li>
-                                                    <a href="#">-Hospitality /</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Royal /</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Interior</a>
-                                                </li>
-                                            </ul>
-                                            <div class="title">
-                                                <h3><a href="portfolio-details.html">Royal palace</a></h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-5 col-md-6 offset-lg-0 offset-md-3">
-                                    <div class="portfolio-list">
-                                        <a href="portfolio-details.html">
-                                            <img src="{{asset('/front/assets/img/portfolio/portfolio-list5.jpg') }}" alt="Images">
-                                        </a>
-                                        <div class="content">
-                                            <ul>
-                                                <li>
-                                                    <a href="#">-Royal /</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Interior</a>
-                                                </li>
-                                            </ul>
-                                            <div class="title">
-                                                <h3><a href="portfolio-details.html">Rectangle Building</a></h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="tabs_item">
-                            <div class="row">
-                                <div class="col-lg-4 col-md-6">
-                                    <div class="portfolio-list">
-                                        <a href="portfolio-details.html">
-                                            <img src="{{asset('/front/assets/img/portfolio/portfolio-list1.jpg') }}" alt="Images">
-                                        </a>
-                                        <div class="content">
-                                            <ul>
-                                                <li>
-                                                    <a href="#">-Royal /</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Interior</a>
-                                                </li>
-                                            </ul>
-                                            <div class="title">
-                                                <h3><a href="portfolio-details.html">White House Building</a></h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-4 col-md-6">
-                                    <div class="portfolio-list">
-                                        <a href="portfolio-details.html">
-                                            <img src="{{asset('/front/assets/img/portfolio/portfolio-list2.jpg') }}" alt="Images">
-                                        </a>
-                                        <div class="content">
-                                            <ul>
-                                                <li>
-                                                    <a href="#">-Interior /</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Royal</a>
-                                                </li>
-                                            </ul>
-                                            <div class="title">
-                                                <h3><a href="portfolio-details.html">Glass Foundation Building</a></h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-4 col-md-6">
-                                    <div class="portfolio-list">
-                                        <a href="portfolio-details.html">
-                                            <img src="{{asset('/front/assets/img/portfolio/portfolio-list3.jpg') }}" alt="Images">
-                                        </a>
-                                        <div class="content">
-                                            <ul>
-                                                <li>
-                                                    <a href="#">-Hospitality /</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Interior</a>
-                                                </li>
-                                            </ul>
-                                            <div class="title">
-                                                <h3><a href="portfolio-details.html">Rectangle Building</a></h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-7 col-md-6">
-                                    <div class="portfolio-list">
-                                        <a href="portfolio-details.html">
-                                            <img src="{{asset('/front/assets/img/portfolio/portfolio-list4.jpg') }}" alt="Images">
-                                        </a>
-                                        <div class="content active">
-                                            <ul>
-                                                <li>
-                                                    <a href="#">-Hospitality /</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Royal /</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Interior</a>
-                                                </li>
-                                            </ul>
-                                            <div class="title">
-                                                <h3><a href="portfolio-details.html">Royal palace</a></h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-5 col-md-6 offset-lg-0 offset-md-3">
-                                    <div class="portfolio-list">
-                                        <a href="portfolio-details.html">
-                                            <img src="{{asset('/front/assets/img/portfolio/portfolio-list5.jpg') }}" alt="Images">
-                                        </a>
-                                        <div class="content">
-                                            <ul>
-                                                <li>
-                                                    <a href="#">-Royal /</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Interior</a>
-                                                </li>
-                                            </ul>
-                                            <div class="title">
-                                                <h3><a href="portfolio-details.html">Rectangle Building</a></h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="tabs_item">
-                            <div class="row">
-                                <div class="col-lg-4 col-md-6">
-                                    <div class="portfolio-list">
-                                        <a href="portfolio-details.html">
-                                            <img src="{{asset('/front/assets/img/portfolio/portfolio-list1.jpg') }}" alt="Images">
-                                        </a>
-                                        <div class="content">
-                                            <ul>
-                                                <li>
-                                                    <a href="#">-Royal /</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Interior</a>
-                                                </li>
-                                            </ul>
-                                            <div class="title">
-                                                <h3><a href="portfolio-details.html">White House Building</a></h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-4 col-md-6">
-                                    <div class="portfolio-list">
-                                        <a href="portfolio-details.html">
-                                            <img src="{{asset('/front/assets/img/portfolio/portfolio-list2.jpg') }}" alt="Images">
-                                        </a>
-                                        <div class="content">
-                                            <ul>
-                                                <li>
-                                                    <a href="#">-Interior /</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Royal</a>
-                                                </li>
-                                            </ul>
-                                            <div class="title">
-                                                <h3><a href="portfolio-details.html">Glass Foundation Building</a></h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-4 col-md-6">
-                                    <div class="portfolio-list">
-                                        <a href="portfolio-details.html">
-                                            <img src="{{asset('/front/assets/img/portfolio/portfolio-list3.jpg') }}" alt="Images">
-                                        </a>
-                                        <div class="content">
-                                            <ul>
-                                                <li>
-                                                    <a href="#">-Hospitality /</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Interior</a>
-                                                </li>
-                                            </ul>
-                                            <div class="title">
-                                                <h3><a href="portfolio-details.html">Rectangle Building</a></h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-7 col-md-6">
-                                    <div class="portfolio-list">
-                                        <a href="portfolio-details.html">
-                                            <img src="{{asset('/front/assets/img/portfolio/portfolio-list4.jpg') }}" alt="Images">
-                                        </a>
-                                        <div class="content">
-                                            <ul>
-                                                <li>
-                                                    <a href="#">-Hospitality /</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Royal /</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Interior</a>
-                                                </li>
-                                            </ul>
-                                            <div class="title">
-                                                <h3><a href="portfolio-details.html">Royal palace</a></h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-5 offset-lg-0 offset-md-3">
-                                    <div class="portfolio-list">
-                                        <a href="portfolio-details.html">
-                                            <img src="{{asset('/front/assets/img/portfolio/portfolio-list5.jpg') }}" alt="Images">
-                                        </a>
-                                        <div class="content active">
-                                            <ul>
-                                                <li>
-                                                    <a href="#">-Royal /</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Interior</a>
-                                                </li>
-                                            </ul>
-                                            <div class="title">
-                                                <h3><a href="portfolio-details.html">Rectangle Building</a></h3>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-        <!-- Portfolio Area End -->
-                {{-- end our service --}}
+                <!-- Portfolio Area End -->
             @elseif($sec->section_design_type_id==10 && count($projects))
                 {{-- our project --}}
                 <div class="our-project scroll-animation-section show-on-scroll" style="background: {{$sec->background_color}}">
@@ -1042,39 +474,47 @@
                 </div>
                 {{-- end our porject --}}
 
-            @elseif($sec->section_design_type_id==11 && count($values))
-                {{-- our value --}}
-                <div class="our-value-section" style="background: {{$sec->background_color}}">
-                    <div class="our-value scroll-animation-section show-on-scroll">
-                        <div class="container">
-                            <div class="heading-title" style="font-weight: bold;color: #fff;">
-                                <label>{{ $sec->section_name }}</label>
-                            </div>
-                            <div class="row justify-content-center">
-                                @foreach ($values as $value)
-                                    <div class="
-                                        @if($sec->col == 2)
-                                            col-lg-6 col-md-6 col-sm-12
-                                        @elseif($sec->col == 3)
-                                            col-lg-4 col-md-6 col-sm-12
-                                        @elseif($sec->col == 4)
-                                            col-lg-3 col-md-6 col-sm-12
-                                        @endif
-                                    ">
-                                        <div class="our-value-box">
-                                            <div class="content-box">
-                                                <h5>{{ $value->title }}</h5>
-                                                {!! \Illuminate\Support\Str::limit($value->description,120) !!}
-                                            </div>
-                                        </div>
+            @elseif($sec->section_design_type_id==7 && count($teams))
+                {{-- our team --}}
+                <div class="team-area team-bg pt-100 pb-70">
+                    <div class="container">
+                        <div class="section-title-two text-center">
+                            <span class="sp-before">Creative Team</span>
+                            <h2>Our Motivated Team</h2>
+                        </div>
+                        <div class="row pt-45 customer-logo">
+                            @foreach($teams as $team)
+                            <div class="col-lg-4 col-sm-6">
+                                <div class="team-card">
+                                    <div class="images">
+                                        <a href="single-team.html">
+                                            <img src="{{ $team->img_paths['medium'] }}" alt="Images">
+                                        </a>
+                                        <ul class="social-link">
+                                            <li>
+                                                <a href="{{ $team->facebook }}" target="_blank"><i class="bx bxl-facebook"></i></a>
+                                            </li>
+                                            <li>
+                                                <a href="{{ $team->twitter }}#" target="_blank"><i class="bx bxl-twitter"></i></a>
+                                            </li>
+                                            <li>
+                                                <a href="{{ $team->linkedin }}" target="_blank"><i class="bx bxl-linkedin"></i></a>
+                                            </li>
+                                        </ul>
                                     </div>
-                                @endforeach
+                                    <div class="content">
+                                        <h3><a href="single-team.html">{{ $team->name }}</a></h3>
+                                        <ul class="sub-title">
+                                            <li>{{ $team->designation }}</li>
+                                            {{-- <li>ARCHITECT</li> --}}
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
+                            @endforeach
                         </div>
                     </div>
-
                 </div>
-
                 {{-- end our value --}}
 
             @elseif($sec->section_design_type_id==12 && count($testimonials))
@@ -1194,6 +634,26 @@
   $(document).ready(function(){
     $('.customer-logos').slick({
         slidesToShow: 6,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 1500,
+        arrows: false,
+        dots: false,
+        pauseOnHover: false,
+        responsive: [{
+            breakpoint: 768,
+            settings: {
+                slidesToShow: 4
+            }
+        }, {
+            breakpoint: 520,
+            settings: {
+                slidesToShow: 3
+            }
+        }]
+    });
+    $('.customer-logo').slick({
+        slidesToShow: 4,
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 1500,

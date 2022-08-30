@@ -28,6 +28,7 @@ class CreateHomeSectionsTable extends Migration
             $table->tinyInteger('text_align')->default(1)->comment('1=left,2=right');
             $table->boolean('is_image_inner_border')->default(false);
             $table->string('image',191)->nullable();
+            $table->string('signature',191)->nullable();
             $table->string('image_path',191)->nullable();
             $table->unsignedBigInteger('media_id')->nullable();
             $table->text('short_description')->nullable();

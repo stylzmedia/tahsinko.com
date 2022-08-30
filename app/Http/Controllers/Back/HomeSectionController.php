@@ -39,13 +39,23 @@ class HomeSectionController extends Controller
             'background_color'=>'',
             'section_name_is_show'=>'required',
             'title' => 'max:191',
-            'image' => 'image|mimes:jpg,png,jpeg,gif'
+            'image' => 'image|mimes:jpg,png,jpeg,gif',
+            'signature' => 'image|mimes:jpg,png,jpeg,gif'
         ]);
-        $home_section=$request->except('image');
+        $home_section=$request->except('image','signature');
         if($request->file('image')){
             $uploaded_file = MediaRepo::upload($request->file('image'));
             $home_section += [
                 'image'=> $uploaded_file['file_name'],
+                'image_path'=> $uploaded_file['file_path'],
+                'media_id'=> $uploaded_file['media_id'],
+                'created_by'=>auth()->id(),
+            ];
+        }
+        if($request->file('signature')){
+            $uploaded_file = MediaRepo::upload($request->file('signature'));
+            $home_section += [
+                'signature'=> $uploaded_file['file_name'],
                 'image_path'=> $uploaded_file['file_path'],
                 'media_id'=> $uploaded_file['media_id'],
                 'created_by'=>auth()->id(),

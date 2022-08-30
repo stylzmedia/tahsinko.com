@@ -10,7 +10,7 @@ use App\Http\Controllers\Back\CustomerController;
 use App\Http\Controllers\Back\FaqController;
 use App\Http\Controllers\Back\TestimonialController;
 use App\Http\Controllers\Back\ServiceController;
-use App\Http\Controllers\Back\ValueController;
+use App\Http\Controllers\Back\TeamController;
 use App\Http\Controllers\Back\RequestContactController;
 use App\Http\Controllers\Back\PortfolioController;
 use App\Http\Controllers\Back\CategoryController;
@@ -97,8 +97,9 @@ Route::middleware('auth', 'isAdmin')->group(function () {
 
     // Service Controller
     Route::resource('service', ServiceController::class, ['as' => 'back']);
-    // Value Controller
-    Route::resource('value', ValueController::class, ['as' => 'back']);
+
+    // Team Controller
+    Route::resource('team', TeamController::class, ['as' => 'back']);
 
     // Request Contact Controller
     Route::resource('request-contact', RequestContactController::class, ['as' => 'back']);

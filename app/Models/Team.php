@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use App\Repositories\MediaRepo;
 use Illuminate\Database\Eloquent\Model;
 
-class Value extends Model
+class Team extends Model
 {
     use HasFactory;
 
@@ -16,8 +16,8 @@ class Value extends Model
      * @var array
      */
     protected $fillable = [
-        'title',
-        'description',
+        'Name',
+        'designation',
         'image',
         'position',
         'status',

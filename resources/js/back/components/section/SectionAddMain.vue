@@ -4,20 +4,29 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="row">
-                        <div class="col-md-9">
-<!--                            <div class="col-md-8">
+                            <div class="col-md-4">
                                 <div class="form-group">
-                                    <label><b>Section *</b></label>
-                                    <select class="form-control" name="section_name_id" v-model="section_name_id" required>
+                                    <label><b>Design Type *</b></label>
+                                    <select class="form-select" v-model="design_type" name="section_design_type_id" required>
                                         <option value="null">Select One</option>
-                                        <option v-for="(sec,key) in section_names" :value="sec.id" :key="key">{{sec.title}}</option>
+                                        <option v-for="(type,key) in section_design_types" :value="type.id" :key="key">{{ type.name }}</option>
                                     </select>
                                 </div>
-                            </div>-->
-                            <div class="col-md-12">
+                            </div>
+                        <div class="col-md-9">
+<!--                            <div class="col-md-8">
+                                    <div class="form-group">
+                                        <label><b>Section *</b></label>
+                                        <select class="form-control" name="section_name_id" v-model="section_name_id" required>
+                                            <option value="null">Select One</option>
+                                            <option v-for="(sec,key) in section_names" :value="sec.id" :key="key">{{sec.title}}</option>
+                                        </select>
+                                    </div>
+                                </div>-->
+                            <div class="col-md-12" v-if="design_type === 1">
                                 <div class="form-group">
                                     <label><b>Section Name*</b></label>
-                                    <input type="text" name="section_name" class="form-control" placeholder="write section here" required>
+                                    <input type="text" name="section_name" class="form-control" placeholder="write section name here" required>
                                 </div>
                             </div>
 <!--                            <div class="col-md-12">
@@ -27,7 +36,7 @@
                                 </div>
                             </div>-->
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-md-6" v-if="design_type === 1 || design_type === 2 || design_type === 3">
                                     <div class="form-group">
                                         <label><b>Display section title*</b></label>
                                         <select class="form-select" name="section_name_is_show" required>
@@ -36,23 +45,14 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
+                                <!-- <div class="col-md-6">
                                     <div class="form-group">
                                         <label><b>Background color *</b></label>
                                         <input type="color" name="background_color" class="form-control form-control-color w-100 colorpicker" value="#088f7d"  required>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label><b>Design Type *</b></label>
-                                    <select class="form-select" v-model="design_type" name="section_design_type_id" required>
-                                        <option value="null">Select One</option>
-                                        <option v-for="(type,key) in section_design_types" :value="type.id" :key="key">{{ type.name }}</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <template v-if="design_type===2 || design_type === 3 || design_type===6 || design_type===10 || design_type === 11">
+                            <template v-if="design_type === 2 || design_type === 3">
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label><b>Number of Column *</b></label>
@@ -79,20 +79,20 @@
                                 </div>
                             </div>-->
                             <div class="row">
-                                <template v-if="!optional_designs.includes(design_type)">
-                                    <div class="col-md-12">
+                                <template>
+                                    <div class="col-md-12" v-if="design_type===1">
                                         <div class="form-group">
                                             <label><b>Title *</b></label>
                                             <input type="text" class="form-control" name="title" placeholder="Title write here.." required>
                                         </div>
                                     </div>
-                                    <div class="col-md-12">
+                                    <!-- <div class="col-md-12" v-if="design_type===1">
                                         <div class="form-group">
                                             <label><b>Sub Title</b></label>
                                             <input type="text" class="form-control" name="sub_title" placeholder="Sub Title write here..">
                                         </div>
-                                    </div>
-                                    <div class="col-md-4">
+                                    </div> -->
+                                    <!-- <div class="col-md-4">
                                         <div class="form-group">
                                             <label><b>Image Align</b></label>
                                             <select class="form-select" name="text_align">
@@ -100,8 +100,8 @@
                                                 <option value="2">Right</option>
                                             </select>
                                         </div>
-                                    </div>
-                                    <div class="col-md-4">
+                                    </div> -->
+                                    <!-- <div class="col-md-4">
                                         <div class="form-group">
                                             <label><b>Button Name</b></label>
                                             <input type="text" class="form-control" name="button_name" placeholder="button name write here..">
@@ -112,7 +112,7 @@
                                             <label><b>Button URL</b></label>
                                             <input type="text" class="form-control" name="button_url" placeholder="button url write here..">
                                         </div>
-                                    </div>
+                                    </div> -->
                                     <div class="col-md-4" v-if="design_type === 4">
                                         <div class="form-group">
                                             <label><b>Template</b></label>
@@ -137,56 +137,64 @@
                                         </div>
                                     </template>
                                 </template>
+
+                                <template v-if="design_type === 1 ">
+                                    <!-- <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label><b>Short Description</b></label>
+                                            <vue-editor v-model="short_description" name="short_description" ></vue-editor>
+                                        <textarea id="editor" class="form-control summernote" name="short_description" cols="30" rows="3" placeholder="Short description wrote here.." required></textarea>
+
+                                        </div>
+                                    </div> -->
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label><b>Description*</b></label>
+                                            <vue-editor v-model="description" name="description" ></vue-editor>
+                <!--                            <textarea id="editor" class="form-control  summernote" name="description" cols="30" rows="3" placeholder="Description wrote here.." required></textarea>
+                                        -->
+                                        </div>
+                                    </div>
+                                </template>
                             </div>
 
                         </div>
-                        <div class="col-md-3" v-if="!optional_designs.includes(design_type)">
-                            <div class="col-md-12">
+                        <div class="col-md-3">
+                            <div class="col-md-12" v-if="design_type === 4 || design_type === 1">
                                 <div class="card border-light mt-3 shadow">
                                     <div class="card-body">
                                         <img class="img-thumbnail uploaded_img"  :src="'/img/default-img.png'" alt="">
                                     </div>
                                 </div>
-                                <div class="col-md-12 text-center">
+                                <div class="col-md-12 text-center " >
                                     <div class="form-group">
                                         <label><b>Image*</b></label>
                                         <div class="custom-file text-left">
-                                            <label for="imageInput" class="image-button"><i class="ri-gallery-upload-line"></i> Choose Image</label>
+                                            <label for="imageInput" class="image-button"><i class="ri-gallery-upload-line"></i> Upload Image</label>
                                             <input type="file" id="imageInput" class="form-control custom-file-input image_upload" name="image" accept="image/*" required>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-12">
+                            </div>
+                            <div class="col-md-12" v-if="design_type === 4 || design_type === 1">
+                                <div class="card border-light mt-3 shadow">
+                                    <div class="card-body">
+                                        <img class="img-thumbnail uploaded_img2"  :src="'/img/default-img.png'" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-md-12 text-center " >
                                     <div class="form-group">
-                                        <label><b>Display Image Inner Border *</b></label>
-                                        <select class="form-select" name="is_image_inner_border" required>
-                                            <option value="0">No</option>
-                                            <option value="1">Yes</option>
-                                        </select>
+                                        <label><b>Signature</b></label>
+                                        <div class="custom-file text-left">
+                                            <!-- <label for="imageInput" class="image-button"><i class="ri-gallery-upload-line"></i> Upload Signature</label> -->
+                                            <input type="file" id="imageInput" class="form-control custom-file-input image_upload2 " name="signature" accept="image/*">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <template v-if="!optional_designs.includes(design_type) && design_type !== 4">
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            <label><b>Short Description</b></label>
-                            <vue-editor v-model="short_description" name="short_description" ></vue-editor>
-<!--                            <textarea id="editor" class="form-control summernote" name="short_description" cols="30" rows="3" placeholder="Short description wrote here.." required></textarea>
-                        -->
-                        </div>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            <label><b>Description*</b></label>
-                            <vue-editor v-model="description" name="description" ></vue-editor>
-<!--                            <textarea id="editor" class="form-control  summernote" name="description" cols="30" rows="3" placeholder="Description wrote here.." required></textarea>
-                        -->
-                        </div>
-                    </div>
-                </template>
                 <!-- <div class="col-md-12" v-if="design_type===6">
                     <div class="form-group">
                         <label><b>Short Description</b></label>

@@ -379,25 +379,22 @@
                         </li>
                         @endif
 
-                        @if(auth()->user()->permission('value','list'))
-                        {{-- @isset(auth()->user()->role->permission['permission']['value']['list']) --}}
+                        @if(auth()->user()->permission('team','list'))
                         <li class="nav-item">
-                            <a class="nav-link menu-link {{(Route::is('back.value.index') || Route::is('back.value.create') || Route::is('back.value.edit')) ? 'active' : 'collapsed'}}" href="#sidebarValues" data-bs-toggle="collapse" role="button"
-                                aria-expanded="{{(Route::is('back.value.index') || Route::is('back.value.create') || Route::is('back.value.edit')) ? 'true' : 'false'}}" aria-controls="sidebarValues">
-                                <i class="ri-honour-line"></i> <span data-key="t-apps">Values</span>
+                            <a class="nav-link menu-link {{(Route::is('back.team.index') || Route::is('back.team.create') || Route::is('back.team.edit')) ? 'active' : 'collapsed'}}" href="#sidebarTeams" data-bs-toggle="collapse" role="button"
+                                aria-expanded="{{(Route::is('back.team.index') || Route::is('back.team.create') || Route::is('back.team.edit')) ? 'true' : 'false'}}" aria-controls="sidebarTeams">
+                                <i class="ri-honour-line"></i> <span data-key="t-apps">Teams</span>
                             </a>
-                            <div class="collapse menu-dropdown {{(Route::is('back.value.index') || Route::is('back.value.create') || Route::is('back.value.edit')) ? 'show' : ''}}" id="sidebarValues">
+                            <div class="collapse menu-dropdown {{(Route::is('back.team.index') || Route::is('back.team.create') || Route::is('back.team.edit')) ? 'show' : ''}}" id="sidebarTeams">
                                 <ul class="nav nav-sm flex-column">
-                                    @if(auth()->user()->permission('value','list'))
-                                    {{-- @isset(auth()->user()->role->permission['permission']['value']['list']) --}}
+                                    @if(auth()->user()->permission('team','list'))
                                     <li class="nav-item">
-                                        <a href="{{route('back.value.index')}}" class="nav-link {{Route::is('back.value.index') ? 'active' : ''}}" data-key="t-mailbox"> All </a>
+                                        <a href="{{route('back.team.index')}}" class="nav-link {{Route::is('back.team.index') ? 'active' : ''}}" data-key="t-mailbox"> All </a>
                                     </li>
                                     @endif
-                                    @if(auth()->user()->permission('value','add'))
-                                    {{-- @isset(auth()->user()->role->permission['permission']['value']['add']) --}}
+                                    @if(auth()->user()->permission('team','add'))
                                     <li class="nav-item">
-                                        <a href="{{route('back.value.create')}}" class="nav-link {{Route::is('back.value.create') ? 'active' : ''}}" data-key="t-mailbox"> Add New </a>
+                                        <a href="{{route('back.team.create')}}" class="nav-link {{Route::is('back.team.create') ? 'active' : ''}}" data-key="t-mailbox"> Add New </a>
                                     </li>
                                     @endif
                                 </ul>

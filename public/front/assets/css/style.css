@@ -7034,7 +7034,7 @@ Checkout Area End
 Footer Area
 ====================================*/
 .footer-bg {
-  background-color: #E0DECA;
+  background-color: #000000;
 }
 .text-footer{
     color: #383838;
@@ -8008,7 +8008,7 @@ h2{
     top: -50%;
     width: 100%;
     height: 100%;
-    background: #ffce00;
+    background: #ff000a;
     transform: skewY(345deg);
     transition: 0.5s;
   }

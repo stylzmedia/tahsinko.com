@@ -198,7 +198,7 @@
 
 
         <!-- Footer Area -->
-        <div class="footer-area footer-bg pt-100 pb-70">
+        {{-- <div class="footer-area footer-bg pt-100 pb-70">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-4">
@@ -249,6 +249,115 @@
                         </div>
                     </div>
                 </div>
+        </div> --}}
+        <div class="footer-area footer-bg pt-100 pb-70">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="footer-widget footer-widget-color">
+                            <a href="index.html" class="footer-logo">
+                                <img src="{{$settings_g['logo'] ?? ''}}" alt="Images">
+                            </a>
+                            <ul class="footer-contact-list">
+                                <li>
+                                    <span> Address:</span> 2659 Autostrad St, London, UK
+                                </li>
+                                <li>
+                                    <span>Message:</span> <a href="mailto:support@sprio.com"></a> support@sprio.com
+                                </li>
+                                <li>
+                                    <span>Phone:</span> <a href="tel:215-123-4567"> 215 - 123 - 4567</a>
+                                </li>
+                                <li>
+                                    <span>Open:</span>  Mon - Fri / 9:00 AM - 6:00 PM
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6 footer-plr">
+                        <div class="footer-widget footer-widget-color">
+                            <h3>OUR SERVICES</h3>
+                            <ul class="footer-list">
+                                <li>
+                                    <a href="services-1.html" target="_blank">
+                                        <i class="bx bx-plus"></i>
+                                        Interior Design
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="services-1.html" target="_blank">
+                                        <i class="bx bx-plus"></i>
+                                        Architecture Modeling
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="services-1.html" target="_blank">
+                                        <i class="bx bx-plus"></i>
+                                        Rendering Buildings
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="services-1.html" target="_blank">
+                                        <i class="bx bx-plus"></i>
+                                        Landscape works
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-widget-color">
+                        <div class="footer-widget footer-widget-color pl-4">
+                            <h3>LATEST PROJECTS</h3>
+                            <ul class="footer-list">
+                                <li>
+                                    <a href="services-1.html" target="_blank">
+                                        Chemical Engineering Projects
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="services-1.html" target="_blank">
+                                        Construction Engineering
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="services-1.html" target="_blank">
+                                        Interior Welding Engineering
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="services-1.html" target="_blank">
+                                        Welding Engineering
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-widget footer-widget-color">
+                            <h3>RECENT NEWS</h3>
+                            <ul class="footer-news">
+                                <li>
+                                    <i class="bx bx-time-five"></i>
+                                    <div class="content">
+                                        <span>12 Jun 2020</span>
+                                        <a href="#">Visiting rabat bridge</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <i class="bx bx-time-five"></i>
+                                    <div class="content">
+                                        <span>30 April 2020</span>
+                                        <a href="#">Meet iceland’s rivers &amp; hills</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <!-- Footer Area End -->
 

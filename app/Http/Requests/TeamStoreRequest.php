@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ValueUpdateRequest extends FormRequest
+class TeamStoreRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,8 +24,12 @@ class ValueUpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => ['required', 'string'],
+            'name' => ['required', 'string'],
+            'designation' => ['required', 'string'],
             'description' => ['string'],
+            'facebook' => ['string'],
+            'linkedin' => ['string'],
+            'tweeter' => ['string'],
             'image' => ['string'],
             'position' => ['integer'],
             'status' => ['required', 'integer'],

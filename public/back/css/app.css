@@ -328,10 +328,6 @@
   color: inherit;
 }
 
-.vs__search:-ms-input-placeholder {
-  color: inherit;
-}
-
 .vs__search::placeholder {
   color: inherit;
 }

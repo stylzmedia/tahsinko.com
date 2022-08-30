@@ -1,5 +1,5 @@
 @extends('back.layouts.master')
-@section('title', 'Values')
+@section('title', 'Teams')
 
 @section('head')
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.23/datatables.min.css"/>
@@ -14,7 +14,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                    <h4 class="mb-sm-0">Values</h4>
+                    <h4 class="mb-sm-0">Teams</h4>
 
                     <div class="page-title-right">
                         <ol class="breadcrumb m-0">
@@ -33,7 +33,7 @@
                 <div class="card">
                     <div class="blog-table-header card-header">
                         <h4 class="card-title mb-0 flex-grow-1">Value List</h4>
-                        <a href="{{route('back.value.create')}}" class="btn btn-info float-right"><i class="ri-add-circle-line"></i> Create New</a>
+                        <a href="{{route('back.team.create')}}" class="btn btn-info float-right"><i class="ri-add-circle-line"></i> Create New</a>
                     </div><!-- end card header -->
 
                     <div class="card-body table-responsive">
@@ -41,25 +41,29 @@
                             <thead>
                               <tr>
                                 <th scope="col">#</th>
-                                <th scope="col">title</th>
+                                <th scope="col">Picture</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Designation</th>
                                 <th scope="col">Status</th>
                                 <th scope="col" class="text-right">Action</th>
                               </tr>
                             </thead>
                             <tbody>
-                                @foreach ($values as $key => $blog)
+                                @foreach ($teams as $key => $team)
                                     <tr>
                                         <th scope="row">{{$key + 1}}</th>
-                                        <td>{!! $blog->title !!}</td>
+                                        <td> <img class="img-thumbnail" style="height:50px" src="{{$team->img_paths['small']}}"></td>
+                                        <td>{!! $team->name !!}</td>
+                                        <td>{!! $team->designation !!}</td>
                                         <td>
                                             @include('switcher::switch', [
-                                                'table' => 'values',
-                                                'data' => $blog
+                                                'table' => 'teams',
+                                                'data' => $team
                                             ])
                                         </td>
                                         <td class="text-right">
-                                            <a class="btn btn-sm btn-success" href="{{route('back.value.edit', $blog->id)}}"><i class="ri-edit-2-line"></i></a>
-                                            <form class="d-inline-block" action="{{route('back.value.destroy', $blog->id)}}" method="POST">
+                                            <a class="btn btn-sm btn-success" href="{{route('back.team.edit', $team->id)}}"><i class="ri-edit-2-line"></i></a>
+                                            <form class="d-inline-block" action="{{route('back.team.destroy', $team->id)}}" method="POST">
                                                 @method('DELETE')
                                                 @csrf
 

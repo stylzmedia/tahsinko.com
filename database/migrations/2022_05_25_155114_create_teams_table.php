@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateValuesTable extends Migration
+class CreateTeamsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,15 @@ class CreateValuesTable extends Migration
      */
     public function up()
     {
-        Schema::create('values', function (Blueprint $table) {
+        Schema::create('teams', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('title');
+            $table->string('name');
+            $table->string('designation');
+            $table->string('facebook');
+            $table->string('linkedin');
+            $table->string('tweeter');
             $table->longText('description')->nullable();
-            $table->string('image')->nullable();
+            $table->string('image');
             $table->string('image_path')->nullable();
             $table->unsignedBigInteger('media_id')->nullable();
             $table->integer('position')->nullable();
@@ -33,6 +37,6 @@ class CreateValuesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('values');
+        Schema::dropIfExists('teams');
     }
 }
