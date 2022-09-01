@@ -14,7 +14,7 @@
 @section('master')
      {{-- sliders --}}
      <div class="header-slider">
-        <div class="container" style="margin:0;max-width:100%;">
+        <div class="container-fluid g-0">
 
             <div id="header-slider" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
@@ -29,10 +29,17 @@
                                     <source src="{{ $slider->video_path }}" type="video/mp4" />
                                 </video>
                             </div>
+                        @elseif($slider->slider_type== 3)
+                        <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
+                            <iframe class="background-video-embed" frameborder="0" allowfullscreen="1" src="{!! $slider->slider_script !!}?autoplay=1&mute=1&controls=0&playlist=3TRq1IMZGFg&loop=1" style="width: 100%; height: 902.812px; pointer-events: none;"></iframe>
+                        </div>
                         @endif
                     @endforeach
 
                 </div>
+            </div>
+            <div>
+
             </div>
         </div>
     </div>

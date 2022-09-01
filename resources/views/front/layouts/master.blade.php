@@ -2,9 +2,12 @@
 
 <html class="no-js" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 @php
-    $main_menu = App\Models\Menu::with('SingleMenuItems')->where('name', 'Main Menu')->active()->first();
+    $main_menu_left = App\Models\Menu::with('SingleMenuItems')->where('name', 'Main Menu Left')->active()->first();
+    $main_menu_right = App\Models\Menu::with('SingleMenuItems')->where('name', 'Main Menu Right')->active()->first();
     $footer_menu = App\Models\Menu::with('SingleMenuItems')->where('name', 'Footer')->active()->first();
+
     $widgets = App\Models\Widget::with('Menu', 'Menu.SingleMenuItems')->where('status', 1)->where('placement', 'Footer')->orderBy('position')->get();
+
     $socials = \App\Models\Settings::where(['group'=>'social'])->get();
     $general = \App\Models\Settings::where(['group'=>'general'])->get();
 
@@ -50,7 +53,7 @@
 
 <body>
     <!-- PreLoader Start -->
-    {{-- <div class="preloader">
+    <div class="preloader">
         <div class="d-table">
             <div class="d-table-cell">
                 <div class="sk-cube-area">
@@ -61,19 +64,34 @@
                 </div>
             </div>
         </div>
-    </div> --}}
+    </div>
         <!-- PreLoader End -->
 
         <!-- Top Nav Start -->
         <div class="top-navbar bg-dark d-none d-sm-block">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-6 p-2  text-white"><i class="fa-solid fa-phone-flip fa-xl"></i> +88-02-222242057 <i class="fa-solid fa-envelope text-md fa-xl"></i> info@tahsinko.com</div>
+                    <div class="col-md-6 p-2  text-white"><i class="fa-solid fa-phone-flip fa-xl"></i> {{$settings_g['mobile_number'] ?? ''}} <i class="fa-solid fa-envelope text-md fa-xl"></i> {{$settings_g['email'] ?? ''}}</div>
                     <div class="col-md-6 p-2 text-white text-md-end y-1">
-                        <i class="fa-brands fa-facebook fa-xl "></i>
-                        <i class="fa-brands fa-instagram fa-xl"></i>
-                        <i class="fa-brands fa-twitter fa-xl"></i>
-                        <i class="fa-brands fa-youtube fa-xl"></i>
+                        <div class="top-bar-left">
+                            <div class="social">
+                                     @if(Info::Social($socials, 'facebook'))
+                                             <a href="{{Info::Social($socials,  'facebook')}}" target="_blank"><i class="fab fa-facebook"></i></a>
+                                     @endif
+                                     @if(Info::Social($socials, 'linkedin'))
+                                             <a href="{{Info::Social($socials,  'linkedin')}}"><i class="fab fa-linkedin" target="_blank"></i></a>
+                                     @endif
+                                     @if(Info::Social($socials,  'twitter'))
+                                             <a href="{{Info::Social($socials,  'twitter')}}"><i class="fab fa-twitter" target="_blank"></i></a>
+                                     @endif
+                                     @if(Info::Social($socials, 'instagram'))
+                                             <a href="{{Info::Social($socials,  'instagram')}}"><i class="fab fa-instagram" target="_blank"></i></a>
+                                     @endif
+                                     @if(Info::Social($socials, 'youtube'))
+                                             <a href="{{Info::Social($socials,  'youtube')}}"><i class="fab fa-youtube" target="_blank"></i></a>
+                                     @endif
+                            </div>
+                        </div>
                     </div>
 
                 </div>
@@ -84,113 +102,146 @@
 
 
         <!-- Start Navbar Area -->
-        <div class="navbar-area">
-            <!-- Menu For Mobile Device -->
-            <div class="mobile-nav bg-light ">
-                <a href="" class="logo ">
-                    <img class="" src="{{asset('images/logo/Logo-Tahsinko.png')}}" alt="Tahsinko Logo" width="170px" height="55px">
-                </a>
+ <!-- Start Navbar Area -->
+ <div class="navbar-area">
+    <!-- Menu For Mobile Device -->
+    <div class="mobile-nav">
+        <a href="index.html" class="logo">
+            <img src="assets/img/logo/logo1.png" alt="Logo">
+        </a>
+    </div>
+
+    <!-- Menu For Desktop Device -->
+    <div class="main-nav nav-two">
+        <div class="container-fluid">
+            <nav class="container-max-2 navbar navbar-expand-md navbar-light ">
+                <div class="collapse navbar-collapse mean-menu justify-content-center" id="navbarSupportedContent">
+                    {{-- <div class="menu-contact d-in-line">
+                        <a href="tel:+180012356789" class="menu-contact-btn">
+                            <i class="flaticon-telephone"></i>
+                            +1 800 123 56 789
+                        </a>
+                    </div> --}}
+
+                    <div class="row">
+                        <div class="col-5">
+                            <ul class="navbar-nav m-auto">
+
+                                <li class="nav-item">
+                                    <a href="{{route('homepage')}}" class="nav-link {{ url('/') == url()->current() ? 'active' : ''}}">HOME</a>
+                                </li>
+
+
+                                @foreach ($main_menu_left->SingleMenuItems as $item)
+                                    <li class="nav-item">
+                                        <a href="{{$item->menu_info['url']}}" class="nav-link {{$item->menu_info['url'] == url()->current() ? 'active' : ''}}"> {{ $item->menu_info['text'] }}</a>
+                                    </li>
+                                @endforeach
+
+
+                            </ul>
+                        </div>
+                        <div class="col-2">
+                            <ul class="navbar-nav m-auto">
+                                <li class="nav-item logo">
+                                    <a href="index.html" class="nav-link">
+                                        <img src="{{$settings_g['logo'] ?? ''}}" class="nav-link-logo1" alt="{{$settings_g['title'] ?? ''}}">
+                                        <img src="{{$settings_g['logo'] ?? ''}}" class="nav-link-logo2" alt="{{$settings_g['title'] ?? ''}}">
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-5">
+                            <ul class="navbar-nav m-auto">
+                                @foreach ($main_menu_right->SingleMenuItems as $item)
+                                <li class="nav-item">
+                                    <a href="{{$item->menu_info['url']}}" class="nav-link {{$item->menu_info['url'] == url()->current() ? 'active' : ''}}"> {{ $item->menu_info['text'] }}</a>
+                                </li>
+                            @endforeach
+                            </ul>
+                        </div>
+                    </div>
+
+                    {{-- <div class="other-side d-in-line">
+                        <div class="search-area">
+                            <div class="other-option">
+                                <div class="search-item">
+                                    <a href="#" class="search-btn-2">
+                                        <i class="bx bx-search"></i>
+                                    </a>
+                                    <i class="close-btn bx bx-x"></i>
+                                    <div class="search-overlay search-popup">
+                                        <div class="search-box-2">
+                                            <form class="search-form">
+                                                <input class="search-input" name="search" placeholder="Search" type="text">
+                                                <button class="search-button" type="submit">
+                                                    <i class="bx bx-search"></i>
+                                                </button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="menu-icon d-in-line">
+                            <a href="#" class="burger-menu menu-icon-two">
+                                <i class='flaticon-menu'></i>
+                            </a>
+                        </div>
+                    </div> --}}
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <div class="side-nav-responsive nav-two-responsive">
+        <div class="container">
+            <div class="dot-menu">
+                <div class="circle-inner">
+                    <div class="circle circle-one"></div>
+                    <div class="circle circle-two"></div>
+                    <div class="circle circle-three"></div>
+                </div>
             </div>
 
-            <!-- Menu For Desktop Device -->
-            <div class="main-nav nav-two sticky-top">
-                <div class="container-fluid">
-                    <nav class=" navbar navbar-expand-md navbar-light ">
-                        <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
-                            <!-- <div class="menu-contact d-in-line">
+            <div class="container">
+                <div class="side-nav-inner">
+                    <div class="side-nav justify-content-center  align-items-center">
+                        <div class="side-item">
+                            <div class="responsive-search-box">
+                                <form class="search-form">
+                                    <input class="form-control" name="search" placeholder="Search Your Result" type="text">
+                                    <button class="search-btn" type="submit">
+                                        <i class="bx bx-search"></i>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="side-item">
+                            <div class="responsive-menu-icon">
+                                <a href="#" class="burger-menu menu-icon-bg">
+                                    <i class='flaticon-menu'></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="side-item">
+                            <div class="responsive-menu-contact">
                                 <a href="tel:+180012356789" class="menu-contact-btn">
                                     <i class="flaticon-telephone"></i>
                                     +1 800 123 56 789
                                 </a>
-                            </div> -->
-                            <ul class="navbar-nav m-auto">
-                                <li class="nav-item">
-                                    <a href="" class="nav-link active">HOME</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="" class="nav-link">ABOUT US</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="" class="nav-link">DECORATION</a>
-                                </li>
-
-                                <li class="nav-item">
-                                    <a href="" class="nav-link">MAJOR COMPONENTS</a>
-                                </li>
-
-                                <li class="nav-item logo ">
-                                    <a href="" class="nav-link">
-                                        <img src="{{asset('images/logo/Logo-Tahsinko.png')}}" alt="Tahsinko Logo" width="180px" height="65px">
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link">DEMO NAME</a>
-                                </li>
-
-                                <li class="nav-item">
-                                    <a href="" class="nav-link">NEWS</a>
-                                </li>
-
-                                <li class="nav-item">
-                                    <a href="" class="nav-link">Q&A</a>
-                                </li>
-
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link">CONTACT US</a>
-                                </li>
-                            </ul>
-                            <div class="other-side d-in-line"></div>
-                        </div>
-                    </nav>
-                </div>
-            </div>
-
-            <div class="side-nav-responsive nav-two-responsive">
-                <div class="container">
-                    <!-- <div class="dot-menu">
-                        <div class="circle-inner">
-                            <div class="circle circle-one"></div>
-                            <div class="circle circle-two"></div>
-                            <div class="circle circle-three"></div>
-                        </div>
-                    </div> -->
-
-                    <div class="container">
-                        <div class="side-nav-inner">
-                            <div class="side-nav justify-content-center  align-items-center">
-                                <div class="side-item">
-                                    <div class="responsive-search-box">
-                                        <form class="search-form">
-                                            <input class="form-control" name="search" placeholder="Search Your Result" type="text">
-                                            <button class="search-btn" type="submit">
-                                                <i class="bx bx-search"></i>
-                                            </button>
-                                        </form>
-                                    </div>
-                                </div>
-
-                                <div class="side-item">
-                                    <div class="responsive-menu-icon">
-                                        <a href="#" class="burger-menu menu-icon-bg">
-                                            <i class='flaticon-menu'></i>
-                                        </a>
-                                    </div>
-                                </div>
-
-                                <div class="side-item">
-                                    <div class="responsive-menu-contact">
-                                        <a href="tel:+180012356789" class="menu-contact-btn">
-                                            <i class="flaticon-telephone"></i>
-                                            +88-02-222242057, 01819014568
-                                        </a>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+</div>
+<!-- End Navbar Area -->
         <!-- End Navbar Area -->
 
 
@@ -253,55 +304,31 @@
         <div class="footer-area footer-bg pt-100 pb-70">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-4 col-md-6">
+                    <div class="col-lg-3 col-md-6">
                         <div class="footer-widget footer-widget-color">
                             <a href="index.html" class="footer-logo">
                                 <img src="{{$settings_g['logo'] ?? ''}}" alt="Images">
                             </a>
                             <ul class="footer-contact-list">
-                                <li>
-                                    <span> Address:</span> 2659 Autostrad St, London, UK
-                                </li>
-                                <li>
-                                    <span>Message:</span> <a href="mailto:support@sprio.com"></a> support@sprio.com
-                                </li>
-                                <li>
-                                    <span>Phone:</span> <a href="tel:215-123-4567"> 215 - 123 - 4567</a>
-                                </li>
-                                <li>
-                                    <span>Open:</span>  Mon - Fri / 9:00 AM - 6:00 PM
-                                </li>
+
+
                             </ul>
                         </div>
                     </div>
 
-                    <div class="col-lg-2 col-md-6 footer-plr">
+                    <div class="col-lg-3 col-md-6 footer-plr">
                         <div class="footer-widget footer-widget-color">
-                            <h3>OUR SERVICES</h3>
+                            <h3>BANGLADESH OFFICE</h3>
                             <ul class="footer-list">
+                                <p>{{$settings_g['title'] ?? ''}}</p>
                                 <li>
-                                    <a href="services-1.html" target="_blank">
-                                        <i class="bx bx-plus"></i>
-                                        Interior Design
-                                    </a>
+                                    <span> Address:</span> {{$settings_g['street'] ?? ''}}, {{$settings_g['city'] ?? ''}}
                                 </li>
                                 <li>
-                                    <a href="services-1.html" target="_blank">
-                                        <i class="bx bx-plus"></i>
-                                        Architecture Modeling
-                                    </a>
+                                    <span>Message:</span> <a href="mailto:{{$settings_g['email'] ?? ''}}"></a> {{$settings_g['email'] ?? ''}}
                                 </li>
                                 <li>
-                                    <a href="services-1.html" target="_blank">
-                                        <i class="bx bx-plus"></i>
-                                        Rendering Buildings
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="services-1.html" target="_blank">
-                                        <i class="bx bx-plus"></i>
-                                        Landscape works
-                                    </a>
+                                    <span>Phone:</span> <a href="tel:{{$settings_g['mobile_number'] ?? ''}}"> {{$settings_g['mobile_number'] ?? ''}}</a>
                                 </li>
                             </ul>
                         </div>
@@ -309,29 +336,22 @@
 
                     <div class="col-lg-3 col-md-6 footer-widget-color">
                         <div class="footer-widget footer-widget-color pl-4">
-                            <h3>LATEST PROJECTS</h3>
-                            <ul class="footer-list">
-                                <li>
-                                    <a href="services-1.html" target="_blank">
-                                        Chemical Engineering Projects
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="services-1.html" target="_blank">
-                                        Construction Engineering
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="services-1.html" target="_blank">
-                                        Interior Welding Engineering
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="services-1.html" target="_blank">
-                                        Welding Engineering
-                                    </a>
-                                </li>
-                            </ul>
+                            @foreach ($widgets as $widget)
+                                <h3>{{$widget->title[1]}}</h3>
+                                @if($widget->type == 'Menu' && $widget->Menu)
+                                <ul class="footer-list">
+                                    @foreach ($widget->Menu->SingleMenuItems as $item)
+                                    <li>
+                                        <a href="{{$item->menu_info['url']}}" target="_blank">
+                                            {{$item->menu_info['text']}}
+                                        </a>
+                                    </li>
+                                    @endforeach
+                                </ul>
+                                @else
+                                {!! $widget->text !!}
+                                @endif
+                            @endforeach
                         </div>
                     </div>
 

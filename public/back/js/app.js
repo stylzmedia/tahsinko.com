@@ -2621,6 +2621,9 @@ __webpack_require__.r(__webpack_exports__);
     },
     video_path: {
       required: false
+    },
+    slider_script: {
+      required: false
     }
   },
   data: function data() {
@@ -4400,7 +4403,39 @@ var render = function render() {
     attrs: {
       "for": "inlineRadio2"
     }
-  }, [_vm._v("Video Upload")])])]), _vm._v(" "), _vm.slider_type === 1 ? _c("div", {
+  }, [_vm._v("Video Upload")])]), _vm._v(" "), _c("div", {
+    staticClass: "form-check form-check-inline"
+  }, [_c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model.number",
+      value: _vm.slider_type,
+      expression: "slider_type",
+      modifiers: {
+        number: true
+      }
+    }],
+    staticClass: "form-check-input",
+    attrs: {
+      type: "radio",
+      name: "slider_type",
+      id: "inlineRadio3",
+      value: "3"
+    },
+    domProps: {
+      checked: _vm._q(_vm.slider_type, _vm._n("3"))
+    },
+    on: {
+      change: function change($event) {
+        _vm.slider_type = _vm._n("3");
+      }
+    }
+  }), _vm._v(" "), _c("label", {
+    staticClass: "form-check-label",
+    attrs: {
+      "for": "inlineRadio3"
+    }
+  }, [_vm._v("Script")])])]), _vm._v(" "), _vm.slider_type === 1 ? _c("div", {
     staticClass: "text-center"
   }, [_c("img", {
     staticClass: "img-thumbnail uploaded_img",
@@ -4593,7 +4628,7 @@ var staticRenderFns = [function () {
 
   return _c("div", {
     staticClass: "form-group"
-  }, [_c("label", [_c("b", [_vm._v("Slider Video *")])]), _vm._v(" "), _c("div", {
+  }, [_c("label", [_c("b", [_vm._v("Input Slider Video Link*")])]), _vm._v(" "), _c("div", {
     staticClass: "form-group"
   }, [_c("input", {
     staticClass: "video_input form-control mt-2",
@@ -4950,7 +4985,39 @@ var render = function render() {
     attrs: {
       "for": "inlineRadio2"
     }
-  }, [_vm._v("Video Upload")])])])]), _vm._v(" "), _vm.slider_type === 1 ? _c("div", {
+  }, [_vm._v("Video Upload")])]), _vm._v(" "), _c("div", {
+    staticClass: "form-check form-check-inline"
+  }, [_c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model.number",
+      value: _vm.slider.slider_type,
+      expression: "slider.slider_type",
+      modifiers: {
+        number: true
+      }
+    }],
+    staticClass: "form-check-input",
+    attrs: {
+      type: "radio",
+      name: "slider_type",
+      id: "inlineRadio3",
+      value: "3"
+    },
+    domProps: {
+      checked: _vm._q(_vm.slider.slider_type, _vm._n("3"))
+    },
+    on: {
+      change: function change($event) {
+        _vm.$set(_vm.slider, "slider_type", _vm._n("3"));
+      }
+    }
+  }), _vm._v(" "), _c("label", {
+    staticClass: "form-check-label",
+    attrs: {
+      "for": "inlineRadio3"
+    }
+  }, [_vm._v("Script")])])])]), _vm._v(" "), _vm.slider_type === 1 ? _c("div", {
     staticClass: "col-md-4 text-center"
   }, [_vm.img_path ? _c("img", {
     staticClass: "img-thumbnail uploaded_img",

@@ -3,6 +3,8 @@
 <html class="no-js" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 @php
     $main_menu = App\Models\Menu::with('SingleMenuItems')->where('name', 'Main Menu')->active()->first();
+    $main_menu = App\Models\Menu::with('SingleMenuItems')->where('name', 'Main Menu')->active()->first();
+
     $footer_menu = App\Models\Menu::with('SingleMenuItems')->where('name', 'Footer')->active()->first();
     $widgets = App\Models\Widget::with('Menu', 'Menu.SingleMenuItems')->where('status', 1)->where('placement', 'Footer')->orderBy('position')->get();
     $socials = \App\Models\Settings::where(['group'=>'social'])->get();
@@ -162,6 +164,7 @@
 
                                         <li class="menu-item @if(count($item->Items)) dropdown @endif">
                                             <a class="nav__link {{$item->menu_info['url'] == url()->current() ? 'active' : ''}}"  href="{{$item->menu_info['url']}}">{{ $item->menu_info['text'] }}</a>
+
                                             @if(count($item->Items))
                                                 <ul class="sub-nav">
                                                     @foreach ($item->Items as $item)
@@ -173,6 +176,7 @@
                                                     @endforeach
                                                 </ul>
                                             @endif
+
                                         </li>
                                     @endforeach
 

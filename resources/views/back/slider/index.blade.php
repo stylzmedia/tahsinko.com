@@ -83,7 +83,7 @@
                                             <img style="max-height:450px;object-fit: cover;" src="{{$slider->img_paths['original']}}" class="d-block w-100" alt="">
                                         @elseif($slider->slider_type==2)
                                             <video style="width: 100%;height:auto;" class="mt-2" controls controlsList="nodownload">
-                                                <source src="{{$slider->video_path}}" type="video/mp4">
+                                                <source src="{{$slider->video_path}}" type="file">
                                             </video>
                                         @endif
                                     </div>
@@ -115,7 +115,7 @@
                                             <img src="{{$slider->img_paths['medium']}}" alt="">
                                         @elseif($slider->slider_type==2)
                                             <video style="width: 40%;height:100px;" class="mt-2" controls controlsList="nodownload">
-                                                <source src="{{$slider->video_path}}" type="video/mp4">
+                                                <source src="{{$slider->video_path}}" type="file">
                                             </video>
                                         @endif
                                         <input type="hidden" name="position[]" value="{{$slider->id}}">

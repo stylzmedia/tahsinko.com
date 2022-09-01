@@ -84,7 +84,7 @@
                                     />
                                     <label class="form-check-label" for="inlineRadio2">Video Upload</label>
                                 </div>
-<!--                                <div class="form-check form-check-inline">
+                               <div class="form-check form-check-inline">
                                     <input v-model.number="slider_type"
                                         class="form-check-input"
                                         type="radio"
@@ -93,7 +93,7 @@
                                         value="3"
                                     />
                                     <label class="form-check-label" for="inlineRadio3">Script</label>
-                                </div>-->
+                                </div>
 
                             </div>
                             <div class="text-center" v-if="slider_type===1">
@@ -109,7 +109,7 @@
                         </div>
                         <div class="text-center" v-if="slider_type===2">
                             <div class="form-group">
-                                <label><b>Slider Video *</b></label>
+                                <label><b>Input Slider Video Link*</b></label>
                                 <div class="form-group">
                                    <input type="file" name="video" accept="video/mp4" class="video_input form-control mt-2" required>
                                 </div>

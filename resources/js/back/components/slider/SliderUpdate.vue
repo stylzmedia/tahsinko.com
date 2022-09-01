@@ -80,16 +80,16 @@
                         />
                         <label class="form-check-label" for="inlineRadio2">Video Upload</label>
                     </div>
-                    <!--                                <div class="form-check form-check-inline">
-                                                        <input v-model.number="slider.slider_type"
-                                                            class="form-check-input"
-                                                            type="radio"
-                                                            name="slider_type"
-                                                            id="inlineRadio3"
-                                                            value="3"
-                                                        />
-                                                        <label class="form-check-label" for="inlineRadio3">Script</label>
-                                                    </div>-->
+                    <div class="form-check form-check-inline">
+                        <input v-model.number="slider.slider_type"
+                            class="form-check-input"
+                            type="radio"
+                            name="slider_type"
+                            id="inlineRadio3"
+                            value="3"
+                        />
+                        <label class="form-check-label" for="inlineRadio3">Script</label>
+                    </div>
 
                 </div>
             </div>
@@ -145,6 +145,9 @@ export default {
             required:false,
         },
         video_path:{
+            required:false,
+        },
+        slider_script:{
             required:false,
         }
     },

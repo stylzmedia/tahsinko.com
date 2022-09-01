@@ -443,7 +443,7 @@ Navbar Area
 }
 
 .nav-two {
-  position: inherit;
+  position: absolute;
   background-color: #ffffff;
   top: 0;
   left: 0;
@@ -466,13 +466,13 @@ Navbar Area
   color: #414141;
 }
 
-.nav-two nav .navbar-nav .nav-item.logo {
-  position: relative;
-  padding: 0 !important;
-  top: 12px;
-  margin-right: 40px;
-  margin-left: 40px;
+.nav-two nav .navbar-nav  {
+    position: relative;
+    padding: 0 !important;
+    top: 12px;
+    margin: 5px !important;
 }
+
 
 .nav-two nav .navbar-nav .nav-item.logo .nav-link-logo2 {
   display: none;
