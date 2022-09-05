@@ -2319,6 +2319,11 @@ vue__WEBPACK_IMPORTED_MODULE_3__["default"].use((v_toaster__WEBPACK_IMPORTED_MOD
     };
   },
   methods: {
+    show_video_pre: function show_video_pre() {
+      var regex = /youtube.com\/((?:embed)|(?:watch))((?:\?v\=)|(?:\/))([a-zA-Z0-9_-]+)/ig;
+      var matches = regex.exec(this.$refs.feature_video.value);
+      this.$refs.feature_video_preview.src = "https://www.youtube.com/embed/" + matches[matches.length - 1];
+    },
     btnLoad: function btnLoad() {
       $('.btn').on('click', function () {
         var $this = $(this);
@@ -2470,6 +2475,11 @@ vue__WEBPACK_IMPORTED_MODULE_3__["default"].use((v_toaster__WEBPACK_IMPORTED_MOD
     };
   },
   methods: {
+    show_video_pre: function show_video_pre() {
+      var regex = /youtube.com\/((?:embed)|(?:watch))((?:\?v\=)|(?:\/))([a-zA-Z0-9_-]+)/ig;
+      var matches = regex.exec(this.$refs.feature_video.value);
+      this.$refs.feature_video_preview.src = "https://www.youtube.com/embed/" + matches[matches.length - 1];
+    },
     btnLoad: function btnLoad() {
       $('.btn').on('click', function () {
         var $this = $(this);
@@ -2497,10 +2507,10 @@ vue__WEBPACK_IMPORTED_MODULE_3__["default"].use((v_toaster__WEBPACK_IMPORTED_MOD
                   _this.is_loading = false; //this.$refs.section_update_form.reset();
 
                   if (response.data.status === 'success') {
-                    console.log(response);
+                    //console.log(response);
+                    _this.$toaster.success(response.data.message);
 
-                    _this.$toaster.success(response.data.message); // window.location.reload();
-
+                    window.location.reload();
                   } else _this.$toaster.error(response.data.message);
                 })["catch"](function (error) {
                   _this.is_loading = false;
@@ -3181,7 +3191,36 @@ var render = function render() {
       },
       expression: "description"
     }
-  })], 1)])] : _vm._e(), _vm._v(" "), _vm.design_type === 1 ? [_vm._m(8)] : _vm._e()], 2)]), _vm._v(" "), _c("div", {
+  })], 1)])] : _vm._e(), _vm._v(" "), _vm.design_type === 1 ? [_c("div", {
+    staticClass: "col-md-12"
+  }, [_c("div", {
+    staticClass: "row"
+  }, [_c("div", {
+    staticClass: "col-md-8"
+  }, [_vm._m(8), _vm._v(" "), _c("input", {
+    ref: "feature_video",
+    staticClass: "form-control feature_video",
+    attrs: {
+      id: "feature_video",
+      type: "text",
+      value: "",
+      name: "feature_video"
+    },
+    on: {
+      input: _vm.show_video_pre
+    }
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "col-md-4"
+  }, [_c("div", {
+    staticClass: "img_group video mt-4"
+  }, [_c("iframe", {
+    ref: "feature_video_preview",
+    staticClass: "embed-responsive-item",
+    attrs: {
+      src: "https://www.youtube.com/embed/gSXnyDDwvUY",
+      allowfullscreen: ""
+    }
+  })])])])])] : _vm._e()], 2)]), _vm._v(" "), _c("div", {
     staticClass: "col-md-2"
   }, [_vm.design_type === 4 || _vm.design_type === 1 ? _c("div", {
     staticClass: "col-md-12"
@@ -3348,31 +3387,7 @@ var staticRenderFns = [function () {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("div", {
-    staticClass: "col-md-12"
-  }, [_c("div", {
-    staticClass: "row"
-  }, [_c("div", {
-    staticClass: "col-md-8"
-  }, [_c("label", [_c("b", [_vm._v("YouTube Video*")])]), _vm._v(" "), _c("input", {
-    staticClass: "form-control feature_video",
-    attrs: {
-      id: "feature_video",
-      type: "text",
-      value: "",
-      name: "feature_video"
-    }
-  })]), _vm._v(" "), _c("div", {
-    staticClass: "col-md-4"
-  }, [_c("div", {
-    staticClass: "img_group video mt-4"
-  }, [_c("iframe", {
-    staticClass: "embed-responsive-item",
-    attrs: {
-      src: "https://www.youtube.com/embed/gSXnyDDwvUY",
-      allowfullscreen: ""
-    }
-  })])])])]);
+  return _c("label", [_c("b", [_vm._v("YouTube Video*")])]);
 }, function () {
   var _vm = this,
       _c = _vm._self._c;
@@ -3818,6 +3833,7 @@ var render = function render() {
       value: _vm.home_section.feature_video,
       expression: "home_section.feature_video"
     }],
+    ref: "feature_video",
     staticClass: "form-control feature_video",
     attrs: {
       id: "feature_video",
@@ -3828,13 +3844,24 @@ var render = function render() {
       value: _vm.home_section.feature_video
     },
     on: {
-      input: function input($event) {
+      input: [function ($event) {
         if ($event.target.composing) return;
 
         _vm.$set(_vm.home_section, "feature_video", $event.target.value);
-      }
+      }, _vm.show_video_pre]
     }
-  })]), _vm._v(" "), _vm._m(13)])])] : _vm._e(), _vm._v(" "), _c("div", {
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "col-md-4"
+  }, [_c("div", {
+    staticClass: "img_group video mt-4"
+  }, [_c("iframe", {
+    ref: "feature_video_preview",
+    staticClass: "embed-responsive-item",
+    attrs: {
+      src: _vm.home_section.feature_video ? _vm.home_section.feature_video : "https://www.youtube.com/embed/gSXnyDDwvUY",
+      allowfullscreen: ""
+    }
+  })])])])])] : _vm._e(), _vm._v(" "), _c("div", {
     staticClass: "col-md-12"
   }), _vm._v(" "), _c("div", {
     staticClass: "card-footer"
@@ -3853,7 +3880,7 @@ var render = function render() {
       type: "submit",
       variant: "success"
     }
-  }, [_vm._v("\n                    Update\n                ")]) : _vm._e(), _vm._v(" "), _c("br"), _vm._v(" "), _vm._m(14)], 1)], 2)])]);
+  }, [_vm._v("\n                    Update\n                ")]) : _vm._e(), _vm._v(" "), _c("br"), _vm._v(" "), _vm._m(13)], 1)], 2)])]);
 };
 
 var staticRenderFns = [function () {
@@ -3984,21 +4011,6 @@ var staticRenderFns = [function () {
       _c = _vm._self._c;
 
   return _c("label", [_c("b", [_vm._v("YouTube Video*")])]);
-}, function () {
-  var _vm = this,
-      _c = _vm._self._c;
-
-  return _c("div", {
-    staticClass: "col-md-4"
-  }, [_c("div", {
-    staticClass: "img_group video mt-4"
-  }, [_c("iframe", {
-    staticClass: "embed-responsive-item",
-    attrs: {
-      src: "https://www.youtube.com/embed/gSXnyDDwvUY",
-      allowfullscreen: ""
-    }
-  })])]);
 }, function () {
   var _vm = this,
       _c = _vm._self._c;

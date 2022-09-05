@@ -184,6 +184,8 @@
                         <div class="col-md-8">
                           <label><b>YouTube Video*</b></label>
                           <input
+                            @input="show_video_pre"
+                            ref = "feature_video"
                             id="feature_video"
                             type="text"
                             class="form-control feature_video"
@@ -195,8 +197,9 @@
                         <div class="col-md-4">
                           <div class="img_group video mt-4">
                             <iframe
+                                ref = "feature_video_preview"
                               class="embed-responsive-item"
-                              src="https://www.youtube.com/embed/gSXnyDDwvUY"
+                              :src="home_section.feature_video ? home_section.feature_video : 'https://www.youtube.com/embed/gSXnyDDwvUY'"
                               allowfullscreen
                             ></iframe>
                           </div>
@@ -266,6 +269,11 @@ export default {
       }
     },
     methods:{
+        show_video_pre(){
+            const regex = /youtube.com\/((?:embed)|(?:watch))((?:\?v\=)|(?:\/))([a-zA-Z0-9_-]+)/ig;
+            const matches = regex.exec(this.$refs.feature_video.value);
+            this.$refs.feature_video_preview.src="https://www.youtube.com/embed/"+matches[matches.length - 1];
+        },
         btnLoad(){
             $('.btn').on('click', function() {
                 var $this = $(this);
@@ -284,9 +292,9 @@ export default {
                 this.is_loading=false;
                 //this.$refs.section_update_form.reset();
                 if (response.data.status === 'success') {
-                    console.log(response);
+                    //console.log(response);
                     this.$toaster.success(response.data.message);
-                    // window.location.reload();
+                     window.location.reload();
                 }
                 else this.$toaster.error(response.data.message);
             }).catch((error)=>{
