@@ -166,7 +166,7 @@
                             <iframe
                                 ref = "feature_video_preview"
                                 class="embed-responsive-item"
-                                src="https://www.youtube.com/embed/gSXnyDDwvUY"
+                                src=""
                                 allowfullscreen
                             ></iframe>
                           </div>

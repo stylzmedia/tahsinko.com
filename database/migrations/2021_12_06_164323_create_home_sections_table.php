@@ -16,13 +16,15 @@ class CreateHomeSectionsTable extends Migration
         Schema::create('home_sections', function (Blueprint $table) {
             $table->id();
             $table->string('section_name',191)->nullable();
-            $table->integer('col')->default(1);
-            $table->integer('row')->default(3);
             $table->boolean('section_name_is_show')->default(false);
-            $table->string('title',191);
             $table->unsignedBigInteger('section_name_id')->nullable();
             $table->unsignedBigInteger('section_design_type_id')->nullable();
             $table->integer('position')->default(1000);
+            $table->string('title',191);
+            $table->longText('description')->nullable();
+            $table->boolean('status')->default(true);
+            $table->integer('col')->default(1);
+            $table->integer('row')->default(3);
             $table->string('image',191)->nullable();
             $table->string('signature_light',191)->nullable();
             $table->string('signature_dark',191)->nullable();
@@ -34,12 +36,10 @@ class CreateHomeSectionsTable extends Migration
             $table->unsignedBigInteger('media_id')->nullable();
             $table->unsignedBigInteger('media_id2')->nullable();
             $table->unsignedBigInteger('media_id3')->nullable();
-            $table->longText('description')->nullable();
-            $table->string('ceo_name',191)->nullable();
 
             $table->string('ceo_name',191)->nullable();
+
             $table->string('feature_video',191)->nullable();
-            $table->boolean('status')->default(true);
             $table->unsignedInteger('created_by')->nullable();
             $table->unsignedInteger('updated_by')->nullable();
             $table->timestamp('deleted_at')->nullable();

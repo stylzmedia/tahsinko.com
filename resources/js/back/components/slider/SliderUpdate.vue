@@ -88,7 +88,7 @@
                             id="inlineRadio3"
                             value="3"
                         />
-                        <label class="form-check-label" for="inlineRadio3">Script</label>
+                        <label class="form-check-label" for="inlineRadio3">YouTube Link</label>
                     </div>
 
                 </div>
@@ -116,9 +116,41 @@
                 </div>
             </div>
             <div class="col-md-12 text-center" v-if="slider_type=== 3">
+
+
+
                 <div class="form-group">
-                    <label><b>Slider Script *</b></label>
-                    <textarea class="form-control" name="slider_script" cols="30" rows="3" required></textarea>
+                    <div class="col-md-12">
+                                    <div class="row">
+                                    <div class="col-md-8">
+                                        <label><b>YouTube Link*</b></label>
+                                        <input
+                                        @input="show_video_pre"
+                                        ref = "feature_video"
+                                        id="feature_video"
+                                        type="text"
+                                        class="form-control feature_video"
+                                        name="slider_script"
+                                        v-model="slider.slider_script"
+                                        required
+                                        />
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="img_group video mt-4">
+                                        <iframe
+                                            ref = "feature_video_preview"
+                                            class="embed-responsive-item"
+                                            :src="slider.slider_script"
+                                            allowfullscreen
+                                        ></iframe>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+
+                    <!-- <label><b>YouTube Link*</b></label>
+                    <input type="text" class="form-control" name="slider_script" v-model="slider.slider_script" required> -->
                 </div>
             </div>
             <div class="col-md-6">
@@ -164,6 +196,14 @@ export default {
         slider(){
             this.slider_type=parseInt(this.slider.slider_type);
         }
+    },
+    methods:{
+        show_video_pre(){
+            const regex = /youtube.com\/((?:embed)|(?:watch))((?:\?v\=)|(?:\/))([a-zA-Z0-9_-]+)/ig;
+            const matches = regex.exec(this.$refs.feature_video.value);
+            this.$refs.feature_video_preview.src="https://www.youtube.com/embed/"+matches[matches.length - 1];
+        },
     }
+
 }
 </script>

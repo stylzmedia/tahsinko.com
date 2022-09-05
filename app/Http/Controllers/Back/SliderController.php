@@ -75,7 +75,16 @@ class SliderController extends Controller
                 'video'=>$fileName,
             ];
         }
-        Slider::create($data);
+        if($request->slider_type == 3){
+                $youtube_id="";
+            $longUrlRegex = '/youtube.com\/((?:embed)|(?:watch))((?:\?v\=)|(?:\/))([a-zA-Z0-9_-]+)/i';
+            if (preg_match($longUrlRegex, $request->slider_script, $matches)) {
+            $youtube_id = $matches[count($matches) - 1];
+            }
+            $data['slider_script']="https://www.youtube.com/embed/".$youtube_id;
+        }
+
+            Slider::create($data);
             return response()->json(['status'=>'success','message'=>'Successfully created'],200);
 
         // try {
@@ -146,6 +155,14 @@ class SliderController extends Controller
             $data +=[
                 'video'=>$fileName,
             ];
+        }
+        if($request->slider_type == 3){
+            $youtube_id="";
+            $longUrlRegex = '/youtube.com\/((?:embed)|(?:watch))((?:\?v\=)|(?:\/))([a-zA-Z0-9_-]+)/i';
+            if (preg_match($longUrlRegex, $request->slider_script, $matches)) {
+            $youtube_id = $matches[count($matches) - 1];
+            }
+            $data['slider_script']="https://www.youtube.com/embed/".$youtube_id;
         }
         try {
             $slider->update($data);

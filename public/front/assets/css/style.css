@@ -35,6 +35,7 @@ This files table contents are outlined below>>>>>
 ** - Pagination Area Style
 ** - Back To Top Button Style
 ** - PreLoader CSS Style
+** - YouTube Modal
 *******************************************
 /*
 
@@ -2167,7 +2168,7 @@ About Area
 
 .about-img .about-img-text {
   width: 275px;
-  height: 230px;
+  height: 150px;
   text-align: center;
   position: absolute;
   bottom: -30px;
@@ -7054,6 +7055,10 @@ Footer Area
   margin-bottom: 30px;
 }
 
+.footer-widget a {
+    color: #fff;
+  }
+
 .footer-widget h3 {
   margin-bottom: 20px;
   margin-top: 15px;
@@ -8133,3 +8138,34 @@ h2{
     -webkit-transform: translateY(-2px);
             transform: translateY(-2px);
   }
+
+  /* YouTube Modal */
+
+.modal-dialog {
+    max-width: 800px;
+    margin: 30px auto;
+  }
+
+.modal-body {
+    position:relative;
+    padding:0px;
+  }
+.btn-close {
+    position:absolute;
+    right:-30px;
+    top:0;
+  }
+
+
+
+/* Product Category Section  */
+.section2 p {
+    margin: 0;
+    line-height: 35px;
+}
+
+.section2 h2 {
+    padding-top: 0px;
+}
+
+

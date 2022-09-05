@@ -71,7 +71,9 @@
         <div class="row">
                 <div class="col-sm-9">
                     <div class="card-header">
-                        <a href="{{route('back.frontend.section')}}" class="btn btn-success btn-sm"><i class="fas fa-angle-double-left"></i> Back</a>
+                        {{-- <a href="{{route('back.frontend.section')}}" class="btn btn-success btn-sm"><i class="fas fa-angle-double-left"></i> Back</a> --}}
+                        <a href="{{route('back.frontend.section')}}" class="btn btn-success btn-sm"><i class="fas fa-angle-double-left"></i> Create New</a>
+
                     </div>
                     <div class="card border-light mt-3 shadow">
                         <div class="card-body">

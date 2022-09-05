@@ -71,7 +71,10 @@
         <div class="top-navbar bg-dark d-none d-sm-block">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-6 p-2  text-white"><i class="fa-solid fa-phone-flip fa-xl"></i> {{$settings_g['mobile_number'] ?? ''}} <i class="fa-solid fa-envelope text-md fa-xl"></i> {{$settings_g['email'] ?? ''}}</div>
+                    <div class="col-md-6 p-2  text-white">
+                        <i class="fa-solid fa-phone-flip fa-xl"></i> <a class="text-white me-3" href="tel:+8801720397476" rel="noopener noreferrer" target="_blank"> {{$settings_g['mobile_number'] ?? ''}} </a>
+                        <i class="fa-solid fa-envelope text-md fa-xl"></i> {{$settings_g['email'] ?? ''}}
+                    </div>
                     <div class="col-md-6 p-2 text-white text-md-end y-1">
                         <div class="top-bar-left">
 
@@ -112,24 +115,6 @@
                                 </li>
                                 @endif
                             </ul>
-
-                            {{-- <div class="social">
-                                     @if(Info::Social($socials, 'facebook'))
-                                             <a href="{{Info::Social($socials,  'facebook')}}" target="_blank"><i class="fab fa-facebook"></i></a>
-                                     @endif
-                                     @if(Info::Social($socials, 'linkedin'))
-                                             <a href="{{Info::Social($socials,  'linkedin')}}"><i class="fab fa-linkedin" target="_blank"></i></a>
-                                     @endif
-                                     @if(Info::Social($socials,  'twitter'))
-                                             <a href="{{Info::Social($socials,  'twitter')}}"><i class="fab fa-twitter" target="_blank"></i></a>
-                                     @endif
-                                     @if(Info::Social($socials, 'instagram'))
-                                             <a href="{{Info::Social($socials,  'instagram')}}"><i class="fab fa-instagram" target="_blank"></i></a>
-                                     @endif
-                                     @if(Info::Social($socials, 'youtube'))
-                                             <a href="{{Info::Social($socials,  'youtube')}}"><i class="fab fa-youtube" target="_blank"></i></a>
-                                     @endif
-                            </div> --}}
                         </div>
                     </div>
 
@@ -165,19 +150,16 @@
                     <div class="row">
                         <div class="col-5">
                             <ul class="navbar-nav m-auto">
-
                                 <li class="nav-item">
                                     <a href="{{route('homepage')}}" class="nav-link {{ url('/') == url()->current() ? 'active' : ''}}">HOME</a>
                                 </li>
-
-
-                                @foreach ($main_menu_left->SingleMenuItems as $item)
-                                    <li class="nav-item">
-                                        <a href="{{$item->menu_info['url']}}" class="nav-link {{$item->menu_info['url'] == url()->current() ? 'active' : ''}}"> {{ $item->menu_info['text'] }}</a>
-                                    </li>
-                                @endforeach
-
-
+                                @isset($main_menu_left->SingleMenuItems)
+                                    @foreach ($main_menu_left->SingleMenuItems as $item)
+                                        <li class="nav-item">
+                                            <a href="{{$item->menu_info['url']}}" class="nav-link {{$item->menu_info['url'] == url()->current() ? 'active' : ''}}"> {{ $item->menu_info['text'] }}</a>
+                                        </li>
+                                    @endforeach
+                                @endisset
                             </ul>
                         </div>
                         <div class="col-2">
@@ -192,43 +174,16 @@
                         </div>
                         <div class="col-5">
                             <ul class="navbar-nav m-auto">
-                                @foreach ($main_menu_right->SingleMenuItems as $item)
-                                <li class="nav-item">
-                                    <a href="{{$item->menu_info['url']}}" class="nav-link {{$item->menu_info['url'] == url()->current() ? 'active' : ''}}"> {{ $item->menu_info['text'] }}</a>
-                                </li>
-                            @endforeach
+                                @isset($main_menu_right->SingleMenuItems)
+                                    @foreach ($main_menu_right->SingleMenuItems as $item)
+                                    <li class="nav-item">
+                                        <a href="{{$item->menu_info['url']}}" class="nav-link {{$item->menu_info['url'] == url()->current() ? 'active' : ''}}"> {{ $item->menu_info['text'] }}</a>
+                                    </li>
+                                    @endforeach
+                                @endisset
                             </ul>
                         </div>
                     </div>
-
-                    {{-- <div class="other-side d-in-line">
-                        <div class="search-area">
-                            <div class="other-option">
-                                <div class="search-item">
-                                    <a href="#" class="search-btn-2">
-                                        <i class="bx bx-search"></i>
-                                    </a>
-                                    <i class="close-btn bx bx-x"></i>
-                                    <div class="search-overlay search-popup">
-                                        <div class="search-box-2">
-                                            <form class="search-form">
-                                                <input class="search-input" name="search" placeholder="Search" type="text">
-                                                <button class="search-button" type="submit">
-                                                    <i class="bx bx-search"></i>
-                                                </button>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="menu-icon d-in-line">
-                            <a href="#" class="burger-menu menu-icon-two">
-                                <i class='flaticon-menu'></i>
-                            </a>
-                        </div>
-                    </div> --}}
                 </div>
             </nav>
         </div>
@@ -288,58 +243,6 @@
 
 
         <!-- Footer Area -->
-        {{-- <div class="footer-area footer-bg pt-100 pb-70">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="footer_logo">
-                                <img src="{{asset('images/logo/Logo-Tahsinko.png')}}" alt="Tahsinko Logo" srcset="">
-                                <p class="text-footer">
-                                    102/1, Sute # 6B, West Agargaon,<br>
-                                    Sher-E-Bngla Nagar, Dhaka-1207 <br>
-                                    Phone: +88-02-222242057, 01819014568<br>
-                                    Email: info@tahsinko.com tahsinkolift@gmail.com
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-md-8">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <h4 class="text-dark">NAVIGATION</h4>
-                                    <div class="footer_link">
-                                        <ul class="navbar-nav m-auto">
-                                            <li class="nav-item">
-                                                <a href="{{asset('')}}" class="nav-link text-footer">Q&A</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a href="{{asset('')}}" class="nav-link text-footer">NEWS</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a href="{{asset('')}}" class="nav-link text-footer">CONTACT US</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <h4 class="text-dark">MANUFACTURER IN CHINA</h4>
-                                    <p class="text-footer">
-                                        Zhejiang KNK Elevator Co. Ltd. <br>
-                                        Suzhou Fuji Hitech Elevator Co. Ltd.
-                                    </p>
-                                </div>
-                                <div class="col-md-4">
-                                    <h4 class="text-dark">MANUFACTURER IN EUROPE</h4>
-                                    <p class="text-footer">
-                                        DOPPLER S. A, <br>
-                                        <i class="fa-brands fa-chrome"></i> www.doppler.gr <br>
-                                        <i class="fa-solid fa-envelope"></i> info@doppler.gr
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-        </div> --}}
         <div class="footer-area footer-bg pt-100 pb-70">
             <div class="container">
                 <div class="row">
@@ -347,10 +250,9 @@
                         <div class="footer-widget footer-widget-color">
                             <a href="index.html" class="footer-logo">
                                 <img src="{{$settings_g['dark_logo'] ?? ''}}" alt="Images">
+                                <p>{{$settings_g['title'] ?? ''}}</p>
                             </a>
                             <ul class="footer-contact-list">
-
-
                             </ul>
                         </div>
                     </div>
@@ -359,7 +261,7 @@
                         <div class="footer-widget footer-widget-color">
                             <h3>BANGLADESH OFFICE</h3>
                             <ul class="footer-list">
-                                <p>{{$settings_g['title'] ?? ''}}</p>
+
                                 <li>
                                     <span> Address:</span> {{$settings_g['street'] ?? ''}}, {{$settings_g['city'] ?? ''}}
                                 </li>
@@ -372,49 +274,26 @@
                             </ul>
                         </div>
                     </div>
-
+                    @foreach ($widgets as $widget)
                     <div class="col-lg-3 col-md-6 footer-widget-color">
                         <div class="footer-widget footer-widget-color pl-4">
-                            @foreach ($widgets as $widget)
-                                <h3>{{$widget->title[1]}}</h3>
-                                @if($widget->type == 'Menu' && $widget->Menu)
-                                <ul class="footer-list">
-                                    @foreach ($widget->Menu->SingleMenuItems as $item)
-                                    <li>
-                                        <a href="{{$item->menu_info['url']}}" target="_blank">
-                                            {{$item->menu_info['text']}}
-                                        </a>
-                                    </li>
-                                    @endforeach
-                                </ul>
-                                @else
-                                {!! $widget->text !!}
-                                @endif
-                            @endforeach
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6">
-                        <div class="footer-widget footer-widget-color">
-                            <h3>RECENT NEWS</h3>
-                            <ul class="footer-news">
+                            <h3>{{$widget->title}}</h3>
+                            @if($widget->type == 'Menu' && $widget->Menu)
+                            <ul class="footer-list">
+                                @foreach ($widget->Menu->SingleMenuItems as $item)
                                 <li>
-                                    <i class="bx bx-time-five"></i>
-                                    <div class="content">
-                                        <span>12 Jun 2020</span>
-                                        <a href="#">Visiting rabat bridge</a>
-                                    </div>
+                                    <a href="{{$item->menu_info['url']}}" target="_blank">
+                                        {{$item->menu_info['text']}}
+                                    </a>
                                 </li>
-                                <li>
-                                    <i class="bx bx-time-five"></i>
-                                    <div class="content">
-                                        <span>30 April 2020</span>
-                                        <a href="#">Meet iceland’s rivers &amp; hills</a>
-                                    </div>
-                                </li>
+                                @endforeach
                             </ul>
+                            @else
+                            {!! $widget->text !!}
+                            @endif
                         </div>
                     </div>
+                    @endforeach
                 </div>
             </div>
         </div>

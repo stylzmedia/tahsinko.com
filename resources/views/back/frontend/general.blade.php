@@ -98,15 +98,21 @@
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label class="col-sm-2 col-form-label"><b>Tel: </b></label>
+                                                        <label class="col-sm-2 col-form-label"><b>Telephone: </b></label>
                                                         <div class="col-sm-8">
                                                             <input type="text" class="form-control" placeholder="Tel" name="tel" value="{{$settings_g['tel'] ?? ''}}">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label class="col-sm-2 col-form-label"><b>Email Address*: </b></label>
+                                                        <label class="col-sm-2 col-form-label"><b>Primary Email Address*: </b></label>
                                                         <div class="col-sm-8">
                                                             <input type="email" class="form-control" placeholder="Email Address" name="email" value="{{$settings_g['email'] ?? ''}}" required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-sm-2 col-form-label"><b>Secondary Email Address (optional): </b></label>
+                                                        <div class="col-sm-8">
+                                                            <input type="email" class="form-control" placeholder="Secondary Email Address" name="email2" value="{{$settings_g['email2'] ?? ''}}">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
@@ -383,7 +389,7 @@
         });
     </script>
 <script>
-    // Uploaded image Fabickon get url
+    // Uploaded image favicon get url
     function readURLFavicon(input) {
         if (input.files && input.files[0]) {
             var reader = new FileReader();
@@ -398,7 +404,7 @@
     });
 
     // // Uploaded image Dark get url
-    function readURLFavicon(input) {
+    function readURLDark(input) {
         if (input.files && input.files[0]) {
             var reader = new FileReader();
             reader.onload = function (e) {
@@ -408,10 +414,23 @@
         }
     }
     $(".image_upload_dark").change(function(){
-        readURLFavicon(this);
+        readURLDark(this);
     });
 
-    function readURLog(input) {
+    function readURLogo(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $('.uploaded_img').attr('src', e.target.result);
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+    $(".image_upload").change(function(){
+        readURLogo(this);
+    });
+
+    function readUROG(input) {
         if (input.files && input.files[0]) {
             var reader = new FileReader();
             reader.onload = function (e) {
@@ -421,7 +440,7 @@
         }
     }
     $(".image_upload_og").change(function(){
-        readURLog(this);
+        readUROG(this);
     });
 </script>
 @endsection

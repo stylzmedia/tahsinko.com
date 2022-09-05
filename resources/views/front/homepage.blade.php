@@ -29,8 +29,17 @@
                                 </video>
                             </div>
                         @elseif($slider->slider_type== 3)
+                        @php
+
+                        $longUrlRegex = '/youtube.com\/((?:embed)|(?:watch))((?:\?v\=)|(?:\/))([a-zA-Z0-9_-]+)/i';
+                        if (preg_match($longUrlRegex, $slider->slider_script, $matches)) {
+                          $youtube_id = $matches[count($matches) - 1];
+                         }
+
+                        @endphp
+
                         <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
-                            <iframe class="background-video-embed" frameborder="0" allowfullscreen="1" src="{!! $slider->slider_script !!}?autoplay=1&mute=1&controls=0&playlist=3TRq1IMZGFg&loop=1" style="width: 100%; height: 902.812px; pointer-events: none;"></iframe>
+                            <iframe class="background-video-embed" frameborder="0" allowfullscreen="1" src="{{'https://www.youtube.com/embed/' . $youtube_id}}?autoplay=1&mute=1&controls=0&playlist={{ $youtube_id }}&loop=1" style="width: 100%; height: 902.812px; pointer-events: none;"></iframe>
                         </div>
                         @endif
                     @endforeach
@@ -74,10 +83,38 @@
                             <div class="col-lg-7">
                                 <div class="about-img">
                                     <img src="{{ $sec->img_paths['original'] }}" alt="Image">
-                                    <div class="about-img-text">
-                                        <span>Build</span>
-                                        <h3>2015</h3>
+                                    @php
+                                    $longUrlRegex = '/youtube.com\/((?:embed)|(?:watch))((?:\?v\=)|(?:\/))([a-zA-Z0-9_-]+)/i';
+                                    if (preg_match($longUrlRegex, $sec->feature_video, $matches)) {
+                                    $youtube_id = $matches[count($matches) - 1];
+                                    }
+                                    @endphp
+                                    <div class="about-img-text" style="background-image: url(https://img.youtube.com/vi/{{$youtube_id}}/sddefault.jpg);">
+                                        {{-- <span>Build</span>
+                                        <h3>2015</h3> --}}
+                                        <a href=" javascript:void(0)" data-bs-toggle="modal" data-bs-target="#videoeModal">
+                                            <i class="bx bxl-youtube" style=" color: red; font-size: 67px; margin: auto; cursor: pointer;"  ></i>
+                                        </a>
+
                                     </div>
+                                    <!-- YouTube Modal --->
+                                    <div class="modal fade" id="videoeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                          <div class="modal-content">
+                                            <div class="modal-body">
+                                             <button type="button" class="btn-close btn-close-white video-btn" data-bs-dismiss="modal" aria-label="Close"></span>
+                                              </button>
+                                              <!-- 16:9 aspect ratio -->
+                                                <div class="ratio ratio-16x9">
+                                                    <iframe class="embed-responsive-item"  width="665" height="500" src="{{$sec->feature_video}}?autoplay=0&controls=1&playlist={{ $youtube_id }}&loop=1" title="{{ $sec->title }}" allowscriptaccess="always" frameborder="0"  ></iframe>
+                                                </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                    </div>
+                                    <!-- End YouTube Modal --->
+
+
                                 </div>
                             </div>
                         </div>
@@ -86,7 +123,7 @@
                 <!-- About Area End -->
 
             @elseif ($sec->section_design_type_id==4)
-            <!-- Product Category -->
+                <!-- Product Category -->
                 <div class="about-area pt-100 pb-70">
                     <div class="container">
                         <div class="row justify-content-center">
@@ -98,13 +135,13 @@
                             <div class="col-lg-5">
                                 <div class="section2">
                                     <h2>{{ $sec->section_name }}</h2>
-                                    <p>{!! \Illuminate\Support\Str::words($sec->description,150,'...') !!}</p>
+                                    <p>{!! $sec->description!!}</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            <!-- Product Category End -->
+                <!-- Product Category End -->
 
             @elseif($sec->section_design_type_id==2 && count($newes))
                 <div class="blog-area pt-100 pb-70">
@@ -591,9 +628,38 @@
 
         @endforeach
     @endif
+
+
+
+
 @endsection
 
+
+
 @section('footer')
+
+<script>
+//     $('#videoeModal').on('click', '.close', function(){
+
+//     $('#videoeModal').find('iframe').attr('src', '');
+//     });
+
+
+//     // stop playing the youtube video when I close the modal
+// $('#myModal').on('hide.bs.modal', function (e) {
+//     // a poor man's stop video
+//     $('#videoeModal').find('iframe').attr('src','');
+// })
+</script>
+
+<script>
+
+$("#videoeModal").on('hidden.bs.modal', function (e) {
+    $("#videoeModal iframe").attr("src", $("#videoeModal iframe").attr("src"));
+});
+
+</script>
+
 
 <script>
   $(document).ready(function(){
