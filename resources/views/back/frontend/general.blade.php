@@ -76,7 +76,7 @@
                                                 </div>
                                             </div>
 
-                                            <div class="col-md-8">
+                                            <div class="col-md-9">
                                             <div class="tab-content" id="v-pills-tabContent">
                                                 <div class="tab-pane fade show active" id="v-pills-WebInfo" role="tabpanel" aria-labelledby="v-pills-WebInfo-tab">
                                                     <div class="form-group row">
@@ -169,12 +169,25 @@
                                                     <div class="row">
                                                         <div class="col-md-10">
                                                             <div class="row">
-                                                                <div class="col-md-4 text-center">
+                                                                <div class="col-md-3 text-center">
+                                                                    <div class="img_group">
+                                                                        <img class="img-thumbnail uploaded_img_dark" style="width: 70%; height: auto;" src="{{$settings_g['dark_logo'] ?? asset('img/default-img.png')}}">
+
+                                                                        <div class="form-group">
+                                                                            <label><b>Dark Theme Logo </b></label>
+                                                                            <div class="custom-file text-left">
+                                                                                <label for="imageInputDark" class="image-button"><i class="ri-gallery-upload-line"></i> Choose Logo</label>
+                                                                                <input type="file" id="imageInputDark" class="custom-file-input image_upload_dark form-control" name="dark_logo" accept="image/*">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3 text-center">
                                                                     <div class="img_group">
                                                                         <img class="img-thumbnail uploaded_img" style="width: 70%; height: auto;" src="{{$settings_g['logo'] ?? asset('img/default-img.png')}}">
 
                                                                         <div class="form-group">
-                                                                            <label><b>Logo</b></label>
+                                                                            <label><b>Light Theme Logo</b></label>
                                                                             <div class="custom-file text-left">
                                                                                 <label for="imageInput" class="image-button"><i class="ri-gallery-upload-line"></i> Choose Logo</label>
                                                                                 <input type="file" id="imageInput" class="custom-file-input image_upload form-control" name="logo" accept="image/*">
@@ -183,7 +196,7 @@
                                                                     </div>
                                                                 </div>
 
-                                                                <div class="col-md-4 text-center">
+                                                                <div class="col-md-3 text-center">
                                                                     <div class="img_group">
                                                                         <img class="img-thumbnail uploaded_img_favicon" style="width: 70%;" src="{{$settings_g['favicon'] ?? asset('img/default-img.png')}}">
 
@@ -197,7 +210,7 @@
                                                                     </div>
                                                                 </div>
 
-                                                                <div class="col-md-4 text-center">
+                                                                <div class="col-md-3 text-center">
                                                                     <div class="img_group">
                                                                         <img class="img-thumbnail uploaded_img_og" style="width: 70%;" src="{{$settings_g['og_image'] ?? asset('img/default-img.png')}}">
 
@@ -370,7 +383,7 @@
         });
     </script>
 <script>
-    // Uploaded image get url
+    // Uploaded image Fabickon get url
     function readURLFavicon(input) {
         if (input.files && input.files[0]) {
             var reader = new FileReader();
@@ -384,19 +397,19 @@
         readURLFavicon(this);
     });
 
-    // // Uploaded image get url
-    // function readURLFavicon(input) {
-    //     if (input.files && input.files[0]) {
-    //         var reader = new FileReader();
-    //         reader.onload = function (e) {
-    //             $('.uploaded_img_hb_image').attr('src', e.target.result);
-    //         }
-    //         reader.readAsDataURL(input.files[0]);
-    //     }
-    // }
-    // $(".image_upload_hb_image").change(function(){
-    //     readURLFavicon(this);
-    // });
+    // // Uploaded image Dark get url
+    function readURLFavicon(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $('.uploaded_img_dark').attr('src', e.target.result);
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+    $(".image_upload_dark").change(function(){
+        readURLFavicon(this);
+    });
 
     function readURLog(input) {
         if (input.files && input.files[0]) {

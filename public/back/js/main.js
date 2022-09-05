@@ -85,6 +85,19 @@ $(document).on('change', ".image_upload2", function(){
     readURL2(this);
 });
 
+// Uploaded image get url
+function readURL3(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            $('.uploaded_img3').attr('src', e.target.result);
+        }
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+$(document).on('change', ".image_upload3", function(){
+    readURL3(this);
+});
 // $(".image_upload").click(function(){
 //     // readURL(this);
 //     alert(245);

@@ -20,10 +20,7 @@ class FrontendController extends Controller
             'mobile_number' => 'required|max:255',
             'email' => 'required|max:255',
             'city' => 'required|max:255',
-            // 'province' => 'required|max:255',
-            // 'postal_code' => 'required|max:255',
             'street' => 'required|max:255',
-            // 'tax_type' => 'required|max:255',
             'copyright' => 'required|max:255',
         ]);
 
@@ -78,26 +75,6 @@ class FrontendController extends Controller
         $insert['value'] = $request->gmap;
         DB::table('settings')->updateOrInsert($where, $insert);
 
-        $where['name'] = 'tax';
-        $insert['value'] = $request->tax;
-        DB::table('settings')->updateOrInsert($where, $insert);
-
-        $where['name'] = 'tax_type';
-        $insert['value'] = $request->tax_type;
-        DB::table('settings')->updateOrInsert($where, $insert);
-
-        $where['name'] = 'currency_name';
-        $insert['value'] = $request->currency_name;
-        DB::table('settings')->updateOrInsert($where, $insert);
-
-        $where['name'] = 'currency_symbol';
-        $insert['value'] = $request->currency_symbol;
-        DB::table('settings')->updateOrInsert($where, $insert);
-
-        // $where['name'] = 'shipping_charge';
-        // $insert['value'] = $request->shipping_charge;
-        // DB::table('settings')->updateOrInsert($where, $insert);
-
         $where['name'] = 'meta_description';
         $insert['value'] = $request->meta_description;
         DB::table('settings')->updateOrInsert($where, $insert);
@@ -132,6 +109,32 @@ class FrontendController extends Controller
 
             // Store logo
             $where['name'] = 'logo';
+            $insert['value'] = $photo;
+            DB::table('settings')->updateOrInsert($where, $insert);
+        }
+
+        // Update Dark Logo
+        if($request->dark_logo){
+            $this->validate($request, [
+                'dark_logo' => 'image|mimes:jpg,png,jpeg,gif'
+            ]);
+
+            // Delete Old
+            if(\Info::Settings('general', 'dark_logo')){
+                $img_del = public_path('/uploads/info/' . \Info::Settings('general', 'dark_logo'));
+                if (file_exists($img_del)) {
+                    unset($photo);
+                    unlink($img_del);
+                }
+            }
+
+            $file = $request->file('dark_logo');
+            $photo = 'dark_logo.' . $file->getClientOriginalExtension();
+            $destination = public_path() . '/uploads/info';
+            $file->move($destination, $photo);
+
+            // Store dark_logo
+            $where['name'] = 'dark_logo';
             $insert['value'] = $photo;
             DB::table('settings')->updateOrInsert($where, $insert);
         }
@@ -203,12 +206,11 @@ class FrontendController extends Controller
         $insert['value'] = $request->hb_short_description;
         DB::table('settings')->updateOrInsert($where, $insert);
 
-        $where['name'] = 'button_text';
-        $insert['value'] = $request->hb_button_text;
-        DB::table('settings')->updateOrInsert($where, $insert);
 
-        $where['name'] = 'button_url';
-        $insert['value'] = $request->hb_button_url;
+
+
+        $where['name'] = 'ceo_name';
+        $insert['value'] = $request->hb_button_text;
         DB::table('settings')->updateOrInsert($where, $insert);
 
         if($request->hb_background){

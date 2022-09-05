@@ -15,7 +15,6 @@
      {{-- sliders --}}
      <div class="header-slider">
         <div class="container-fluid g-0">
-
             <div id="header-slider" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
                     @foreach ($sliders as $key => $slider)
@@ -51,12 +50,11 @@
             @if($sec->section_design_type_id==1)
                     <!-- About Area -->
                 <div class="about-area pt-100 pb-70">
-                    @if($sec->text_align == 1)
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-lg-5">
                                 <div class="about-content">
-                                    <div class="section-title">
+                                    <div class="    ">
                                         <span class="sp-before">About Us</span>
                                         <h2>{{ $sec->title }}</h2>
                                         <p>{!! \Illuminate\Support\Str::words($sec->description,100,'...') !!}</p>
@@ -84,8 +82,12 @@
                             </div>
                         </div>
                     </div>
-                    @endif
-                    @if($sec->text_align == 2)
+                </div>
+                <!-- About Area End -->
+
+            @elseif ($sec->section_design_type_id==4)
+            <!-- Product Category -->
+                <div class="about-area pt-100 pb-70">
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-5">
@@ -101,54 +103,17 @@
                             </div>
                         </div>
                     </div>
-                    @endif
                 </div>
-                <!-- About Area End -->
+            <!-- Product Category End -->
 
             @elseif($sec->section_design_type_id==2 && count($newes))
-                {{-- News --}}
-                {{-- <div class="our-news scroll-animation-section show-on-scroll" style="padding-bottom: 15px; background: {{$sec->background_color}}">
-                    <div class="container" >
-                        <div class="heading-title">
-                            <label>{{ $sec->section_name }}</label>
-
-                        </div>
-                        <div class="row">
-                            @foreach ($newes as $news)
-                                <div class="
-                                    @if($sec->col == 2)
-                                        col-lg-6 col-md-6 col-sm-12
-                                    @elseif($sec->col == 3)
-                                        col-lg-4 col-md-6 col-sm-12
-                                    @elseif($sec->col == 4)
-                                        col-lg-3 col-md-6 col-sm-12
-                                    @endif
-                                ">
-                                    <div class="blog-item">
-                                        <div class="image-wrap">
-                                            <a href="blog-details">
-                                                <img src="{{ $news->img_paths['small'] }}" alt="Blog">
-                                            </a>
-                                        </div>
-                                        <div class="blog-content">
-                                        <ul class="blog-meta mb-10">
-                                            <li class="date"> <i class="fa fa-calendar-check-o"></i> {{ \Carbon\Carbon::parse($news->publish_date)->format('d-M-Y')}}</li>
-                                        </ul>
-                                        <h3 class="blog-title"><a href="{{ route('news.single', $news->slug) }}">{{ $news->title }}</a></h3>
-                                        {!! \Illuminate\Support\Str::limit($news->description,100) !!}
-                                        </div>
-                                    </div>
-                                </div>
-                            @endforeach
-                        </div>
-                    </div>
-                </div> --}}
-
-                <div class="blog-area pb-70">
+                <div class="blog-area pt-100 pb-70">
                     <div class="container">
                         <div class="section-title-two text-center">
                             <span class="sp-before">Recent Articles</span>
-                            <h2>{{ $sec->section_name }}</h2>
+                            <div class="section-title">
+                                <h2>{{ $sec->section_name }}</h2>
+                            </div>
                         </div>
                         <div class="row pt-45">
                             @foreach ($newes as $news)
@@ -184,8 +149,8 @@
                 {{-- feature products --}}
                 <div class="feature-product scroll-animation-section show-on-scroll">
                     <div class="container" style="padding: 70px 0;">
-                        <div class="heading-title text-white">
-                            <label>{{ $sec->section_name }}</label>
+                        <div class="section-title">
+                            <h2>{{ $sec->section_name }}</h2>
                         </div>
                         <div class="row justify-content-center">
                             @foreach($products as $product)
@@ -211,8 +176,13 @@
                             @endforeach
                         </div>
                         <div class="row">
-                            <div class="col-lg-12 ceo-box">
-                                <div class="text-center mt-5"> <a href="{{ url('/page/products') }}" class="">View All Products</a></div>
+                            <div class="col-lg-12">
+                                {{-- <a href="services-1.html" class="default-btn">
+                                    More Service
+
+                                </a> --}}
+
+                                <div class="text-center mt-5"> <a href="{{ url('/page/products') }}" class="default-btn">View All Products  <i class="flaticon-right-arrow-1"></i></a></div>
                             </div>
                         </div>
                     </div>
@@ -605,30 +575,18 @@
                 {{-- end counter --}}
             @elseif($sec->section_design_type_id==9 && count($clients))
                 {{-- valueable client --}}
-
-                <div class="container">
-                    <h2>{{ $sec->section_name }}</h2>
-                     <section class="customer-logos slider">
-                        @foreach ($clients as $client)
-                            <div class="slide"><img src="{{ $client->img_paths['original'] }}" alt="{{ $client->title}}"></div>
-                        @endforeach
-                     </section>
-                  </div>
-                {{-- <div class="client-section scroll-animation-section show-on-scroll" style="background: {{$sec->background_color}}">
-                    <div class="container" style="padding: 70px 0;" >
-                        <div class="heading-title text-white">
-                            <label>{{ $sec->section_name }}</label>
+                <div class="client-area pt-100 pb-70">
+                    <div class="container">
+                        <div class="section-title">
+                            <h2>{{ $sec->section_name }}</h2>
                         </div>
                         <section class="customer-logos slider">
                             @foreach ($clients as $client)
-                                <div class="slide bg-white" style="width: 160px;height: 160px;" >
-                                    <img class="img-fluid  mx-auto" data-toggle="tooltip" style="height: 160px; width: 160px; padding: 10px;" src="{{ $client->img_paths['original'] }}" alt="{{ $client->title}}">
-                                </div>
+                                <div class="slide"><img src="{{ $client->img_paths['original'] }}" alt="{{ $client->title}}"></div>
                             @endforeach
                         </section>
                     </div>
-                </div> --}}
-                {{-- end valuable client --}}
+                </div>
             @endif
 
         @endforeach

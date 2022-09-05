@@ -8,8 +8,8 @@ use Info;
 use Intervention\Image\ImageManagerStatic as Image;
 
 class MediaRepo {
-    public static function upload($file){
-        $filename = time() . '.' . $file->getClientOriginalExtension();
+    public static function upload($file,$name=''){
+        $filename = $name.time() . '.' . $file->getClientOriginalExtension();
         $filename_string = date('Y') . '/' . date('m') . '/' . $filename;
         $path = public_path() . '/uploads' . '/' . date('Y') . '/' . date('m') . '/';
         File::makeDirectory($path, $mode = 0775, true, true);

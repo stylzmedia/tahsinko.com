@@ -42,7 +42,7 @@ class Info {
         // Generate Output
         $output = [];
         foreach($query as $data){
-            if($data->name == 'logo' || $data->name == 'favicon' || $data->name == 'og_image'){
+            if($data->name == 'logo' || $data->name == 'dark_logo' || $data->name == 'favicon' || $data->name == 'og_image'){
                 $output[$data->name] = asset('uploads/info/' . $data->value);
             }else{
                 $output[$data->name] = $data->value;

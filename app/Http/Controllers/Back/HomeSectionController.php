@@ -36,29 +36,36 @@ class HomeSectionController extends Controller
     {
         $request->validate([
             'section_name'=>'required|string|max:191',
-            'background_color'=>'',
             'section_name_is_show'=>'required',
             'title' => 'max:191',
             'image' => 'image|mimes:jpg,png,jpeg,gif',
-            'signature' => 'image|mimes:jpg,png,jpeg,gif'
+            'signature_light' => 'image|mimes:jpg,png,jpeg,gif',
+            'signature_dark' => 'image|mimes:jpg,png,jpeg,gif'
         ]);
-        $home_section=$request->except('image','signature');
+        $home_section=$request->except('image','signature_light','signature_dark');
         if($request->file('image')){
             $uploaded_file = MediaRepo::upload($request->file('image'));
             $home_section += [
                 'image'=> $uploaded_file['file_name'],
                 'image_path'=> $uploaded_file['file_path'],
                 'media_id'=> $uploaded_file['media_id'],
-                'created_by'=>auth()->id(),
             ];
         }
-        if($request->file('signature')){
-            $uploaded_file = MediaRepo::upload($request->file('signature'));
+        if($request->file('signature_light')){
+            $uploaded_file2 = MediaRepo::upload($request->file('signature_light'),'signature_light');
+
             $home_section += [
-                'signature'=> $uploaded_file['file_name'],
-                'image_path'=> $uploaded_file['file_path'],
-                'media_id'=> $uploaded_file['media_id'],
-                'created_by'=>auth()->id(),
+                'signature_light'=> $uploaded_file2['file_name'],
+                'image_path2'=> $uploaded_file2['file_path'],
+                'media_id2'=> $uploaded_file2['media_id'],
+            ];
+        }
+        if($request->file('signature_dark')){
+            $uploaded_file3 = MediaRepo::upload($request->file('signature_dark'),'signature_dark');
+            $home_section += [
+                'signature_dark'=> $uploaded_file3['file_name'],
+                'image_path3'=> $uploaded_file3['file_path'],
+                'media_id3'=> $uploaded_file3['media_id'],
             ];
         }
         $home_section += [
@@ -76,6 +83,7 @@ class HomeSectionController extends Controller
     public function edit(HomeSection $homeSection)
     {
         $sliders = HomeSection::orderBy('position','ASC')->get();
+        //dd($homeSection->img_paths2);
         return view('back.frontend.section.edit', compact('homeSection','sliders'));
     }
 
@@ -83,12 +91,13 @@ class HomeSectionController extends Controller
     {
         $request->validate([
             'section_name'=>'required|string|max:191',
-            'background_color'=>'',
             'section_name_is_show'=>'required',
             'title' => 'max:191',
-            'image' => 'image|mimes:jpg,png,jpeg,gif'
+            'image' => 'image|mimes:jpg,png,jpeg,gif',
+            'signature_light' => 'image|mimes:jpg,png,jpeg,gif',
+            'signature_dark' => 'image|mimes:jpg,png,jpeg,gif'
         ]);
-        $home_section=$request->except('image','background_image');
+        $home_section=$request->except('image','signature_light');
         if($request->file('image')){
             $uploaded_file = MediaRepo::upload($request->file('image'));
             $home_section += [
@@ -97,29 +106,21 @@ class HomeSectionController extends Controller
                 'media_id'=> $uploaded_file['media_id'],
             ];
         }
-        if($request->is_background_color == 2)
-        {
+        if($request->file('signature_light')){
+            $uploaded_file2 = MediaRepo::upload($request->file('signature_light'),'signature_light');
 
-            if($request->file('background_image')){
-                $file = $request->file('background_image');
-                $fileName = time().'_'.$homeSection->section_name.'.'.$request->file('background_image')->getClientOriginalExtension();
-
-                $destination = public_path('uploads/background_image');
-                $file->move($destination, $fileName);
-                // $home_section += [
-                //     'background_image'=>'uploads/background_image/'.$fileName,
-                // ];
-                $home_section += [
-                    'background_image'=>'uploads/background_image/'.$fileName,
-                    'is_background_color'=>$request->is_background_color,
-                ];
-
-            }
-
-        }else{
             $home_section += [
-                'background_color'=>$request->background_image,
-                'is_background_color'=>$request->is_background_color,
+                'signature_light'=> $uploaded_file2['file_name'],
+                'image_path2'=> $uploaded_file2['file_path'],
+                'media_id2'=> $uploaded_file2['media_id'],
+            ];
+        }
+        if($request->file('signature_dark')){
+            $uploaded_file3 = MediaRepo::upload($request->file('signature_dark'),'signature_dark');
+            $home_section += [
+                'signature_dark'=> $uploaded_file3['file_name'],
+                'image_path3'=> $uploaded_file3['file_path'],
+                'media_id3'=> $uploaded_file3['media_id'],
             ];
         }
        // return response()->json(['status'=>'success','message'=>$home_section],200);

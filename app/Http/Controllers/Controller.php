@@ -13,7 +13,7 @@ class Controller extends BaseController
 {
     public function __construct() {
         View::share ('settings_g', Info::SettingsGroupKey('general'));
-        View::share ('provinces', Info::provinces());
+        // View::share ('provinces', Info::provinces());
     }
 
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;

@@ -29,13 +29,13 @@ class SectionDesignTypeSeeder extends Seeder
         DB::table('section_design_types')->insert(
             [
                 'id'=>3,
-                'name'=>"Contribution",
+                'name'=>"Latest Products",
             ]
         );
         DB::table('section_design_types')->insert(
             [
                 'id'=>4,
-                'name'=>"Half Parallax",
+                'name'=>"Product Category",
             ]
         );
         DB::table('section_design_types')->insert(

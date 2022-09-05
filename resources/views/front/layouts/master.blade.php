@@ -26,7 +26,7 @@
      <!-- Flaticon CSS -->
      <link rel="stylesheet" href="{{asset('/front/assets/css/flaticon.css')}}">
      <!-- Boxicons CSS -->
-     <link rel="stylesheet" href="{{asset('assets/css/boxicons.min.css')}}">
+     <link rel="stylesheet" href="{{asset('/front/assets/css/boxicons.min.css')}}">
      <!-- Font Awesome CSS -->
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
      <!-- Owl Carousel Min CSS -->
@@ -74,7 +74,46 @@
                     <div class="col-md-6 p-2  text-white"><i class="fa-solid fa-phone-flip fa-xl"></i> {{$settings_g['mobile_number'] ?? ''}} <i class="fa-solid fa-envelope text-md fa-xl"></i> {{$settings_g['email'] ?? ''}}</div>
                     <div class="col-md-6 p-2 text-white text-md-end y-1">
                         <div class="top-bar-left">
-                            <div class="social">
+
+                            <ul class="social-wrap">
+                                @if(Info::Social($socials, 'facebook'))
+                                <li>
+                                    <a href="{{Info::Social($socials,  'facebook')}}" target="_blank">
+                                        <i class="bx bxl-facebook"></i>
+                                    </a>
+                                </li>
+                                @endif
+                                @if(Info::Social($socials, 'linkedin'))
+                                <li>
+                                    <a href="{{Info::Social($socials,  'linkedin')}}" target="_blank">
+                                        <i class="bx bxl-linkedin"></i>
+                                    </a>
+                                </li>
+                                @endif
+                                @if(Info::Social($socials,  'twitter'))
+                                <li>
+                                    <a href="{{Info::Social($socials,  'twitter')}}" target="_blank">
+                                        <i class="bx bxl-twitter"></i>
+                                    </a>
+                                </li>
+                                @endif
+                                @if(Info::Social($socials, 'instagram'))
+                                <li>
+                                    <a href="{{Info::Social($socials,  'instagram')}}" target="_blank">
+                                        <i class="bx bxl-instagram"></i>
+                                    </a>
+                                </li>
+                                @endif
+                                @if(Info::Social($socials, 'youtube'))
+                                <li>
+                                    <a href="{{Info::Social($socials,  'youtube')}}" target="_blank">
+                                        <i class="bx bxl-youtube"></i>
+                                    </a>
+                                </li>
+                                @endif
+                            </ul>
+
+                            {{-- <div class="social">
                                      @if(Info::Social($socials, 'facebook'))
                                              <a href="{{Info::Social($socials,  'facebook')}}" target="_blank"><i class="fab fa-facebook"></i></a>
                                      @endif
@@ -90,7 +129,7 @@
                                      @if(Info::Social($socials, 'youtube'))
                                              <a href="{{Info::Social($socials,  'youtube')}}"><i class="fab fa-youtube" target="_blank"></i></a>
                                      @endif
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
 
@@ -115,7 +154,7 @@
     <div class="main-nav nav-two">
         <div class="container-fluid">
             <nav class="container-max-2 navbar navbar-expand-md navbar-light ">
-                <div class="collapse navbar-collapse mean-menu justify-content-center" id="navbarSupportedContent">
+                <div class="collapse navbar-collapse mean-menu justify-content-center" id="navbarSupportedContent" >
                     {{-- <div class="menu-contact d-in-line">
                         <a href="tel:+180012356789" class="menu-contact-btn">
                             <i class="flaticon-telephone"></i>
@@ -146,7 +185,7 @@
                                 <li class="nav-item logo">
                                     <a href="index.html" class="nav-link">
                                         <img src="{{$settings_g['logo'] ?? ''}}" class="nav-link-logo1" alt="{{$settings_g['title'] ?? ''}}">
-                                        <img src="{{$settings_g['logo'] ?? ''}}" class="nav-link-logo2" alt="{{$settings_g['title'] ?? ''}}">
+                                        <img src="{{$settings_g['dark_logo'] ?? ''}}" class="nav-link-logo2" alt="{{$settings_g['title'] ?? ''}}">
                                     </a>
                                 </li>
                             </ul>
@@ -307,7 +346,7 @@
                     <div class="col-lg-3 col-md-6">
                         <div class="footer-widget footer-widget-color">
                             <a href="index.html" class="footer-logo">
-                                <img src="{{$settings_g['logo'] ?? ''}}" alt="Images">
+                                <img src="{{$settings_g['dark_logo'] ?? ''}}" alt="Images">
                             </a>
                             <ul class="footer-contact-list">
 

@@ -256,6 +256,9 @@
   background-color: #080808;
 }
 
+.theme-dark .about-area {
+    background-color: #000000;
+}
 .theme-dark .about-content .about-counter h3 {
   color: #ffffff;
 }
@@ -415,6 +418,10 @@
   background-color: #080808;
 }
 
+.theme-dark .portfolio-area {
+    background-color: #000000;
+}
+
 .theme-dark .portfolio-tab .tabs li a:focus {
   color: #ffffff;
   border-bottom: 1px solid #ffffff;
@@ -454,7 +461,7 @@
 }
 
 .theme-dark .blog-area {
-  background-color: #252525;
+  background-color: #000000;
 }
 
 .theme-dark .blog-shape {

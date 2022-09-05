@@ -3,7 +3,7 @@
     justify-content: space-between;
 }
 label.image-button {
-    padding: 10px 20px 20px;
+    padding: 0px 14px 10px;
     border: 1px solid #ddd;
     cursor: pointer;
 }
@@ -14,6 +14,6 @@ label.image-button i {
     position: relative;
     top: 9px;
 }
-.image_upload, .image_upload_favicon, .image_upload_og{
+.image_upload, .image_upload2, .image_upload3, .image_upload_dark, .image_upload_favicon, .image_upload_og{
     display: none;
 }

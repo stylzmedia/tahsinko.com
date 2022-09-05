@@ -41,7 +41,7 @@
     <link href="{{ asset('back/assets/css/custom.min.css') }}" rel="stylesheet" type="text/css" />
     <style>
         .uploaded_img {
-            height: 168px;
+            /* height: 168px; */
             margin: 0 auto;
             display: block;
             width: auto;
