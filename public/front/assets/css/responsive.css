@@ -2066,6 +2066,10 @@
     max-width: 1460px !important;
     margin: 0 auto;
   }
+  .feature-product .card {
+    width: 260px;
+    height: 480px;
+  }
 }
 
 @media only screen and (min-width: 1350px) {
