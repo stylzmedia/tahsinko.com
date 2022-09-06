@@ -133,14 +133,14 @@
                                     </div>
                                     <br>
                                     <div class="form-group">
-                                        <label for="editor" class="form-label">Description </label>
-                                        <textarea class="form-control" id="editor" placeholder="Enter the Description"
-                                            name="description">{{ old('description') }}</textarea>
+                                        <label><b>Position</b></label>
+                                        <input type="text" class="form-control" name="position" value="{{old('position')}}" required>
                                     </div>
                                     <br>
                                     <div class="form-group">
-                                        <label><b>Position</b></label>
-                                        <input type="text" class="form-control" name="position" value="{{old('position')}}" required>
+                                        <label for="editor" class="form-label">Description </label>
+                                        <textarea class="form-control" id="editor" placeholder="Enter the Description"
+                                            name="description">{{ old('description') }}</textarea>
                                     </div>
                                     <br>
                                 </div>

@@ -2711,6 +2711,22 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -24679,13 +24695,9 @@ var render = function () {
                       attrs: { name: "title_is_show", required: "" },
                     },
                     [
-                      _c("option", { domProps: { value: true } }, [
-                        _vm._v("Yes"),
-                      ]),
+                      _c("option", { domProps: { value: 1 } }, [_vm._v("Yes")]),
                       _vm._v(" "),
-                      _c("option", { domProps: { value: false } }, [
-                        _vm._v("No"),
-                      ]),
+                      _c("option", { domProps: { value: 0 } }, [_vm._v("No")]),
                     ]
                   ),
                 ]),
@@ -24952,6 +24964,7 @@ var render = function () {
             _c("div", { staticClass: "row" }, [
               _c("div", { staticClass: "col-md-10" }, [
                 _vm.design_type === 1 ||
+                _vm.design_type === 2 ||
                 _vm.design_type === 3 ||
                 _vm.design_type === 4 ||
                 _vm.design_type === 6 ||
@@ -24985,11 +24998,11 @@ var render = function () {
                                 },
                               },
                               [
-                                _c("option", { domProps: { value: true } }, [
+                                _c("option", { domProps: { value: 1 } }, [
                                   _vm._v("Yes"),
                                 ]),
                                 _vm._v(" "),
-                                _c("option", { domProps: { value: false } }, [
+                                _c("option", { domProps: { value: 0 } }, [
                                   _vm._v("No"),
                                 ]),
                               ]
@@ -24998,21 +25011,24 @@ var render = function () {
                         ])
                       : _vm._e(),
                     _vm._v(" "),
-                    _vm.design_type === 1
+                    _vm.design_type === 7
                       ? _c("div", { staticClass: "col-md-6" }, [_vm._m(3)])
+                      : _vm._e(),
+                    _vm._v(" "),
+                    _vm.design_type === 1
+                      ? _c("div", { staticClass: "col-md-6" }, [_vm._m(4)])
                       : _vm._e(),
                     _vm._v(" "),
                     _vm.design_type === 2 ||
                     _vm.design_type === 3 ||
                     _vm.design_type === 6
-                      ? [_vm._m(4)]
+                      ? [_vm._m(5)]
                       : _vm._e(),
                     _vm._v(" "),
                     _vm.design_type === 2 ||
                     _vm.design_type === 3 ||
-                    _vm.design_type === 7 ||
                     _vm.design_type === 9
-                      ? [_vm._m(5)]
+                      ? [_vm._m(6)]
                       : _vm._e(),
                   ],
                   2
@@ -25024,7 +25040,7 @@ var render = function () {
                   [
                     [
                       _vm.design_type === 1
-                        ? _c("div", { staticClass: "col-md-12" }, [_vm._m(6)])
+                        ? _c("div", { staticClass: "col-md-12" }, [_vm._m(7)])
                         : _vm._e(),
                     ],
                     _vm._v(" "),
@@ -25035,7 +25051,7 @@ var render = function () {
                               "div",
                               { staticClass: "form-group" },
                               [
-                                _vm._m(7),
+                                _vm._m(8),
                                 _vm._v(" "),
                                 _c("vue-editor", {
                                   attrs: { name: "description" },
@@ -25059,7 +25075,7 @@ var render = function () {
                           _c("div", { staticClass: "col-md-12" }, [
                             _c("div", { staticClass: "row" }, [
                               _c("div", { staticClass: "col-md-8" }, [
-                                _vm._m(8),
+                                _vm._m(9),
                                 _vm._v(" "),
                                 _c("input", {
                                   ref: "feature_video",
@@ -25112,7 +25128,7 @@ var render = function () {
                         ]
                       ),
                       _vm._v(" "),
-                      _vm._m(9),
+                      _vm._m(10),
                     ])
                   : _vm._e(),
                 _vm._v(" "),
@@ -25131,7 +25147,7 @@ var render = function () {
                         ]
                       ),
                       _vm._v(" "),
-                      _vm._m(10),
+                      _vm._m(11),
                       _vm._v(" "),
                       _c(
                         "div",
@@ -25146,7 +25162,7 @@ var render = function () {
                         ]
                       ),
                       _vm._v(" "),
-                      _vm._m(11),
+                      _vm._m(12),
                     ])
                   : _vm._e(),
               ]),
@@ -25187,7 +25203,7 @@ var render = function () {
               _vm._v(" "),
               _c("br"),
               _vm._v(" "),
-              _vm._m(12),
+              _vm._m(13),
             ],
             1
           ),
@@ -25226,6 +25242,19 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("label", [_c("b", [_vm._v("Display Section Title*")])])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("label", [_c("b", [_vm._v("Number of Slide Col*")])]),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "form-control",
+        attrs: { type: "number", name: "no_of_slide_col", required: "" },
+      }),
+    ])
   },
   function () {
     var _vm = this
@@ -25792,18 +25821,20 @@ var render = function () {
                                   {
                                     name: "model",
                                     rawName: "v-model",
-                                    value: _vm.home_section.card,
-                                    expression: "home_section.card",
+                                    value: _vm.home_section.no_of_slide_col,
+                                    expression: "home_section.no_of_slide_col",
                                   },
                                 ],
                                 staticClass: "form-control",
                                 attrs: {
                                   type: "number",
-                                  name: "card",
+                                  name: "no_of_slide_col",
                                   placeholder: "write number of card here",
                                   required: "",
                                 },
-                                domProps: { value: _vm.home_section.card },
+                                domProps: {
+                                  value: _vm.home_section.no_of_slide_col,
+                                },
                                 on: {
                                   input: function ($event) {
                                     if ($event.target.composing) {
@@ -25811,7 +25842,7 @@ var render = function () {
                                     }
                                     _vm.$set(
                                       _vm.home_section,
-                                      "card",
+                                      "no_of_slide_col",
                                       $event.target.value
                                     )
                                   },
@@ -26119,7 +26150,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("label", [_c("b", [_vm._v("Number of Card *")])])
+    return _c("label", [_c("b", [_vm._v("Number of Slide Col*")])])
   },
   function () {
     var _vm = this

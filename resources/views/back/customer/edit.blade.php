@@ -97,7 +97,7 @@
             <div class="col-md-4">
                 <div class="card border-light mt-3 shadow">
                     <div class="card-header">
-                        <a href="{{route('back.customer.index')}}"><button class="btn btn-primary btn-lg btn-block" style="width: 100%;">Create</button></a>
+                        <a href="{{route('back.customer.index')}}"><button class="btn btn-primary btn-lg btn-block" style="width: 100%;">Create New</button></a>
                     </div>
                     <div class="card-header">
                         <h5>Update Valuable Customer</h5>
@@ -129,14 +129,14 @@
                                     </div>
                                     <br>
                                     <div class="form-group">
-                                        <label for="editor" class="form-label">Description </label>
-                                        <textarea class="form-control" id="editor" placeholder="Enter the Description"
-                                            name="description">{{ old('description') ?? $customer->description }}</textarea>
+                                        <label><b>Position</b></label>
+                                        <input type="text" class="form-control" name="position" value="{{old('position') ?? $customer->position}}" required>
                                     </div>
                                     <br>
                                     <div class="form-group">
-                                        <label><b>Position</b></label>
-                                        <input type="text" class="form-control" name="position" value="{{old('position') ?? $customer->position}}" required>
+                                        <label for="editor" class="form-label">Description </label>
+                                        <textarea class="form-control" id="editor" placeholder="Enter the Description"
+                                            name="description">{{ old('description') ?? $customer->description }}</textarea>
                                     </div>
                                     <br>
                                 </div>

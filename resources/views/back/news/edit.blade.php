@@ -48,6 +48,12 @@
                                                 <input type="text" class="form-control" id="title" name="title" value="{{old('title') ?? $news->title}}" required>
                                             </div>
 
+                                            <div class="form-group">
+                                                <label for="slug" class="form-label">Slug <b style="color: red;">*</b></label>
+                                                <input type="text" class="form-control" id="slug" name="slug" value="{{old('slug') ?? $news->slug}}" required>
+                                            </div>
+
+
                                             <br>
 
                                             <div class="form-group">
@@ -62,9 +68,6 @@
                                                 <textarea class="form-control" id="editor" placeholder="Enter the Description"
                                                     name="description">{{old('description') ?? $news->description}}</textarea>
                                             </div>
-
-                                            <textarea class="form-control" id="editor" placeholder="Enter the Description"
-                                                    name="description">{{ old('description') }}</textarea>
 
                                             <div class="row">
                                                 <h4 style="margin: 30px 0; text-align:center;">News Source</h2>
@@ -193,7 +196,7 @@
                                             </div>
                                             <br>
                                             <div class="col-12">
-                                                <button type="submit" class="btn btn-primary btn-lg btn-block" style="width: 100%;">Create</button>
+                                                <button type="submit" class="btn btn-primary btn-lg btn-block" style="width: 100%;">Update</button>
                                                 <small><b>NB: <span style="color: red;">*</span></b> marked are required field.</small>
                                             </div>
                                         </div>

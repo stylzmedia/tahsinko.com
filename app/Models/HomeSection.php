@@ -13,7 +13,7 @@ class HomeSection extends Model
     use SoftDeletes;
 
     protected $fillable=[
-        'section_name', 'col', 'row', 'section_name_is_show', 'title', 'section_design_type_id', 'position', 'image', 'image_path','image_path2','image_path3', 'media_id','media_id2','media_id3', 'description', 'ceo_name', 'signature_light', 'signature_dark', 'feature_video', 'status', 'created_by', 'updated_by',
+        'section_name', 'col', 'row', 'section_name_is_show', 'title', 'section_design_type_id', 'position', 'no_of_slide_col', 'image', 'image_path','image_path2','image_path3', 'media_id','media_id2','media_id3', 'description', 'ceo_name', 'signature_light', 'signature_dark', 'feature_video', 'status', 'created_by', 'updated_by',
     ];
     protected $hidden=['deleted_at','created_at','updated_at'];
 

@@ -17,9 +17,9 @@ class CreateTeamsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('designation');
-            $table->string('facebook');
-            $table->string('linkedin');
-            $table->string('tweeter');
+            $table->string('facebook')->nullable();
+            $table->string('linkedin')->nullable();
+            $table->string('tweeter')->nullable();
             $table->longText('description')->nullable();
             $table->string('image');
             $table->string('image_path')->nullable();

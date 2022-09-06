@@ -13,8 +13,8 @@
                             <div class="form-group">
                                 <label><b>Display section title*</b></label>
                                 <select class="form-control" name="title_is_show" required>
-                                    <option :value="true">Yes</option>
-                                    <option :value="false">No</option>
+                                    <option :value="1">Yes</option>
+                                    <option :value="0">No</option>
                                 </select>
                             </div>
                         </div>

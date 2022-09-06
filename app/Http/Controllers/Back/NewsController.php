@@ -104,7 +104,7 @@ class NewsController extends Controller
 
         $news->save();
 
-        return redirect()->back()->with('success-alert', 'News created successfully.');
+        return redirect()->route('back.news.edit', $news->id)->with('success-alert', 'News created successfully.');
     }
 
     /**
@@ -154,7 +154,7 @@ class NewsController extends Controller
 
         $news->title = $request->title;
         $news->sub_title = $request->sub_title;
-        $news->slug = Str::slug($request->title);
+        $news->slug = Str::slug($request->slug);
         $news->description = $request->description;
         $news->meta_title = $request->meta_title;
         $news->meta_description = $request->meta_description;

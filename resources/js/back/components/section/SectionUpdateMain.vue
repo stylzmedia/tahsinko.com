@@ -73,8 +73,8 @@
                             <template  v-if="parseInt(home_section.section_design_type_id) ===7 || parseInt(home_section.section_design_type_id) ===9">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label><b>Number of Card *</b></label>
-                                        <input type="number" name="card" v-model="home_section.card" class="form-control" placeholder="write number of card here" required>
+                                        <label><b>Number of Slide Col*</b></label>
+                                        <input type="number" name="no_of_slide_col" v-model="home_section.no_of_slide_col" class="form-control" placeholder="write number of card here" required>
                                     </div>
                                 </div>
                             </template>

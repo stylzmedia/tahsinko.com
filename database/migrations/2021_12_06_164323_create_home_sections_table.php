@@ -39,7 +39,10 @@ class CreateHomeSectionsTable extends Migration
 
             $table->string('ceo_name',191)->nullable();
 
+            $table->integer('no_of_slide_col')->default(0);
             $table->string('feature_video',191)->nullable();
+
+
             $table->unsignedInteger('created_by')->nullable();
             $table->unsignedInteger('updated_by')->nullable();
             $table->timestamp('deleted_at')->nullable();

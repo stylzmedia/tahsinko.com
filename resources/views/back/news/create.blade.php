@@ -48,6 +48,13 @@
                                                     value="{{ old('title') }}" required>
                                             </div>
 
+                                            <div class="form-group">
+                                                <label for="title" class="form-label">Slug<b
+                                                        style="color: red;">*</b></label>
+                                                <input type="text" class="form-control" id="slug" name="slug"
+                                                    value="{{ old('slug') }}" required>
+                                            </div>
+
                                             <br>
 
                                             <div class="form-group">
@@ -234,7 +241,8 @@
         // summernote editor
         $(function() {
             CKEDITOR.replace('editor', {
-                height: 400
+                height: 400,
+                filebrowserUploadUrl: "{{route('imageUpload')}}?"
             });
         });
 

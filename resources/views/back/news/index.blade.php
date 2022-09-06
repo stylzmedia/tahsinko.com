@@ -54,18 +54,18 @@
                                         <th scope="row">{{$key + 1}}</th>
                                         <td>{!! $blog->title !!}</td>
                                         <td>
-                                            @isset(auth()->user()->role->permission['permission']['news']['edit'])
+                                            @if(auth()->user()->permission('news','edit'))
                                             @include('switcher::switch', [
                                                 'table' => 'news',
                                                 'data' => $blog
                                             ])
-                                            @endisset
+                                            @endif
                                         </td>
                                         <td class="text-right">
-                                            @isset(auth()->user()->role->permission['permission']['news']['edit'])
+                                            @if(auth()->user()->permission('news','edit'))
                                             <a class="btn btn-sm btn-success" href="{{route('back.news.edit', $blog->id)}}"><i class="ri-edit-2-line"></i></a>
-                                            @endisset
-                                            @isset(auth()->user()->role->permission['permission']['news']['delete'])
+                                            @endif
+                                            @if(auth()->user()->permission('news','delete'))
                                             <form class="d-inline-block" action="{{route('back.news.destroy', $blog->id)}}" method="POST">
                                                 @method('DELETE')
                                                 @csrf
@@ -74,7 +74,7 @@
                                                     <i class="ri-delete-bin-5-line"></i>
                                                 </button>
                                             </form>
-                                            @endisset
+                                            @endif
                                         </td>
                                     </tr>
                                 @endforeach

@@ -165,10 +165,10 @@
                                 ">
                                 <div class="blog-card blog-card-pb">
                                     <a href="{{ route('news.single', $news->slug) }}">
-                                        <img src="{{ $news->img_paths['small'] }}" alt="{{ $news->title }}">
+                                        <img src="{{ $news->img_paths['medium'] }}" alt="{{ $news->title }}">
                                     </a>
                                     <div class="content">
-                                        <span><a href="#">Home style</a> / {{ \Carbon\Carbon::parse($news->publish_date)->format('d-m-Y')}}</span>
+                                        <span><a href="#">Lift</a> / {{ \Carbon\Carbon::parse($news->publish_date)->format('d-m-Y')}}</span>
                                         <h3><a href="{{ route('news.single', $news->slug) }}">{{ $news->title }}</a></h3>
                                         <a href="{{ route('news.single', $news->slug) }}" class="learn-btn">
                                             Read more
@@ -186,9 +186,11 @@
                 {{-- feature products --}}
                 <div class="feature-product scroll-animation-section show-on-scroll">
                     <div class="container" style="padding: 70px 0;">
+                        @if ($sec->section_name_is_show == 1)
                         <div class="section-title">
                             <h2>{{ $sec->section_name }}</h2>
                         </div>
+                        @endif
                         <div class="row justify-content-center">
                             @foreach($products as $product)
                                 <div class="
@@ -231,9 +233,11 @@
                         <div class="container-fluid">
                             <div class="tab portfolio-tab">
                                 <div class="container">
+                                    @if ($sec->section_name_is_show == 1)
                                     <div class="section-title">
-                                        <h2>Our Portfolio</h2>
+                                        <h2>{{ $sec->section_name }}</h2>
                                     </div>
+                                    @endif
                                     <ul class="tabs active">
                                         <li class="current">
                                             <a href="#">All</a>
@@ -456,10 +460,11 @@
                 {{-- our project --}}
                 <div class="our-project scroll-animation-section show-on-scroll" style="background: {{$sec->background_color}}">
                     <div class="container" style="margin:0;max-width:100%;">
+                        @if ($sec->section_name_is_show == 1)
                         <div class="heading-title">
                             <label>{{ $sec->section_name }}</label>
-
                         </div>
+                        @endif
                         <div class="row">
                             @foreach($projects as $project)
                                 <div class="
@@ -490,11 +495,16 @@
 
             @elseif($sec->section_design_type_id==7 && count($teams))
                 {{-- our team --}}
+                <input type="hidden" id="NoOfTeamMember" value="{{$sec->no_of_slide_col}}">
                 <div class="team-area team-bg pt-100 pb-70">
                     <div class="container">
                         <div class="section-title-two text-center">
                             <span class="sp-before">Creative Team</span>
-                            <h2>Our Motivated Team</h2>
+                            @if ($sec->section_name_is_show == 1)
+                            <div class="section-title">
+                                <h2>{{ $sec->section_name }}</h2>
+                            </div>
+                            @endif
                         </div>
                         <div class="row pt-45 customer-logo">
                             @foreach($teams as $team)
@@ -535,12 +545,12 @@
                 {{-- Client Testimonial --}}
                 <section class="testimonial text-center" style="background: {{$sec->background_color}}">
                     <div class="container">
-
+                        @if ($sec->section_name_is_show == 1)
                         <div class="heading white-heading">
                             {{ $sec->section_name }}
                         </div>
+                        @endif
                         <div id="testimonial4" class="carousel slide testimonial4_indicators testimonial4_control_button thumb_scroll_x swipe_x" data-ride="carousel" data-pause="hover" data-interval="5000" data-duration="2000">
-
                             <div class="carousel-inner" role="listbox">
                                 @foreach ($testimonials as $key=>$testimonial)
                                     <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
@@ -612,11 +622,14 @@
                 {{-- end counter --}}
             @elseif($sec->section_design_type_id==9 && count($clients))
                 {{-- valueable client --}}
+                <input type="hidden" id="NoOfClient" value="{{$sec->no_of_slide_col}}">
                 <div class="client-area pt-100 pb-70">
                     <div class="container">
+                        @if ($sec->section_name_is_show == 1)
                         <div class="section-title">
                             <h2>{{ $sec->section_name }}</h2>
                         </div>
+                        @endif
                         <section class="customer-logos slider">
                             @foreach ($clients as $client)
                                 <div class="slide"><img src="{{ $client->img_paths['original'] }}" alt="{{ $client->title}}"></div>
@@ -663,8 +676,9 @@ $("#videoeModal").on('hidden.bs.modal', function (e) {
 
 <script>
   $(document).ready(function(){
+
     $('.customer-logos').slick({
-        slidesToShow: 6,
+        slidesToShow: $('#NoOfClient').val(),
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 1500,
@@ -684,7 +698,7 @@ $("#videoeModal").on('hidden.bs.modal', function (e) {
         }]
     });
     $('.customer-logo').slick({
-        slidesToShow: 4,
+        slidesToShow: $('#NoOfTeamMember').val(),
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 1500,

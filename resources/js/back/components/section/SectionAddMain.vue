@@ -36,7 +36,7 @@
             <div class="row">
               <div class="col-md-10">
                 <!-- Section Name  -->
-                <div class="col-md-12" v-if="design_type === 1 || design_type === 3 || design_type === 4 || design_type === 6 || design_type === 7 || design_type === 9">
+                <div class="col-md-12" v-if="design_type === 1 || design_type === 2 || design_type === 3 || design_type === 4 || design_type === 6 || design_type === 7 || design_type === 9">
                   <div class="form-group">
                     <label><b>Section Name*</b></label>
                     <input
@@ -59,12 +59,28 @@
                     name="section_name_is_show"
                     required
                     >
-                    <option :value="true">Yes</option>
-                    <option :value="false">No</option>
+                    <option :value="1">Yes</option>
+                    <option :value="0">No</option>
                     </select>
                 </div>
                 </div>
                 <!-- Display Section Title End  -->
+
+
+                <!-- Number of Slide Col -->
+                <div class="col-md-6" v-if="design_type === 7">
+                    <div class="form-group">
+                      <label><b>Number of Slide Col*</b></label>
+                      <input
+                        type="number"
+                        name="no_of_slide_col"
+                        class="form-control"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <!-- CNumber of Slide Col End -->
+
                 <!-- CEO Name -->
                   <div class="col-md-6" v-if="design_type === 1">
                     <div class="form-group">
@@ -95,7 +111,7 @@
                 <!-- Number of Column End  -->
 
                 <!-- Number of Row  -->
-                <template v-if="design_type === 2 ||design_type === 3 || design_type === 7 || design_type === 9 ">
+                <template v-if="design_type === 2 ||design_type === 3 || design_type === 9 ">
                   <div class="col-md-6">
                     <div class="form-group">
                       <label><b>Number of Row*</b></label>

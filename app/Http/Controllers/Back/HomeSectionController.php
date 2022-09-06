@@ -68,12 +68,14 @@ class HomeSectionController extends Controller
                 'media_id3'=> $uploaded_file3['media_id'],
             ];
         }
-        $youtube_id="";
-        $longUrlRegex = '/youtube.com\/((?:embed)|(?:watch))((?:\?v\=)|(?:\/))([a-zA-Z0-9_-]+)/i';
-        if (preg_match($longUrlRegex, $request->feature_video, $matches)) {
-          $youtube_id = $matches[count($matches) - 1];
+        if($request->feature_video != "") {
+            $youtube_id="";
+            $longUrlRegex = '/youtube.com\/((?:embed)|(?:watch))((?:\?v\=)|(?:\/))([a-zA-Z0-9_-]+)/i';
+            if (preg_match($longUrlRegex, $request->feature_video, $matches)) {
+              $youtube_id = $matches[count($matches) - 1];
+            }
+            $home_section['feature_video']="https://www.youtube.com/embed/".$youtube_id;
         }
-        $home_section['feature_video']="https://www.youtube.com/embed/".$youtube_id;
         $home_section += [
             'created_by'=>auth()->id(),
         ];
@@ -129,12 +131,14 @@ class HomeSectionController extends Controller
                 'media_id3'=> $uploaded_file3['media_id'],
             ];
         }
-        $youtube_id="";
-        $longUrlRegex = '/youtube.com\/((?:embed)|(?:watch))((?:\?v\=)|(?:\/))([a-zA-Z0-9_-]+)/i';
-        if (preg_match($longUrlRegex, $request->feature_video, $matches)) {
-          $youtube_id = $matches[count($matches) - 1];
+        if($request->feature_video != "") {
+            $youtube_id="";
+            $longUrlRegex = '/youtube.com\/((?:embed)|(?:watch))((?:\?v\=)|(?:\/))([a-zA-Z0-9_-]+)/i';
+            if (preg_match($longUrlRegex, $request->feature_video, $matches)) {
+              $youtube_id = $matches[count($matches) - 1];
+            }
+            $home_section['feature_video']="https://www.youtube.com/embed/".$youtube_id;
         }
-        $home_section['feature_video']="https://www.youtube.com/embed/".$youtube_id;
        // return response()->json(['status'=>'success','message'=>$home_section],200);
         $home_section += [
             'updated_by'=>auth()->id(),
