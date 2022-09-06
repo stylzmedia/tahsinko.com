@@ -59,7 +59,7 @@ return [
     | engines understand it better.
     |
     */
-	'title'	=> 'MATRIX Engineering Services',
+	'title'	=> 'TAHSINKO®',
 
 	/*
     |--------------------------------------------------------------------------
@@ -70,7 +70,7 @@ return [
     | help search engines understand it better.
     |
     */
-	'description' => 'To maintain our core services as an independent and leading provider of Verticals Transportation Systems(VTS) namely Elevator , Escalator, Moving walks, Parking System and all sort of Construction hoits.',
+	'description' => 'TAHSINKO is a Trade Mark™ Registered® organization, who is professional in operating all kinds of elevator, escalator, moving walk and complete accessories.',
 
 	/*
     |--------------------------------------------------------------------------
@@ -82,7 +82,7 @@ return [
     | or a specific page page.
     |
     */
-	'image' => 'https://matrixlift.com.bd/uploads/info/favicon.png',
+	'image' => 'https://demo.tahsinko.com/uploads/info/og_image.png',
 
 	/*
     |--------------------------------------------------------------------------
@@ -107,7 +107,7 @@ return [
     |
     */
 	'geo_region' => '', //e.g: Lagos
-	'geo_position' => '', //e.g(lng,lat): 4.870467,6.993388
+	'geo_position' => '', //e.g(lng,lat): 23.7793595,90.3688835
 
 
 	/*
@@ -152,7 +152,7 @@ return [
     | Here you may provide keywords relevant to your website and the specific page.
     |
     */
-	'keywords' => 'MATRIX Engineering Services',
+	'keywords' => 'lift company in bangladesh, lift in bangladesh, elevator company in bangladesh,  lift in dhaka, lift price in bangladesh, elevator price in bangladesh, escalator company in bangladesh',
 
 
 ];
