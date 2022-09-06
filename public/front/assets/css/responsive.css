@@ -2063,7 +2063,10 @@
   }
   .feature-product .mouse {
     height: 300px;
-}
+  }
+  .section2 p {
+    line-height: 27px;
+  }
 }
 
 @media only screen and (min-width: 1350px) {
