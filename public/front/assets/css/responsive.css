@@ -1982,10 +1982,6 @@
   .footer-widget.pl-4, .footer-widget.px-4 {
     padding-left: 0 !important;
   }
-  .feature-product .card {
-    width: 260px;
-    height: 480px;
-  }
 }
 
 @media only screen and (min-width: 1400px) {
@@ -2026,11 +2022,6 @@
   .about-img {
     max-width: 720px;
   }
-
-  .feature-product .card {
-    width: 260px;
-    height: 480px;
-  }
 }
 
 @media only screen and (min-width: 1800px) {
@@ -2068,8 +2059,11 @@
   }
   .feature-product .card {
     width: 260px;
-    height: 480px;
+    height: 390px;
   }
+  .feature-product .mouse {
+    height: 300px;
+}
 }
 
 @media only screen and (min-width: 1350px) {
