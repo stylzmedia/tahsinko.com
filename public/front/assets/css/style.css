@@ -314,7 +314,7 @@ Navbar Area
 }
 
 .main-nav nav .navbar-nav .nav-item a {
-  text-transform: capitalize;
+  text-transform: uppercase;
   color: #ffffff;
   font-weight: 500;
   margin-left: 12px;
