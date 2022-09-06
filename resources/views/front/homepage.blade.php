@@ -1,9 +1,9 @@
 @extends('front.layouts.master')
 
 @section('head')
-    {{-- @include('meta::manager', [
+    {@include('meta::manager', [
         'title' => ($settings_g['title'] ?? env('APP_NAME')) . ' - ' . ($settings_g['slogan'] ?? '')
-    ]) --}}
+    ]) 
 
     <style>
 
