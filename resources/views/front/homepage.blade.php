@@ -3,7 +3,7 @@
 @section('head')
     {@include('meta::manager', [
         'title' => ($settings_g['title'] ?? env('APP_NAME')) . ' - ' . ($settings_g['slogan'] ?? '')
-    ]) 
+    ])
 
     <style>
 
@@ -227,7 +227,8 @@
                     </div>
                 </div>
                 {{-- end feature product --}}
-            @elseif($sec->section_design_type_id==6 && count($services))
+            {{-- @elseif($sec->section_design_type_id==6 && count($services)) --}}
+            @elseif($sec->section_design_type_id==6)
                 <!-- Portfolio Area -->
                     <div class="portfolio-area pb-70">
                         <div class="container-fluid">
