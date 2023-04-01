@@ -68,7 +68,7 @@
         <!-- PreLoader End -->
 
         <!-- Top Nav Start -->
-        <div class="top-navbar bg-dark d-none d-sm-block">
+        <div class="top-navbar d-none d-sm-block" style="background-color: #FF0000">
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 p-2  text-white">
@@ -130,60 +130,40 @@
  <div class="navbar-area">
     <!-- Menu For Mobile Device -->
     <div class="mobile-nav">
-        <a href="index.html" class="logo">
-            <img src="assets/img/logo/logo1.png" alt="Logo">
+        <a href="{{ route('homepage') }}" class="logo">
+            <img src="{{$settings_g['logo'] ?? ''}}" alt="Logo">
         </a>
     </div>
 
     <!-- Menu For Desktop Device -->
-    <div class="main-nav nav-two">
+    <div class="main-nav bg-white">
         <div class="container-fluid">
             <nav class="container-max-2 navbar navbar-expand-md navbar-light ">
-                <div class="collapse navbar-collapse mean-menu justify-content-center" id="navbarSupportedContent" >
-                    {{-- <div class="menu-contact d-in-line">
-                        <a href="tel:+180012356789" class="menu-contact-btn">
-                            <i class="flaticon-telephone"></i>
-                            +1 800 123 56 789
-                        </a>
-                    </div> --}}
-
-                    <div class="row">
-                        <div class="col-5">
-                            <ul class="navbar-nav m-auto">
+                <a class="navbar-brand" href="{{ route('homepage') }}">
+                    <img src="{{$settings_g['logo'] ?? ''}}" class="nav-link-logo1" alt="{{$settings_g['title'] ?? ''}}">
+                </a>
+                <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent" style="display: block;">
+                    <ul class="navbar-nav nav-ml">
+                        @isset($main_menu_left->SingleMenuItems)
+                            @foreach ($main_menu_left->SingleMenuItems as $item)
                                 <li class="nav-item">
-                                    <a href="{{route('homepage')}}" class="nav-link {{ url('/') == url()->current() ? 'active' : ''}}">HOME</a>
+                                    <a href="{{$item->menu_info['url']}}" class="nav-link {{$item->menu_info['url'] == url()->current() ? 'active' : ''}}"> {{ $item->menu_info['text'] }} @if(count($item->Items))<i class="bx bx-chevron-down"></i>@endif</a>
+
+                                    @if(count($item->Items))
+                                    <ul class="dropdown-menu">
+                                        @foreach ($item->Items as $sub_item)
+                                            <li class="nav-item">
+                                                <a href="{{ $sub_item->menu_info['url'] }}" class="nav-link">
+                                                    {{ $sub_item->menu_info['text'] }}
+                                                </a>
+                                            </li>
+                                        @endforeach
+                                    </ul>
+                                    @endif
                                 </li>
-                                @isset($main_menu_left->SingleMenuItems)
-                                    @foreach ($main_menu_left->SingleMenuItems as $item)
-                                        <li class="nav-item">
-                                            <a href="{{$item->menu_info['url']}}" class="nav-link {{$item->menu_info['url'] == url()->current() ? 'active' : ''}}"> {{ $item->menu_info['text'] }}</a>
-                                        </li>
-                                    @endforeach
-                                @endisset
-                            </ul>
-                        </div>
-                        <div class="col-2">
-                            <ul class="navbar-nav m-auto">
-                                <li class="nav-item logo">
-                                    <a href="index.html" class="nav-link">
-                                        <img src="{{$settings_g['logo'] ?? ''}}" class="nav-link-logo1" alt="{{$settings_g['title'] ?? ''}}">
-                                        <img src="{{$settings_g['dark_logo'] ?? ''}}" class="nav-link-logo2" alt="{{$settings_g['title'] ?? ''}}">
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="col-5">
-                            <ul class="navbar-nav m-auto">
-                                @isset($main_menu_right->SingleMenuItems)
-                                    @foreach ($main_menu_right->SingleMenuItems as $item)
-                                    <li class="nav-item">
-                                        <a href="{{$item->menu_info['url']}}" class="nav-link {{$item->menu_info['url'] == url()->current() ? 'active' : ''}}"> {{ $item->menu_info['text'] }}</a>
-                                    </li>
-                                    @endforeach
-                                @endisset
-                            </ul>
-                        </div>
-                    </div>
+                            @endforeach
+                        @endisset
+                    </ul>
                 </div>
             </nav>
         </div>
@@ -248,7 +228,7 @@
                 <div class="row">
                     <div class="col-lg-3 col-md-6">
                         <div class="footer-widget footer-widget-color">
-                            <a href="index.html" class="footer-logo">
+                            <a href="{{ route('homepage') }}" class="footer-logo">
                                 <img src="{{$settings_g['dark_logo'] ?? ''}}" alt="Images">
                                 <p>{{$settings_g['title'] ?? ''}}</p>
                             </a>
@@ -358,7 +338,7 @@
 
 
 
-    <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+    <script src="{{ asset('front/assets/js/jquery-2.2.0.min.js') }}" type="text/javascript"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 

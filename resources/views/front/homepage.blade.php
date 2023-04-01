@@ -1,11 +1,40 @@
 @extends('front.layouts.master')
 
 @section('head')
-    {@include('meta::manager', [
+    @include('meta::manager', [
         'title' => ($settings_g['title'] ?? env('APP_NAME')) . ' - ' . ($settings_g['slogan'] ?? '')
     ])
 
     <style>
+    .moving-together img {
+        width: 85%;
+        float: right;
+    }
+
+
+    @media (max-width: 1280px)
+    {
+        .doppler-title h1 {
+            font-size: 46px !important;
+        }
+        .doppler-logo {
+            margin-top: -40px !important;
+        }
+    }
+
+    @media only screen and (min-width: 768px) and (max-width: 991px)
+    {
+        .doppler-title h1 {
+                font-size: 25px !important;
+            }
+    }
+
+    @media only screen and (min-width: 360px) and (max-width: 768px)
+    {
+        .doppler-title h1 {
+                font-size: 12px !important;
+            }
+    }
 
 
     </style>
@@ -53,6 +82,42 @@
     </div>
     {{-- end sliders --}}
 
+                      <!-- About Area -->
+                      <div class="about-area pt-100 pb-70">
+                        <div class="container-fluid">
+                            <div class="row">
+                                    <div class="doppler-logo" style="position: absolute; margin-top: -70px;" >
+                                        <img src="{{ asset('front/images/section-image/moving-together-logo.png') }}" alt=""  style="width: 16%">
+                                    </div>
+
+                                <div class="col-4">
+                                    <div class="moving-together" style="position: relative">
+                                        <div class="doppler-title text-end">
+                                            <h1 style="font-family: DopplerSans-Regular; font-size: 70px;">Moving together</h1>
+                                        </div>
+                                        <div class="logo-brand mt-5">
+                                            <img class="mb-5" src="{{  asset('front/images/section-image/prestige-doppler.png')  }}" alt="" >
+                                            <img class="mt-5 mb-5"src="{{  asset('front/images/section-image/intelligent-tahsinko.png')  }}" alt="" >
+                                            <img class="mt-5" src="{{  asset('front/images/section-image/smart-dreamler.png')  }}" alt="" >
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-1">
+                                </div>
+                                <div class="col-7">
+                                    <div class="rectangle-team">
+
+                                        <img class="" src="{{  asset('front/images/section-image/image-top.png')  }}" alt="" >
+                                        <img class="mt-5" src="{{  asset('front/images/section-image/image-middle.jpg')  }}" alt="" >
+                                        <img class="mt-5" src="{{  asset('front/images/section-image/image-bottom.png')  }}" alt="" >
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- About Area End -->
 
     @if(count($home_sections))
         @foreach($home_sections as $key=>$sec)
