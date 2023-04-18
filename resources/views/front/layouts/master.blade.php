@@ -42,6 +42,8 @@
      <link rel="stylesheet" href="{{asset('/front/assets/css/nice-select.min.css')}}">
      <!-- Style CSS -->
      <link rel="stylesheet" href="{{asset('/front/assets/css/style.css')}}">
+     <link rel="stylesheet" href="{{asset('/front/assets/css/custom.css')}}">
+
      <!-- Responsive CSS -->
      <link rel="stylesheet" href="{{asset('/front/assets/css/responsive.css') }}">
       <!-- Theme Dark CSS -->
@@ -53,7 +55,7 @@
 
 <body>
     <!-- PreLoader Start -->
-    <div class="preloader">
+    {{-- <div class="preloader">
         <div class="d-table">
             <div class="d-table-cell">
                 <div class="sk-cube-area">
@@ -64,7 +66,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
         <!-- PreLoader End -->
 
         <!-- Top Nav Start -->

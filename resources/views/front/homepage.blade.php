@@ -5,39 +5,6 @@
         'title' => ($settings_g['title'] ?? env('APP_NAME')) . ' - ' . ($settings_g['slogan'] ?? '')
     ])
 
-    <style>
-    .moving-together img {
-        width: 85%;
-        float: right;
-    }
-
-
-    @media (max-width: 1280px)
-    {
-        .doppler-title h1 {
-            font-size: 46px !important;
-        }
-        .doppler-logo {
-            margin-top: -40px !important;
-        }
-    }
-
-    @media only screen and (min-width: 768px) and (max-width: 991px)
-    {
-        .doppler-title h1 {
-                font-size: 25px !important;
-            }
-    }
-
-    @media only screen and (min-width: 360px) and (max-width: 768px)
-    {
-        .doppler-title h1 {
-                font-size: 12px !important;
-            }
-    }
-
-
-    </style>
 @endsection
 
 @section('master')
@@ -82,654 +49,764 @@
     </div>
     {{-- end sliders --}}
 
-                      <!-- About Area -->
-                      <div class="about-area pt-100 pb-70">
-                        <div class="container-fluid">
-                            <div class="row">
-                                    <div class="doppler-logo" style="position: absolute; margin-top: -70px;" >
-                                        <img src="{{ asset('front/images/section-image/moving-together-logo.png') }}" alt=""  style="width: 16%">
-                                    </div>
+<!-- section One Start -->
+   <div class="section-one">
+        <div class="container-fluid">
+            <div class="row section-one-inner">
+                <div class="col-lg-6 col-md-6">
+                    <div class="bg-media">
+                        <img src="{{ asset('front/images/section/moving-together.png') }}" class="moving" alt="">
+                        <img src="{{ asset('front/images/section/sec1-bg.png') }}" class="sec1-bg" alt="" >
+                    </div>
+                    <div class="section-one-content ms-5">
+                        <div class="section-one-inner-item">
+                            <img src="{{ asset('front/images/section/tahsinko-liftnescalator.png') }}" class="tahsinko-logo" alt="TAHSINKO® Lift & Escalator Logo" >
+                        </div>
+                        <div class="section-one-inner-item">
+                        <img src="{{ asset('front/images/section/1st-tm-bd.png') }}" class="tm-img animate-1" alt="1st Trademark™ Registered® Lift Brand in Bangladesh">
+                        </div>
+                        <div class="section-one-inner-item">
+                        <img src="{{ asset('front/images/section/1st-tm-china.png') }}" class="tm-img animate-2" alt="1st Trademark™ Registered® Bangladeshi Lift Brand in China" >
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
 
-                                <div class="col-4">
-                                    <div class="moving-together" style="position: relative">
-                                        <div class="doppler-title text-end">
-                                            <h1 style="font-family: DopplerSans-Regular; font-size: 70px;">Moving together</h1>
-                                        </div>
-                                        <div class="logo-brand mt-5">
-                                            <img class="mb-5" src="{{  asset('front/images/section-image/prestige-doppler.png')  }}" alt="" >
-                                            <img class="mt-5 mb-5"src="{{  asset('front/images/section-image/intelligent-tahsinko.png')  }}" alt="" >
-                                            <img class="mt-5" src="{{  asset('front/images/section-image/smart-dreamler.png')  }}" alt="" >
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-1">
-                                </div>
-                                <div class="col-7">
-                                    <div class="rectangle-team">
+                    <div class="section-one-media">
+                        <img src="{{asset('front/images/section/sec1-group-photo.png')}}" class="group-img" alt="">
+                    </div>
+                    <div class="js-shape">
+                        <img src="{{asset('front/images/section/sec1-shape-1.png')}}" class="shape-1" alt="shape" >
+                        <img src="{{asset('front/images/section/sec1-shape-2.png')}}" class="shape-2" alt="shape" >
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- section One End -->
 
-                                        <img class="" src="{{  asset('front/images/section-image/image-top.png')  }}" alt="" >
-                                        <img class="mt-5" src="{{  asset('front/images/section-image/image-middle.jpg')  }}" alt="" >
-                                        <img class="mt-5" src="{{  asset('front/images/section-image/image-bottom.png')  }}" alt="" >
-                                    </div>
-                                </div>
-
-
+<!-- Section Two Start -->
+    <div class="section-two">
+        <div class="container-fluid">
+            <div class="section-two-inner">
+                <div class="row">
+                    <div class="col-lg-4 col-md-4">
+                        <img src="{{asset('front/images/section/sec2-bg-left.png')}}" class="sec2-bg-left" alt="">
+                        <img src="{{asset('front/images/section/sec2-ceo.png')}}" alt="" class="tareq">
+                    </div>
+                    <div class="col-lg-8 col-md-8">
+                        <img src="{{asset('front/images/section/sec2-artwork.png')}}" class="sec2-artwork animate-2" alt="">
+                        <div class="section-content">
+                            <div class="section-content-inner">
+                                <p>
+                                    Our products and solutions allow us to install lifts of any size, configuration, speed and load for every section of industry. Working closely with all stakeholders, architects, principal designers and end user, TAHSINKO® Limited can provide our clients with full turnkey projects, or small bespoke single private sector works. Our installation teams work to the highest levels of safety and quality alongside our very experienced Project Managers. TAHSINKO® is our own brand that’s why its quality different then others. We invite you to be proud owner of our lift at your prestigious project.
+                                </p>
+                                <p>- Tarequl Islam, CEO</p>
                             </div>
                         </div>
                     </div>
-                    <!-- About Area End -->
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- Section Two End -->
 
-    @if(count($home_sections))
-        @foreach($home_sections as $key=>$sec)
-            @if($sec->section_design_type_id==1)
-                    <!-- About Area -->
-                <div class="about-area pt-100 pb-70">
-                    <div class="container-fluid">
+<!-- Section Three Start -->
+    <div class="section-three">
+        <div class="container-fluid">
+            <div class="container">
+                <div class="row section-three-mission">
+                    <div class="col-lg-4 col-md-4 title">
+                        <div class="section-three-title">
+                            <h2>Mission</h2>
+                        </div>
+                    </div>
+                    <div class="col-lg-8 col-md-8">
+                        <div class="section-three-content">
+                            <div class="quote">
+                                <img src="{{asset('front/images/section/quote.png')}}" class="quote" alt="">
+                            </div>
+                            <div class="inner">
+                                <p>Our mission in to provide innovative and reliable vertical transportation solutions that enable people to move safety and efficiently in buildings of all sizes and types, while also promoting sustainability, accessibility, and exceptional customer service in Bangladesh.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row section-three-vision">
+                    <div class="col-lg-8 col-md-8">
+                        <div class="section-three-content">
+                            <div class="quote">
+                                <img src="{{asset('front/images/section/quote.png')}}" class="quote" alt="">
+                            </div>
+                            <div class="inner">
+                                <p>Our vision is to lead the elevator industry by providing smart, sustainable, and user-centered vertical transportation solutions that enhance the human experience, improve urban mobility, and create more livable and inclusive cities around the world.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 title">
+                        <div class="section-three-title">
+                            <h2>Vision</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- Section Three End -->
+
+<!-- Section Four Start -->
+    <div class="section-four bg-black">
+        <div class="container">
+            <div class="row counter-list justify-content-center">
+                <div class="col-xl-3 col-lg-6 col-md-6">
+                    <div class="counter-item">
+                        <div class="counter-item-inner justify-content-center text-center d-flex">
+                            <h2>Valuable Partners <span>100+</span></h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-6 col-md-6">
+                    <div class="counter-item">
+                        <div class="counter-item-inner justify-content-center text-center d-flex">
+                            <h2>Completed Projects<span>100+</span></h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-6 col-md-6">
+                    <div class="counter-item">
+                        <div class="counter-item-inner justify-content-center text-center d-flex">
+                            <h2>Ongoing Projects<span>100+</span></h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-6 col-md-6">
+                    <div class="counter-item">
+                        <div class="counter-item-inner justify-content-center text-center d-flex">
+                            <h2>Coworkers<span>100+</span></h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- Section Four End -->
+
+<!-- Section Five Start -->
+     <div class="section-five">
+        <div class="container-fluid p-0">
+            <div class="row section-five-inner">
+
+                <div class="col-xxl-3 col-xl-4 col-lg-6 col-md-12 col-sm-12 col-12">
+                    <img src="{{asset('front/images/section/sec5-bgleft.png')}}" alt="" class="sec5-bgleft">
+                </div>
+                <div class="col-xxl-3 col-xl-4 col-lg-6 col-md-8 col-sm-12 col-12">
+                    <img src="{{asset('front/images/section/sec5-bgright.png')}}" alt="" class="sec5-bgright float-end">
+                </div>
+
+                <div class="pline-content position-absolute my-2">
+                    <div class="row justify-content-center">
+                        <div class="col-xxl-3 col-xl-4 col-lg-6 col-md-8 col-sm-12 col-12">
+                            <div class="pline-title my-5">
+                                <h2>product line</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-xl-1 col-lg-2 col-md-3 col-6">
+                            <div class="pline-item-content-down mb-4">
+                                <h5>Elevators</h5>
+                                <div class="triangle-down">
+                                </div>
+                            </div>
+                            <div class="pline-item-icon mb-4">
+                                <img src="{{asset('front/images/section/icon-elevators.png')}}" class="img-fluid rounded-top" alt="">
+                            </div>
+                        </div>
+                        <div class="col-xl-1 col-lg-2 col-md-3 col-6">
+                            <div class="pline-item-icon mb-4">
+                                <img src="{{asset('front/images/section/icon-home-elevators.png')}}" class="img-fluid rounded-top" alt="">
+                            </div>
+                            <div class="pline-item-content-up mb-4">
+                                <h5>Home Elevator</h5>
+                                <div class="triangle-up">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-1 col-lg-2 col-md-3 col-6">
+                            <div class="pline-item-content-down mb-4">
+                                <h5>Hospital Elevator</h5>
+                                <div class="triangle-down">
+                                </div>
+                            </div>
+                            <div class="pline-item-icon mb-4">
+                                <img src="{{asset('front/images/section/icon-hospital-elevator.png')}}" class="img-fluid rounded-top" alt="">
+                            </div>
+                        </div>
+                        <div class="col-xl-1 col-lg-2 col-md-3 col-6">
+                            <div class="pline-item-icon mb-4">
+                                <img src="{{asset('front/images/section/icon-passenger-elevator.png')}}" class="img-fluid rounded-top" alt="">
+                            </div>
+                            <div class="pline-item-content-up mb-4">
+                                <h5>Passenger Elevator</h5>
+                                <div class="triangle-up">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-1 col-lg-2 col-md-3 col-6">
+                            <div class="pline-item-content-down mb-4">
+                                <h5>Car Elevator</h5>
+                                <div class="triangle-down">
+                                </div>
+                            </div>
+                            <div class="pline-item-icon mb-4">
+                                <img src="{{asset('front/images/section/icon-car-elevator.png')}}" class="img-fluid rounded-top" alt="">
+                            </div>
+                        </div>
+                        <div class="col-xl-1 col-lg-2 col-md-3 col-6">
+                            <div class="pline-item-icon mb-4">
+                                <img src="{{asset('front/images/section/icon-escalator.png')}}" class="img-fluid rounded-top" alt="">
+                            </div>
+                            <div class="pline-item-content-up mb-4">
+                                <h5>Escalator</h5>
+                                <div class="triangle-up">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-1 col-lg-2 col-md-3 col-6">
+                            <div class="pline-item-content-down mb-4">
+                                <h5>Observation Elevator</h5>
+                                <div class="triangle-down">
+                                </div>
+                            </div>
+                            <div class="pline-item-icon mb-4">
+                                <img src="{{asset('front/images/section/icon-observation.png')}}" class="img-fluid rounded-top" alt="">
+                            </div>
+                        </div>
+                        <div class="col-xl-1 col-lg-2 col-md-3 col-6">
+                            <div class="pline-item-icon mb-4">
+                                <img src="{{asset('front/images/section/icon-freight-elevator.png')}}" class="img-fluid rounded-top" alt="">
+                            </div>
+                            <div class="pline-item-content-up mb-4">
+                                <h5>Freight Elevator</h5>
+                                <div class="triangle-up">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-1 col-lg-2 col-md-3 col-6">
+                            <div class="pline-item-content-down mb-4">
+                                <h5>Dumb Waiter</h5>
+                                <div class="triangle-down">
+                                </div>
+                            </div>
+                            <div class="pline-item-icon mb-4">
+                                <img src="{{asset('front/images/section/icon-dumbwaiter.png')}}" class="img-fluid rounded-top" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- Section Five End -->
+
+<!-- Section Six Start -->
+    <div class="section-six">
+        <div class="container-fluid">
+            <div class="tm-title text-uppercase text-center mt-2">
+                <h1>Trademark Certificates</h1>
+            </div>
+            <div class="inner-bg">
+                <img src="{{asset('front/images/section/tm-bg.png')}}" alt="" class="tm-bg">
+            </div>
+            <div class="row section-six-inner">
+                <div class="col-xl-6 col-lg-6 col-md-6">
+                    <div class="flag-tm-left">
+                        <img src="{{asset('front/images/section/bd-flag.png')}}" alt="" class="bd-flag">
+                        <img src="{{asset('front/images/section/tm-bd.png')}}" alt="" class="tm-bd">
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6">
+                    <div class="flag-tm-right">
+                        <img src="{{asset('front/images/section/tm-cn.png')}}" alt="" class="tm-cn">
+                        <img src="{{asset('front/images/section/cn-flag.png')}}" alt="" class="cn-flag">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- Section Six End -->
+
+<!-- Section Seven Start -->
+    <div class="section-seven bg-black">
+        <div class="container-fluid">
+            <div class="section-seven-inner">
+                <div class="row justify-content-center">
+                    <div class="col-xl-4 col-lg-5 col-md-6 col-11">
+                        <div class="service-title">
+                            <h1>Our Services</h1>
+                        </div>
+                    </div>
+                    <div class="row service-list justify-content-center">
+                        <div class="col-xl-3 col-lg-4 col-md-6">
+                            <div class="service-item">
+                                <div class="service-item-inner text-center">
+                                    <div class="service-icon">
+                                        <img src="{{asset('front/images/section/icon-planning.png')}}" alt="" class="">
+                                    </div>
+                                    <h2>Planning</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-4 col-md-6">
+                            <div class="service-item">
+                                <div class="service-item-inner text-center">
+                                    <div class="service-icon">
+                                        <img src="{{asset('front/images/section/icon--supply.png')}}" alt="" class="">
+                                    </div>
+                                    <h2>Supply</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-4 col-md-6">
+                            <div class="service-item">
+                                <div class="service-item-inner text-center">
+                                    <div class="service-icon">
+                                        <img src="{{asset('front/images/section/icon-installation.png')}}" alt="" class="">
+                                    </div>
+                                    <h2>Installation</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-4 col-md-6">
+                            <div class="service-item">
+                                <div class="service-item-inner text-center">
+                                    <div class="service-icon">
+                                        <img src="{{asset('front/images/section/icon-commissioning.png')}}" alt="" class="">
+                                    </div>
+                                    <h2>Commissioning</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-4 col-md-6">
+                            <div class="service-item">
+                                <div class="service-item-inner text-center">
+                                    <div class="service-icon">
+                                        <img src="{{asset('front/images/section/icon-service-main.png')}}" alt="" class="">
+                                    </div>
+                                    <h2>Service & Maintenance</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-4 col-md-6">
+                            <div class="service-item">
+                                <div class="service-item-inner text-center">
+                                    <div class="service-icon">
+                                        <img src="{{asset('front/images/section/icon-renovation.png')}}" alt="" class="">
+                                    </div>
+                                    <h2>Renovation</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-4 col-md-6">
+                            <div class="service-item">
+                                <div class="service-item-inner text-center">
+                                    <div class="service-icon">
+                                        <img src="{{asset('front/images/section/icon-spare-parts.png')}}" alt="" class="">
+                                    </div>
+                                    <h2>Spare Parts</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- Section Seven End -->
+
+<!-- Section Eight Start -->
+    <div class="feature-product">
+
+        <div class="container">
+            <div class="inner">
+                <div class="tm-title text-uppercase text-center mt-2">
+                    <h1>Latest Products</h1>
+                </div>
+                <div class="portfolio-bg">
+                    <img src="{{asset('front/images/section/portfolio-bd-left.png')}}" alt="" class="portfolio-bd-left">
+                </div>
+                <div class="portfolio-bg">
+                    <img src="{{asset('front/images/section/portfolio-bd-rignt.png')}}" alt="" class="portfolio-bd-rignt">
+                </div>
+
+                <div class="row feature-product-inner justify-content-center">
+                    <div class="col-xl-3 col-lg-6 col-md-6">
+                        <div class="card">
+                            <div class="imgBox">
+                                <img src="https://demo.tahsinko.com/uploads/2022/09/1662476048.jpg" alt="" class="product">
+                            </div>
+                            <div class="contentBox">
+                                <h3>TK-J111</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-6 col-md-6">
+                        <div class="card">
+                            <div class="imgBox">
+                                <img src="https://demo.tahsinko.com/uploads/2022/09/1662476048.jpg" alt="" class="product">
+                            </div>
+                            <div class="contentBox">
+                                <h3>TK-J111</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-6 col-md-6">
+                        <div class="card">
+                            <div class="imgBox">
+                                <img src="https://demo.tahsinko.com/uploads/2022/09/1662476048.jpg" alt="" class="product">
+                            </div>
+                            <div class="contentBox">
+                                <h3>TK-J111</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-6 col-md-6">
+                        <div class="card">
+                            <div class="imgBox">
+                                <img src="https://demo.tahsinko.com/uploads/2022/09/1662476048.jpg" alt="" class="product">
+                            </div>
+                            <div class="contentBox">
+                                <h3>TK-J111</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="text-center mt-5">
+                            <a href="#" class="default-btn">View All Products</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- Section Eight End -->
+
+<!-- Section Nine Start -->
+    <div class="portfolio-area pb-70">
+
+            <div class="tm-title text-uppercase text-center mt-2">
+                <h1>Our Project</h1>
+            </div>
+        <div class="container">
+            <div class="tab portfolio-tab">
+                <div class="tab_content current active pt-45">
+                    <div class="tabs_item current">
                         <div class="row">
-                            <div class="col-lg-5">
-                                <div class="about-content">
-                                    <div class="    ">
-                                        <span class="sp-before">About Us</span>
-                                        <h2>{{ $sec->title }}</h2>
-                                        <p>{!! \Illuminate\Support\Str::words($sec->description,100,'...') !!}</p>
-                                    </div>
-                                    <ul class="signature">
-                                        <li>
-                                            <img src="{{asset('/front/assets/img/about-img/signatures.png')}}" class="signature-img1" alt="Images">
-                                            <img src="{{asset('/front/assets/img/about-img/signatures2.png')}}" class="signature-img2" alt="Images">
-                                        </li>
-                                        <li>
-                                            <h3>Tarequl Islam</h3>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-7">
-                                <div class="about-img">
-                                    <img src="{{ $sec->img_paths['original'] }}" alt="Image">
-                                    @php
-                                    $longUrlRegex = '/youtube.com\/((?:embed)|(?:watch))((?:\?v\=)|(?:\/))([a-zA-Z0-9_-]+)/i';
-                                    if (preg_match($longUrlRegex, $sec->feature_video, $matches)) {
-                                    $youtube_id = $matches[count($matches) - 1];
-                                    }
-                                    @endphp
-                                    <div class="about-img-text" style="background-image: url(https://img.youtube.com/vi/{{$youtube_id}}/sddefault.jpg);">
-                                        {{-- <span>Build</span>
-                                        <h3>2015</h3> --}}
-                                        <a href=" javascript:void(0)" data-bs-toggle="modal" data-bs-target="#videoeModal">
-                                            <i class="bx bxl-youtube" style=" color: red; font-size: 67px; margin: auto; cursor: pointer;"  ></i>
-                                        </a>
-
-                                    </div>
-                                    <!-- YouTube Modal --->
-                                    <div class="modal fade" id="videoeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog" role="document">
-                                          <div class="modal-content">
-                                            <div class="modal-body">
-                                             <button type="button" class="btn-close btn-close-white video-btn" data-bs-dismiss="modal" aria-label="Close"></span>
-                                              </button>
-                                              <!-- 16:9 aspect ratio -->
-                                                <div class="ratio ratio-16x9">
-                                                    <iframe class="embed-responsive-item"  width="665" height="500" src="{{$sec->feature_video}}?autoplay=0&controls=1&playlist={{ $youtube_id }}&loop=1" title="{{ $sec->title }}" allowscriptaccess="always" frameborder="0"  ></iframe>
-                                                </div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                    </div>
-                                    <!-- End YouTube Modal --->
-
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- About Area End -->
-
-            @elseif ($sec->section_design_type_id==4)
-                <!-- Product Category -->
-                <div class="about-area pt-100 pb-70">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-5">
-                                <div class="">
-                                    <img src="{{asset('/front/images/Type-of-Product.png')}}" alt="Image">
-                                </div>
-                            </div>
-                            <div class="col-lg-5">
-                                <div class="section2">
-                                    <h2>{{ $sec->section_name }}</h2>
-                                    <p>{!! $sec->description!!}</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Product Category End -->
-
-            @elseif($sec->section_design_type_id==2 && count($newes))
-                <div class="blog-area pt-100 pb-70">
-                    <div class="container">
-                        <div class="section-title-two text-center">
-                            <span class="sp-before">Recent Articles</span>
-                            <div class="section-title">
-                                <h2>{{ $sec->section_name }}</h2>
-                            </div>
-                        </div>
-                        <div class="row pt-45">
-                            @foreach ($newes as $news)
-                            <div class="
-                                    @if($sec->col == 2)
-                                        col-lg-6 col-md-6 col-sm-12
-                                    @elseif($sec->col == 3)
-                                        col-lg-4 col-md-6 col-sm-12
-                                    @elseif($sec->col == 4)
-                                        col-lg-3 col-md-6 col-sm-12
-                                    @endif
-                                ">
-                                <div class="blog-card blog-card-pb">
-                                    <a href="{{ route('news.single', $news->slug) }}">
-                                        <img src="{{ $news->img_paths['medium'] }}" alt="{{ $news->title }}">
+                            <div class="col-lg-3 col-sm-6">
+                                <div class="portfolio-item-two">
+                                    <a href="portfolio-details.html">
+                                        <img src="https://templates.hibootstrap.com/sprio/default/assets/img/portfolio/portfolio-item1.jpg" alt="Images">
                                     </a>
                                     <div class="content">
-                                        <span><a href="#">Lift</a> / {{ \Carbon\Carbon::parse($news->publish_date)->format('d-m-Y')}}</span>
-                                        <h3><a href="{{ route('news.single', $news->slug) }}">{{ $news->title }}</a></h3>
-                                        <a href="{{ route('news.single', $news->slug) }}" class="learn-btn">
-                                            Read more
-                                            <i class="flaticon-right-arrow-1"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            @endforeach
-                        </div>
-                    </div>
-                </div>
-                {{-- end News --}}
-            @elseif($sec->section_design_type_id==3 && count($products))
-                {{-- feature products --}}
-                <div class="feature-product scroll-animation-section show-on-scroll">
-                    <div class="container" style="padding: 70px 0;">
-                        @if ($sec->section_name_is_show == 1)
-                        <div class="section-title">
-                            <h2>{{ $sec->section_name }}</h2>
-                        </div>
-                        @endif
-                        <div class="row justify-content-center">
-                            @foreach($products as $product)
-                                <div class="
-                                    @if($sec->col == 2)
-                                        col-lg-6 col-sm-6 mb-4
-                                    @elseif($sec->col == 3)
-                                        col-lg-4 col-sm-6 mb-4 px-4
-                                    @elseif($sec->col == 4)
-                                        col-lg-3 col-sm-6 mb-4
-                                    @endif">
-                                    <div class="card">
-                                        <div class="imgBox">
-                                            <img src="{{$product->img_paths['original']}}" alt="{{ $product->name }}" class="mouse">
+                                        <div class="title">
+                                            <h3><a href="portfolio-details.html">Royal palace</a></h3>
                                         </div>
-                                        <div class="contentBox">
-                                            <h3>{{ $product->name }}</h3>
-                                            {{-- <h2 class="price">61.<small>98</small> €</h2>
-                                            <a href="#" class="buy">Buy Now</a> --}}
-                                        </div>
-                                    </div>
-                                </div>
-                            @endforeach
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-12">
-                                {{-- <a href="services-1.html" class="default-btn">
-                                    More Service
 
-                                </a> --}}
-
-                                <div class="text-center mt-5"> <a href="{{ url('/page/products') }}" class="default-btn">View All Products  <i class="flaticon-right-arrow-1"></i></a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                {{-- end feature product --}}
-            {{-- @elseif($sec->section_design_type_id==6 && count($services)) --}}
-            @elseif($sec->section_design_type_id==6)
-                <!-- Portfolio Area -->
-                    <div class="portfolio-area pb-70">
-                        <div class="container-fluid">
-                            <div class="tab portfolio-tab">
-                                <div class="container">
-                                    @if ($sec->section_name_is_show == 1)
-                                    <div class="section-title">
-                                        <h2>{{ $sec->section_name }}</h2>
-                                    </div>
-                                    @endif
-                                    <ul class="tabs active">
-                                        <li class="current">
-                                            <a href="#">All</a>
-                                        </li>
-
-                                        <li>
-                                            <a href="#">Hospitality</a>
-                                        </li>
-
-                                        <li>
-                                            <a href="#">Interior</a>
-                                        </li>
-                                    </ul>
-                                </div>
-
-                                <div class="tab_content current active pt-45">
-                                    <div class="tabs_item current">
-                                        <div class="row">
-                                            <div class="col-lg-3 col-sm-6">
-                                                <div class="portfolio-item-two">
-                                                    <a href="portfolio-details.html">
-                                                        <img src="{{asset('/front/assets/img/portfolio/portfolio-item1.jpg') }}" alt="Images">
-                                                    </a>
-                                                    <div class="content">
-                                                        <div class="title">
-                                                            <h3><a href="portfolio-details.html">Royal palace</a></h3>
-                                                        </div>
-
-                                                        <ul>
-                                                            <li>
-                                                                <a href="#">-Hospitality /</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">Interior /</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">Royal</a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-3 col-sm-6">
-                                                <div class="portfolio-item-two">
-                                                    <a href="portfolio-details.html">
-                                                        <img src="{{asset('/front/assets/img/portfolio/portfolio-item1.jpg') }}" alt="Images">
-                                                    </a>
-                                                    <div class="content">
-                                                        <div class="title">
-                                                            <h3><a href="portfolio-details.html">Royal palace</a></h3>
-                                                        </div>
-
-                                                        <ul>
-                                                            <li>
-                                                                <a href="#">-Hospitality /</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">Interior /</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">Royal</a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-3 col-sm-6">
-                                                <div class="portfolio-item-two">
-                                                    <a href="portfolio-details.html">
-                                                        <img src="{{asset('/front/assets/img/portfolio/portfolio-item1.jpg') }}" alt="Images">
-                                                    </a>
-                                                    <div class="content">
-                                                        <div class="title">
-                                                            <h3><a href="portfolio-details.html">Royal palace</a></h3>
-                                                        </div>
-
-                                                        <ul>
-                                                            <li>
-                                                                <a href="#">-Hospitality /</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">Interior /</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">Royal</a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-3 col-sm-6">
-                                                <div class="portfolio-item-two">
-                                                    <a href="portfolio-details.html">
-                                                        <img src="{{asset('/front/assets/img/portfolio/portfolio-item1.jpg') }}" alt="Images">
-                                                    </a>
-                                                    <div class="content">
-                                                        <div class="title">
-                                                            <h3><a href="portfolio-details.html">Royal palace</a></h3>
-                                                        </div>
-
-                                                        <ul>
-                                                            <li>
-                                                                <a href="#">-Hospitality /</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">Interior /</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">Royal</a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-
-                                    <div class="tabs_item">
-                                        <div class="row">
-                                            <div class="col-lg-3 col-sm-6">
-                                                <div class="portfolio-item-two">
-                                                    <a href="portfolio-details.html">
-                                                        <img src="{{asset('/front/assets/img/portfolio/portfolio-item1.jpg') }}" alt="Images">
-                                                    </a>
-                                                    <div class="content active">
-                                                        <div class="title">
-                                                            <h3><a href="portfolio-details.html">Royal palace</a></h3>
-                                                        </div>
-
-                                                        <ul>
-                                                            <li>
-                                                                <a href="#">-Hospitality /</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">Interior /</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">Royal</a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-lg-3 col-sm-6">
-                                                <div class="portfolio-item-two">
-                                                    <a href="portfolio-details.html">
-                                                        <img src="{{asset('/front/assets/img/portfolio/portfolio-item2.jpg') }}" alt="Images">
-                                                    </a>
-                                                    <div class="content">
-                                                        <div class="title">
-                                                            <h3><a href="portfolio-details.html">Glass foundation building</a></h3>
-                                                        </div>
-
-                                                        <ul>
-                                                            <li>
-                                                                <a href="#">Interior /</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">Royal</a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-lg-3 col-sm-6">
-                                                <div class="portfolio-item-two">
-                                                    <a href="portfolio-details.html">
-                                                        <img src="{{asset('/front/assets/img/portfolio/portfolio-item3.jpg') }}" alt="Images">
-                                                    </a>
-                                                    <div class="content">
-                                                        <div class="title">
-                                                            <h3><a href="portfolio-details.html">White house building</a></h3>
-                                                        </div>
-
-                                                        <ul>
-                                                            <li>
-                                                                <a href="#">Royal /</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">Interior</a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-lg-3 col-sm-6">
-                                                <div class="portfolio-item-two">
-                                                    <a href="portfolio-details.html">
-                                                        <img src="{{asset('/front/assets/img/portfolio/portfolio-item4.jpg') }}" alt="Images">
-                                                    </a>
-                                                    <div class="content">
-                                                        <div class="title">
-                                                            <h3><a href="portfolio-details.html">Rectangle building</a></h3>
-                                                        </div>
-
-                                                        <ul>
-                                                            <li>
-                                                                <a href="#">-Interior /</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">Royal</a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                <!-- Portfolio Area End -->
-            @elseif($sec->section_design_type_id==10 && count($projects))
-                {{-- our project --}}
-                <div class="our-project scroll-animation-section show-on-scroll" style="background: {{$sec->background_color}}">
-                    <div class="container" style="margin:0;max-width:100%;">
-                        @if ($sec->section_name_is_show == 1)
-                        <div class="heading-title">
-                            <label>{{ $sec->section_name }}</label>
-                        </div>
-                        @endif
-                        <div class="row">
-                            @foreach($projects as $project)
-                                <div class="
-                                    @if($sec->col == 2)
-                                        col-lg-6 col-sm-6 mb-4
-                                    @elseif($sec->col == 3)
-                                        col-lg-4 col-sm-6 mb-4
-                                    @elseif($sec->col == 4)
-                                        col-lg-3 col-sm-6 mb-4
-                                    @endif
-                                ">
-                                    <div class="project-box">
-                                        <img class="image-animantion show-on-scroll" src="{{ $project->img_paths['small'] }}"/>
-                                        <div class="project-title-bar">{{ $project->title }}</div>
-                                        <div class="project-content">
-
-                                            {!! \Illuminate\Support\Str::limit($project->description,150) !!}
-
-                                        </div>
-                                    </div>
-                                </div>
-                            @endforeach
-
-                        </div>
-                    </div>
-                </div>
-                {{-- end our porject --}}
-
-            @elseif($sec->section_design_type_id==7 && count($teams))
-                {{-- our team --}}
-                <input type="hidden" id="NoOfTeamMember" value="{{$sec->no_of_slide_col}}">
-                <div class="team-area team-bg pt-100 pb-70">
-                    <div class="container">
-                        <div class="section-title-two text-center">
-                            <span class="sp-before">Creative Team</span>
-                            @if ($sec->section_name_is_show == 1)
-                            <div class="section-title">
-                                <h2>{{ $sec->section_name }}</h2>
-                            </div>
-                            @endif
-                        </div>
-                        <div class="row pt-45 customer-logo">
-                            @foreach($teams as $team)
-                            <div class="col-lg-4 col-sm-6">
-                                <div class="team-card">
-                                    <div class="images">
-                                        <a href="single-team.html">
-                                            <img src="{{ $team->img_paths['medium'] }}" alt="Images">
-                                        </a>
-                                        <ul class="social-link">
+                                        <ul>
                                             <li>
-                                                <a href="{{ $team->facebook }}" target="_blank"><i class="bx bxl-facebook"></i></a>
+                                                <a href="#">-Passenger Lift /</a>
                                             </li>
                                             <li>
-                                                <a href="{{ $team->twitter }}#" target="_blank"><i class="bx bxl-twitter"></i></a>
+                                                <a href="#"> /</a>
                                             </li>
                                             <li>
-                                                <a href="{{ $team->linkedin }}" target="_blank"><i class="bx bxl-linkedin"></i></a>
+                                                <a href="#">Royal</a>
                                             </li>
                                         </ul>
                                     </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-sm-6">
+                                <div class="portfolio-item-two">
+                                    <a href="portfolio-details.html">
+                                        <img src="https://templates.hibootstrap.com/sprio/default/assets/img/portfolio/portfolio-item2.jpg" alt="Images">
+                                    </a>
                                     <div class="content">
-                                        <h3><a href="single-team.html">{{ $team->name }}</a></h3>
-                                        <ul class="sub-title">
-                                            <li>{{ $team->designation }}</li>
-                                            {{-- <li>ARCHITECT</li> --}}
+                                        <div class="title">
+                                            <h3><a href="portfolio-details.html">Glass foundation building</a></h3>
+                                        </div>
+                                        <ul>
+                                            <li>
+                                                <a href="#">Car</a>
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
-                            @endforeach
+
+                            <div class="col-lg-3 col-sm-6">
+                                <div class="portfolio-item-two">
+                                    <a href="portfolio-details.html">
+                                        <img src="https://templates.hibootstrap.com/sprio/default/assets/img/portfolio/portfolio-item3.jpg" alt="Images">
+                                    </a>
+                                    <div class="content active">
+                                        <div class="title">
+                                            <h3><a href="portfolio-details.html">White house building</a></h3>
+                                        </div>
+
+                                        <ul>
+                                            <li>
+                                                <a href="#">Royal /</a>
+                                            </li>
+                                            <li>
+                                                <a href="#"></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-sm-6">
+                                <div class="portfolio-item-two">
+                                    <a href="portfolio-details.html">
+                                        <img src="https://templates.hibootstrap.com/sprio/default/assets/img/portfolio/portfolio-item4.jpg" alt="Images">
+                                    </a>
+                                    <div class="content">
+                                        <div class="title">
+                                            <h3><a href="portfolio-details.html">Rectangle building</a></h3>
+                                        </div>
+
+                                        <ul>
+                                            <li>
+                                                <a href="#">- /</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Royal</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                {{-- end our value --}}
+            </div>
+        </div>
+    </div>
+<!-- Section Nine End -->
 
-            @elseif($sec->section_design_type_id==12 && count($testimonials))
-                {{-- Client Testimonial --}}
-                <section class="testimonial text-center" style="background: {{$sec->background_color}}">
-                    <div class="container">
-                        @if ($sec->section_name_is_show == 1)
-                        <div class="heading white-heading">
-                            {{ $sec->section_name }}
+<!-- Section Ten Start -->
+     <div class="section9">
+        <div class="team-bg-item position-absolute">
+            <img src="{{asset('front/images/section/team-bg.png')}}" alt="" class="team-bg img-fluid">
+        </div>
+        <div class="container-fluid">
+            <div class="team-section my-5">
+                <div class="row justify-content-center">
+                    <div class="col-xl-4 col-lg-5 col-md-6 col-11">
+                        <div class="service-title mb-5">
+                            <h1>Our TEAM</h1>
                         </div>
-                        @endif
-                        <div id="testimonial4" class="carousel slide testimonial4_indicators testimonial4_control_button thumb_scroll_x swipe_x" data-ride="carousel" data-pause="hover" data-interval="5000" data-duration="2000">
-                            <div class="carousel-inner" role="listbox">
-                                @foreach ($testimonials as $key=>$testimonial)
-                                    <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
-                                        <div class="testimonial4_slide">
-                                            <img src="{{ $testimonial->img_paths['small'] }}" class="img-circle img-responsive" />
-                                            {!! $testimonial->message !!}
-                                            <h4>{{ $testimonial->name }}</h4>
+                    </div>
+                </div>
+                <div class="row team-list justify-content-center">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="tean-item">
+                            <div class="team-item-inner text-center">
+                                <div class="team-member position-relative">
+                                    <div style="top: 8%;">
+                                        <div class="hexagon">
+                                            <div class="hexagon-inner" style="overflow: hidden;">
+                                                <img src="/assets/image/team/ceo.png')}}" alt="" class="" >
+                                            </div>
                                         </div>
                                     </div>
-                                @endforeach
+                                </div>
+                                <div class="team-member-details text-uppercase">
+                                    <div class="social-link position-relative">
+                                        <i style="color: #ffff;" class="fa-brands fa-square-facebook"></i>
+                                        <i style="color: #ffff;"class="fa-brands fa-square-facebook"></i>
+                                        <i style="color: #ffff;"class="fa-brands fa-square-facebook"></i>
+                                    </div>
+                                    <div class="team-member-name">
+                                        <h4>Tarequl Islam Shopon</h4>
+                                        <p>CEO</p>
+                                    </div>
+                                </div>
                             </div>
-                            <a class="carousel-control-prev" href="#testimonial4" data-slide="prev">
-                                <span class="carousel-control-prev-icon"></span>
-                            </a>
-                            <a class="carousel-control-next" href="#testimonial4" data-slide="next">
-                                <span class="carousel-control-next-icon"></span>
-                            </a>
                         </div>
                     </div>
-                </section>
-                {{-- end client Testimonial --}}
-
-
-
-
-            @elseif($sec->section_design_type_id==8)
-                {{-- counter --}}
-                <div class="counter-section scroll-animation-section show-on-scroll" >
-                    <img src="./front/images/elevator-buttons.webp" style="width: 100%;">
-                    <div  style="position: absolute; top: 0%; margin: 0 auto; width: 100%; height: 100%; background: {{$sec->background_color}}">
-                        <div class="container">
-
-                            <div class="row">
-
-                            <div class="four col-md-3">
-                                <div class="counter-box">
-                                    <i class="fa fa-thumbs-up"></i>
-                                    <span class="counter">2147</span>
-                                    <p>Customers</p>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="tean-item">
+                            <div class="team-item-inner text-center">
+                                <div class="team-member position-relative">
+                                    <div style="top: 8%;">
+                                        <div class="hexagon">
+                                            <div class="hexagon-inner" style="overflow: hidden;">
+                                                <img src="/assets/image/team/director-operation.png')}}" alt="" class="" >
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="four col-md-3">
-                                <div class="counter-box">
-                                    <i class="fa fa-users"></i>
-                                    <span class="counter">3275</span>
-                                    <p>Client</p>
-                                </div>
-                            </div>
-                            <div class="four col-md-3">
-                                <div class="counter-box">
-                                    <i class="fa fa-shopping-cart"></i>
-                                    <span class="counter">289</span>
-                                    <p>Complete project</p>
-                                </div>
-                            </div>
-                            <div class="four col-md-3">
-                                <div class="counter-box">
-                                    <i class="fa fa-user"></i>
-                                    <span class="counter">1563</span>
-                                    <p>Support Given</p>
+                                <div class="team-member-details text-uppercase">
+                                    <div class="social-link position-relative">
+                                        <i style="color: #ffff;" class="fa-brands fa-square-facebook"></i>
+                                        <i style="color: #ffff;"class="fa-brands fa-square-facebook"></i>
+                                        <i style="color: #ffff;"class="fa-brands fa-square-facebook"></i>
+                                    </div>
+                                    <div class="team-member-name">
+                                        <h4>Moazzam Husain</h4>
+                                        <p>Director Operation</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        </div>
-
                     </div>
-
+                    <div class="col-lg-4 col-md-6">
+                        <div class="tean-item">
+                            <div class="team-item-inner text-center">
+                                <div class="team-member position-relative">
+                                    <div style="top: 8%;">
+                                        <div class="hexagon">
+                                            <div class="hexagon-inner" style="overflow: hidden;">
+                                                <img src="/assets/image/team/moniruzzaman.png')}}" alt="" class="" >
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="team-member-details text-uppercase">
+                                    <div class="social-link position-relative">
+                                        <i style="color: #ffff;" class="fa-brands fa-square-facebook"></i>
+                                        <i style="color: #ffff;"class="fa-brands fa-square-facebook"></i>
+                                        <i style="color: #ffff;"class="fa-brands fa-square-facebook"></i>
+                                    </div>
+                                    <div class="team-member-name">
+                                        <h4>Moniruzzaman Monir Mozammel</h4>
+                                        <p>Manager, Operation</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="tean-item">
+                            <div class="team-item-inner text-center">
+                                <div class="team-member position-relative">
+                                    <div style="top: 8%;">
+                                        <div class="hexagon">
+                                            <div class="hexagon-inner" style="overflow: hidden;">
+                                                <img src="/assets/image/team/belel-hossain.png')}}" alt="" class="" >
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="team-member-details text-uppercase">
+                                    <div class="social-link position-relative">
+                                        <i style="color: #ffff;" class="fa-brands fa-square-facebook"></i>
+                                        <i style="color: #ffff;"class="fa-brands fa-square-facebook"></i>
+                                        <i style="color: #ffff;"class="fa-brands fa-square-facebook"></i>
+                                    </div>
+                                    <div class="team-member-name">
+                                        <h4>Belal Rahman</h4>
+                                        <p>Deputy Manager, Operation</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="tean-item">
+                            <div class="team-item-inner text-center">
+                                <div class="team-member position-relative">
+                                    <div style="top: 8%;">
+                                        <div class="hexagon">
+                                            <div class="hexagon-inner" style="overflow: hidden;">
+                                                <img src="/assets/image/team/nazmul-hoque.png')}}" alt="" class="" >
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="team-member-details text-uppercase">
+                                    <div class="social-link position-relative">
+                                        <i style="color: #ffff;" class="fa-brands fa-square-facebook"></i>
+                                        <i style="color: #ffff;"class="fa-brands fa-square-facebook"></i>
+                                        <i style="color: #ffff;"class="fa-brands fa-square-facebook"></i>
+                                    </div>
+                                    <div class="team-member-name">
+                                        <h4>Md. Nazmul Hoque</h4>
+                                        <p>Asst. Manager, Accounts & Admin</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="tean-item">
+                            <div class="team-item-inner text-center">
+                                <div class="team-member position-relative">
+                                    <div style="top: 8%;">
+                                        <div class="hexagon">
+                                            <div class="hexagon-inner" style="overflow: hidden;">
+                                                <img src="/assets/image/team/monir-anand.png')}}" alt="" class="" >
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="team-member-details text-uppercase">
+                                    <div class="social-link position-relative">
+                                        <i style="color: #ffff;" class="fa-brands fa-square-facebook"></i>
+                                        <i style="color: #ffff;"class="fa-brands fa-square-facebook"></i>
+                                        <i style="color: #ffff;"class="fa-brands fa-square-facebook"></i>
+                                    </div>
+                                    <div class="team-member-name">
+                                        <h4>Monir Hossain Anand</h4>
+                                        <p>PS to CEO, Asst. Manager Marketing</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="tean-item">
+                            <div class="team-item-inner text-center">
+                                <div class="team-member position-relative">
+                                    <div style="top: 8%;">
+                                        <div class="hexagon">
+                                            <div class="hexagon-inner" style="overflow: hidden;">
+                                                <img src="/assets/image/team/jahangir-alam.png')}}" alt="" class="" >
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="team-member-details text-uppercase">
+                                    <div class="social-link position-relative">
+                                        <i style="color: #ffff;" class="fa-brands fa-square-facebook"></i>
+                                        <i style="color: #ffff;"class="fa-brands fa-square-facebook"></i>
+                                        <i style="color: #ffff;"class="fa-brands fa-square-facebook"></i>
+                                    </div>
+                                    <div class="team-member-name">
+                                        <h4>Md. Jahangir Alam</h4>
+                                        <p>AGM, Business Development</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                {{-- end counter --}}
-            @elseif($sec->section_design_type_id==9 && count($clients))
-                {{-- valueable client --}}
-                <input type="hidden" id="NoOfClient" value="{{$sec->no_of_slide_col}}">
-                <div class="client-area pt-100 pb-70">
-                    <div class="container">
-                        @if ($sec->section_name_is_show == 1)
-                        <div class="section-title">
-                            <h2>{{ $sec->section_name }}</h2>
-                        </div>
-                        @endif
-                        <section class="customer-logos slider">
-                            @foreach ($clients as $client)
-                                <div class="slide"><img src="{{ $client->img_paths['original'] }}" alt="{{ $client->title}}"></div>
-                            @endforeach
-                        </section>
-                    </div>
-                </div>
-            @endif
-
-        @endforeach
-    @endif
-
-
-
+            </div>
+        </div>
+    </div>
+<!-- Section Ten End -->
 
 @endsection
 
-
-
 @section('footer')
 
-<script>
-//     $('#videoeModal').on('click', '.close', function(){
-
-//     $('#videoeModal').find('iframe').attr('src', '');
-//     });
-
-
-//     // stop playing the youtube video when I close the modal
-// $('#myModal').on('hide.bs.modal', function (e) {
-//     // a poor man's stop video
-//     $('#videoeModal').find('iframe').attr('src','');
-// })
-</script>
 
 <script>
 
