@@ -66,7 +66,7 @@
                         <img src="{{ asset('front/images/section/1st-tm-bd.png') }}" class="tm-img animate-1" alt="1st Trademark™ Registered® Lift Brand in Bangladesh">
                         </div>
                         <div class="section-one-inner-item">
-                        <img src="{{ asset('front/images/section/1st-tm-china.png') }}" class="tm-img animate-2" alt="1st Trademark™ Registered® Bangladeshi Lift Brand in China" >
+                        <img src="{{ asset('front/images/section/1st-tm-china.png') }}" class="tm-img animate-1" alt="1st Trademark™ Registered® Bangladeshi Lift Brand in China" >
                         </div>
                     </div>
                 </div>
@@ -116,7 +116,7 @@
         <div class="container-fluid">
             <div class="container">
                 <div class="row section-three-mission">
-                    <div class="col-lg-4 col-md-4 title">
+                    <div class="col-lg-4 col-md-4 title animate-1">
                         <div class="section-three-title">
                             <h2>Mission</h2>
                         </div>
@@ -144,7 +144,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-4 title">
+                    <div class="col-lg-4 col-md-4 title animate-2">
                         <div class="section-three-title">
                             <h2>Vision</h2>
                         </div>
@@ -622,7 +622,7 @@
                                     <div style="top: 8%;">
                                         <div class="hexagon">
                                             <div class="hexagon-inner" style="overflow: hidden;">
-                                                <img src="/assets/image/team/ceo.png')}}" alt="" class="" >
+                                                <img src="{{ asset('/front/assets/img/team/ceo.png')}}" alt="" class="" >
                                             </div>
                                         </div>
                                     </div>
@@ -648,7 +648,7 @@
                                     <div style="top: 8%;">
                                         <div class="hexagon">
                                             <div class="hexagon-inner" style="overflow: hidden;">
-                                                <img src="/assets/image/team/director-operation.png')}}" alt="" class="" >
+                                                <img src="{{ asset('/front/assets/img/team/director-operation.png')}}" alt="" class="" >
                                             </div>
                                         </div>
                                     </div>
@@ -674,7 +674,7 @@
                                     <div style="top: 8%;">
                                         <div class="hexagon">
                                             <div class="hexagon-inner" style="overflow: hidden;">
-                                                <img src="/assets/image/team/moniruzzaman.png')}}" alt="" class="" >
+                                                <img src="{{ asset('/front/assets/img/team/moniruzzaman.png')}}" alt="" class="" >
                                             </div>
                                         </div>
                                     </div>
@@ -700,7 +700,7 @@
                                     <div style="top: 8%;">
                                         <div class="hexagon">
                                             <div class="hexagon-inner" style="overflow: hidden;">
-                                                <img src="/assets/image/team/belel-hossain.png')}}" alt="" class="" >
+                                                <img src="{{  asset('/front/assets/img/team/belel-hossain.png') }}" alt="" class="" >
                                             </div>
                                         </div>
                                     </div>
@@ -726,7 +726,7 @@
                                     <div style="top: 8%;">
                                         <div class="hexagon">
                                             <div class="hexagon-inner" style="overflow: hidden;">
-                                                <img src="/assets/image/team/nazmul-hoque.png')}}" alt="" class="" >
+                                                <img src="{{ asset('/front/assets/img/team/nazmul-hoque.png')}}" alt="" class="" >
                                             </div>
                                         </div>
                                     </div>
@@ -752,7 +752,7 @@
                                     <div style="top: 8%;">
                                         <div class="hexagon">
                                             <div class="hexagon-inner" style="overflow: hidden;">
-                                                <img src="/assets/image/team/monir-anand.png')}}" alt="" class="" >
+                                                <img src="{{ asset('/front/assets/img/team/monir-anand.png')}}" alt="" class="" >
                                             </div>
                                         </div>
                                     </div>
@@ -778,7 +778,7 @@
                                     <div style="top: 8%;">
                                         <div class="hexagon">
                                             <div class="hexagon-inner" style="overflow: hidden;">
-                                                <img src="/assets/image/team/jahangir-alam.png')}}" alt="" class="" >
+                                                <img src="{{ asset('/front/assets/img/team/jahangir-alam.png')}}" alt="" class="" >
                                             </div>
                                         </div>
                                     </div>

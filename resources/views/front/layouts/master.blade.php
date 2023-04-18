@@ -21,12 +21,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
     <!-- Title  -->
     <title> {{ config('app.name') }} | {{$settings_g['slogan'] ?? ''}}</title>
-     <!-- Bootstrap CSS -->
+     {{-- <!-- Bootstrap CSS -->
      <link rel="stylesheet" href="{{asset('/front/assets/css/bootstrap.min.css') }}">
      <!-- Flaticon CSS -->
      <link rel="stylesheet" href="{{asset('/front/assets/css/flaticon.css')}}">
      <!-- Boxicons CSS -->
-     <link rel="stylesheet" href="{{asset('/front/assets/css/boxicons.min.css')}}">
+     <link rel="stylesheet" href="{{asset('/front/assets/css/boxicons.min.css')}}"> --}}
      <!-- Font Awesome CSS -->
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
      <!-- Owl Carousel Min CSS -->
@@ -43,6 +43,17 @@
      <!-- Style CSS -->
      <link rel="stylesheet" href="{{asset('/front/assets/css/style.css')}}">
      <link rel="stylesheet" href="{{asset('/front/assets/css/custom.css')}}">
+
+     <!-- Animation CSS  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+     <!-- Bootstrap CSS v5.2.1 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+
+<!-- Font-Awesome 6 -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
      <!-- Responsive CSS -->
      <link rel="stylesheet" href="{{asset('/front/assets/css/responsive.css') }}">
@@ -84,35 +95,35 @@
                                 @if(Info::Social($socials, 'facebook'))
                                 <li>
                                     <a href="{{Info::Social($socials,  'facebook')}}" target="_blank">
-                                        <i class="bx bxl-facebook"></i>
+                                        <i class="fa-brands fa-square-facebook"></i>
                                     </a>
                                 </li>
                                 @endif
                                 @if(Info::Social($socials, 'linkedin'))
                                 <li>
                                     <a href="{{Info::Social($socials,  'linkedin')}}" target="_blank">
-                                        <i class="bx bxl-linkedin"></i>
+                                        <i class="fa-brands fa-square-linkedin"></i>
                                     </a>
                                 </li>
                                 @endif
                                 @if(Info::Social($socials,  'twitter'))
                                 <li>
                                     <a href="{{Info::Social($socials,  'twitter')}}" target="_blank">
-                                        <i class="bx bxl-twitter"></i>
+                                        <i class="fa-brands fa-square-twitter"></i>
                                     </a>
                                 </li>
                                 @endif
                                 @if(Info::Social($socials, 'instagram'))
                                 <li>
                                     <a href="{{Info::Social($socials,  'instagram')}}" target="_blank">
-                                        <i class="bx bxl-instagram"></i>
+                                        <i class="fa-brands fa-square-instagram"></i>>
                                     </a>
                                 </li>
                                 @endif
                                 @if(Info::Social($socials, 'youtube'))
                                 <li>
                                     <a href="{{Info::Social($socials,  'youtube')}}" target="_blank">
-                                        <i class="bx bxl-youtube"></i>
+                                        <i class="fa-brands fa-square-youtube"></i>
                                     </a>
                                 </li>
                                 @endif
@@ -149,7 +160,7 @@
                         @isset($main_menu_left->SingleMenuItems)
                             @foreach ($main_menu_left->SingleMenuItems as $item)
                                 <li class="nav-item">
-                                    <a href="{{$item->menu_info['url']}}" class="nav-link {{$item->menu_info['url'] == url()->current() ? 'active' : ''}}"> {{ $item->menu_info['text'] }} @if(count($item->Items))<i class="bx bx-chevron-down"></i>@endif</a>
+                                    <a href="{{$item->menu_info['url']}}" class="nav-link {{$item->menu_info['url'] == url()->current() ? 'active' : ''}}"> {{ $item->menu_info['text'] }} @if(count($item->Items))<i class="fa-solid fa-chevron-down"></i>@endif</a>
 
                                     @if(count($item->Items))
                                     <ul class="dropdown-menu">
@@ -171,51 +182,6 @@
         </div>
     </div>
 
-    <div class="side-nav-responsive nav-two-responsive">
-        <div class="container">
-            <div class="dot-menu">
-                <div class="circle-inner">
-                    <div class="circle circle-one"></div>
-                    <div class="circle circle-two"></div>
-                    <div class="circle circle-three"></div>
-                </div>
-            </div>
-
-            <div class="container">
-                <div class="side-nav-inner">
-                    <div class="side-nav justify-content-center  align-items-center">
-                        <div class="side-item">
-                            <div class="responsive-search-box">
-                                <form class="search-form">
-                                    <input class="form-control" name="search" placeholder="Search Your Result" type="text">
-                                    <button class="search-btn" type="submit">
-                                        <i class="bx bx-search"></i>
-                                    </button>
-                                </form>
-                            </div>
-                        </div>
-
-                        <div class="side-item">
-                            <div class="responsive-menu-icon">
-                                <a href="#" class="burger-menu menu-icon-bg">
-                                    <i class='flaticon-menu'></i>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="side-item">
-                            <div class="responsive-menu-contact">
-                                <a href="tel:+180012356789" class="menu-contact-btn">
-                                    <i class="flaticon-telephone"></i>
-                                    +1 800 123 56 789
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
 <!-- End Navbar Area -->
         <!-- End Navbar Area -->
@@ -304,8 +270,8 @@
                 </div>
         </div>
         <!-- Copy-right Area two End -->
-
-
+    <!-- Slick JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
 
     <!-- Jquery Min JS -->
     <script src="{{ asset('/front/assets/js/jquery.min.js') }}"></script>
@@ -313,7 +279,7 @@
     <script src="{{asset('/front/assets/js/bootstrap.bundle.min.js')}}"></script>
     <!-- Owl Carousel Min JS -->
     <script src="{{asset('/front/assets/js/owl.carousel.min.js')}}"></script>
-    <script src="{{asset('/front/assets/js/owl.min.js')}}"></script>
+
     <!-- Magnific Popup JS -->
     <script src="{{asset('/front/assets/js/popper.min.js')}}"></script>
     <script src="{{asset('/front/assets/js/jquery.magnific-popup.min.js')}}"></script>
@@ -333,16 +299,76 @@
     <script src="{{asset('/front/assets/js/custom.js')}}"></script>
 
 
-
-
-
-
-
-
-
-    <script src="{{ asset('front/assets/js/jquery-2.2.0.min.js') }}" type="text/javascript"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+
+    <script>
+        $(".team-list").slick({
+        autoplay: true,
+        autoplaySpeed: 1500,
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        arrows: false,
+        responsive:[
+        {
+            breakpoint: 1200,
+            settings: {
+            slidesToShow: 3,
+            },
+            breakpoint: 520,
+            settings: {
+            slidesToShow: 1,
+            }
+        },
+        ]
+        });
+
+
+   //   animate css start
+    const animateOnScroll = () => {
+    const animate1 = document.querySelectorAll(".animate-1");
+    const animate2 = document.querySelectorAll(".animate-2");
+    const animate3 = document.querySelectorAll(".animate-3");
+
+    animate1.forEach((element) => {
+        const position = element.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+
+        if (position < windowHeight) {
+        element.classList.add("animate__animated", "animate__bounceInLeft");
+        } else {
+        element.classList.remove("animate__animated", "animate__bounceInLeft");
+        }
+    });
+
+    animate2.forEach((element) => {
+        const position = element.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+
+        if (position < windowHeight) {
+        element.classList.add("animate__animated", "animate__bounceInRight");
+        } else {
+        element.classList.remove("animate__animated", "animate__bounceInRight");
+        }
+    });
+
+    animate3.forEach((element) => {
+        const position = element.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+
+        if (position < windowHeight) {
+        element.classList.add("animate__animated", "rotateIn");
+        } else {
+        element.classList.remove("animate__animated", "rotateIn");
+        }
+    });
+    };
+
+    window.addEventListener("scroll", animateOnScroll);
+//   animate css end
+    </script>
 
     @yield('footer')
 </body>

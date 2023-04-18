@@ -2,13 +2,13 @@
     'use strict';
 
      // Mean Menu JS
-     jQuery('.mean-menu').meanmenu({ 
+     jQuery('.mean-menu').meanmenu({
         meanScreenWidth: "991"
     });
 
     // Navbar Area
     $(window).on('scroll', function() {
-        if ($(this).scrollTop() >150){  
+        if ($(this).scrollTop() >150){
             $('.navbar-area').addClass("sticky-nav");
         }
         else{
@@ -28,7 +28,7 @@
 	$(".side-nav-responsive .dot-menu").on("click", function(){
 		$(".side-nav-responsive .container .container").toggleClass("active");
     });
-    
+
     // Slider Area
     $('.slider-area').owlCarousel({
         loop: true,
@@ -78,7 +78,7 @@
         ],
     })
 
-    // Testimonials Slider 
+    // Testimonials Slider
     $('.testimonials-slider').owlCarousel({
         loop: true,
         margin: 30,
@@ -93,7 +93,7 @@
         ],
     })
 
-    // Service Slider 
+    // Service Slider
     $('.service-slider').owlCarousel({
         loop: true,
         margin: 30,
@@ -133,7 +133,7 @@
     // Tabs Single Page
     $('.tab ul.tabs').addClass('active').find('> li:eq(0)').addClass('current');
     $('.tab ul.tabs li a').on('click', function (g) {
-        var tab = $(this).closest('.tab'), 
+        var tab = $(this).closest('.tab'),
         index = $(this).closest('li').index();
         tab.find('ul.tabs > li').removeClass('current');
         $(this).closest('li').addClass('current');
@@ -151,7 +151,7 @@
 		// Hide The Other Panels
 		$('.accordion-content').not($(this).next()).slideUp('fast');
 		// Removes Active Class From Other Titles
-		$('.accordion-title').not($(this)).removeClass('active');		
+		$('.accordion-title').not($(this)).removeClass('active');
     });
 
     // Input Plus & Minus Number JS
@@ -162,7 +162,7 @@
         btnDown = spinner.find('.minus-btn'),
         min = input.attr('min'),
         max = input.attr('max');
-        
+
         btnUp.on('click', function() {
             var oldValue = parseFloat(input.val());
             if (oldValue >= max) {
@@ -184,7 +184,7 @@
             spinner.find("input").val(newVal);
             spinner.find("input").trigger("change");
         });
-    }); 
+    });
 
     // Input Plus & Minus Number JS
     $('.input-counter').each(function() {
@@ -194,7 +194,7 @@
         btnDown = spinner.find('.minus-btn'),
         min = input.attr('min'),
         max = input.attr('max');
-        
+
         btnUp.on('click', function() {
             var oldValue = parseFloat(input.val());
             if (oldValue >= max) {
@@ -216,19 +216,19 @@
             spinner.find("input").val(newVal);
             spinner.find("input").trigger("change");
         });
-    }); 
+    });
 
     // Nice Select JS
     $('select').niceSelect();
 
     // Count Time JS
 	function makeTimer() {
-		var endTime = new Date("september 30, 2022 17:00:00 PDT");			
+		var endTime = new Date("september 30, 2022 17:00:00 PDT");
 		var endTime = (Date.parse(endTime)) / 1000;
 		var now = new Date();
 		var now = (Date.parse(now) / 1000);
 		var timeLeft = endTime - now;
-		var days = Math.floor(timeLeft / 86400); 
+		var days = Math.floor(timeLeft / 86400);
 		var hours = Math.floor((timeLeft - (days * 86400)) / 3600);
 		var minutes = Math.floor((timeLeft - (days * 86400) - (hours * 3600 )) / 60);
 		var seconds = Math.floor((timeLeft - (days * 86400) - (hours * 3600) - (minutes * 60)));
@@ -241,7 +241,7 @@
 		$("#seconds").html(seconds + "<span>Seconds</span>");
 	}
     setInterval(function() { makeTimer(); }, 300);
-    
+
      // Subscribe form
      $(".newsletter-form").validator().on("submit", function (event) {
         if (event.isDefaultPrevented()) {
@@ -282,22 +282,16 @@
         }
         $("#validator-newsletter").removeClass().addClass(msgClasses).text(msg);
     }
-        
-    // AJAX MailChimp
-    $(".newsletter-form").ajaxChimp({
-        url: "https://envyTheme.us20.list-manage.com/subscribe/post?u=60e1ffe2e8a68ce1204cd39a5&amp;id=42d6d188d9", // Your url MailChimp
-        callback: callbackFunction
-    });
 
     // Back To Top Js
-    $('body').append('<div id="toTop" class="top-btn"><i class="bx bx-chevrons-up"></i></div>');
+    $('body').append('<div id="toTop" class="top-btn"><i class="fa-solid fa-chevron-up"></i></div>');
     $(window).on('scroll',function () {
         if ($(this).scrollTop() != 0) {
             $('#toTop').fadeIn();
         } else {
             $('#toTop').fadeOut();
         }
-    }); 
+    });
     $('#toTop').on('click',function(){
         $("html, body").animate({ scrollTop: 0 }, 600);
         return false;
@@ -308,37 +302,7 @@
         jQuery(".preloader").fadeOut(500);
     });
 
-    // // Buy Now Btn
-    // $('body').append("<a href='https://themeforest.net/checkout/from_item/28399222?license=regular&support=bundle_6month&_ga=2.103712896.1220166448.1645934757-918236941.1644836235' target='_blank' class='buy-now-btn'><img src='assets/img/envato.png' alt='envato'/>Buy Now</a>");
-
-    // Switch Btn
-    $('body').append("<div class='switch-box'><label id='switch' class='switch'><input type='checkbox' onchange='toggleTheme()' id='slider'><span class='slider round'></span></label></div>");
-
 
 })(jQuery);
 
-// function to set a given theme/color-scheme
-function setTheme(themeName) {
-    localStorage.setItem('theme', themeName);
-    document.documentElement.className = themeName;
-}
 
-// function to toggle between light and dark theme
-function toggleTheme() {
-    if (localStorage.getItem('theme') === 'theme-dark') {
-        setTheme('theme-light');
-    } else {
-        setTheme('theme-dark');
-    }
-}
-
-// Immediately invoked function to set the theme on initial load
-(function () {
-    if (localStorage.getItem('theme') === 'theme-dark') {
-        setTheme('theme-dark');
-        document.getElementById('slider').checked = false;
-    } else {
-        setTheme('theme-light');
-      document.getElementById('slider').checked = true;
-    }
-})();
