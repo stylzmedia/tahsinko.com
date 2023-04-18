@@ -803,6 +803,45 @@
     </div>
 <!-- Section Ten End -->
 
+{{-- News  --}}
+<div class="blog-area pt-100 pb-70">
+    <div class="container">
+        <div class="section-title-two text-center">
+            <span class="sp-before">Recent Articles</span>
+            <div class="section-title">
+                <h2>{{ $sec->section_name }}</h2>
+            </div>
+        </div>
+        <div class="row pt-45">
+            @foreach ($newes as $news)
+            <div class="
+                    @if($sec->col == 2)
+                        col-lg-6 col-md-6 col-sm-12
+                    @elseif($sec->col == 3)
+                        col-lg-4 col-md-6 col-sm-12
+                    @elseif($sec->col == 4)
+                        col-lg-3 col-md-6 col-sm-12
+                    @endif
+                ">
+                <div class="blog-card blog-card-pb">
+                    <a href="{{ route('news.single', $news->slug) }}">
+                        <img src="{{ $news->img_paths['medium'] }}" alt="{{ $news->title }}">
+                    </a>
+                    <div class="content">
+                        <span><a href="#">Lift</a> / {{ \Carbon\Carbon::parse($news->publish_date)->format('d-m-Y')}}</span>
+                        <h3><a href="{{ route('news.single', $news->slug) }}">{{ $news->title }}</a></h3>
+                        <a href="{{ route('news.single', $news->slug) }}" class="learn-btn">
+                            Read more
+                            <i class="flaticon-right-arrow-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            @endforeach
+        </div>
+    </div>
+</div>
+{{-- News End --}}
 @endsection
 
 @section('footer')
