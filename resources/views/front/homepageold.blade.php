@@ -543,7 +543,7 @@
                                     @endif
                                 ">
                                     <div class="project-box">
-                                        <img class="image-animantion show-on-scroll" src="{{ $project->img_paths['small'] }}"/>
+                                        <img class="image-animation show-on-scroll" src="{{ $project->img_paths['small'] }}"/>
                                         <div class="project-title-bar">{{ $project->title }}</div>
                                         <div class="project-content">
 
