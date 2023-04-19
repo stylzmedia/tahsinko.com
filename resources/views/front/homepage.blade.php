@@ -601,212 +601,63 @@
 <!-- Section Nine End -->
 
 <!-- Section Ten Start -->
-     <div class="section9">
-        <div class="team-bg-item position-absolute">
-            <img src="{{asset('front/images/section/team-bg.png')}}" alt="" class="team-bg img-fluid">
-        </div>
-        <div class="container-fluid">
-            <div class="team-section my-5">
-                <div class="row justify-content-center">
-                    <div class="col-xl-4 col-lg-5 col-md-6 col-11">
-                        <div class="service-title mb-5">
-                            <h1>Our TEAM</h1>
-                        </div>
-                    </div>
-                </div>
-                <div class="row team-list justify-content-center">
-                    <div class="col-lg-4 col-md-6">
-                        <div class="tean-item">
-                            <div class="team-item-inner text-center">
-                                <div class="team-member position-relative">
-                                    <div style="top: 8%;">
-                                        <div class="hexagon">
-                                            <div class="hexagon-inner" style="overflow: hidden;">
-                                                <img src="{{ asset('/front/assets/img/team/ceo.png')}}" alt="" class="" >
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="team-member-details text-uppercase">
-                                    <div class="social-link position-relative">
-                                        <i style="color: #ffff;" class="fa-brands fa-square-facebook"></i>
-                                        <i style="color: #ffff;"class="fa-brands fa-square-facebook"></i>
-                                        <i style="color: #ffff;"class="fa-brands fa-square-facebook"></i>
-                                    </div>
-                                    <div class="team-member-name">
-                                        <h4>Tarequl Islam Shopon</h4>
-                                        <p>CEO</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="tean-item">
-                            <div class="team-item-inner text-center">
-                                <div class="team-member position-relative">
-                                    <div style="top: 8%;">
-                                        <div class="hexagon">
-                                            <div class="hexagon-inner" style="overflow: hidden;">
-                                                <img src="{{ asset('/front/assets/img/team/director-operation.png')}}" alt="" class="" >
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="team-member-details text-uppercase">
-                                    <div class="social-link position-relative">
-                                        <i style="color: #ffff;" class="fa-brands fa-square-facebook"></i>
-                                        <i style="color: #ffff;"class="fa-brands fa-square-facebook"></i>
-                                        <i style="color: #ffff;"class="fa-brands fa-square-facebook"></i>
-                                    </div>
-                                    <div class="team-member-name">
-                                        <h4>Moazzam Husain</h4>
-                                        <p>Director Operation</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="tean-item">
-                            <div class="team-item-inner text-center">
-                                <div class="team-member position-relative">
-                                    <div style="top: 8%;">
-                                        <div class="hexagon">
-                                            <div class="hexagon-inner" style="overflow: hidden;">
-                                                <img src="{{ asset('/front/assets/img/team/moniruzzaman.png')}}" alt="" class="" >
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="team-member-details text-uppercase">
-                                    <div class="social-link position-relative">
-                                        <i style="color: #ffff;" class="fa-brands fa-square-facebook"></i>
-                                        <i style="color: #ffff;"class="fa-brands fa-square-facebook"></i>
-                                        <i style="color: #ffff;"class="fa-brands fa-square-facebook"></i>
-                                    </div>
-                                    <div class="team-member-name">
-                                        <h4>Moniruzzaman Monir Mozammel</h4>
-                                        <p>Manager, Operation</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="tean-item">
-                            <div class="team-item-inner text-center">
-                                <div class="team-member position-relative">
-                                    <div style="top: 8%;">
-                                        <div class="hexagon">
-                                            <div class="hexagon-inner" style="overflow: hidden;">
-                                                <img src="{{  asset('/front/assets/img/team/belel-hossain.png') }}" alt="" class="" >
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="team-member-details text-uppercase">
-                                    <div class="social-link position-relative">
-                                        <i style="color: #ffff;" class="fa-brands fa-square-facebook"></i>
-                                        <i style="color: #ffff;"class="fa-brands fa-square-facebook"></i>
-                                        <i style="color: #ffff;"class="fa-brands fa-square-facebook"></i>
-                                    </div>
-                                    <div class="team-member-name">
-                                        <h4>Belal Rahman</h4>
-                                        <p>Deputy Manager, Operation</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="tean-item">
-                            <div class="team-item-inner text-center">
-                                <div class="team-member position-relative">
-                                    <div style="top: 8%;">
-                                        <div class="hexagon">
-                                            <div class="hexagon-inner" style="overflow: hidden;">
-                                                <img src="{{ asset('/front/assets/img/team/nazmul-hoque.png')}}" alt="" class="" >
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="team-member-details text-uppercase">
-                                    <div class="social-link position-relative">
-                                        <i style="color: #ffff;" class="fa-brands fa-square-facebook"></i>
-                                        <i style="color: #ffff;"class="fa-brands fa-square-facebook"></i>
-                                        <i style="color: #ffff;"class="fa-brands fa-square-facebook"></i>
-                                    </div>
-                                    <div class="team-member-name">
-                                        <h4>Md. Nazmul Hoque</h4>
-                                        <p>Asst. Manager, Accounts & Admin</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="tean-item">
-                            <div class="team-item-inner text-center">
-                                <div class="team-member position-relative">
-                                    <div style="top: 8%;">
-                                        <div class="hexagon">
-                                            <div class="hexagon-inner" style="overflow: hidden;">
-                                                <img src="{{ asset('/front/assets/img/team/monir-anand.png')}}" alt="" class="" >
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="team-member-details text-uppercase">
-                                    <div class="social-link position-relative">
-                                        <i style="color: #ffff;" class="fa-brands fa-square-facebook"></i>
-                                        <i style="color: #ffff;"class="fa-brands fa-square-facebook"></i>
-                                        <i style="color: #ffff;"class="fa-brands fa-square-facebook"></i>
-                                    </div>
-                                    <div class="team-member-name">
-                                        <h4>Monir Hossain Anand</h4>
-                                        <p>PS to CEO, Asst. Manager Marketing</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="tean-item">
-                            <div class="team-item-inner text-center">
-                                <div class="team-member position-relative">
-                                    <div style="top: 8%;">
-                                        <div class="hexagon">
-                                            <div class="hexagon-inner" style="overflow: hidden;">
-                                                <img src="{{ asset('/front/assets/img/team/jahangir-alam.png')}}" alt="" class="" >
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="team-member-details text-uppercase">
-                                    <div class="social-link position-relative">
-                                        <i style="color: #ffff;" class="fa-brands fa-square-facebook"></i>
-                                        <i style="color: #ffff;"class="fa-brands fa-square-facebook"></i>
-                                        <i style="color: #ffff;"class="fa-brands fa-square-facebook"></i>
-                                    </div>
-                                    <div class="team-member-name">
-                                        <h4>Md. Jahangir Alam</h4>
-                                        <p>AGM, Business Development</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+
 <!-- Section Ten End -->
 
 
 @if(count($home_sections))
-        @foreach($home_sections as $key=>$sec)
-            @if($sec->section_design_type_id==9 && count($clients))
+            @foreach($home_sections as $key=>$sec)
+            @if($sec->section_design_type_id==7 && count($teams))
+            <input type="hidden" id="NoOfTeamMember" value="{{$sec->no_of_slide_col}}">
+            <div class="section9">
+                <div class="team-bg-item position-absolute">
+                    <img src="{{asset('front/images/section/team-bg.png')}}" alt="" class="team-bg img-fluid">
+                </div>
+                <div class="container-fluid">
+                    <div class="team-section my-5">
+                        <div class="row justify-content-center">
+                            <div class="col-xl-4 col-lg-5 col-md-6 col-11">
+                                <div class="service-title mb-5">
+                                    <h1>Our TEAM</h1>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row team-list justify-content-center">
+                            @foreach($teams as $team)
+                            <div class="col-lg-4 col-md-6">
+                                <div class="tean-item">
+                                    <div class="team-item-inner text-center">
+                                        <div class="team-member position-relative">
+                                            <div style="top: 8%;">
+                                                <div class="hexagon">
+                                                    <div class="hexagon-inner" style="overflow: hidden;">
+                                                        <img src="{{ $team->img_paths['original'] }}" alt="" class="" >
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="team-member-details text-uppercase">
+                                            <div class="social-link position-relative">
+                                                <i style="color: #ffff;" class="fa-brands fa-square-facebook"></i>
+                                                <i style="color: #ffff;"class="fa-brands fa-square-facebook"></i>
+                                                <i style="color: #ffff;"class="fa-brands fa-square-facebook"></i>
+                                            </div>
+                                            <div class="team-member-name">
+                                                <h4>{{ $team->name }}</h4>
+                                                <p>{{ $team->designation }}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            @elseif($sec->section_design_type_id==9 && count($clients))
             {{-- valueable client --}}
             <input type="hidden" id="NoOfClient" value="{{$sec->no_of_slide_col}}">
             <div class="client-area pt-100 pb-70">
