@@ -4370,11 +4370,6 @@ Blog Area
   display: block;
 }
 
-.blog-card a img {
-  max-width: 100%;
-  width: 100%;
-}
-
 .blog-card .content {
   padding: 30px;
 }
@@ -4408,6 +4403,7 @@ Blog Area
 .blog-card .content h3 {
   margin-top: 10px;
   margin-bottom: 10px;
+  font-size: 1.5rem;
 }
 
 .blog-card .content h3 a {
@@ -4461,6 +4457,11 @@ Blog Area
   background-color: #ffffff;
   -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
           box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.news-image {
+    height: 160px;
+    overflow: hidden;
 }
 
 .blog-title ul {
@@ -7164,6 +7165,7 @@ Footer Area
 .footer-widget .footer-list li {
   display: block;
   margin-bottom: 5px;
+  color: #ffffff;
 }
 
 .footer-widget .footer-list li:last-child {

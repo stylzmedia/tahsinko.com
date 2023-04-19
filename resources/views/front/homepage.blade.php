@@ -809,39 +809,101 @@
         <div class="section-title-two text-center">
             <span class="sp-before">Recent Articles</span>
             <div class="section-title">
-                <h2>{{ $sec->section_name }}</h2>
+                <h2>Our Latest News</h2>
             </div>
         </div>
         <div class="row pt-45">
-            @foreach ($newes as $news)
-            <div class="
-                    @if($sec->col == 2)
-                        col-lg-6 col-md-6 col-sm-12
-                    @elseif($sec->col == 3)
-                        col-lg-4 col-md-6 col-sm-12
-                    @elseif($sec->col == 4)
-                        col-lg-3 col-md-6 col-sm-12
-                    @endif
-                ">
+            <div class="col-lg-3 col-md-6 col-sm-12">
                 <div class="blog-card blog-card-pb">
-                    <a href="{{ route('news.single', $news->slug) }}">
-                        <img src="{{ $news->img_paths['medium'] }}" alt="{{ $news->title }}">
-                    </a>
+                    <div class="news-image">
+                        <a href="#">
+                            <img src="https://i.postimg.cc/v898qhxc/screenshot-144.png" alt="" class="">
+                        </a>
+                    </div>
                     <div class="content">
-                        <span><a href="#">Lift</a> / {{ \Carbon\Carbon::parse($news->publish_date)->format('d-m-Y')}}</span>
-                        <h3><a href="{{ route('news.single', $news->slug) }}">{{ $news->title }}</a></h3>
-                        <a href="{{ route('news.single', $news->slug) }}" class="learn-btn">
+                        <span>April 4th, 2022</span>
+                        <h3><a href="#">TAHSINKO Limited is one of the best elevator company in Bangladesh</a></h3>
+                        <a href="#" class="learn-btn">
                             Read more
                             <i class="flaticon-right-arrow-1"></i>
                         </a>
                     </div>
                 </div>
             </div>
-            @endforeach
+            <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="blog-card blog-card-pb">
+                    <div class="news-image">
+                        <a href="#">
+                            <img src="https://arraafigroup.com/assets/images/blog/banner/23-best-8-things-you-should-consider-once-buying-a-lift.jpg" alt="" class="">
+                        </a>
+                    </div>
+                    <div class="content">
+                        <span>March 1st, 2022</span>
+                        <h3><a href="#">সঠিক লিফট ক্রয়ের নির্দেশাবলি | Lift maintenance tips</a></h3>
+                        <a href="#" class="learn-btn">
+                            Read more
+                            <i class="flaticon-right-arrow-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="blog-card blog-card-pb">
+                    <div class="news-image">
+                        <a href="#">
+                            <img src="https://i.postimg.cc/pL9nd818/screenshot-145.png" alt="" class="">
+                        </a>
+                    </div>
+                    <div class="content">
+                        <span>April 4th, 2022</span>
+                        <h3><a href="#">Best Hydraulic elevator in Bangladesh</a></h3>
+                        <a href="#" class="learn-btn">
+                            Read more
+                            <i class="flaticon-right-arrow-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="blog-card blog-card-pb">
+                    <div class="news-image">
+                        <a href="#">
+                            <img src="https://i.postimg.cc/tJWpfqrs/screenshot-146.png" alt="" class="">
+                        </a>
+                    </div>
+                    <div class="content">
+                        <span>February 14th, 2022</span>
+                        <h3><a href="#">Best Passenger elevator Manufacturing In Greece</a></h3>
+                        <a href="#" class="learn-btn">
+                            Read more
+                            <i class="flaticon-right-arrow-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 {{-- News End --}}
+{{-- valueable client --}}
+<input type="hidden" id="NoOfClient" value="6">
+<div class="client-area pt-100 pb-70">
+    <div class="container">
+        <div class="section-title">
+            <h2>Our Valuable Clients</h2>
+        </div>
+        <section class="customer-logos slider">
+                <div class="slide"><img src="{{asset('front/assets/img/client-logo/4walls.jpg')}}" alt=""></div>
+                <div class="slide"><img src="{{asset('front/assets/img/client-logo/Abdul Momen.jpg')}}" alt=""></div>
+                <div class="slide"><img src="{{asset('front/assets/img/client-logo/Akij Group.png')}}" alt=""></div>
+                <div class="slide"><img src="{{asset('front/assets/img/client-logo/Amin MOhammad Foundation Logo.jpg')}}" alt=""></div>
+                <div class="slide"><img src="{{asset('front/assets/img/client-logo/Assign.png')}}" alt=""></div>
+                <div class="slide"><img src="{{asset('front/assets/img/client-logo/AWR.jpg')}}" alt=""></div>
+                <div class="slide"><img src="{{asset('front/assets/img/client-logo/brac-logo-big.jpg')}}" alt=""></div>
+        </section>
+    </div>
+</div>
+
 @endsection
 
 @section('footer')
