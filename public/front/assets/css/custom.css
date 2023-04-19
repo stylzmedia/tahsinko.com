@@ -744,6 +744,10 @@ Default btn Style End
 .service-icon img {
     height: 60%;
     margin: auto;
+    transition: transform .7s ease-in-out;
+}
+.service-icon img:hover {
+    transform: rotate(360deg);
 }
 
 .service-item-inner.text-center h2 {
