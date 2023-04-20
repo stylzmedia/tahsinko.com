@@ -76,8 +76,8 @@
                         <img src="{{asset('front/images/section/sec1-group-photo.png')}}" class="group-img" alt="">
                     </div>
                     <div class="js-shape">
-                        <img src="{{asset('front/images/section/sec1-shape-1.png')}}" class="shape-1" alt="shape" >
-                        <img src="{{asset('front/images/section/sec1-shape-2.png')}}" class="shape-2" alt="shape" >
+                        <img src="{{asset('front/images/section/sec1-shape-1.png')}}" class="shape-1 move-1" alt="shape" >
+                        <img src="{{asset('front/images/section/sec1-shape-2.png')}}" class="shape-2 move-1" alt="shape" >
                     </div>
                 </div>
             </div>
@@ -92,10 +92,10 @@
                 <div class="row">
                     <div class="col-lg-4 col-md-4">
                         <img src="{{asset('front/images/section/sec2-bg-left.png')}}" class="sec2-bg-left" alt="">
-                        <img src="{{asset('front/images/section/sec2-ceo.png')}}" alt="" class="tareq">
+                        <img src="{{asset('front/images/section/sec2-ceo.png')}}" alt="" class="tareq move-3">
                     </div>
                     <div class="col-lg-8 col-md-8">
-                        <img src="{{asset('front/images/section/sec2-artwork.png')}}" class="sec2-artwork animate-2" alt="">
+                        <img src="{{asset('front/images/section/sec2-artwork.png')}}" class="sec2-artwork move-1" alt="">
                         <div class="section-content">
                             <div class="section-content-inner">
                                 <p>
@@ -610,7 +610,7 @@
             @if($sec->section_design_type_id==7 && count($teams))
             <input type="hidden" id="NoOfTeamMember" value="{{$sec->no_of_slide_col}}">
             <div class="section9">
-                <div class="team-bg-item position-absolute">
+                <div class="team-bg-item">
                     <img src="{{asset('front/images/section/team-bg.png')}}" alt="" class="team-bg img-fluid">
                 </div>
                 <div class="container-fluid">
@@ -625,7 +625,7 @@
                         <div class="row team-list justify-content-center">
                             @foreach($teams as $team)
                             <div class="col-lg-4 col-md-6">
-                                <div class="tean-item">
+                                <div class="team-item">
                                     <div class="team-item-inner text-center">
                                         <div class="team-member position-relative">
                                             <div style="top: 8%;">
@@ -638,13 +638,24 @@
                                         </div>
                                         <div class="team-member-details text-uppercase">
                                             <div class="social-link position-relative">
-                                                <i style="color: #ffff;" class="fa-brands fa-square-facebook"></i>
-                                                <i style="color: #ffff;"class="fa-brands fa-square-facebook"></i>
-                                                <i style="color: #ffff;"class="fa-brands fa-square-facebook"></i>
+                                                <!-- Facebook -->
+                                                <a class="btn btn-primary" style="background-color: #3b5998;" href="#" role="button"
+                                                ><i class="fab fa-facebook-f"></i
+                                                ></a>
+
+                                                <!-- Twitter -->
+                                                <a class="btn btn-primary" style="background-color: #55acee;" href="#" role="button"
+                                                ><i class="fab fa-twitter"></i
+                                                ></a>
+
+                                                <!-- Instagram -->
+                                                <a class="btn btn-primary" style="background-color: #ac2bac;" href="#" role="button"
+                                                ><i class="fab fa-instagram"></i
+                                                ></a>
                                             </div>
                                             <div class="team-member-name">
-                                                <h4>{{ $team->name }}</h4>
-                                                <p>{{ $team->designation }}</p>
+                                                <h4>{!! $team->name !!}</h4>
+                                                <p>{!! $team->designation!!}</p>
                                             </div>
                                         </div>
                                     </div>
