@@ -305,7 +305,7 @@
 
     <script>
         $(".team-list").slick({
-        autoplay: true,
+        autoplay: false,
         autoplaySpeed: 1500,
         infinite: true,
         slidesToShow: 3,
