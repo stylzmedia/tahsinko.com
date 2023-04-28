@@ -676,6 +676,8 @@ Default btn Style End
     position: absolute;
     left: 18%;
     top: 20%;
+    box-shadow: 0.1rem 0.2em 0.5rem 0.3rem rgba(0,0,0,0.4);
+
 }
 
 .flag-tm-right .tm-cn {
@@ -684,6 +686,7 @@ Default btn Style End
     z-index: 1;
     right: 18%;
     top: 20%;
+    box-shadow: 0.1rem 0.2em 0.5rem 0.3rem rgba(0,0,0,0.4);
 }
 
 
@@ -744,6 +747,10 @@ Default btn Style End
 .service-icon img {
     height: 60%;
     margin: auto;
+    transition: transform .7s ease-in-out;
+}
+.service-icon img:hover {
+    transform: rotate(360deg);
 }
 
 .service-item-inner.text-center h2 {
@@ -1308,7 +1315,6 @@ Portfolio Area
 
 .team-member-details {
     position: relative;
-    top: -66px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -1320,19 +1326,32 @@ Portfolio Area
     font-size: 35px;
 }
 
+.social-link a.btn.btn-primary {
+    border-color: transparent;
+}
+
+
 .team-member-name {
     background: red;
     width: 327px;
     padding: 5px;
     border-radius: 15px;
-    line-height: 1px;
     color: #ffff;
 }
 
+.team-member-name p {
+    margin-top: -12px;
+    margin-bottom: 2px;
+}
+
+.team-member-name h4 {
+    color: #ffffff;
+}
 
 .section9 {
     /* height: 600px; */
     overflow: hidden;
+    position: relative;
 }
 
 .section9 .service-title {

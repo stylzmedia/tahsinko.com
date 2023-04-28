@@ -44,16 +44,22 @@
      <link rel="stylesheet" href="{{asset('/front/assets/css/style.css')}}">
      <link rel="stylesheet" href="{{asset('/front/assets/css/custom.css')}}">
 
+
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+
      <!-- Animation CSS  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
      <!-- Bootstrap CSS v5.2.1 -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
-  integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 
 
-<!-- Font-Awesome 6 -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Font-Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
      <!-- Responsive CSS -->
      <link rel="stylesheet" href="{{asset('/front/assets/css/responsive.css') }}">
@@ -62,6 +68,7 @@
 
 
     @yield('head')
+
 </head>
 
 <body>
@@ -272,6 +279,7 @@
         <!-- Copy-right Area two End -->
     <!-- Slick JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
+    {{-- <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script> --}}
 
     <!-- Jquery Min JS -->
     <script src="{{ asset('/front/assets/js/jquery.min.js') }}"></script>
@@ -304,26 +312,7 @@
 
 
     <script>
-        $(".team-list").slick({
-        autoplay: true,
-        autoplaySpeed: 1500,
-        infinite: true,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        arrows: false,
-        responsive:[
-        {
-            breakpoint: 1200,
-            settings: {
-            slidesToShow: 3,
-            },
-            breakpoint: 520,
-            settings: {
-            slidesToShow: 1,
-            }
-        },
-        ]
-        });
+
 
 
    //   animate css start

@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Front\PageController;
-use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\TestController;
 use Illuminate\Support\Facades\Route;
