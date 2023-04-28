@@ -251,14 +251,37 @@
                             </div>
                         </li>
                         @endif
+                        @if(auth()->user()->permission('portfolio','list'))
+                        <li class="nav-item">
+                            <a class="nav-link menu-link {{(Route::is('back.portfolio.index') || Route::is('back.portfolio.create') || Route::is('back.portfolio.edit')) ? 'active' : 'collapsed'}}" href="#sidebarPortfolio" data-bs-toggle="collapse" role="button"
+                                aria-expanded="{{(Route::is('back.portfolio.index') || Route::is('back.portfolio.create') || Route::is('back.portfolio.edit')) ? 'true' : 'false'}}" aria-controls="sidebarPortfolio">
+                                <i class="ri-artboard-2-line"></i> <span data-key="t-apps">Project</span>
+                            </a>
+                            <div class="collapse menu-dropdown {{(Route::is('back.portfolio.index') || Route::is('back.portfolio.create') || Route::is('back.portfolio.edit')) ? 'show' : ''}}" id="sidebarPortfolio">
+                                <ul class="nav nav-sm flex-column">
+                                    @if(auth()->user()->permission('portfolio','list'))
+                                    <li class="nav-item">
+                                        <a href="{{route('back.portfolio.index')}}" class="nav-link {{Route::is('back.portfolio.index') ? 'active' : ''}}" data-key="t-mailbox"> All </a>
+                                    </li>
+                                    @endif
+                                    @if(auth()->user()->permission('portfolio','add'))
+
+                                    <li class="nav-item">
+                                        <a href="{{route('back.portfolio.create')}}" class="nav-link {{Route::is('back.portfolio.create') ? 'active' : ''}}" data-key="t-mailbox"> Create </a>
+                                    </li>
+                                    @endif
+                                </ul>
+                            </div>
+                        </li>
+                        @endif
                         @if(auth()->user()->permission('product','list'))
                         {{-- @isset(auth()->user()->role->permission['permission']['product']['list']) --}}
                         <li class="nav-item">
-                            <a class="nav-link menu-link {{(Route::is('back.product.index') || Route::is('back.product.create') || Route::is('back.product.edit') || Route::is('back.product.category') || Route::is('back.portfolio.index') || Route::is('back.portfolio.create') || Route::is('back.portfolio.edit')) ? 'active' : 'collapsed'}}" href="#sidebarPeople" data-bs-toggle="collapse" role="button"
-                                aria-expanded="{{(Route::is('back.product.index') || Route::is('back.product.create') || Route::is('back.product.edit') || Route::is('back.product.category') || Route::is('back.portfolio.index') || Route::is('back.portfolio.create') || Route::is('back.portfolio.edit')) ? 'true' : 'false'}}" aria-controls="sidebarPeople">
+                            <a class="nav-link menu-link {{(Route::is('back.product.index') || Route::is('back.product.create') || Route::is('back.product.edit') || Route::is('back.product.category')) ? 'active' : 'collapsed'}}" href="#sidebarPeople" data-bs-toggle="collapse" role="button"
+                                aria-expanded="{{(Route::is('back.product.index') || Route::is('back.product.create') || Route::is('back.product.edit') || Route::is('back.product.category')) ? 'true' : 'false'}}" aria-controls="sidebarPeople">
                                 <i class="ri-shopping-cart-fill"></i> <span data-key="t-apps">Products</span>
                             </a>
-                            <div class="collapse menu-dropdown {{(Route::is('back.product.index') || Route::is('back.product.create') || Route::is('back.product.edit') || Route::is('back.product.category') || Route::is('back.portfolio.index') || Route::is('back.portfolio.create') || Route::is('back.portfolio.edit')) ? 'show' : ''}}" id="sidebarPeople">
+                            <div class="collapse menu-dropdown {{(Route::is('back.product.index') || Route::is('back.product.create') || Route::is('back.product.edit') || Route::is('back.product.category')) ? 'show' : ''}}" id="sidebarPeople">
                                 <ul class="nav nav-sm flex-column">
                                     @if(auth()->user()->permission('product','list'))
                                     {{-- @isset(auth()->user()->role->permission['permission']['product']['list']) --}}
@@ -275,7 +298,7 @@
                                     <li class="nav-item">
                                         <a href="{{route('back.product.category')}}" class="nav-link {{Route::is('back.product.category') ? 'active' : ''}}" data-key="t-mailbox"> Category </a>
                                     </li>
-                                    <li class="nav-item">
+                                    {{-- <li class="nav-item">
                                         <a href="#sidebarPortfolios" class="nav-link collapsed {{(Route::is('back.portfolio.index') || Route::is('back.portfolio.create') || Route::is('back.portfolio.edit')) ? 'active' : 'collapsed'}}" data-bs-toggle="collapse" role="button" aria-expanded="{{(Route::is('back.portfolio.index') || Route::is('back.portfolio.create') || Route::is('back.portfolio.edit')) ? 'true' : 'false'}}" aria-controls="sidebarPortfolios">Portfolios</a>
                                         <div class="collapse menu-dropdown {{(Route::is('back.portfolio.index') || Route::is('back.portfolio.create') || Route::is('back.portfolio.edit')) ? 'show' : ''}}" id="sidebarPortfolios">
                                             <ul class="nav nav-sm flex-column">
@@ -287,7 +310,7 @@
                                                 </li>
                                             </ul>
                                         </div>
-                                    </li>
+                                    </li> --}}
                                 </ul>
                             </div>
                         </li>
