@@ -1,31 +1,33 @@
 <?php
 
-use App\Http\Controllers\Back\AdminController;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MediaController;
+use App\Http\Controllers\Back\FaqController;
+use App\Http\Controllers\Back\MenuController;
 use App\Http\Controllers\Back\NewsController;
+use App\Http\Controllers\Back\PageController;
+use App\Http\Controllers\Back\RoleController;
+use App\Http\Controllers\Back\TeamController;
+use App\Http\Controllers\Back\AdminController;
+use App\Http\Controllers\Back\SliderController;
+use App\Http\Controllers\Back\GalleryController;
 use App\Http\Controllers\Back\ProductController;
+use App\http\Controllers\Back\ProjectController;
+use App\Http\Controllers\Back\ServiceController;
+use App\Http\Controllers\Back\CategoryController;
+use App\Http\Controllers\Back\CustomerController;
+use App\Http\Controllers\Back\FrontendController;
+use App\Http\Controllers\Back\OtherPageController;
+use App\Http\Controllers\Back\PortfolioController;
+use App\Http\Controllers\Back\PermissionController;
+use App\Http\Controllers\Back\HomeSectionController;
+use App\Http\Controllers\Back\TestimonialController;
 use App\Http\Controllers\Back\FooterWidgetController;
+use App\Http\Controllers\Back\NotificationController;
+use App\Http\Controllers\Back\RequestContactController;
 use App\Http\Controllers\Back\ProductSpecificationController;
 use App\Http\Controllers\Back\ProductSpecificationValueController;
-use App\Http\Controllers\Back\CustomerController;
-use App\Http\Controllers\Back\FaqController;
-use App\Http\Controllers\Back\TestimonialController;
-use App\Http\Controllers\Back\ServiceController;
-use App\Http\Controllers\Back\TeamController;
-use App\Http\Controllers\Back\RequestContactController;
-use App\Http\Controllers\Back\PortfolioController;
-use App\Http\Controllers\Back\CategoryController;
-use App\Http\Controllers\Back\FrontendController;
-use App\Http\Controllers\Back\GalleryController;
-use App\Http\Controllers\Back\HomeSectionController;
-use App\Http\Controllers\Back\MenuController;
-use App\Http\Controllers\Back\NotificationController;
-use App\Http\Controllers\Back\OtherPageController;
-use App\Http\Controllers\Back\PageController;
-use App\Http\Controllers\Back\SliderController;
-use App\Http\Controllers\Back\RoleController;
-use App\Http\Controllers\Back\PermissionController;
-use App\Http\Controllers\MediaController;
-use Illuminate\Support\Facades\Route;
 
 // Auth
 // Route::get('login',             [AuthController::class, 'login'])->name('back.login');
@@ -71,9 +73,11 @@ Route::middleware('auth', 'isAdmin')->group(function () {
     Route::get('back/news/categories/edit/{id}', [NewsController::class, 'categoriesCreate'])->name('back.news.categories.edit');
     Route::get('news/remove-image/{news}', [NewsController::class, 'removeImage'])->name('back.news.removeImage');
 
+    //Project
+    Route::get('back/projects', ProjectController::class, 'index');
 
     // Product Controller
-    Route::resource('product',ProductController::class, ['as' => 'back']);
+    Route::resource('product',ProductController::class, ['as`' => 'back']);
     Route::resource('product-specification', ProductSpecificationController::class, ['as' => 'back']);
     Route::resource('product-specification-value', ProductSpecificationValueController::class, ['as' => 'back']);
 
