@@ -13,7 +13,7 @@ use App\Http\Controllers\Back\AdminController;
 use App\Http\Controllers\Back\SliderController;
 use App\Http\Controllers\Back\GalleryController;
 use App\Http\Controllers\Back\ProductController;
-use App\http\Controllers\Back\ProjectController;
+use App\Http\Controllers\Back\ProjectController;
 use App\Http\Controllers\Back\ServiceController;
 use App\Http\Controllers\Back\CategoryController;
 use App\Http\Controllers\Back\CustomerController;
