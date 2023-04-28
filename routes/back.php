@@ -74,7 +74,7 @@ Route::middleware('auth', 'isAdmin')->group(function () {
     Route::get('news/remove-image/{news}', [NewsController::class, 'removeImage'])->name('back.news.removeImage');
 
     //Project
-    Route::get('back/projects', ProjectController::class, 'index');
+    Route::get('back/projects', [ProjectController::class, 'index']);
 
     // Product Controller
     Route::resource('product',ProductController::class, ['as`' => 'back']);
