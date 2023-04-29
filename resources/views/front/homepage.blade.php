@@ -519,27 +519,31 @@
                 <div class="tab_content current active pt-45">
                     <div class="tabs_item current">
                         <div class="row portfolio-item">
+                            @foreach($projects as $project)
                             <div class="col-lg-3 col-sm-6">
                                 <div class="portfolio-item-two">
-                                    <a href="#">
-                                        <img src="{{ asset('front/assets/img/project/anwar-hossain-monzu-home.jpg') }}" alt="Images">
+                                    <a href="{{ route('project.single') }}">
+                                        {{-- <img src="{{ asset('front/assets/img/project/anwar-hossain-monzu-home.jpg') }}" alt="Images"> --}}
+                                        <img src="{{ $project->img_paths['original'] }}" alt="Images">
                                     </a>
                                     <div class="content active">
                                         <div class="title">
-                                            <h3><a href="#">Anwar Hossain Monzu</a></h3>
+                                            <h3><a href="#">{{ $project->title }}</a></h3>
                                         </div>
 
                                         <ul>
                                             <li>
-                                                <a href="#">Traction MR Home Lift</a>
+                                                <a href="#">{{ $project->lift_type }}</a>
                                             </li>
                                             <li>
-                                                <a>Pirojpur</a>
+                                                <a>{{ $project->location }}</a>
                                             </li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
+                            @endforeach
+                            {{--
                             <div class="col-lg-3 col-sm-6">
                                 <div class="portfolio-item-two">
                                     <a href="#">
@@ -875,7 +879,7 @@
                                         </ul>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>

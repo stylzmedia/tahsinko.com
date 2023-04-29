@@ -1,5 +1,5 @@
 @extends('back.layouts.master')
-@section('title', 'Portfolios')
+@section('title', 'Projects')
 
 @section('head')
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.23/datatables.min.css"/>
@@ -13,7 +13,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                    <h4 class="mb-sm-0">Portfolios</h4>
+                    <h4 class="mb-sm-0">Projects</h4>
 
                     <div class="page-title-right">
                         <ol class="breadcrumb m-0">
@@ -31,7 +31,7 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="blog-table-header card-header">
-                        <h4 class="card-title mb-0 flex-grow-1">Portfolio List</h4>
+                        <h4 class="card-title mb-0 flex-grow-1">Project List</h4>
                         <a href="{{route('back.portfolio.create')}}" class="btn btn-info float-right"><i class="ri-add-circle-line"></i> Create New</a>
                     </div><!-- end card header -->
 
@@ -40,7 +40,7 @@
                             <thead>
                               <tr>
                                 <th scope="col">SL</th>
-                                <th scope="col">Title</th>
+                                <th scope="col">Project Name</th>
                                 <th scope="col">Status</th>
                                 <th scope="col" class="text-right">Action</th>
                               </tr>

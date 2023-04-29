@@ -38,9 +38,9 @@
 
         @yield('master')
 
-        <div class="text-center mt-5">
+        {{-- <div class="text-center mt-5">
             <p class="mb-0">Copyright &copy; {{date('Y')}}. All right reserved | Developed by <a class="text-warning" href="https://stylzmedia.com" target="_blank">StylzMedia Limited</a></p>
-        </div>
+        </div> --}}
     </div>
   </div>
 

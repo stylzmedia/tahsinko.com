@@ -585,11 +585,11 @@
                         <div class="col-sm-6">
                             © <script  type="application/javascript">document.write(new Date().getFullYear())</script> {{$settings_g['title'] ?? ''}}.
                         </div>
-                        <div class="col-sm-6">
+                        {{-- <div class="col-sm-6">
                             <div class="text-sm-end d-none d-sm-block">
                                 website by StylzMedia.com
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </footer>

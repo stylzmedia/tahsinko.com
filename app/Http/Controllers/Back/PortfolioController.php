@@ -42,15 +42,16 @@ class PortfolioController extends Controller
     {
 
         $request->validate([
-            'title' => 'required|max:255',
-            'description' => 'required'
+            'title' => 'required|max:255'
         ]);
 
         $portfolio = new Portfolio();
         $portfolio->title = $request->title;
         $portfolio->description = $request->description;
         $portfolio->product_id = $request->product_id;
-        $portfolio->client_name = $request->client_name;
+        $portfolio->lift_type = $request->lift_type;
+        $portfolio->stop_opening = $request->stop_opening;
+
         $portfolio->location = $request->location;
         $portfolio->total_capacity = $request->total_capacity;
         $portfolio->position = $request->position;
@@ -111,14 +112,14 @@ class PortfolioController extends Controller
     public function update(Request $request, Portfolio $portfolio)
     {
         $request->validate([
-            'title' => 'required|max:255',
-            'description' => 'required'
+            'title' => 'required|max:255'
         ]);
 
         $portfolio->title = $request->title;
         $portfolio->description = $request->description;
         $portfolio->product_id = $request->product_id;
-        $portfolio->client_name = $request->client_name;
+        $portfolio->lift_type = $request->lift_type;
+        $portfolio->stop_opening = $request->stop_opening;
         $portfolio->location = $request->location;
         $portfolio->total_capacity = $request->total_capacity;
         $portfolio->position = $request->position;

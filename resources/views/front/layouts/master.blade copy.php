@@ -338,9 +338,9 @@
                    <div class="p-2 copyright mt-0">
                        <p class="mb-0">&copy; {{date('Y')}} All Right Reserved {{$settings_g['title'] ?? ''}}</p>
                    </div>
-                   <div class="p-2 copyright mt-0">
+                   <!-- <div class="p-2 copyright mt-0">
                        <p class="mb-0">website by <a class="text-decoration-none" href="https://www.stylzmedia.com">stylzMedia Limited</a></p>
-                   </div>
+                   </div> -->
                </div>
 
            </div>

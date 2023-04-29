@@ -260,19 +260,18 @@
                     <div class="row align-items-center">
                         <div class="col-lg-6 col-md-5">
                             <div class="copy-right-icon-two">
-                                <p>© Copyright 2020 TAHSINKO Limited. All Right Reserved </p>
+                                <p>© Copyright 2020 - {{ date('Y') }} TAHSINKO Limited. All Right Reserved </p>
                             </div>
                         </div>
 
-                        <div class="col-lg-6 col-md-7">
+                        {{-- <div class="col-lg-6 col-md-7">
                             <div class="copyright-text-two">
                                 <p>
                                     website by
                                     <a href="https://stylzmedia.com/" target="_blank">stylzMedia Limited</a>
                                 </p>
                             </div>
-
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
         </div>

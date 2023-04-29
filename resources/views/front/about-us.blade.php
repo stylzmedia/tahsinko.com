@@ -537,11 +537,11 @@
             <div class="container">
                 <div class="d-flex justify-content-between">
                     <div class="p-2 copyright mt-0">
-                        <p class="mb-0">Copyright 2022, All Right Reserved</p>
+                        <p class="mb-0">Copyright 2020 - {{ date('Y') }}, All Right Reserved</p>
                     </div>
-                    <div class="p-2 copyright mt-0">
+                    {{-- <div class="p-2 copyright mt-0">
                         <p class="mb-0">website by <a class="text-decoration-none" href="https://www.stylzmedia.com">stylzMedia Limited</a></p>
-                    </div>
+                    </div> --}}
                 </div>
 
             </div>

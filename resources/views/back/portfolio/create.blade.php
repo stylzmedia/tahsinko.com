@@ -1,5 +1,5 @@
 @extends('back.layouts.master')
-@section('title', 'Create Portfolio')
+@section('title', 'Create Project')
 @section('head')
     <link rel="stylesheet" href="{{asset('back/css/dropzone.css')}}">
 @endsection
@@ -10,7 +10,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                        <h4 class="mb-sm-0">Portfolio</h4>
+                        <h4 class="mb-sm-0">Project</h4>
 
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
@@ -33,14 +33,14 @@
                             <div class="col-lg-8">
                                 <div class="card">
                                     <div class="card-header">
-                                        <h4 class="card-title mb-0 flex-grow-1">Create Portfolio</h4>
+                                        <h4 class="card-title mb-0 flex-grow-1">Create Project</h4>
                                     </div>
                                     <div class="card-body">
                                         <div class="row live-preview">
                                             <div class="col-lg-12">
 
                                                 <div class="form-group">
-                                                    <label for="title" class="form-label">Title <b
+                                                    <label for="title" class="form-label">Project Name<b
                                                             style="color: red;">*</b></label>
                                                     <input type="text" class="form-control" id="title" name="title"
                                                         value="{{ old('title') }}" required>
@@ -49,8 +49,7 @@
                                                 <br>
 
                                                 <div class="form-group">
-                                                    <label for="editor" class="form-label">Description <b
-                                                            style="color: red;">*</b></label>
+                                                    <label for="editor" class="form-label">About Project</label>
                                                     <textarea class="form-control" id="editor" placeholder="Enter the Description"
                                                         name="description">{{ old('description') }}</textarea>
                                                 </div>
@@ -64,7 +63,7 @@
                             <div class="col-lg-4">
                                 <div class="card">
                                     <div class="card-header">
-                                        <h4 class="card-title mb-0 flex-grow-1">Portfolio Details</h4>
+                                        <h4 class="card-title mb-0 flex-grow-1">Project Feature Image</h4>
                                     </div>
                                     <div class="card-body">
                                         <div class="img_group">
@@ -82,7 +81,7 @@
                                             </div>
                                         </div>
                                         <br>
-                                        <div class="form-group">
+                                        {{-- <div class="form-group">
                                             <label for="categorySelect">Product<b style="color: red;">*</b></label>
                                             <select name="product_id" class="form-select" id="">
                                                 <option value="">Select Product</option>
@@ -90,7 +89,7 @@
                                                     <option value="{{ $item->id }}">{{ $item->name }}</option>
                                                 @endforeach
                                             </select>
-                                        </div>
+                                        </div> --}}
                                         <br>
 
                                         <div class="form-group">
@@ -104,7 +103,7 @@
                                 {{-- Product Image Gallery --}}
                                 <div class="card border-light mt-3 shadow">
                                     <div class="card-header">
-                                        <h6 class="d-inline-block">Product gallery</h6>
+                                        <h6 class="d-inline-block">Project gallery</h6>
                                     </div>
                                     <div class="card-body">
                                         <div class="dropzone">
@@ -123,19 +122,23 @@
                                     </div>
                                     <div class="card-body">
                                         <div class="form-group">
-                                            <label for="client_name" class="form-label">Client Name</label>
-                                            <input type="text" class="form-control" id="client_name" name="client_name" value="{{old('client_name')}}">
+                                            <label for="lift_type" class="form-label">Type of Lift</label>
+                                            <input type="text" class="form-control" id="lift_type" name="lift_type" value="{{old('lift_type')}}">
                                         </div>
                                         <br>
                                         <div class="form-group">
-                                            <label for="location" class="form-label">Location</label>
+                                            <label for="total_capacity" class="form-label">Capacity</label>
+                                            <input type="text" class="form-control" id="total_capacity" name="total_capacity" value="{{old('total_capacity')}}">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="stop_opening" class="form-label">Stop/Opening</label>
+                                            <input type="text" class="form-control" id="stop_opening" name="stop_opening" value="{{old('stop_opening')}}">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="location" class="form-label">Project Location</label>
                                             <input type="text" class="form-control" id="location" name="location" value="{{old('location')}}">
                                         </div>
                                         <br>
-                                        <div class="form-group">
-                                            <label for="total_capacity" class="form-label">Total Capacity</label>
-                                            <input type="text" class="form-control" id="total_capacity" name="total_capacity" value="{{old('total_persion')}}">
-                                        </div>
 
                                     </div>
                                 </div>

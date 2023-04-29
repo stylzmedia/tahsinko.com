@@ -17,8 +17,9 @@ class CreatePortfoliosTable extends Migration
             $table->id();
             $table->unsignedBigInteger('product_id');
             $table->string('title');
-            $table->longText('description');
-            $table->string('client_name')->nullable();
+            $table->longText('description')->nullable();;
+            $table->string('lift_type')->nullable();
+            $table->string('stop_opening')->nullable();
             $table->string('location')->nullable();
             $table->string('total_capacity')->nullable();
             $table->string('image')->nullable();
