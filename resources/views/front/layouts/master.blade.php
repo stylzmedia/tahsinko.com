@@ -23,10 +23,11 @@
     <title> {{ config('app.name') }} | {{$settings_g['slogan'] ?? ''}}</title>
      {{-- <!-- Bootstrap CSS -->
      <link rel="stylesheet" href="{{asset('/front/assets/css/bootstrap.min.css') }}">
-     <!-- Flaticon CSS -->
-     <link rel="stylesheet" href="{{asset('/front/assets/css/flaticon.css')}}">
      <!-- Boxicons CSS -->
      <link rel="stylesheet" href="{{asset('/front/assets/css/boxicons.min.css')}}"> --}}
+
+     <!-- Flaticon CSS -->
+     <link rel="stylesheet" href="{{ asset('front/assets/fonts/flaticon.css') }}">
      <!-- Font Awesome CSS -->
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
      <!-- Owl Carousel Min CSS -->
@@ -43,6 +44,7 @@
      <!-- Style CSS -->
      <link rel="stylesheet" href="{{asset('/front/assets/css/style.css')}}">
      <link rel="stylesheet" href="{{asset('/front/assets/css/custom.css')}}">
+     {{-- <link rel="stylesheet" href="{{asset('/front/css/main.css')}}"> --}}
 
 
     <!-- Add the slick-theme.css if you want default styling -->

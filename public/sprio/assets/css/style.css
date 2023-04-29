@@ -9,7 +9,7 @@ This files table contents are outlined below>>>>>
 
 *******************************************
 *******************************************
-** - Default Btn Style 
+** - Default Btn Style
 ** - Section Title Style
 ** - Navbar Area Style
 ** - Main Banner Area CSS  Style
@@ -130,7 +130,7 @@ img {
 }
 
 /*================================
-Default btn Style 
+Default btn Style
 ===================================*/
 .default-btn {
   padding: 7px 27px 12px 27px;
@@ -181,7 +181,7 @@ Default btn Style
 Default btn Style End
 ===================================*/
 /*================================
-Section Title Style 
+Section Title Style
 ===================================*/
 .section-title span {
   line-height: 0;
@@ -2082,7 +2082,7 @@ Inner Banner
 Inner Banner End
 ==================================*/
 /*=================================
-About Area 
+About Area
 ====================================*/
 .about-content {
   max-width: 520px;
@@ -2519,7 +2519,7 @@ Consultation Area
 Consultation Area End
 ====================================*/
 /*=================================
-Offer Area 
+Offer Area
 ====================================*/
 .offer-card {
   margin-bottom: 50px;
@@ -2707,7 +2707,7 @@ Offer Area
 Offer Area End
 ====================================*/
 /*=================================
-Skill Area 
+Skill Area
 ====================================*/
 .skill-content {
   margin-top: 70px;
@@ -2862,7 +2862,7 @@ Skill Area
 Skill Area End
 ====================================*/
 /*=================================
-Process Area 
+Process Area
 ====================================*/
 .process-area {
   background-color: #1a1a1a;
@@ -2958,7 +2958,7 @@ Process Area
 Process Area End
 ====================================*/
 /*=================================
-Counter Area 
+Counter Area
 ====================================*/
 .counter-area {
   background-image: url(../img/shape/counter-shape.png);
@@ -2999,7 +2999,7 @@ Counter Area
 Counter Area End
 ====================================*/
 /*=================================
-Service Area 
+Service Area
 ====================================*/
 .service-area .section-title p {
   max-width: 720px;
@@ -3355,7 +3355,7 @@ Service Area
 Service Area End
 ====================================*/
 /*=================================
-Portfolio Area 
+Portfolio Area
 ====================================*/
 .portfolio-area {
   padding-top: 50px;
@@ -3737,7 +3737,7 @@ Portfolio Area
 Portfolio Area End
 ====================================*/
 /*=================================
-Testimonials Area 
+Testimonials Area
 ====================================*/
 .testimonials-area {
   position: relative;
@@ -3864,7 +3864,7 @@ Testimonials Area
 Testimonials Area End
 ====================================*/
 /*=================================
-Team Area 
+Team Area
 ====================================*/
 .team-area .section-title p {
   max-width: 695px;
@@ -5469,7 +5469,7 @@ Contact Area
 Contact Area End
 ====================================*/
 /*==================================
-User All Area 
+User All Area
 =================================*/
 .user-all-img {
   margin-bottom: 30px;
@@ -5540,7 +5540,7 @@ User All Area End
 }
 
 /*==================================
-Faq Area 
+Faq Area
 =================================*/
 .faq-accordion {
   max-width: 100%;
@@ -5623,7 +5623,7 @@ Faq Area
 Faq Area End
 =================================*/
 /*=================================
-Map Area 
+Map Area
 ====================================*/
 .map-area iframe {
   display: block;
@@ -5635,7 +5635,7 @@ Map Area
 Map Area End
 ====================================*/
 /*=================================
-Product Area 
+Product Area
 ====================================*/
 .product-area .product-topbar {
   margin-bottom: 40px;
@@ -6645,7 +6645,7 @@ Cart Wraps Area
 Cart Wraps Area End
 ===================================*/
 /*=================================
-Checkout Area 
+Checkout Area
 ===================================*/
 .checkout-area .checkout-user {
   -webkit-box-shadow: 0 5px 35px 0 rgba(0, 0, 0, 0.08);
@@ -7023,7 +7023,7 @@ Checkout Area
 Checkout Area End
 ===================================*/
 /*=================================
-Footer Area 
+Footer Area
 ====================================*/
 .footer-bg {
   background-color: #000000;
@@ -7428,8 +7428,8 @@ Footer Area End
 /*=================================
 404 Error Area End
 ===================================*/
-/*================================== 
-Coming Soon Area 
+/*==================================
+Coming Soon Area
 ====================================*/
 .coming-soon-area {
   position: relative;
@@ -7617,11 +7617,11 @@ Coming Soon Area
   color: #dc3545 !important;
 }
 
-/*================================== 
+/*==================================
 Coming Soon Area End
 ====================================*/
 /*==============================
-Pagination Area 
+Pagination Area
 =================================*/
 .pagination-area {
   margin-top: 10px;
@@ -7666,7 +7666,7 @@ Pagination Area
 Pagination Area End
 =================================*/
 /*==================================
-Back To Top Button 
+Back To Top Button
 =====================================*/
 #toTop {
   position: fixed;
@@ -7701,10 +7701,10 @@ Back To Top Button
 }
 
 /*==============================
-Back To Top Button 
+Back To Top Button
 =================================*/
 /*==============================
-PreLoader CSS 
+PreLoader CSS
 =================================*/
 .preloader {
   background: #414141;

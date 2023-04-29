@@ -327,11 +327,11 @@ Navbar Area
 
 .main-nav nav .navbar-nav .nav-item a {
   text-transform: uppercase;
-  color: #ffffff;
+  color: #EB1D36;
   font-weight: 500;
   margin-left: 12px;
   margin-right: 12px;
-  font-size: 20px;
+  font-size: 16px;
 }
 
 .main-nav nav .navbar-nav .nav-item a i {
@@ -1981,6 +1981,67 @@ Home Slider End
 /*================================
 Inner Banner
 ==================================*/
+.inner-banner-video {
+    position: relative;
+  background-position: center center;
+  background-size: cover;
+}
+
+.inner-banner-video .inner-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    -webkit-transform: translate(-50%, -50%);
+}
+.inner-banner-video .inner-title h3 {
+    font-size: 50px;
+    color: #ffffff;
+    font-weight: 500;
+  }
+
+  .inner-banner-video .inner-title ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .inner-banner-video .inner-title ul li {
+    font-size: 18px;
+    color: #ffffff;
+    display: inline-block;
+  }
+
+  .inner-banner-video .inner-title ul li i {
+    font-size: 18px;
+    color: #ffffff;
+    position: relative;
+    margin-right: 30px;
+    top: -2px;
+  }
+
+  .inner-banner-video .inner-title ul li i::after {
+    content: '';
+    position: absolute;
+    top: 15px;
+    right: -25px;
+    height: 1px;
+    width: 20px;
+    background-color: #ffffff;
+  }
+
+  .inner-banner-video .inner-title ul li a {
+    color: #ffffff;
+  }
+
+  .inner-banner-video .inner-title ul li a:hover {
+    color: #EB1D36;
+  }
+
+
+
+
+
 .inner-banner {
   position: relative;
   background-position: center center;
@@ -2000,9 +2061,11 @@ Inner Banner
 }
 
 .inner-banner .inner-title {
-  padding-top: 150px;
-  padding-bottom: 150px;
-  position: relative;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    -webkit-transform: translate(-50%, -50%);
 }
 
 .inner-banner .inner-title h3 {
@@ -2055,6 +2118,7 @@ Inner Banner
 
 .inner-bg2 {
   background-image: url(../img/inner-banner/inner-banner2.jpg);
+
 }
 
 .inner-bg3 {

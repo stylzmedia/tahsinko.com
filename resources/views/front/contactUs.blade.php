@@ -7,30 +7,29 @@
         'title' => 'Contact Us'
     ])
     <style>
-        .header {
-            position: relative;
+        #background-video {
+        width: 100%;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        margin: auto;
+        min-height: 50%;
+        min-width: 50%;
+        position: absolute;
         }
-        .contact_form_page input[type=email], .contact_form_page input[type=text], .contact_form_page input[type=url], .contact_form_page input[type=tel], .contact_form_page input[type=number], .contact_form_page textarea {
-            display: block;
-            width: 100%;
-            background: 0 0;
-            padding: 0;
-            border: none;
-            border-bottom: 1px solid #b9b9b9;
-            border-radius: 0;
-            font-size: 16px;
-            line-height: 60px;
-            margin: 0 0 20px;
-            color: #fff;
-        }
-        textarea:focus, input:focus {
-            border-color: #fff !important;
+        .video-inner {
+        position: relative;
+        height: 500px;
+        overflow: hidden;
         }
     </style>
+
+
 @endsection
 
 @section('master')
-    <div class="container-mains skew-aminamtion" style="background: #222;">
+    {{-- <div class="container-mains skew-aminamtion" style="background: #222;">
         @php
             if(empty($page->breadcrumb_background)){
                 $back_value="#2c3232b0";
@@ -53,78 +52,180 @@
                 </div><!-- end row -->
             </div><!-- end container -->
         </section>
-        <section class="InnerPage_section">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="conFormWrapper">
-                            <div class="row">
-                                <div class="col-md-7">
-                                    <h2>Get in touch!</h2>
-                                    <div class="contact_form_page">
-                                        <form action="{{route('contact.us.store')}}" method="POST" class="row" id="contact_form_page">
-                                            @csrf
-                                            @method('POST')
-                                            <div class="col-md-6">
-                                                <input class="required" type="text" name="name" id="con_name" placeholder="Name" required>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <input class="required" type="email" name="email" id="con_email" placeholder="E-mail" required>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <input type="text" name="phone" id="con_phone" placeholder="Phone">
-                                            </div>
-                                            <div class="col-md-6">
-                                                <input type="text" name="subject" id="con_subject" placeholder="Subject">
-                                            </div>
-                                            <div class="col-md-12">
-                                                <textarea class="required" name="message" id="con_message" placeholder="Your Message here" required></textarea>
-                                            </div>
-                                            <div class="col-md-12">
-                                                <button type="submit" class="dgBtn">Submit Message</button>
-                                                <div class="con_message"></div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                                <div class="col-md-5">
+    </div> --}}
+    <!-- Inner Banner -->
+    <div class="inner-banner-video">
+            <div class="video-inner">
+                <video id="background-video" autoplay loop muted poster="{{ asset('front/video/ElevatorsGoingUpAndDown.png') }}">
+                    <source src="{{ asset('front/video/ElevatorsGoingUpAndDown.mp4') }}" type="video/mp4">
+                </video>
+            </div>
+        <div class="container">
+            <div class="inner-title text-center">
+                <h3>@if(empty($page->breadcrumb_title)){{$page->title}}@else{{$page->breadcrumb_title}}@endif</h3>
+                <ul>
+                    <li>
+                        <i class="flaticon-fireplace"></i>
+                    </li>
+                    <li>
+                        <a href="{{ route('homepage') }}">Home /</a>
+                    </li>
+                    <li>@if(empty($page->breadcrumb_title)){{$page->title}}@else{{$page->breadcrumb_title}}@endif</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- Inner Banner End -->
 
-                                    <div class="contactInfo">
-                                        <img src="{{asset('/front/images/telephone.png')}}" alt="">
-                                        <h4>Phone</h4>
-                                        <p>
-                                            Phone : {{$settings_g['mobile_number'] ?? ''}}<br>
-                                            Telephone : {{$settings_g['tel'] ?? ''}}
-                                        </p>
-                                    </div>
-                                     <div class="contactInfo">
-                                        <img src="{{asset('/front/images/email.png')}}" alt="">
-                                        <h4>Email</h4>
-                                        <p>
-                                            <a href="">{{$settings_g['email'] ?? ''}}</a>
-                                        </p>
-                                    </div>
-                                    <div class="contactInfo">
-                                        <img src="{{asset('/front/images/placeholder.png')}}" alt="">
-                                        <h4>Address</h4>
-                                        <p>
-                                            {{$settings_g['street'] ?? ''}}, {{$settings_g['city'] ?? ''}}-{{$settings_g['zip'] ?? ''}}
-                                            <br>
-                                            {{$settings_g['state'] ?? ''}}, {{$settings_g['country'] ?? ''}}
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+    <!-- Contact Section -->
+    <div class="contact-section pt-100 pb-70">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 col-md-6 pr-0">
+                    <div class="contact-section-img">
+                        <img src="{{ asset('front/images/section/sec1-group-photo.png') }}" alt="Images">
+                    </div>
+                </div>
+
+                <div class="col-lg-5 col-md-6 pl-0">
+                    <div class="contact-section-content">
+                        <h3>Contact Info</h3>
+                        <ul class="contact-section-list">
+                            <li>
+                                <span> Address:</span> {{$settings_g['street'] ?? ''}}, {{$settings_g['city'] ?? ''}}-{{$settings_g['zip'] ?? ''}}
+                                {{$settings_g['state'] ?? ''}}, {{$settings_g['country'] ?? ''}}
+                            </li>
+                            <li>
+                                <span>Message:</span> <a href="mailto:{{$settings_g['email'] ?? ''}}">{{$settings_g['email'] ?? ''}}</a>
+                            </li>
+                            <li>
+                                <span>Phone:</span> <a href="tel:+88{{$settings_g['tel'] ?? ''}}"> {{$settings_g['tel'] ?? ''}}</a>
+                            </li>
+                            <li>
+                                <span>Mobile:</span> <a href="tel:+88{{$settings_g['mobile_number'] ?? ''}}"> {{$settings_g['mobile_number'] ?? ''}}</a>
+                            </li>
+                            <li>
+                                <span>Open:</span>  Sat - Thu / 9:00 AM - 6:00 PM
+                            </li>
+                        </ul>
+
+                        <ul class="social-link">
+                            @if(Info::Social($socials, 'facebook'))
+                            <li>
+                                <a href="{{Info::Social($socials,  'facebook')}}" target="_blank">
+                                    <i class="fa-brands fa-square-facebook"></i>
+                                </a>
+                            </li>
+                            @endif
+                            @if(Info::Social($socials, 'linkedin'))
+                            <li>
+                                <a href="{{Info::Social($socials,  'linkedin')}}" target="_blank">
+                                    <i class="fa-brands fa-square-linkedin"></i>
+                                </a>
+                            </li>
+                            @endif
+                            @if(Info::Social($socials,  'twitter'))
+                            <li>
+                                <a href="{{Info::Social($socials,  'twitter')}}" target="_blank">
+                                    <i class="fa-brands fa-square-twitter"></i>
+                                </a>
+                            </li>
+                            @endif
+                            @if(Info::Social($socials, 'instagram'))
+                            <li>
+                                <a href="{{Info::Social($socials,  'instagram')}}" target="_blank">
+                                    <i class="fa-brands fa-square-instagram"></i>>
+                                </a>
+                            </li>
+                            @endif
+                            @if(Info::Social($socials, 'youtube'))
+                            <li>
+                                <a href="{{Info::Social($socials,  'youtube')}}" target="_blank">
+                                    <i class="fa-brands fa-square-youtube"></i>
+                                </a>
+                            </li>
+                            @endif
+                        </ul>
+
                     </div>
                 </div>
             </div>
-        </section>
-        <section id="contact" class="contactWrapp position-relative">
-            <div class="contact-map">
-                <div id="map">
-                    {!! $settings_g['gmap'] ?? ''!!}
+        </div>
+    </div>
+    <!-- Contact Section End -->
+
+    <!-- Contact Area Two -->
+    <div class="contact-area-two">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-7">
+                    <div class="contact-two-form pt-100 pb-70">
+                        <div class="contact-wrap-form">
+                            <h2>Contact Us</h2>
+                            <form action="{{route('contact.us.store')}}" method="POST">
+                                @csrf
+                                @method('POST')
+                                <div class="row">
+                                    <div class="col-lg-6 col-sm-6">
+                                        <div class="form-group">
+                                            <i class='bx bx-user'></i>
+                                            <input type="text" name="name" id="name" class="form-control" required data-error="Please enter your name" placeholder="Your Name*">
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6 col-sm-6">
+                                        <div class="form-group">
+                                            <i class='bx bx-envelope'></i>
+                                            <input type="email" name="email" id="email_address" required data-error="Please enter email address" class="form-control" placeholder="Email Address*">
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6 col-sm-6">
+                                        <div class="form-group">
+                                            <i class='bx bx-phone'></i>
+                                            <input type="text" name="phone" id="phone_number" required data-error="Please enter your number" class="form-control" placeholder="Your Phone">
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6 col-sm-6">
+                                        <div class="form-group">
+                                            <i class='bx bx-git-compare'></i>
+                                            <input type="text" name="subject" id="msg_subject" class="form-control" required data-error="Please enter your subject" placeholder="Your Subject">
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-12 col-md-12">
+                                        <div class="form-group">
+                                            <i class='bx bx-envelope'></i>
+                                            <textarea name="message" class="form-control" id="message" cols="30" rows="8" required data-error="Write your message" placeholder="Your Message"></textarea>
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-12 col-md-12">
+                                        <button type="submit" class="default-btn">
+                                            Send Your Message
+                                        </button>
+                                        <div id="msgSubmit" class="h3 text-center hidden"></div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-5">
+                    <div class="contact-map">
+                        {!! $settings_g['gmap'] ?? ''!!}
+                    </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </div>
+    <!-- Contact Area Two End -->
 @endsection
