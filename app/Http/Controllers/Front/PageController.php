@@ -89,6 +89,12 @@ class PageController extends Controller
 
     }
 
+    public function singleProject($name){
+        $project = Portfolio::where('name', $name)->first();
+
+        return view('front.single-project',compact('project'));
+
+    }
 
 
     public function galleries(){

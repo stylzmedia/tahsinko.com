@@ -522,7 +522,8 @@
                             @foreach($projects as $project)
                             <div class="col-lg-3 col-sm-6">
                                 <div class="portfolio-item-two">
-                                    <a href="{{ route('project.single') }}">
+                                    {{-- <a href="{{ route('project.single') }}"> --}}
+                                    <a href="#">
                                         {{-- <img src="{{ asset('front/assets/img/project/anwar-hossain-monzu-home.jpg') }}" alt="Images"> --}}
                                         <img src="{{ $project->img_paths['original'] }}" alt="Images">
                                     </a>

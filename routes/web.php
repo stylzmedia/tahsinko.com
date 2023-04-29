@@ -32,6 +32,8 @@ Route::get('email-verify-check/{id}', [AuthController::class, 'emailVerifyCheck'
 Route::get('news/{blog}', [PageController::class, 'singleNews'])->name('news.single');
 Route::get('product/{name}', [PageController::class, 'singleProduct'])->name('product.single');
 
+Route::get('project/{name}', [PageController::class, 'singleProject'])->name('project.single');
+
 // Test Routes
 // Route::get('test',             [TestController::class, 'test'])->name('test');
 Route::get('cache-clear',      [TestController::class, 'cacheClear'])->name('cacheClear');
