@@ -513,55 +513,11 @@
                                         </a>
                                         <div class="content active">
                                             <div class="title">
-                                                <h3><a href="#">{{ $project->title }}</a></h3>
+                                                <h3><a href="{{ route('project.single', $project->id) }}">{{ $project->title }}</a></h3>
                                             </div>
                                             <ul>
                                                 <li>
-                                                    <a href="#">{{ $project->lift_type }}</a>
-                                                </li>
-                                                <li>
-                                                    <a>{{ $project->location }}</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            @endforeach
-                            @foreach($projects as $project)
-                                <div class="col-lg-3 col-sm-6">
-                                    <div class="portfolio-item-two">
-                                        <a href="{{ route('project.single', $project->id) }}">
-                                            <img src="{{ $project->img_paths['original'] }}" alt="Images">
-                                        </a>
-                                        <div class="content active">
-                                            <div class="title">
-                                                <h3><a href="#">{{ $project->title }}</a></h3>
-                                            </div>
-                                            <ul>
-                                                <li>
-                                                    <a href="#">{{ $project->lift_type }}</a>
-                                                </li>
-                                                <li>
-                                                    <a>{{ $project->location }}</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            @endforeach
-                            @foreach($projects as $project)
-                                <div class="col-lg-3 col-sm-6">
-                                    <div class="portfolio-item-two">
-                                        <a href="{{ route('project.single', $project->id) }}">
-                                            <img src="{{ $project->img_paths['original'] }}" alt="Images">
-                                        </a>
-                                        <div class="content active">
-                                            <div class="title">
-                                                <h3><a href="#">{{ $project->title }}</a></h3>
-                                            </div>
-                                            <ul>
-                                                <li>
-                                                    <a href="#">{{ $project->lift_type }}</a>
+                                                    <a href="{{ route('project.single', $project->id) }}">{{ $project->lift_type }}</a>
                                                 </li>
                                                 <li>
                                                     <a>{{ $project->location }}</a>
@@ -578,11 +534,6 @@
         </div>
     </div>
 <!-- Section Nine End -->
-
-<!-- Section Ten Start -->
-
-<!-- Section Ten End -->
-
 
 @if(count($home_sections))
             @foreach($home_sections as $key=>$sec)

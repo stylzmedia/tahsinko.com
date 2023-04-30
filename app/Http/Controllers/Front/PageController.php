@@ -36,6 +36,7 @@ class PageController extends Controller
         $testimonials = Testimonial::where(['status'=>1])->orderBy('position','ASC')->get();
         $clients = Customer::where(['status'=>1])->orderBy('position','ASC')->get();
         $newes = News::where(['status'=>1])->orderBy('position','ASC')->take(6)->get();
+
         return view('front.homepage', compact(
             'sliders',
             'home_sections',

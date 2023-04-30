@@ -17,37 +17,13 @@
 @section('master')
 
 
-          <!-- Breadcrumb -->
-          {{-- @php
-          if(empty($page->breadcrumb_background)){
-              $back_value="#2c3232b0";
-          }else{
-              $back_value=$page->breadcrumb_background;
-          }
-          if($page->is_color == 2){
-              $bg_bread="background:rgba(0, 0, 0, 0) url('../$back_value') no-repeat scroll center center / cover;";
-          }else{
-              $bg_bread="background:".$back_value;
-          }
-
-      @endphp --}}
-
-      {{-- <section id="page-header" class="section background" style="{{$bg_bread}}">
-      <div class="container">
-          <div class="row">
-              <div class="col-sm-12 text-center">
-                  <h3>@if(empty($page->breadcrumb_title)){{$page->title}}@else{{$page->breadcrumb_title}}@endif</h3>
-              </div>
-          </div><!-- end row -->
-      </div><!-- end container -->
-      </section> --}}
     {{-- News section --}}
 
       <!-- Inner Banner -->
       <div class="inner-banner inner-bg6">
         <div class="container">
             <div class="inner-title text-center">
-                <h3>@if(empty($page->breadcrumb_title)){{$page->title}}@else{{$page->breadcrumb_title}}@endif</h3>
+                <h3>{{$page->title}}</h3>
                 <ul>
                     <li>
                         <i class="flaticon-fireplace"></i>
@@ -56,7 +32,7 @@
                         <a href="{{ route('homepage') }}">Home /</a>
                     </li>
                     <li>Page/</li>
-                    <li>@if(empty($page->breadcrumb_title)){{$page->title}}@else{{$page->breadcrumb_title}}@endif</li>
+                    <li>{{$page->title}}</li>
                 </ul>
             </div>
         </div>

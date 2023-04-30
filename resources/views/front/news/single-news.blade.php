@@ -5,7 +5,9 @@
 
 @php
     $page_title="News";
-    $newes=\App\Models\News::where(['status'=>1])->orderBy('id','DESC')->get();
+    // $related_news=\App\Models\News::where(['status'=>1])->orderBy('id','DESC')->inRandomOrder()->take(2)->get();
+    $recent_news =\App\Models\News::where('category_id', $news->category_id)->where('id', '!=', $news->id)->take(2)->get();
+    $related_news=\App\Models\News::where(['status'=>1])->orderBy('id','ASC')->take(4)->get();
 @endphp
 
 
@@ -33,10 +35,10 @@
 @endsection
 @section('master')
  <!-- Inner Banner -->
- <div class="inner-banner inner-bg5">
+ <div class="inner-banner inner-bg6">
     <div class="container">
         <div class="inner-title text-center">
-            {{-- <h3>Design Inside Of Home</h3> --}}
+            <h3>{{$page_title}}</h3>
             <ul>
                 <li>
                     <i class="flaticon-fireplace"></i>
@@ -45,7 +47,7 @@
                     <a href="{{ route('homepage') }}">Home /</a>
                 </li>
                 <li> Blogs /</li>
-                <li>{{ $page_title }}</li>
+                <li>{{$news->title}}</li>
             </ul>
         </div>
     </div>
@@ -60,7 +62,7 @@
                 <li><a href="#"> Home style / </a></li>
                 <li>{{ \Carbon\Carbon::parse($news->publish_date)->format('d-M-Y')}}</li>
             </ul>
-            <h2>{{ $page_title }}</h2>
+            <h2>{{$news->title}}</h2>
         </div>
         <div class="row">
             <div class="col-lg-8">
@@ -73,23 +75,16 @@
                     </div>
                     <div class="article-post">
                         <div class="row">
-                            <div class="col-lg-6 col-sm-6">
-                                <div class="article-post-share">
-                                    <span>Jun 12, 2020 / <a href="#">SEO</a></span>
-                                    <a href="#">
-                                        <h3>Successful digital marketer does first to ensure they get</h3>
-                                    </a>
+                            @foreach ( $recent_news as $item )
+                                <div class="col-lg-6 col-sm-6">
+                                    <div class="article-post-share">
+                                        <span>{{ \Carbon\Carbon::parse($item->publish_date)->format('d-M-Y')}} / <a href="#">SEO</a></span>
+                                        <a href="{{ route('news.single', $item->slug) }}">
+                                            <h3>{{ $item->title }}</h3>
+                                        </a>
+                                    </div>
                                 </div>
-                            </div>
-
-                            <div class="col-lg-6 col-sm-6">
-                                <div class="article-post-share">
-                                    <span>April 19, 2020 / <a href="#">Web</a></span>
-                                    <a href="#">
-                                        <h3 class="active">Marketer who knows how to execute their campaigns</h3>
-                                    </a>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -121,10 +116,12 @@
                     <div class="side-bar-widget">
                         <h3 class="title">Recent Posts</h3>
                         <div class="widget-popular-post">
-                            @foreach ( $newes as $item )
+                            @foreach ( $related_news as $item )
                             <article class="item">
-                                <a href="blog-details.html" class="thumb">
-                                    <span class="full-image cover"  role="img"></span>
+                                <a href="{{ route('news.single', $item->slug) }}" class="thumb">
+                                    <span class="full-image cover"  role="img">
+                                        <img src="{{ $item->img_paths['medium'] }}" class="img-fluid rounded-top" alt="">
+                                    </span>
                                 </a>
 
                                 <div class="info">
@@ -133,7 +130,7 @@
                                             {{ $item->title }}
                                         </a>
                                     </h4>
-                                    <p>March 20, 2020</p>
+                                    <p>{{ \Carbon\Carbon::parse($item->publish_date)->format('d-M-Y')}}</p>
                                 </div>
                             </article>
 
@@ -143,22 +140,12 @@
                         </div>
                     </div>
 
-                    <div class="side-bar-widget">
-                        <h3 class="title">Tags</h3>
-                        <ul class="side-bar-widget-tag">
-                            <li><a href="#">Architecture</a></li>
-                            <li><a href="#">Design</a></li>
-                            <li><a href="#">Decor</a></li>
-                            <li><a href="#">3D Architecture</a></li>
-                            <li><a href="#">Home & Design</a></li>
-                            <li><a href="#">Craft</a></li>
-                        </ul>
-                    </div>
+
 
                     <div class="side-bar-contact">
                         <i class="flaticon-phone-call"></i>
                         <h3>Want to know Cal us for info</h3>
-                        <span><a href="tel:(+123)-456-876">(+123) 456 876</a></span>
+                        <span><a href="tel:+88{{$settings_g['mobile_number'] ?? ''}}">{{$settings_g['mobile_number'] ?? ''}}</a></span>
                     </div>
                 </div>
             </div>
