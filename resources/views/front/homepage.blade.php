@@ -9,6 +9,10 @@
         'title' => ($settings_g['title'] ?? env('APP_NAME')) . ' - ' . ($settings_g['slogan'] ?? '')
     ])
 
+<!-- Title  -->
+
+
+
 <style>
     .portfolio-area .slick-next {right: -700px; z-index: 999; top: 40%;}
 
@@ -526,16 +530,19 @@
                             @foreach($projects as $project)
                             <div class="col-lg-3 col-sm-6">
                                 <div class="portfolio-item-two">
+<<<<<<< HEAD
                                     {{-- <a href="{{ route('project.single') }}"> --}}
                                     <a href="{{ route('project.single', $project->id) }}">
                                         {{-- <img src="{{ asset('front/assets/img/project/anwar-hossain-monzu-home.jpg') }}" alt="Images"> --}}
+=======
+                                    <a href="#">
+>>>>>>> 370f2a05e83f60f2f41491d8a4cc49ca6281b684
                                         <img src="{{ $project->img_paths['original'] }}" alt="Images">
                                     </a>
                                     <div class="content active">
                                         <div class="title">
                                             <h3><a href="#">{{ $project->title }}</a></h3>
                                         </div>
-
                                         <ul>
                                             <li>
                                                 <a href="#">{{ $project->lift_type }}</a>
@@ -548,343 +555,6 @@
                                 </div>
                             </div>
                             @endforeach
-                            {{--
-                            <div class="col-lg-3 col-sm-6">
-                                <div class="portfolio-item-two">
-                                    <a href="#">
-                                        <img src="{{ asset('front/assets/img/project/assign-horizon-home.jpg') }}" alt="Images">
-                                    </a>
-                                    <div class="content active">
-                                        <div class="title">
-                                            <h3><a href="#">Assign Horizon</a></h3>
-                                        </div>
-
-                                        <ul>
-                                            <li>
-                                                <a href="#">Traction MR Passenger Lift</a>
-                                            </li>
-                                            <li>
-                                                <a>Gulshan 1</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-sm-6">
-                                <div class="portfolio-item-two">
-                                    <a href="#">
-                                        <img src="{{ asset('front/assets/img/project/assign-nirvana-home.jpg') }}" alt="Images">
-                                    </a>
-                                    <div class="content active">
-                                        <div class="title">
-                                            <h3><a href="#">Assign Nirvana</a></h3>
-                                        </div>
-
-                                        <ul>
-                                            <li>
-                                                <a href="#">Traction MR Passenger Lift</a>
-                                            </li>
-                                            <li>
-                                                <a>Banani</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-sm-6">
-                                <div class="portfolio-item-two">
-                                    <a href="#">
-                                        <img src="{{ asset('front/assets/img/project/awr-melinda-home.jpg') }}" alt="Images">
-                                    </a>
-                                    <div class="content active">
-                                        <div class="title">
-                                            <h3><a href="#">AWR Melinda</a></h3>
-                                        </div>
-
-                                        <ul>
-                                            <li>
-                                                <a href="#">Traction MR Passenger Lift</a>
-                                            </li>
-                                            <li>
-                                                <a>Bashundhara</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-sm-6">
-                                <div class="portfolio-item-two">
-                                    <a href="#">
-                                        <img src="{{ asset('front/assets/img/project/best-shirt-md-house-home.jpg') }}" alt="Images">
-                                    </a>
-                                    <div class="content active">
-                                        <div class="title">
-                                            <h3><a href="#">Best Shirt Md House</a></h3>
-                                        </div>
-
-                                        <ul>
-                                            <li>
-                                                <a href="#">Hydraulic Passenger Lift</a>
-                                            </li>
-                                            <li>
-                                                <a>Bashundhara</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-sm-6">
-                                <div class="portfolio-item-two">
-                                    <a href="#">
-                                        <img src="{{ asset('front/assets/img/project/chittagong-airport-home.jpg') }}" alt="Images">
-                                    </a>
-                                    <div class="content active">
-                                        <div class="title">
-                                            <h3><a href="#">Chottogram Airport</a></h3>
-                                        </div>
-
-                                        <ul>
-                                            <li>
-                                                <a href="#">Traction MR Passenger Lift</a>
-                                            </li>
-                                            <li>
-                                                <a>Chottogram</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-sm-6">
-                                <div class="portfolio-item-two">
-                                    <a href="#">
-                                        <img src="{{ asset('front/assets/img/project/delvista-home.jpg') }}" alt="Images">
-                                    </a>
-                                    <div class="content active">
-                                        <div class="title">
-                                            <h3><a href="#">Delvista</a></h3>
-                                        </div>
-
-                                        <ul>
-                                            <li>
-                                                <a href="#">Hydraulic Car Lift</a>
-                                            </li>
-                                            <li>
-                                                <a>Banani</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-sm-6">
-                                <div class="portfolio-item-two">
-                                    <a href="#">
-                                        <img src="{{ asset('front/assets/img/project/dhaka-bank-head-office-home.jpg') }}" alt="Images">
-                                    </a>
-                                    <div class="content active">
-                                        <div class="title">
-                                            <h3><a href="#">Dhaka Bank Head Office</a></h3>
-                                        </div>
-
-                                        <ul>
-                                            <li>
-                                                <a href="#">Traction MRL Passenger Lift</a>
-                                            </li>
-                                            <li>
-                                                <a>Gulshan 1</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-sm-6">
-                                <div class="portfolio-item-two">
-                                    <a href="#">
-                                        <img src="{{ asset('front/assets/img/project/house-10-home.jpg') }}" alt="Images">
-                                    </a>
-                                    <div class="content active">
-                                        <div class="title">
-                                            <h3><a href="#">House 10</a></h3>
-                                        </div>
-
-                                        <ul>
-                                            <li>
-                                                <a href="#">Traction MRL Home Lift</a>
-                                            </li>
-                                            <li>
-                                                <a>Gulshan 2</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-sm-6">
-                                <div class="portfolio-item-two">
-                                    <a href="#">
-                                        <img src="{{ asset('front/assets/img/project/momen-height-home.jpg') }}" alt="Images">
-                                    </a>
-                                    <div class="content active">
-                                        <div class="title">
-                                            <h3><a href="#">Momen Height</a></h3>
-                                        </div>
-
-                                        <ul>
-                                            <li>
-                                                <a href="#">Hydraulic Car Lift</a>
-                                            </li>
-                                            <li>
-                                                <a>Banani</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-sm-6">
-                                <div class="portfolio-item-two">
-                                    <a href="#">
-                                        <img src="{{ asset('front/assets/img/project/monem-house-home.jpg') }}" alt="Images">
-                                    </a>
-                                    <div class="content active">
-                                        <div class="title">
-                                            <h3><a href="#">Monem House</a></h3>
-                                        </div>
-
-                                        <ul>
-                                            <li>
-                                                <a href="#">Hydraulic Home Lift</a>
-                                            </li>
-                                            <li>
-                                                <a>Gulshan 1</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-sm-6">
-                                <div class="portfolio-item-two">
-                                    <a href="#">
-                                        <img src="{{ asset('front/assets/img/project/mrs-asma-siddique-home.jpg') }}" alt="Images">
-                                    </a>
-                                    <div class="content active">
-                                        <div class="title">
-                                            <h3><a href="#">Mrs. Asma Siddique</a></h3>
-                                        </div>
-
-                                        <ul>
-                                            <li>
-                                                <a href="#">Hydraulic Car Lift</a>
-                                            </li>
-                                            <li>
-                                                <a>Banani</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-sm-6">
-                                <div class="portfolio-item-two">
-                                    <a href="#">
-                                        <img src="{{ asset('front/assets/img/project/mr-tanvir-residence-home.jpg') }}" alt="Images">
-                                    </a>
-                                    <div class="content active">
-                                        <div class="title">
-                                            <h3><a href="#">Mr. Tanvir Residence</a></h3>
-                                        </div>
-
-                                        <ul>
-                                            <li>
-                                                <a href="#">Hydraulic Home Lift</a>
-                                            </li>
-                                            <li>
-                                                <a>Nikunjo 1</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-sm-6">
-                                <div class="portfolio-item-two">
-                                    <a href="#">
-                                        <img src="{{ asset('front/assets/img/project/nahid-group-md-house-home.jpg') }}" alt="Images">
-                                    </a>
-                                    <div class="content active">
-                                        <div class="title">
-                                            <h3><a href="#">Nahid Group MD House</a></h3>
-                                        </div>
-
-                                        <ul>
-                                            <li>
-                                                <a href="#">Traction MRL Passenger Lift</a>
-                                            </li>
-                                            <li>
-                                                <a>Gulshan 1</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-sm-6">
-                                <div class="portfolio-item-two">
-                                    <a href="#">
-                                        <img src="{{ asset('front/assets/img/project/sheraton-home.jpg') }}" alt="Images">
-                                    </a>
-                                    <div class="content active">
-                                        <div class="title">
-                                            <h3><a href="#">Sheraton</a></h3>
-                                        </div>
-
-                                        <ul>
-                                            <li>
-                                                <a href="#">Hydraulic Car Lift</a>
-                                            </li>
-                                            <li>
-                                                <a>Banani</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-sm-6">
-                                <div class="portfolio-item-two">
-                                    <a href="#">
-                                        <img src="{{ asset('front/assets/img/project/spl-lifestyle-home.jpg') }}" alt="Images">
-                                    </a>
-                                    <div class="content active">
-                                        <div class="title">
-                                            <h3><a href="#">SPL lifestyle</a></h3>
-                                        </div>
-
-                                        <ul>
-                                            <li>
-                                                <a href="#">Traction MRL Home Lift</a>
-                                            </li>
-                                            <li>
-                                                <a>Tejgaon</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-sm-6">
-                                <div class="portfolio-item-two">
-                                    <a href="#">
-                                        <img src="{{ asset('front/assets/img/project/sunnydale-school-home.jpg') }}" alt="Images">
-                                    </a>
-                                    <div class="content active">
-                                        <div class="title">
-                                            <h3><a href="#">Sunnydale School</a></h3>
-                                        </div>
-
-                                        <ul>
-                                            <li>
-                                                <a href="#">Traction MR Passenger Lift</a>
-                                            </li>
-                                            <li>
-                                                <a>Bashundhara</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div> --}}
                         </div>
                     </div>
                 </div>

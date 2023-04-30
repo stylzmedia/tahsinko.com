@@ -22,7 +22,10 @@
 
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
+<<<<<<< HEAD
 
+=======
+>>>>>>> 370f2a05e83f60f2f41491d8a4cc49ca6281b684
      {{-- <!-- Bootstrap CSS -->
      <link rel="stylesheet" href="{{asset('/front/assets/css/bootstrap.min.css') }}">
      <!-- Boxicons CSS -->

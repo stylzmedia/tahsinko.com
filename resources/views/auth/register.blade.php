@@ -72,7 +72,7 @@
                             </div>
                         @else
                             <div class="my-3 text-4xl font-bold tracking-wider text-center">
-                                <a href="#">MATRIX<br>Engineering Services</a>
+                                <a href="{{ route('homepage') }}">{{$settings_g['title'] ?? env('APP_NAME')}}<br>{{ ($settings_g['slogan'] ?? '') }}</a>
                             </div>
                         @endif
                         <p class="mt-6 font-normal text-center text-gray-300 md:mt-0">

@@ -134,7 +134,7 @@
                     </div>
                     <div class="d-flex align-items-center">
                        <a href="{{route('homepage')}}" target="_blank" >
-                        <button type="button" class="btn btn-success text-white"> <i class="ri-eye-fill"></i> View Website</button>
+                        <button type="button" class="btn btn-danger text-white"> <i class="ri-eye-fill"></i> View Website</button>
                         </a>
                     </div>
                     <div class="d-flex align-items-right">
@@ -585,11 +585,11 @@
                         <div class="col-sm-6">
                             © <script  type="application/javascript">document.write(new Date().getFullYear())</script> {{$settings_g['title'] ?? ''}}.
                         </div>
-                        {{-- <div class="col-sm-6">
-                            <div class="text-sm-end d-none d-sm-block">
-                                website by StylzMedia.com
+                        <div class="col-sm-6">
+                            <div class="text-sm-end d-sm-block">
+                                website by  <a href="https://jamunasoft.com/" target="_blank" rel="noopener noreferrer">JamunaSoft</a>
                             </div>
-                        </div> --}}
+                        </div>
                     </div>
                 </div>
             </footer>
