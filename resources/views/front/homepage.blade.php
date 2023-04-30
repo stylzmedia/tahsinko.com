@@ -1,31 +1,10 @@
 @extends('front.layouts.master')
 
 @section('head')
-
-    {{-- <!-- Title  -->
-    <title> {{ config('app.name') }} | {{$settings_g['slogan'] ?? ''}}</title> --}}
-
+    <!-- Title  -->
     @include('meta::manager', [
         'title' => ($settings_g['title'] ?? env('APP_NAME')) . ' - ' . ($settings_g['slogan'] ?? '')
     ])
-
-<!-- Title  -->
-
-
-
-<style>
-    .portfolio-area .slick-next {right: -700px; z-index: 999; top: 40%;}
-
-    .portfolio-area .slick-prev {left: -700px; z-index: 999; top: 40%;}
-
-    .slick-prev:before, .slick-next:before{font-size: 40px; color: #f00;}
-
-    .team-list .slick-next {right: -850px; z-index: 999; top: 33%;}
-
-    .team-list .slick-prev {left: -850px; z-index: 999; top: 33%;}
-
-</style>
-
 @endsection
 
 @section('master')
@@ -518,7 +497,6 @@
 
 <!-- Section Nine Start -->
     <div class="portfolio-area pb-70">
-
             <div class="tm-title text-uppercase text-center mt-2">
                 <h1>Our Project</h1>
             </div>
@@ -528,28 +506,70 @@
                     <div class="tabs_item current">
                         <div class="row portfolio-item">
                             @foreach($projects as $project)
-                            <div class="col-lg-3 col-sm-6">
-                                <div class="portfolio-item-two">
-                                    {{-- <a href="{{ route('project.single') }}"> --}}
-                                    <a href="{{ route('project.single', $project->id) }}">
-                                        {{-- <img src="{{ asset('front/assets/img/project/anwar-hossain-monzu-home.jpg') }}" alt="Images"> --}}
-                                        <img src="{{ $project->img_paths['original'] }}" alt="Images">
-                                    </a>
-                                    <div class="content active">
-                                        <div class="title">
-                                            <h3><a href="#">{{ $project->title }}</a></h3>
+                                <div class="col-lg-3 col-sm-6">
+                                    <div class="portfolio-item-two">
+                                        <a href="{{ route('project.single', $project->id) }}">
+                                            <img src="{{ $project->img_paths['original'] }}" alt="Images">
+                                        </a>
+                                        <div class="content active">
+                                            <div class="title">
+                                                <h3><a href="#">{{ $project->title }}</a></h3>
+                                            </div>
+                                            <ul>
+                                                <li>
+                                                    <a href="#">{{ $project->lift_type }}</a>
+                                                </li>
+                                                <li>
+                                                    <a>{{ $project->location }}</a>
+                                                </li>
+                                            </ul>
                                         </div>
-                                        <ul>
-                                            <li>
-                                                <a href="#">{{ $project->lift_type }}</a>
-                                            </li>
-                                            <li>
-                                                <a>{{ $project->location }}</a>
-                                            </li>
-                                        </ul>
                                     </div>
                                 </div>
-                            </div>
+                            @endforeach
+                            @foreach($projects as $project)
+                                <div class="col-lg-3 col-sm-6">
+                                    <div class="portfolio-item-two">
+                                        <a href="{{ route('project.single', $project->id) }}">
+                                            <img src="{{ $project->img_paths['original'] }}" alt="Images">
+                                        </a>
+                                        <div class="content active">
+                                            <div class="title">
+                                                <h3><a href="#">{{ $project->title }}</a></h3>
+                                            </div>
+                                            <ul>
+                                                <li>
+                                                    <a href="#">{{ $project->lift_type }}</a>
+                                                </li>
+                                                <li>
+                                                    <a>{{ $project->location }}</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+                            @foreach($projects as $project)
+                                <div class="col-lg-3 col-sm-6">
+                                    <div class="portfolio-item-two">
+                                        <a href="{{ route('project.single', $project->id) }}">
+                                            <img src="{{ $project->img_paths['original'] }}" alt="Images">
+                                        </a>
+                                        <div class="content active">
+                                            <div class="title">
+                                                <h3><a href="#">{{ $project->title }}</a></h3>
+                                            </div>
+                                            <ul>
+                                                <li>
+                                                    <a href="#">{{ $project->lift_type }}</a>
+                                                </li>
+                                                <li>
+                                                    <a>{{ $project->location }}</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
                             @endforeach
                         </div>
                     </div>
