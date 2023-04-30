@@ -54,25 +54,25 @@
                                         <th scope="row">{{$key + 1}}</th>
                                         <td>{{$page->title}}</td>
                                         <td>
-                                            @isset(auth()->user()->role->permission['permission']['pages']['edit'])
+                                            @if(auth()->user()->permission('pages', 'edit'))
                                             @include('switcher::switch', [
                                                 'table' => 'pages',
                                                 'data' => $page
                                             ])
-                                            @endisset
+                                            @endif
                                         </td>
                                         <td class="text-right">
-                                            @isset(auth()->user()->role->permission['permission']['pages']['edit'])
+                                            @if(auth()->user()->permission('pages', 'edit'))
                                             <a class="btn btn-sm btn-success" href="{{route('back.pages.edit', $page->id)}}"><i class="ri-edit-2-line"></i></a>
-                                            @endisset
-                                            @isset(auth()->user()->role->permission['permission']['pages']['delete'])
+                                            @endif
+                                            @if(auth()->user()->permission('pages', 'delete'))
                                             <form class="d-inline-block" action="{{route('back.pages.destroy', $page->id)}}" method="POST">
                                                 @method('DELETE')
                                                 @csrf
 
                                                 <button class="btn btn-sm btn-danger" type="submit" onclick="return confirm('Are you sure to remove?')"><i class="ri-delete-bin-5-line"></i></button>
                                             </form>
-                                            @endisset
+                                            @endif
                                         </td>
                                     </tr>
                                 @endforeach
