@@ -13,6 +13,5 @@ ALTER TABLE `portfolios` CHANGE `description` `description` LONGTEXT CHARACTER S
 ALTER TABLE `portfolios` CHANGE `product_id` `product_id` BIGINT(20) UNSIGNED NULL DEFAULT NULL;
 
 
-May 2 2023
-ALTER TABLE `services` CHANGE `description` `description` TEXT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL;
+
 

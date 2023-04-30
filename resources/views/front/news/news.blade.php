@@ -5,9 +5,9 @@
 @endphp
 @section('head')
         @include('meta::manager', [
-            'title' => $news->meta_title . ' - ' . ($settings_g['title'] ?? env('APP_NAME')),
-            'image' => $news->media_id ? $news->img_paths['medium'] : null,
-            'description' => $news->meta_description
+            'title' => $page->meta_title . ' - ' . ($settings_g['title'] ?? env('APP_NAME')),
+            'image' => $page->media_id ? $news->img_paths['medium'] : null,
+            'description' => $page->meta_description
         ])
 
 @endsection
@@ -77,33 +77,4 @@
         </div>
     </div>
     <!-- Blog Area End -->
-
-    {{-- <div class="our-news scroll-animation-section show-on-scroll" style="padding-bottom: 15px; background: #ddd; padding: 50px 0;">
-        <div class="container" >
-            <div class="heading-title">
-                <label>All News</label>
-
-            </div>
-            <div class="row">
-                @foreach ($newes as $news)
-                    <div class="col-lg-3 col-md-6 col-sm-12">
-                        <div class="blog-item">
-                            <div class="image-wrap">
-                                <a href="blog-details">
-                                    <img src="{{ $news->img_paths['small'] }}" alt="Blog">
-                                </a>
-                            </div>
-                            <div class="blog-content">
-                            <ul class="blog-meta mb-10">
-                                <li class="date"> <i class="fa fa-calendar-check-o"></i> {{ \Carbon\Carbon::parse($news->publish_date)->format('d-M-Y')}}</li>
-                            </ul>
-                            <h3 class="blog-title"><a href="{{ route('news.single', $news->slug) }}">{{ $news->title }}</a></h3>
-                            {!! \Illuminate\Support\Str::limit($news->description,100) !!}
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
-            </div>
-        </div>
-    </div> --}}
 @endsection
