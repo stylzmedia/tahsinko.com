@@ -17,10 +17,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- FabIcons -->
     <link rel="shortcut icon" href="{{$settings_g['favicon'] ?? ''}}">
+
+    @yield('head')
+
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
-    <!-- Title  -->
-    <title> {{ config('app.name') }} | {{$settings_g['slogan'] ?? ''}}</title>
+
      {{-- <!-- Bootstrap CSS -->
      <link rel="stylesheet" href="{{asset('/front/assets/css/bootstrap.min.css') }}">
      <!-- Boxicons CSS -->
@@ -67,9 +69,6 @@
      <link rel="stylesheet" href="{{asset('/front/assets/css/responsive.css') }}">
       <!-- Theme Dark CSS -->
       <link rel="stylesheet" href="{{asset('/front/assets/css/theme-dark.css') }}">
-
-
-    @yield('head')
 
 </head>
 

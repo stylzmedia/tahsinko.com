@@ -1,6 +1,10 @@
 @extends('front.layouts.master')
 
 @section('head')
+
+    {{-- <!-- Title  -->
+    <title> {{ config('app.name') }} | {{$settings_g['slogan'] ?? ''}}</title> --}}
+
     @include('meta::manager', [
         'title' => ($settings_g['title'] ?? env('APP_NAME')) . ' - ' . ($settings_g['slogan'] ?? '')
     ])
@@ -523,7 +527,7 @@
                             <div class="col-lg-3 col-sm-6">
                                 <div class="portfolio-item-two">
                                     {{-- <a href="{{ route('project.single') }}"> --}}
-                                    <a href="#">
+                                    <a href="{{ route('project.single', $project->id) }}">
                                         {{-- <img src="{{ asset('front/assets/img/project/anwar-hossain-monzu-home.jpg') }}" alt="Images"> --}}
                                         <img src="{{ $project->img_paths['original'] }}" alt="Images">
                                     </a>

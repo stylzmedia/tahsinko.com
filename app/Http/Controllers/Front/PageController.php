@@ -89,8 +89,8 @@ class PageController extends Controller
 
     }
 
-    public function singleProject($name){
-        $project = Portfolio::where('name', $name)->first();
+    public function singleProject($id){
+        $project = Portfolio::where('id', $id)->first();
 
         return view('front.single-project',compact('project'));
 
