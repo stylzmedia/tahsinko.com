@@ -102,7 +102,7 @@
                                                 <div class="col-md-6">
                                                     <div class="form-group is_bread_display image" style="width:100px;position:relative;@if($page->is_color == 2) display:block @else display:none @endif">
                                                         <input type="file" id="bread_file" name="breadcrumb_background" style="opacity: 0;position:absolute;top:0;left:0;height:100%;width:100%;" />
-                                                    <img style="width:100%;"  id="bread_img_preview" src="@if($page->is_color == 2){{asset($page->breadcrumb_background)}}@else https://st.depositphotos.com/2934765/53192/v/1600/depositphotos_531920820-stock-illustration-photo-available-vector-icon-default.jpg @endif"/>
+                                                    <img style="width:100%;"  id="bread_img_preview" src="@if($page->is_color == 2){{$page->img_paths['small']}}@else https://st.depositphotos.com/2934765/53192/v/1600/depositphotos_531920820-stock-illustration-photo-available-vector-icon-default.jpg @endif"/>
                                                     </div>
                                                     <div class="form-group is_bread_display color "  style="@if($page->is_color == 2) display:none @else display:block @endif">
 
@@ -113,7 +113,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="breadcrumb_title" class="form-label">breadcrumb Title</label>
-                                            <input type="text" class="form-control" id="breadcrumb_title" name="breadcrumb_title" value="{{old('breadcrumb_title')}}">
+                                            <input type="text" class="form-control" id="breadcrumb_title" name="breadcrumb_title" value="{{old('breadcrumb_title') ?? $page->meta_title}}">
                                         </div>
                                         <div class="form-group">
                                             <label><b>Page Template</b></label>

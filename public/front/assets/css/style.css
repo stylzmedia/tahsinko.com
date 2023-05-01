@@ -749,15 +749,13 @@ Navbar Area
   color: #EB1D36;
 }
 
-.sticky-nav {
-  top: 0;
-  position: fixed;
-  -webkit-animation: 900ms ease-in-out 5s normal none 1 running fadeInDown;
-          animation: 900ms ease-in-out 5s normal none 1 running fadeInDown;
-  -webkit-transition: 0.9s;
-  transition: 0.9s;
-  width: 100% !important;
-  z-index: 999;
+
+.sticky-nav{
+    top: 0;
+    -webkit-animation: 900ms ease-in-out 2s normal none 1 running fadeInDown;
+    animation: 900ms ease-in-out 2s normal none 1 running fadeInDown;
+    width: 100% !important;
+    z-index: 999;
 }
 
 .sticky-nav .navbar-light .navbar-brand img {
@@ -768,7 +766,7 @@ Navbar Area
   top: 0;
   background-color: #000000;
   position: fixed;
-  border-bottom: none;
+  border-bottom: 3px solid rgb(255 0 0 / 50%);
 }
 
 .sticky-nav .menu-icon {
@@ -2060,10 +2058,24 @@ Inner Banner
   opacity: 0.7;
 }
 
-.inner-banner .inner-title {
+/* .inner-banner .inner-title {
     padding-top: 150px;
     padding-bottom: 150px;
     position: relative;
+} */
+
+.inner-banner .inner-image {
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+}
+
+.inner-banner .inner-title {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    -webkit-transform: translate(-50%, -50%);
 }
 
 .inner-banner .inner-title h3 {
@@ -8081,114 +8093,7 @@ h2{
   }
 
 
-  /* Featured product */
-  .card {
-    position: relative;
-    width: 320px;
-    height: 480px;
-    background: #191919;
-    border-radius: 20px;
-    overflow: hidden;
-  }
 
-  .card::before {
-    content: "";
-    position: absolute;
-    top: -50%;
-    width: 100%;
-    height: 100%;
-    background: #ff000a;
-    transform: skewY(345deg);
-    transition: 0.5s;
-  }
-
-  .card:hover::before {
-    top: -70%;
-    transform: skewY(390deg);
-  }
-
-  .card::after {
-    content: "CORSAIR";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    font-weight: 600;
-    font-size: 6em;
-    color: rgba(0, 0, 0, 0.1);
-  }
-
-  .card .imgBox {
-    position: relative;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 20px;
-    z-index: 1;
-    transition: 0.7s;
-  }
-  .card:hover .imgBox {
-    transform: translateY(-5px);
-  }
-  /*
-  .card .imgBox img {
-      max-width: 100%;
-
-      transition: .5s;
-  }
-
-  */
-  .card .contentBox {
-    position: relative;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    z-index: 2;
-  }
-
-  .card .contentBox h3 {
-    font-size: 18px;
-    color: white;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
-
-  .card .contentBox .price {
-    font-size: 24px;
-    color: white;
-    font-weight: 700;
-    letter-spacing: 1px;
-  }
-
-  .card .contentBox .buy {
-    position: relative;
-    top: 100px;
-    opacity: 0;
-    padding: 10px 30px;
-    margin-top: 15px;
-    color: #000000;
-    text-decoration: none;
-    background: #ffce00;
-    border-radius: 30px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: 0.5s;
-  }
-
-  .card:hover .contentBox .buy {
-    top: 0;
-    opacity: 1;
-  }
-
-  .mouse {
-    height: 400px;
-    width: auto;
-  }
-
-  /* featured product end  */
 
 
   /* social */

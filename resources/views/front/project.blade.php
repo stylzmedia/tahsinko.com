@@ -1,12 +1,16 @@
 @extends('front.layouts.master')
 @php
-    $page_title="Portfolio";
     $projects = \App\Models\Portfolio::where(['status'=>1])->orderBy('id','DESC')->get();
 @endphp
 @section('head')
-    @include('meta::manager', [
-        'title' => 'Portfolio - ' . ($settings_g['slogan'] ?? '')
-    ])
+        @include('meta::manager', [
+            'title' => $page->meta_title. ' - ' . ($settings_g['title'] ?? ''),
+            'description' => $page->meta_description,
+            'keywords' => $page->meta_tags,
+            'image' => $page->media_id ? $page->img_paths['original'] : null,
+
+        ])
+
     <style>
         .header {
             position: relative;
@@ -16,57 +20,80 @@
 
 @section('master')
 
-  <!-- Breadcrumb -->
-  @php
-  if(empty($page->breadcrumb_background)){
-      $back_value="#2c3232b0";
-  }else{
-      $back_value=$page->breadcrumb_background;
-  }
-  if($page->is_color == 2){
-      $bg_bread="background:rgba(0, 0, 0, 0) url('../$back_value') no-repeat scroll center center / cover;";
-  }else{
-      $bg_bread="background:".$back_value;
-  }
-
-@endphp
-<section id="page-header" class="section background" style="{{$bg_bread}}">
-<div class="container">
-  <div class="row">
-      <div class="col-sm-12 text-center">
-        <h3>@if(empty($page->breadcrumb_title)){{$page->title}}@else{{$page->breadcrumb_title}}@endif</h3>
-      </div>
-  </div><!-- end row -->
-</div><!-- end container -->
-</section>
-
+<!-- Breadcrumb -->
+    @php
+    if(empty($page->breadcrumb_background)){
+        $back_value="#2c3232b0";
+    }else{
+        $back_value=$page->breadcrumb_background;
+    }
+    if($page->is_color == 2){
+        $bg_bread="background:rgba(0, 0, 0, 0) url('../$back_value') no-repeat scroll center center / cover;";
+    }else{
+        $bg_bread="background:".$back_value;
+    }
+    @endphp
+    <div class="inner-banner">
+        <div class="inner-image" style="{{$bg_bread}}">
+            <img src="{{ $page->media_id ? $page->img_paths['original'] : null }}" alt="">
+        </div>
+        <div class="container">
+            <div class="inner-title text-center">
+                <h3>@if(empty($page->breadcrumb_title)){{$page->title}}@else{{$page->breadcrumb_title}}@endif</h3>
+                <ul>
+                    <li>
+                        <i class="flaticon-fireplace"></i>
+                    </li>
+                    <li>
+                        <a href="{{ route('homepage') }}">Home /</a>
+                    </li>
+                    <li>Page/</li>
+                    <li>{{$page->title}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+<!-- Breadcrumb End-->
     {{-- all-products --}}
     <section class="all-project">
         {{-- our project --}}
-        <div class="our-project scroll-animation-section show-on-scroll">
-            <div class="container" style="margin:0;max-width:100%;">
-                <div class="heading-title">
-                    <label>{{ $page_title }}</label>
-
+            <div class="portfolio-area pb-70">
+                <div class="tm-title text-uppercase text-center mt-2">
+                    <h1>Our Project</h1>
                 </div>
-                <div class="row">
-                    @foreach($projects as $project)
-                        <div class="col-lg-3 col-sm-6 mb-4">
-                            <div class="project-box">
-                                <img class="image-animantion show-on-scroll" src="{{ $project->img_paths['small'] }}"/>
-                                <div class="project-title-bar">{{ $project->title }}</div>
-                                <div class="project-content">
-
-                                    {!! \Illuminate\Support\Str::limit($project->description,150) !!}
-
+                <div class="container">
+                    <div class="tab portfolio-tab">
+                        <div class="tab_content current active pt-45">
+                            <div class="tabs_item current">
+                                <div class="row portfolio-item">
+                                    @foreach($projects as $project)
+                                        <div class="col-lg-3 col-sm-6">
+                                            <div class="portfolio-item-two">
+                                                <a href="{{ route('project.single', $project->id) }}">
+                                                    <img src="{{ $project->img_paths['original'] }}" alt="Images">
+                                                </a>
+                                                <div class="content active">
+                                                    <div class="title">
+                                                        <h3><a href="{{ route('project.single', $project->id) }}">{{ $project->title }}</a></h3>
+                                                    </div>
+                                                    <ul>
+                                                        <li>
+                                                            <a href="{{ route('project.single', $project->id) }}">{{ $project->lift_type }}</a>
+                                                        </li>
+                                                        <li>
+                                                            <a>{{ $project->location }}</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
-                    @endforeach
-
+                    </div>
                 </div>
             </div>
-        </div>
         {{-- end our porject --}}
     </section>
 

@@ -12,10 +12,6 @@
 
 
 @section('head')
-    {{-- @include('meta::manager', [
-        'title' => $news->title.'- ' . ($settings_g['slogan'] ?? '')
-    ]) --}}
-
 @include('meta::manager', [
     'title' => $news->meta_title . ' - ' . ($settings_g['title'] ?? env('APP_NAME')),
     'image' => $news->media_id ? $news->img_paths['medium'] : null,

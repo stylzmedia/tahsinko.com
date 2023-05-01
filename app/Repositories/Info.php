@@ -81,8 +81,8 @@ class Info {
         ];
 
         $template[] = [
-            'name' => 'Testimonial',
-            'blade' => 'testimonial.all'
+            'name' => 'AllClients',
+            'blade' => 'all-clients'
         ];
 
         $template[] = [

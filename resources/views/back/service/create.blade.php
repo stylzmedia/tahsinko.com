@@ -51,7 +51,7 @@
 
                                                 <div class="form-group">
                                                     <label for="editor" class="form-label">Description </label>
-                                                    <textarea class="form-control" id="editor" placeholder="Enter the Description"
+                                                    <textarea class="form-control" type="text" id="editor" placeholder="Enter the Description"
                                                         name="description">{{ old('description') }}</textarea>
                                                 </div>
 

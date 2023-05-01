@@ -4,26 +4,35 @@
     $newes=\App\Models\News::where(['status'=>1])->orderBy('id','DESC')->get();
 @endphp
 @section('head')
-    @include('meta::manager', [
-        'title' => 'News - ' . ($settings_g['slogan'] ?? '')
-    ])
-    <style>
-        .header {
-            position: relative;
-        }
-    </style>
+        @include('meta::manager', [
+            'title' => $news->meta_title . ' - ' . ($settings_g['title'] ?? env('APP_NAME')),
+            'image' => $news->media_id ? $news->img_paths['medium'] : null,
+            'description' => $news->meta_description
+        ])
+
 @endsection
 
 @section('master')
-
-
-    {{-- News section --}}
-
-      <!-- Inner Banner -->
-      <div class="inner-banner inner-bg6">
+<!-- Breadcrumb -->
+    @php
+    if(empty($page->breadcrumb_background)){
+        $back_value="#2c3232b0";
+    }else{
+        $back_value=$page->breadcrumb_background;
+    }
+    if($page->is_color == 2){
+        $bg_bread="background:rgba(0, 0, 0, 0) url('../$back_value') no-repeat scroll center center / cover;";
+    }else{
+        $bg_bread="background:".$back_value;
+    }
+    @endphp
+    <div class="inner-banner">
+        <div class="inner-image" style="{{$bg_bread}}">
+            <img src="{{ $page->media_id ? $page->img_paths['original'] : null }}" alt="">
+        </div>
         <div class="container">
             <div class="inner-title text-center">
-                <h3>{{$page->title}}</h3>
+                <h3>@if(empty($page->breadcrumb_title)){{$page->title}}@else{{$page->breadcrumb_title}}@endif</h3>
                 <ul>
                     <li>
                         <i class="flaticon-fireplace"></i>
@@ -37,7 +46,7 @@
             </div>
         </div>
     </div>
-    <!-- Inner Banner End -->
+<!-- Breadcrumb End-->
 
     <!-- Blog Area -->
     <div class="blog-area pb-70">

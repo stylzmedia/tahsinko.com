@@ -167,6 +167,9 @@ Default btn Style End
   pointer-events: none;
 }
 
+.carousel-inner {
+    height: 800px;
+}
 
 /* Team  */
 
@@ -861,7 +864,7 @@ Default btn Style End
   margin-bottom: 30px;
 }
 
-.card {
+.feature-product .card {
   position: relative;
   height: 480px;
   background: #191919 !important;
@@ -869,7 +872,7 @@ Default btn Style End
   overflow: hidden;
 }
 
-.card::before {
+.feature-product .card::before {
   content: "";
   position: absolute;
   top: -50%;
@@ -879,15 +882,26 @@ Default btn Style End
   transform: skewY(345deg);
   transition: 0.5s;
 }
+.feature-product .card::after {
+    content: "CORSAIR";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-weight: 600;
+    font-size: 6em;
+    color: rgba(0, 0, 0, 0.1);
+}
 
-.card:hover::before {
+
+
+.feature-product .card:hover::before {
   top: -70%;
   transform: skewY(390deg);
 }
 
 
 
-.card .imgBox {
+.feature-product .card .imgBox {
   position: relative;
   width: 100%;
   display: flex;
@@ -897,18 +911,11 @@ Default btn Style End
   z-index: 1;
   transition: 0.7s;
 }
-.card:hover .imgBox {
+.feature-product .card:hover .imgBox {
   transform: translateY(-5px);
 }
-/*
-.card .imgBox img {
-    max-width: 100%;
 
-    transition: .5s;
-}
-
-*/
-.card .contentBox {
+.feature-product .card .contentBox {
   position: relative;
   padding: 20px;
   display: flex;
@@ -918,7 +925,7 @@ Default btn Style End
   z-index: 2;
 }
 
-.card .contentBox h3 {
+.feature-product .card .contentBox h3 {
   font-size: 18px;
   color: white;
   font-weight: 500;
@@ -926,14 +933,14 @@ Default btn Style End
   letter-spacing: 1px;
 }
 
-.card .contentBox .price {
+.feature-product .card .contentBox .price {
   font-size: 24px;
   color: white;
   font-weight: 700;
   letter-spacing: 1px;
 }
 
-.card .contentBox .buy {
+.feature-product .card .contentBox .buy {
   position: relative;
   top: 100px;
   opacity: 0;
@@ -948,12 +955,12 @@ Default btn Style End
   transition: 0.5s;
 }
 
-.card:hover .contentBox .buy {
+.feature-product .card:hover .contentBox .buy {
   top: 0;
   opacity: 1;
 }
 
-.mouse {
+.feature-product .mouse {
   height: 400px;
   width: auto;
 }
@@ -1068,6 +1075,23 @@ Portfolio Area
   .portfolio-item {
     position: relative;
   }
+
+  .portfolio-item .slick-next:before {
+    position: absolute;
+    right: 0;
+    top: -70px;
+    color: red;
+    font-size: 50px;
+}
+
+.portfolio-item  .slick-prev:before {
+    position: absolute;
+    left: 0;
+    top: -70px;
+    z-index: 999;
+    color: red;
+    font-size: 50px;
+}
 
   .portfolio-item .content1 {
     position: absolute;
@@ -1253,7 +1277,7 @@ Portfolio Area
     color: #ffffff;
   }
 
-  .portfolio-area .tab_content .tabs_item .col-lg-3:nth-child(1) .portfolio-item-two {
+  .portfolio-area .tab_content .tabs_item .col-lg-3:nth-child(odd) .portfolio-item-two {
     margin-top: 45px;
   }
 
@@ -1493,11 +1517,43 @@ Portfolio Area
 
 
 
+/* Our Valuable Clients Pages  */
+    .client-list {
+        display: flex;
+        justify-content: space-around;
+        flex-direction: row;
+        height: 250px;
+        flex-wrap: wrap;
+        align-content: space-around;
+    }
+    .client-section .col-md-3:nth-child(n){
+        border-bottom: solid 1px #e6e7e8;
+        border-right: solid 1px #e6e7e8;
+    }
 
-  /* @keyframes slide-before {
-    from { left: -50px; }
-    to { left: calc(100%); }
-  } */
+    .client-section .col-md-3:nth-child(even){
+        border-bottom: solid 1px #e6e7e8;
+        border-right: solid 1px #e6e7e8;
+    }
+    .client-section .col-md-3:nth-child(4n){
+        border-right: none!important;
+    }
+
+    .client-section .col-md-3:nth-last-child(-n+2) {
+        border-bottom: none;
+    }
+
+    .client-item img {
+        filter: grayscale(.8);
+        scale: 1.1;
+        transition: .5ms;
+    }
+    .client-item img:hover {
+        scale: 1.3;
+        transition-duration: 2s;
+        filter: grayscale(.1);
+    }
+/* Our Valuable Clients Pages End */
 
 
 

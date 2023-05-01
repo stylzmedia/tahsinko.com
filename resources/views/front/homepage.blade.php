@@ -40,16 +40,13 @@
                             </div>
                         @elseif($slider->slider_type== 3)
                         @php
-
-                        $longUrlRegex = '/youtube.com\/((?:embed)|(?:watch))((?:\?v\=)|(?:\/))([a-zA-Z0-9_-]+)/i';
-                        if (preg_match($longUrlRegex, $slider->slider_script, $matches)) {
-                          $youtube_id = $matches[count($matches) - 1];
-                         }
-
+                            $longUrlRegex = '/youtube.com\/((?:embed)|(?:watch))((?:\?v\=)|(?:\/))([a-zA-Z0-9_-]+)/i';
+                            if (preg_match($longUrlRegex, $slider->slider_script, $matches)) {
+                            $youtube_id = $matches[count($matches) - 1];
+                            }
                         @endphp
-
                         <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
-                            <iframe class="background-video-embed" frameborder="0" allowfullscreen="1" src="{{'https://www.youtube.com/embed/' . $youtube_id}}?autoplay=1&mute=1&controls=0&playlist={{ $youtube_id }}&loop=1" style="width: 100%; height: 902.812px; pointer-events: none;"></iframe>
+                            <iframe class="background-video-embed" frameborder="0" allowfullscreen="1" src="{{'https://www.youtube.com/embed/' . $youtube_id}}?version=3&vq=hd1080&autoplay=1&mute=1&controls=0&playlist={{ $youtube_id }}&loop=1" style="width: 100%; height: 850px; pointer-events: none;"></iframe>
                         </div>
                         @endif
                     @endforeach
