@@ -5,6 +5,20 @@
     @include('meta::manager', [
         'title' => ($settings_g['title'] ?? env('APP_NAME')) . ' - ' . ($settings_g['slogan'] ?? '')
     ])
+
+<style>
+    .animate-on-scroll {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
+
 @endsection
 
 @section('master')
@@ -207,7 +221,7 @@
                 <div class="pline-content position-absolute my-2">
                     <div class="row justify-content-center">
                         <div class="col-xxl-3 col-xl-4 col-lg-6 col-md-8 col-sm-12 col-12">
-                            <div class="pline-title my-5">
+                            <div class="pline-title animate-4 my-5">
                                 <h2>product line</h2>
                             </div>
                         </div>
@@ -322,14 +336,14 @@
             <div class="row section-six-inner">
                 <div class="col-xl-6 col-lg-6 col-md-6">
                     <div class="flag-tm-left">
-                        <img src="{{asset('front/images/section/bd-flag.png')}}" alt="" class="bd-flag">
+                        <img src="{{asset('front/images/section/bd-flag.png')}}" alt="" class="bd-flag animate-5">
                         <img src="{{asset('front/images/section/tm-bd.png')}}" alt="" class="tm-bd">
                     </div>
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-6">
                     <div class="flag-tm-right">
                         <img src="{{asset('front/images/section/tm-cn.png')}}" alt="" class="tm-cn">
-                        <img src="{{asset('front/images/section/cn-flag.png')}}" alt="" class="cn-flag">
+                        <img src="{{asset('front/images/section/cn-flag.png')}}" alt="" class="cn-flag animate-6">
                     </div>
 
                 </div>
@@ -739,7 +753,6 @@ $('.team-list').mouseover(function() {
         }]
     });
 </script>
-
 @endsection
 
 

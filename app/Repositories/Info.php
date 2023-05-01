@@ -92,7 +92,7 @@ class Info {
 
 
         $template[] = [
-            'name' => 'Contactus',
+            'name' => 'Contact Us',
             'blade' => 'contactUs'
         ];
 

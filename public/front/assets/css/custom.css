@@ -373,9 +373,12 @@ Default btn Style End
     margin-left: 15%;
     margin-right: 25%;
     text-align: justify;
-    color: #ffff;
     font-size: 23px;
     line-height: normal;
+}
+
+.section-content-inner p{
+    color: #ffff;
 }
 
 .section-three {
@@ -419,12 +422,17 @@ Default btn Style End
     padding-bottom: 30px;
 }
 
+
 .section-three-content .inner {
     background: rgb(255 144 0 / 60%);
     padding: 6%;
     color: #ffff;
     font-size: 22px;
     text-align: justify;
+}
+
+.section-three-content p{
+    color: #ffff;
 }
 
 .section-three .quote .quote {
@@ -543,7 +551,7 @@ Default btn Style End
     letter-spacing: 4px;
 }
 
-.pline-title h2::before {
+.animation-line h2::before {
     position: absolute;
     top: 25px;
     left: 10px;
@@ -552,9 +560,22 @@ Default btn Style End
     height: 65px;
     content: "";
     border-radius: 5px;
+    animation: slide-title-before 5s forwards;
+    animation-timing-function: cubic-bezier(0.22, 0.71, 0.32, 0.82);
+
 }
 
-.pline-title h2::after {
+@keyframes slide-title-before {
+    0% {
+      transform: translateY(300px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+
+.animation-line h2::after {
     position: absolute;
     bottom: 25px;
     right: 10px;
@@ -563,31 +584,63 @@ Default btn Style End
     height: 65px;
     content: "";
     border-radius: 5px;
+    animation: slide-title-after 5s reverse;
+    animation-timing-function: cubic-bezier(0.78, 0.16, 0.9, 0.35);
+
 }
 
+@keyframes slide-title-after {
+    0% {
+        transform: translateY(0%);
+      }
+      100% {
+        transform: translateY(-100px);
+      }
+  }
 
-.pline-title::before {
+.animation-line::before {
     position: absolute;
     top: 60px;
-    right: 525px;
+    right: 655px;
     background: #a7a7a7;
     width: 370px;
     height: 6px;
     content: "";
     border-radius: 5px;
+    animation: slide-before 5s reverse;
+    animation-timing-function: cubic-bezier(0.66, 0.2, 0.9, 0.43);
 }
 
-.pline-title::after {
+@keyframes slide-before {
+    0% {
+      transform: translateX(-0px);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
+.animation-line::after {
     position: absolute;
     top: 110px;
-    left: 525px;
+    left: 280px;
     background: #a7a7a7;
     width: 370px;
     height: 6px;
     content: "";
     border-radius: 5px;
+    animation: slide-after 5s forwards;
+    animation-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
+@keyframes slide-after {
+    0% {
+      transform: translateX(-50px);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
 
 .pline-item-icon{
     background-color: #ffffff;
@@ -657,11 +710,28 @@ Default btn Style End
 
 
 
-.flag-tm-left .bd-flag {
+.flag-tm-left .bd-flag  {
     height: 200px;
     position: absolute;
     top: 30%;
 }
+
+.flag-tm-left-animated  {
+    animation: flag-tm-left-animated 8s infinite;
+    animation-timing-function: cubic-bezier(0.01, 0.01, 1, 1.02);
+}
+
+@keyframes flag-tm-left-animated {
+    0% {
+      left: 0;
+    }
+    50% {
+      left: calc(50% - 300px);
+    }
+    100% {
+      left: 0;
+    }
+  }
 
 
 .flag-tm-right .cn-flag {
@@ -670,6 +740,24 @@ Default btn Style End
     top: 30%;
     right: 0;
 }
+
+.flag-tm-right-animated  {
+    animation: flag-tm-right-animated 8s infinite;
+    animation-timing-function: cubic-bezier(0.01, 0.01, 1, 1.02);
+}
+
+@keyframes flag-tm-right-animated {
+    0% {
+      right: 0;
+    }
+    50% {
+      right: calc(50% - 300px);
+    }
+    100% {
+      right: 0;
+    }
+  }
+
 
 .flag-tm-left .tm-bd {
     height: 350px;
@@ -1096,7 +1184,11 @@ Portfolio Area
     width: 100%;
   }
 
-
+  .portfolio-item-two img:hover{
+    filter: grayscale(100%);
+    scale: 1.1;
+    transition-duration: 3s;
+}
 
   .portfolio-item-two:hover .content {
     opacity: 1;
@@ -1303,6 +1395,23 @@ Portfolio Area
   width: 300px;
 }
 
+.team-list .slick-next:before {
+    position: absolute;
+    right: 104px;
+    top: -70px;
+    color: red;
+    font-size: 50px;
+}
+
+.team-list  .slick-prev:before {
+    position: absolute;
+    left: 104px;
+    top: -70px;
+    z-index: 999;
+    color: red;
+    font-size: 50px;
+}
+
 .team-member {
     display: flex;
     justify-content: center;
@@ -1381,6 +1490,18 @@ Portfolio Area
 }
 
 
+
+
+
+
+  /* @keyframes slide-before {
+    from { left: -50px; }
+    to { left: calc(100%); }
+  } */
+
+
+
+/* Responsive  */
 
 @media screen and (min-width: 2500px) {
     .section-one .section-one-content .section-one-inner-item .tm-img{
