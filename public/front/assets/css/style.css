@@ -2056,6 +2056,7 @@ Inner Banner
   right: 0;
   background-color: #000000;
   opacity: 0.7;
+  z-index: 1;
 }
 
 /* .inner-banner .inner-title {
@@ -2069,6 +2070,9 @@ Inner Banner
     height: 500px;
     overflow: hidden;
 }
+.inner-banner .inner-image img {
+        width: 100%;
+}
 
 .inner-banner .inner-title {
     position: absolute;
@@ -2076,6 +2080,7 @@ Inner Banner
     left: 50%;
     transform: translate(-50% , -50%);
     -webkit-transform: translate(-50%, -50%);
+    z-index: 2;
 }
 
 .inner-banner .inner-title h3 {
