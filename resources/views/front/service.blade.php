@@ -123,7 +123,7 @@
     <div class="container">
 
         <div class="row">
-          <h2 class="section-heading">{{$page->breadcrumb_title}}</h2>
+          <h2 class="section-heading text-center ">{{$page->breadcrumb_title}}</h2>
         </div>
         <div class="row d-flex flex-wrap">
             @foreach ($services as $item)

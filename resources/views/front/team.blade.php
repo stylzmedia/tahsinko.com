@@ -15,7 +15,7 @@
 
     <style>
 
-.border {
+.team .border {
   height: 369px;
   width: 290px;
   background: transparent;
@@ -23,53 +23,67 @@
   transition: border 1s;
   position: relative;
 }
-.border:hover {
+.team .border:hover {
   border: 1px solid #fff;
 }
-.card {
+.team .card {
   height: 379px;
   width: 300px;
-  background: #808080;
   border-radius: 10px;
   transition: background 0.8s;
   overflow: hidden;
-  background: #000;
   box-shadow: 0 70px 63px -60px #000;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
 }
-.card0 {
 
+.card0 h5 {
+    opacity: 0;
+    transition: opacity 1s;
+    width: 51%;
+    font-size: 1rem;
+    padding: 0 0 0 20px;
+}
+.card0:hover h5 {
+    width: 51%;
+    font-size: 1rem;
+    padding: 0 0 0 20px;
+    color: gray;
+    opacity: 1;
 }
 .card0:hover {
   background-size: 550px !important;
 }
 .card0:hover h2 {
   opacity: 1;
+  text-align: left;
 }
-.card0:hover .fa {
+.card0:hover .fab {
   opacity: 1;
 }
 
-h2 {
+
+
+.card0 h2 {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: rgb(57, 57, 57);
-  margin: 20px;
   opacity: 0;
   transition: opacity 1s;
+  text-align: left !important;
+  padding: 20px 0px 0px 20px !important;
 }
-.fab {
+.card0 .fab {
   opacity: 0;
   transition: opacity 1s;
 }
 
-.fab:hover {
+.card0 .fab:hover {
   opacity: 1;
   transition: opacity 1s;
 }
-.icons {
+.card0 .icons {
   position: absolute;
   fill: rgb(0, 91, 182);
   color: rgb(254, 0, 0);
@@ -122,84 +136,31 @@ h2 {
     </div>
 <!-- Breadcrumb End-->
 
-{{-- <div class="section9">
-    <div class="team-bg-item">
-        <img src="{{asset('front/images/section/team-bg.png')}}" alt="" class="team-bg img-fluid">
-    </div>
-    <div class="container-fluid">
-        <div class="team-section my-5">
-            <div class="row justify-content-center">
-                <div class="col-xl-4 col-lg-5 col-md-6 col-11">
-                    <div class="service-title mb-5">
-                        <h1>Our TEAM</h1>
+<section class="team">
+    <div class="container">
+        <div class="row">
+            <h2 class="section-heading text-gray-950 opacity-100 ">{{$page->breadcrumb_title}}</h2>
+          </div>
+        <div class="row justify-content-center my-5">
+        @foreach($teams as $team)
+            <div class="col-md-4">
+                <div class="card card0" style="background-image: url('{{ $team->img_paths['original'] }}'); background-size: 400px;
+                    background-repeat: no-repeat;">
+                  <div class="border">
+                    <h2>{!! $team->name !!}</h2>
+                    <h5>{!! $team->designation!!}</h5>
+                    <div class="icons">
+                        <a href="{{ $team->facebook }}"> <i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                        <a href="{{ $team->linkedin }}"> <i class="fab fa-linkedin" aria-hidden="true"></i></a>
+                        <a href="{{ $team->tweeter }}"> <i class="fab fa-twitter" aria-hidden="true"></i></a>
                     </div>
+                  </div>
                 </div>
             </div>
-            <div class="row team-list justify-content-center">
-                @foreach($teams as $team)
-                <div class="col-lg-4 col-md-6">
-                    <div class="team-item">
-                        <div class="team-item-inner text-center">
-                            <div class="team-member position-relative">
-                                <div style="top: 8%;">
-                                    <div class="hexagon">
-                                        <div class="hexagon-inner" style="overflow: hidden;">
-                                            <img src="{{ $team->img_paths['original'] }}" alt="" class="" >
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="team-member-details text-uppercase">
-                                <div class="social-link position-relative">
-                                    <!-- Facebook -->
-                                    <a class="btn btn-primary" style="background-color: #3b5998;" href="#" role="button"
-                                    ><i class="fab fa-facebook-f"></i
-                                    ></a>
-
-                                    <!-- Twitter -->
-                                    <a class="btn btn-primary" style="background-color: #55acee;" href="#" role="button"
-                                    ><i class="fab fa-twitter"></i
-                                    ></a>
-
-                                    <!-- Instagram -->
-                                    <a class="btn btn-primary" style="background-color: #ac2bac;" href="#" role="button"
-                                    ><i class="fab fa-instagram"></i
-                                    ></a>
-                                </div>
-                                <div class="team-member-name">
-                                    <h4>{!! $team->name !!}</h4>
-                                    <p>{!! $team->designation!!}</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                @endforeach
-            </div>
+            @endforeach
         </div>
     </div>
-</div> --}}
-<div class="container">
-    <div class="row justify-content-center">
-    @foreach($teams as $team)
-        <div class="col-md-4">
-            <div class="card card0" style="background-image: url('{{ $team->img_paths['original'] }}'); background-size: 400px;
-                background-repeat: no-repeat;">
-              <div class="border">
-                <h2>{!! $team->name !!}</h2>
-                <div class="icons">
-                  <i class="fab fa-codepen" aria-hidden="true"></i>
-                  <i class="fab fa-instagram" aria-hidden="true"></i>
-                  <i class="fab fa-dribbble" aria-hidden="true"></i>
-                  <i class="fab fa-twitter" aria-hidden="true"></i>
-                  <i class="fab fa-facebook-f" aria-hidden="true"></i>
-                </div>
-              </div>
-            </div>
-        </div>
-        @endforeach
-    </div>
-  </div>
+</section>
 @endsection
 
 @section('footer')
