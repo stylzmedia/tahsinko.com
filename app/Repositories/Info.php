@@ -90,6 +90,11 @@ class Info {
             'blade' => 'gallery.galleries'
         ];
 
+        $template[] = [
+            'name' => 'FAQ',
+            'blade' => 'faq'
+        ];
+
 
         $template[] = [
             'name' => 'Contact Us',
