@@ -33,6 +33,7 @@
     text-align: justify;
     font-size: 16px;
     line-height: 1.5;
+    font-weight: 400;
 }
 
 #qa_title {
@@ -69,6 +70,14 @@
     overflow: hidden;
     max-height: 45px;
 }
+
+.accordion-content header i:hover{
+    color: red;
+}
+.accordion-content header .title:hover{
+    color: red;
+}
+
 .accordion-content.open{
     padding-bottom: 10px;
     max-height: 100% !important;

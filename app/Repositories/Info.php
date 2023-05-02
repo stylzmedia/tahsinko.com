@@ -86,6 +86,11 @@ class Info {
         ];
 
         $template[] = [
+            'name' => 'Team',
+            'blade' => 'team'
+        ];
+
+        $template[] = [
             'name' => 'Media',
             'blade' => 'gallery.galleries'
         ];

@@ -546,7 +546,7 @@
     </div>
 <!-- Section Nine End -->
 
-@if(count($home_sections))
+        @if(count($home_sections))
             @foreach($home_sections as $key=>$sec)
             @if($sec->section_design_type_id==7 && count($teams))
             <input type="hidden" id="NoOfTeamMember" value="{{$sec->no_of_slide_col}}">
