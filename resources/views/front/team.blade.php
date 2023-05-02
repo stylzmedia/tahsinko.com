@@ -1,7 +1,7 @@
 @extends('front.layouts.master')
 @php
     $page_title="Service";
-    $teams = \App\Models\Team::where(['status'=>1])->orderBy('position','DESC')->get();
+    $teams = \App\Models\Team::where(['status'=>1])->orderBy('position','ASC')->get();
 @endphp
 @section('head')
     @include('meta::manager', [
