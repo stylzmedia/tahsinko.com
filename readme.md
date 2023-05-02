@@ -16,3 +16,6 @@ ALTER TABLE `portfolios` CHANGE `product_id` `product_id` BIGINT(20) UNSIGNED NU
 
 
 https://codepen.io/petegarvin1/pen/YzWBbRx
+
+
+ALTER TABLE `pages` ADD `pdf_file` VARCHAR(191) NULL DEFAULT NULL AFTER `description`;

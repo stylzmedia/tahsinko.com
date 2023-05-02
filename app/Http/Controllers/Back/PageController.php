@@ -58,6 +58,7 @@ class PageController extends Controller
 
         $page->short_description = $request->short_description;
         $page->description = $request->description;
+        $page->pdf_file = $request->pdf_file;
         $page->meta_title = $request->meta_title;
         $page->meta_description = $request->meta_description;
         $page->meta_tags = $request->meta_tags;
@@ -149,6 +150,7 @@ class PageController extends Controller
 
         $page->short_description = $request->short_description;
         $page->description = $request->description;
+        $page->pdf_file = $request->pdf_file;
         $page->meta_title = $request->meta_title;
         $page->meta_description = $request->meta_description;
         $page->meta_tags = $request->meta_tags;

@@ -29,7 +29,7 @@
                 <div class="row">
                     <div class="card">
                         <div class="blog-table-header card-header">
-                            <h4 class="card-title mb-0 flex-grow-1">News</h4>
+                            <h4 class="card-title mb-0 flex-grow-1">Page</h4>
                             <ul class="list-inline">
                                 <li class="list-inline-item"> <a href="{{ route('back.pages.index') }}" class="btn btn-info float-right"><i class="ri-add-circle-line"></i> All Page</a></li>
                             </ul>
@@ -60,6 +60,11 @@
                                             {{-- <div class="snow-editor" style="height: 300px;">
                                             </div> <!-- end Snow-editor--> --}}
                                             <textarea class="form-control" id="editor" placeholder="Enter the Description" name="description"></textarea>
+                                        </div>
+                                        <br>
+                                        <div class="form-group">
+                                            <label for="title" class="form-label">PDF Url</label>
+                                            <input type="text" class="form-control" id="pdf_file" name="pdf_file" value="{{old('pdf_file')}}">
                                         </div>
 
                                     </div>

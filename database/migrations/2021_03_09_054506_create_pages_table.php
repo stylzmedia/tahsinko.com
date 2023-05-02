@@ -20,6 +20,8 @@ class CreatePagesTable extends Migration
             $table->string("slug", 300);
             $table->text('short_description')->nullable();
             $table->longText('description')->nullable();
+            $table->string('pdf_file',191)->nullable();
+            $table->longText('description')->nullable();
             $table->integer('position')->nullable()->default(1000);
             $table->boolean('featured')->default(0);
             $table->string('meta_title')->nullable();

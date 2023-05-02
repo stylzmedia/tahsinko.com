@@ -29,7 +29,7 @@
                 <div class="row">
                     <div class="card">
                         <div class="blog-table-header card-header">
-                            <h4 class="card-title mb-0 flex-grow-1">News</h4>
+                            <h4 class="card-title mb-0 flex-grow-1">Page</h4>
                             <ul class="list-inline">
                                 <li class="list-inline-item"> <a href="{{ route('back.pages.index') }}" class="btn btn-info float-right"><i class="ri-book-open-line"></i> All Page</a></li>
                                 <li class="list-inline-item"> <a href="{{ route('back.pages.create') }}" class="btn btn-info float-right"><i class="ri-add-circle-line"></i> Create New</a></li>
@@ -50,9 +50,18 @@
 
                                         <br>
 
+                                        {{-- <div class="form-group">
+                                            <label for="short_description" class="form-label">Short Description</label>
+                                            <textarea type="text" class="form-control" id="short_description" name="short_description"
+                                            value="{{old('short_description') ?? $page->short_description}}"></textarea>
+                                        </div> --}}
+
+                                        <br>
+                                        <br>
+
                                         <div class="form-group">
                                             <label for="short_description" class="form-label">Short Description</label>
-                                            <textarea class="form-control" id="short_description" name="short_description" value="{{old('short_description') ?? $page->short_description}}"></textarea>
+                                            <textarea id="short_description" name="short_description" class="form-control">{{ $page->short_description }}</textarea>
                                         </div>
 
                                         <br>
@@ -61,7 +70,13 @@
                                             <label for="editor" class="form-label">Description <b style="color: red;">*</b></label>
                                             {{-- <div class="snow-editor" style="height: 300px;">
                                             </div> <!-- end Snow-editor--> --}}
-                                            <textarea class="form-control" id="editor" placeholder="Enter the Description" name="description">{{old('description') ?? $page->description}}</textarea>
+                                            <textarea class="form-control" id="editor" placeholder="Enter the Description" name="description" >{{$page->description}}</textarea>
+                                        </div>
+                                        <br>
+                                        <div class="form-group">
+                                            <label for="title" class="form-label">PDF Url</label>
+                                            <input type="text" class="form-control" id="pdf_file" name="pdf_file"
+                                            value="{{old('pdf_file') ?? $page->pdf_file}}">
                                         </div>
 
                                     </div>
