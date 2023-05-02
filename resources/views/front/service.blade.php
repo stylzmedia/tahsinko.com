@@ -44,7 +44,6 @@
     letter-spacing: 0.03em;
     }
     #services .icon-wrapper {
-    background-color: #2c7bfe;
     position: relative;
     margin: auto;
     font-size: 30px;
@@ -60,7 +59,6 @@
     background-position: 0 100%;
     }
     #services .card:hover .icon-wrapper {
-    background-color: #ffffff;
     color: #2c7bfe;
     }
     #services .card:hover h3 {

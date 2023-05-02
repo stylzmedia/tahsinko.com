@@ -1547,6 +1547,7 @@ Portfolio Area
         filter: grayscale(.8);
         scale: 1.1;
         transition: .5ms;
+        height: 150px;
     }
     .client-item img:hover {
         scale: 1.3;
@@ -1648,29 +1649,6 @@ Portfolio Area
         right: -4%;
     }
 
-    .section-five-inner .sec5-bgleft {
-    }
-
-
-    .section-six .inner-bg .tm-bg {
-    }
-
-    .section-six .section-six-inner {
-    }
-
-
-    .section-six .flag-tm-left .bd-flag {
-    }
-
-
-    .section-six .flag-tm-right .cn-flag {
-    }
-
-    .section-six .flag-tm-left .tm-bd {
-    }
-
-    .section-six .flag-tm-right .tm-cn {
-    }
 
 }
 
@@ -1686,6 +1664,18 @@ Portfolio Area
     .feature-product .product {
         height: 300px;
         width: auto;
+    }
+    .animation-line::before{
+        right: 630px;
+    }
+    .animation-line h2::before{
+        top: -10px;
+    }
+    .animation-line h2::after{
+        bottom: -10px;
+    }
+    .animation-line::after{
+        left: 260px;
     }
 
 }
