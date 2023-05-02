@@ -8,6 +8,7 @@
     // $related_news=\App\Models\News::where(['status'=>1])->orderBy('id','DESC')->inRandomOrder()->take(2)->get();
     $recent_news =\App\Models\News::where('category_id', $news->category_id)->where('id', '!=', $news->id)->take(2)->get();
     $related_news=\App\Models\News::where(['status'=>1])->orderBy('id','ASC')->take(4)->get();
+    $page=\App\Models\Page::where(['status'=>1])->orderBy('id','ASC')->get();
 @endphp
 
 
@@ -30,11 +31,22 @@
 
 @endsection
 @section('master')
- <!-- Inner Banner -->
- <div class="inner-banner inner-bg6">
+
+<!-- Breadcrumb -->
+@php
+if(empty($page->breadcrumb_background)){
+    $back_value="#2c3232b0";
+}else{
+    $back_value=$page->breadcrumb_background;
+}
+@endphp
+<div class="inner-banner">
+    <div class="inner-image">
+        <img src="{{ $news->media_id ? $news->img_paths['original'] : null }}" alt="">
+    </div>
     <div class="container">
         <div class="inner-title text-center">
-            <h3>{{$page_title}}</h3>
+            <h3>@if(empty($page->breadcrumb_title)){{$news->title}}@else{{$page->breadcrumb_title}}@endif</h3>
             <ul>
                 <li>
                     <i class="flaticon-fireplace"></i>
@@ -42,20 +54,21 @@
                 <li>
                     <a href="{{ route('homepage') }}">Home /</a>
                 </li>
-                <li> Blogs /</li>
+                <li>Blog/</li>
                 <li>{{$news->title}}</li>
             </ul>
         </div>
     </div>
 </div>
-<!-- Inner Banner End -->
+<!-- Breadcrumb End-->
+
 
 <!-- Blog Details Area -->
 <div class="blog-details-area pt-100 pb-70">
     <div class="container">
         <div class="blog-title">
             <ul>
-                <li><a href="#"> Home style / </a></li>
+                {{-- <li><a href="#"> Home style / </a></li> --}}
                 <li>{{ \Carbon\Carbon::parse($news->publish_date)->format('d-M-Y')}}</li>
             </ul>
             <h2>{{$news->title}}</h2>
@@ -88,16 +101,16 @@
 
             <div class="col-lg-4">
                 <div class="side-bar-wrap">
-                    <div class="search-widget">
+                    {{-- <div class="search-widget">
                         <form class="search-form">
                             <input type="search" class="form-control" placeholder="Search...">
                             <button type="submit">
                                 <i class="bx bx-search"></i>
                             </button>
                         </form>
-                    </div>
+                    </div> --}}
 
-                    <div class="side-bar-widget">
+                    {{-- <div class="side-bar-widget">
                         <h3 class="title">Categories</h3>
                         <div class="side-bar-categories">
                             <ul>
@@ -107,7 +120,7 @@
                                 </li>
                             </ul>
                         </div>
-                    </div>
+                    </div> --}}
 
                     <div class="side-bar-widget">
                         <h3 class="title">Recent Posts</h3>
