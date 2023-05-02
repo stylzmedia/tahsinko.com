@@ -37,6 +37,7 @@
   justify-content: center;
   align-items: center;
   position: relative;
+  margin-bottom: 60px;
 }
 
 .card0 h5 {
