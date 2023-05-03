@@ -37,6 +37,7 @@ class PageController extends Controller
         $clients = Customer::where(['status'=>1])->orderBy('position','ASC')->get();
         $newes = News::where(['status'=>1])->orderBy('position','ASC')->take(6)->get();
 
+
         return view('front.homepage', compact(
             'sliders',
             'home_sections',
@@ -98,12 +99,7 @@ class PageController extends Controller
     }
 
 
-    public function galleries(){
-         $galleries = Gallery::active()->get();
-         return view('front.gallery.galleries', compact('galleries'));
-    }
-    public function gallery($gallery){
-        $gallery = Gallery::where('name', $gallery)->first();
+    public function gallery(Gallery $gallery){
         return view('front.gallery.gallery', compact('gallery'));
     }
 

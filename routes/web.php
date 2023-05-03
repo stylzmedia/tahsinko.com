@@ -18,7 +18,11 @@ Route::post('contact-us/form/submit', [ContactUsController::class, 'contact'])->
 
 Route::get('page/{slug}',[PageController::class, 'commonPage'])->name('common.page');
 
+Route::get('news/{blog}', [PageController::class, 'singleNews'])->name('news.single');
+Route::get('product/{name}', [PageController::class, 'singleProduct'])->name('product.single');
+Route::get('project/{id}', [PageController::class, 'singleProject'])->name('project.single');
 
+Route::get('gallery/{gallery}', [PageController::class, 'gallery'])->name('gallery');
 
 // Auth Routes
 Auth::routes();
@@ -28,11 +32,6 @@ Route::get('email-verify/{id}', [AuthController::class, 'emailVerify'])->name('e
 Route::get('resend-email-verify/{id}', [AuthController::class, 'resendVerifyLink'])->name('resendVerifyLink');
 Route::get('email-verify-check/{id}', [AuthController::class, 'emailVerifyCheck'])->name('emailVerifyCheck');
 
-// single pages
-Route::get('news/{blog}', [PageController::class, 'singleNews'])->name('news.single');
-Route::get('product/{name}', [PageController::class, 'singleProduct'])->name('product.single');
-
-Route::get('project/{id}', [PageController::class, 'singleProject'])->name('project.single');
 
 // Test Routes
 // Route::get('test',             [TestController::class, 'test'])->name('test');

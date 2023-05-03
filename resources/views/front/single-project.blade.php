@@ -1,11 +1,6 @@
 @extends('front.layouts.master')
 
 @section('head')
-    {{-- @include('meta::manager', [
-        'title' => ('Project'). ' - ' .$project->title]
-        // 'image' => $Gallery->media_id ? $Gallery->img_paths['medium'] : null,
-        'description' => $project->meta_description,
-        ) --}}
         @include('meta::manager', [
         'title' => ('Project'). ' - ' .$project->title . ' | ' . ($settings_g['title'] ?? env('APP_NAME')),
         'image' => $project->media_id ? $project->img_paths['original'] : null,
