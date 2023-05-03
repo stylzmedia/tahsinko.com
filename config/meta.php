@@ -94,7 +94,7 @@ return [
     | or a specific page page.
     |
     */
-	'author' => 'StylzMedia',
+	'author' => 'TAHSINKO®',
 
 
 	/*
