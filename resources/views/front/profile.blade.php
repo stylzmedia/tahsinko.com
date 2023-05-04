@@ -8,8 +8,13 @@
     ])
 
 <style>
-    .page-img img {
+    /* .page-img img {
     width: 100%;
+} */
+img.object-cover {
+    width: 30%;
+    float: left;
+    padding-right: 20px;
 }
 </style>
 @endsection
@@ -56,15 +61,14 @@
         <div class="row justify-content-center my-5">
             <div class="page-desc">
                 @if($page->media_id)
-                    <div class="page-img">
-                        <img src="{{$page->img_paths['original']}}" class="h-full w-full object-cover" alt="{{$page->title}}">
+                    <div class="page-content mb-5 float-left">
+                        <img src="{{$page->img_paths['original']}}" class="h-full w-1/2 object-cover" alt="{{$page->title}}">
+                        <h3>{!! $page->short_description !!}</h3>
+                        <br>
+                        {!! $page->description !!}
                     </div>
                 @endif
-                <div class="page-content">
-                    {!! $page->description !!}
-                </div>
-                <br>
-                <div class="page-content">
+                <div class="pdf-content mt-5">
                     <embed class="" style="height: 100vh; width: 100%;" src="{{ $page->pdf_file}}#view=FitH" type="application/pdf">
                 </div>
            </div>

@@ -91,6 +91,11 @@ class Info {
         ];
 
         $template[] = [
+            'name' => 'Profile',
+            'blade' => 'profile'
+        ];
+
+        $template[] = [
             'name' => 'Media',
             'blade' => 'gallery.galleries'
         ];
