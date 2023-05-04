@@ -65,7 +65,7 @@
                     <div class="tab portfolio-tab">
                         <div class="tab_content current active pt-45">
                             <div class="tabs_item current">
-                                <div class="row portfolio-item">
+                                <div class="row justify-content-center portfolio-item">
                                     @foreach($projects as $project)
                                         <div class="col-lg-3 col-sm-6">
                                             <div class="portfolio-item-two">

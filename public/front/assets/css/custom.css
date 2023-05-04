@@ -64,15 +64,7 @@ img {
 /*================================
 Default btn Style
 ===================================*/
-.default-btn {
-  padding: 7px 27px 12px 27px;
-   background-color: #414141;
-   color: #ffffff;
-   position: relative;
-   z-index: 1;
-   font-size: 16px;
-   text-decoration: none;
-  }
+
 
   .default-btn:hover {
     background-color: #ffd900;
