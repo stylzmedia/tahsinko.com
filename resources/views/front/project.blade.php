@@ -1,9 +1,8 @@
 @extends('front.layouts.master')
 @php
-    // $projects = \App\Models\Portfolio::where(['status'=>1])->orderBy('id','DESC')->get();
     $projects = \App\Models\Portfolio::where(['status'=>1])->orderBy('id','DESC')->paginate(8);
-
 @endphp
+
 @section('head')
         @include('meta::manager', [
             'title' => $page->meta_title. ' - ' . ($settings_g['title'] ?? ''),

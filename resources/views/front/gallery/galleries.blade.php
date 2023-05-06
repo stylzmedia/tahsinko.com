@@ -9,12 +9,8 @@
     ])
 
 @php
-    // $names = ['Certificates', 'License', 'Sole Agencies']; // replace with the names you want to retrieve
-    // $galleries = App\Models\Gallery::paginate(12);
-    // $galleries = App\Models\Gallery::whereIn('name', $names)->paginate(10);
-    $categoryName = "{$page->title}"; // replace with the category name you want to filter by
-    // dd($categoryName);
 
+    $categoryName = "{$page->title}"; // replace with the category name you want to filter by
     $galleries = App\Models\Gallery::whereHas('category', function ($query) use ($categoryName) {
         $query->where('title', $categoryName);})->paginate(10);
 
