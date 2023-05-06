@@ -1,6 +1,8 @@
 @extends('front.layouts.master')
 @php
-    $projects = \App\Models\Portfolio::where(['status'=>1])->orderBy('id','DESC')->get();
+    // $projects = \App\Models\Portfolio::where(['status'=>1])->orderBy('id','DESC')->get();
+    $projects = \App\Models\Portfolio::where(['status'=>1])->orderBy('id','DESC')->paginate(10);
+
 @endphp
 @section('head')
         @include('meta::manager', [
@@ -88,6 +90,7 @@
                                             </div>
                                         </div>
                                     @endforeach
+                                    {{ $projects->links() }}
                                 </div>
                             </div>
                         </div>

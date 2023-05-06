@@ -16,8 +16,7 @@
     // dd($categoryName);
 
     $galleries = App\Models\Gallery::whereHas('category', function ($query) use ($categoryName) {
-        $query->where('title', $categoryName);
-    })->paginate(10);
+        $query->where('title', $categoryName);})->paginate(10);
 
 @endphp
 
