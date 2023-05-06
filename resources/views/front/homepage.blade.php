@@ -8,15 +8,15 @@
 
 <style>
     .animate-on-scroll {
-  opacity: 0;
-  transform: translateY(50px);
-  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-}
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    }
 
-.animate-on-scroll.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
+    .animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+    }
 </style>
 
 @endsection
@@ -166,35 +166,36 @@
     </div>
 <!-- Section Three End -->
 
+<style>
+    .counter-list .counter-item .counter-item-inner span{
+        font-size: 53px;
+        font-weight: 700;
+    }
+</style>
 <!-- Section Four Start -->
     <div class="section-four bg-black">
         <div class="container">
             <div class="row counter-list justify-content-center">
-                <div class="col-xl-3 col-lg-6 col-md-6">
+                <div class="col-xl-4 col-lg-6 col-md-6">
                     <div class="counter-item">
                         <div class="counter-item-inner justify-content-center text-center d-flex">
-                            <h2>Valuable Partners <span>100+</span></h2>
+                            <h2>Completed Projects<span>375+</span></h2>
+
+                            {{-- <p data-target="1000" class="count-number">0</p> --}}
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-3 col-lg-6 col-md-6">
+                <div class="col-xl-4 col-lg-6 col-md-6">
                     <div class="counter-item">
                         <div class="counter-item-inner justify-content-center text-center d-flex">
-                            <h2>Completed Projects<span>100+</span></h2>
+                            <h2>Ongoing Projects<span>50+</span></h2>
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-3 col-lg-6 col-md-6">
+                <div class="col-xl-4 col-lg-6 col-md-6">
                     <div class="counter-item">
                         <div class="counter-item-inner justify-content-center text-center d-flex">
-                            <h2>Ongoing Projects<span>100+</span></h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-6 col-md-6">
-                    <div class="counter-item">
-                        <div class="counter-item-inner justify-content-center text-center d-flex">
-                            <h2>Coworkers<span>100+</span></h2>
+                            <h2>Co-workers<span>70+</span></h2>
                         </div>
                     </div>
                 </div>
@@ -725,8 +726,8 @@ $(".team-list").slick({
     },
     ]
 });
-$('.team-list').mouseover(function() {
-  $(this).slick('play')
+    $('.team-list').mouseover(function() {
+    $(this).slick('play')
 });
 
     $('.customer-logos').slick({
@@ -750,6 +751,8 @@ $('.team-list').mouseover(function() {
         }]
     });
 </script>
+
+
 @endsection
 
 
