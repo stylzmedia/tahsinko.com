@@ -66,6 +66,7 @@ p {
   color: #adadad;
 }
 
+
 a {
   display: inline-block;
   -webkit-transition: all 0.5s;
@@ -92,10 +93,20 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   line-height: 1.4;
   color: #414141;
+  font-family: 'Montserrat';
 }
 
 h3 {
   font-size: 24px;
+}
+
+.divider-separator {
+    width: 100px;
+    margin: 0 auto;
+    border-top: 3px solid red;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
 }
 
 .d-table {
