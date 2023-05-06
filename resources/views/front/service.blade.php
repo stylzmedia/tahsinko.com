@@ -127,8 +127,8 @@
         </div>
         <div class="row d-flex flex-wrap">
             @foreach ($services as $item)
-            <div class="col-md-4">
-              <div class="card text-center">
+            <div class="col-md-4 mb-4">
+              <div class="card text-center ">
                 <div class="icon-wrapper">
                   <img src="{{$item->media_id ? $item->img_paths['original'] : null }}" alt="">
                 </div>
