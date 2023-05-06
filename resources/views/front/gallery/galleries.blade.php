@@ -9,7 +9,16 @@
     ])
 
 @php
-    $galleries = App\Models\Gallery::paginate(12);
+    // $names = ['Certificates', 'License', 'Sole Agencies']; // replace with the names you want to retrieve
+    // $galleries = App\Models\Gallery::paginate(12);
+    // $galleries = App\Models\Gallery::whereIn('name', $names)->paginate(10);
+    $categoryName = "{$page->title}"; // replace with the category name you want to filter by
+    // dd($categoryName);
+
+    $galleries = App\Models\Gallery::whereHas('category', function ($query) use ($categoryName) {
+        $query->where('title', $categoryName);
+    })->paginate(2);
+
 @endphp
 
 <link rel="stylesheet" href="ttps://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css">
@@ -178,9 +187,13 @@
                 </div>
             @endforeach
         </div>
+        <div class="d-flex justify-content-center text-center">
+            {{ $galleries->links() }}
+        </div>
+
+
     </div>
 </section>
-
 
 @endsection
 
