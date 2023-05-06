@@ -59,7 +59,7 @@
                     @foreach ($gallery->GalleryItems as $photo)
                         <div class="col-md-6 col-lg-4">
                             <a data-fslightbox href="{{$photo->img_paths['original']}}" class="d-block mb-3" style="border-radius: 4px;overflow: hidden;">
-                                <img src="{{$photo->img_paths['small']}}" alt="{{$gallery->gallery_name}}" class="whp">
+                                <img src="{{$photo->img_paths['original']}}" alt="{{$gallery->gallery_name}}" class="whp">
                             </a>
                         </div>
                     @endforeach

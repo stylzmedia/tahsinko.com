@@ -17,7 +17,7 @@
 
     $galleries = App\Models\Gallery::whereHas('category', function ($query) use ($categoryName) {
         $query->where('title', $categoryName);
-    })->paginate(2);
+    })->paginate(10);
 
 @endphp
 
@@ -48,17 +48,7 @@
 	 border-radius: 20px;
 	 transform: translateX(-80px);
 }
- /* .preview-card__img:after {
-	 content: "";
-	 position: absolute;
-	 top: 0;
-	 left: 0;
-	 width: 100%;
-	 height: 100%;
-	 background-image: linear-gradient(147deg, #000 0%, #000 74%);
-	 border-radius: 20px;
-	 opacity: 0.4;
-} */
+
  .preview-card__img img {
 	 width: 100%;
 	 height: 100%;
@@ -153,23 +143,6 @@
 <!-- Breadcrumb End-->
 <section class="galleries my-5">
 
-   {{--  <div class="container">
-            <div class="row justify-content-center">
-                @foreach ($galleries as $gallery)
-                    <div class="col-md-6 col-lg-2 galleries-list">
-                        <div class="mb-4 galleries-item">
-                            <img class="galleries_img" src="{{ $gallery->img_paths['original'] }}" alt="{{$gallery->name}}">
-
-                            <div class="galleries-details">
-                            <h6 class="galleries-title">{{$gallery->name}}</h6>
-                            <a href="{{route('gallery', $gallery->id)}}" class="button button_md">View All {{$gallery->name}}</a>
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
-            </div>
-        {{$galleries->links()}}
-    </div>--}}
     <div class="container">
         <div class="row mt-5 justify-content-center">
             @foreach ($galleries as $gallery)
