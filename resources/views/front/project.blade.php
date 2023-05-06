@@ -1,7 +1,7 @@
 @extends('front.layouts.master')
 @php
     // $projects = \App\Models\Portfolio::where(['status'=>1])->orderBy('id','DESC')->get();
-    $projects = \App\Models\Portfolio::where(['status'=>1])->orderBy('id','DESC')->paginate(10);
+    $projects = \App\Models\Portfolio::where(['status'=>1])->orderBy('id','DESC')->paginate(8);
 
 @endphp
 @section('head')
@@ -90,6 +90,8 @@
                                             </div>
                                         </div>
                                     @endforeach
+                                </div>
+                                <div class="d-flex justify-content-center text-center">
                                     {{ $projects->links() }}
                                 </div>
                             </div>
