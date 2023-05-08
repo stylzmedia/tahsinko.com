@@ -1,24 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Example Page</title>
+    <title>Inverted Color Scheme Example</title>
     <style>
-      p:contains("TAHSINKO®") {
-        color: red;
+      body {
+        background-color: red;
+        color: white;
+      }
+      img.invert {
+        filter: invert(1);
       }
     </style>
   </head>
   <body>
-    <p>Welcome to TAHSINKO® website!</p>
-    <p>TAHSINKO® is a great company.</p>
-    <p>We love TAHSINKO® products.</p>
-    <p>Check out our TAHSINKO® collection.</p>
+    <h1>Welcome to my inverted color scheme page</h1>
+    <p>This is an example of how to invert the text and background colors using CSS.</p>
+    <img class="invert" src="https://demo.tahsinko.com/front/assets/img/shape/top-right-corner.png" alt="Inverted Image">
   </body>
 </html>
-In this example, all p tags containing the text "TAHSINKO®" will have red color.
-
-
-
-
-
-

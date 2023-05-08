@@ -1,7 +1,7 @@
 @extends('front.layouts.master')
 @php
     $page_title="Service";
-    $services = \App\Models\Service::where(['status'=>1])->orderBy('id','DESC')->get();
+    $services = \App\Models\Service::where(['status'=>1])->orderBy('id','ASC')->get();
 @endphp
 @section('head')
     @include('meta::manager', [
