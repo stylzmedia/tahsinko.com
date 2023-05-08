@@ -130,11 +130,13 @@ Default btn Style End
   font-weight: bold;
   text-transform: uppercase;
   line-height: 1;
+  width: 150px;
 }
 
 .navbar-light .navbar-brand img {
   float: left;
-  padding: 10px 0;
+  padding: 5px 0px 5px 20px;
+  width: 175px;
 }
 
 
@@ -352,13 +354,14 @@ Default btn Style End
 .section-two-inner .sec2-artwork {
     position: absolute;
     right: 0;
+    height: 100%;
 }
 
 .section-two-inner .tareq {
     position: absolute;
     bottom: 0%;
     left: 15%;
-    height: 600px;
+    height: 500px;
 }
 
 .section-two .section-content {
@@ -368,7 +371,7 @@ Default btn Style End
     margin-left: 15%;
     margin-right: 25%;
     text-align: justify;
-    font-size: 23px;
+    font-size: 18px;
     line-height: normal;
 }
 
@@ -395,10 +398,11 @@ Default btn Style End
 .section-three-title {
     background: #ff000080;
     margin: auto;
-    width: 60%;
+    width: 70%;
     padding: 6px 25px;
     border-radius: 10px 33px;
     transform: skew(-45deg);
+    height: 75px;
 }
 
 .section-three-title h2 {
@@ -406,6 +410,7 @@ Default btn Style End
     color: #ffff;
     transform: skew(45deg);
     font-size: 50px;
+    padding: 0;
 }
 
 .section-three-mission {
@@ -510,7 +515,7 @@ Default btn Style End
 
 .section-five .pline-item-content-down{
     background-color: #9D9D9C;
-    height: 102px;
+    height: 85px;
     text-align: center;
     border-radius: 8px;
     box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.3);
@@ -524,7 +529,7 @@ Default btn Style End
 
 .section-five .pline-item-content-up{
     background-color: #9D9D9C;
-    height: 102px;
+    height: 85px;
     text-align: center;
     border-radius: 8px;
     box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.3);
@@ -639,7 +644,7 @@ Default btn Style End
 
 .pline-item-icon{
     background-color: #ffffff;
-    height: 102px;
+    height: 85px;
     text-align: center;
     border-radius: 8px;
 }
@@ -667,13 +672,13 @@ Default btn Style End
 }
 
 .pline-item-content-down h5 {
-    font-size: 16px;
+    font-size: 12px;
     font-weight: 500;
 }
 
 
 .pline-item-content-up h5 {
-    font-size: 16px;
+    font-size: 12px;
     font-weight: 500;
 }
 
@@ -806,7 +811,7 @@ Default btn Style End
 
 .service-item-inner {
     background: red;
-    height: 230px;
+    height: 200px;
     margin: 20px;
     border-radius: 50px;
     display: flex;
@@ -820,12 +825,14 @@ Default btn Style End
 }
 
 .section-seven .service-icon{
-    height: 130px;
-    width: 130px;
+    height: 100px;
+    width: 100px;
     background: #ffff;
     border-radius: 50%;
     margin: auto;
     display: flex;
+    position: relative;
+    top: 15px;
 }
 .service-icon img {
     height: 60%;
@@ -840,7 +847,8 @@ Default btn Style End
     color: #ffff;
     text-transform: uppercase;
     padding-bottom: 15px;
-    font-size: 135%;
+    font-size: 100%;
+    height: 75px;
 }
 
 
@@ -1718,16 +1726,22 @@ Portfolio Area
         width: 400px;
     }
     .pline-title h2::before{
-        left: -4%;
+        left: 8%;
     }
     .pline-title h2::after {
-        right: -4%;
+        right: 8%;
     }
 
 
 }
 
 @media only screen and (min-width: 1200px) {
+
+    .carousel-inner {
+        height: 685px;
+        top: -85px;
+        z-index: -1;
+    }
     .container-max-2 {
         max-width: 1460px !important;
         margin: 0 auto;
@@ -1741,7 +1755,7 @@ Portfolio Area
         width: auto;
     }
     .animation-line::before{
-        right: 630px;
+        right: 470px;
     }
     .animation-line h2::before{
         top: -10px;
@@ -1750,7 +1764,7 @@ Portfolio Area
         bottom: -10px;
     }
     .animation-line::after{
-        left: 260px;
+        left: 70px;
     }
 
 }

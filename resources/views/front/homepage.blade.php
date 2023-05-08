@@ -195,7 +195,7 @@
                 <div class="col-xl-4 col-lg-6 col-md-6">
                     <div class="counter-item">
                         <div class="counter-item-inner justify-content-center text-center d-flex">
-                            <h2>Co-workers<span>70+</span></h2>
+                            <h2>Co-workers<span>50+</span></h2>
                         </div>
                     </div>
                 </div>
