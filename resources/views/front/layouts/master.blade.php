@@ -91,11 +91,11 @@
         <div class="top-navbar d-none d-sm-block" style="background-color: #FF0000">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-6 p-2  text-white">
+                    <div class="col-md-8 p-2  text-white">
                         <i class="fa-solid fa-phone-flip fa-xl"></i> <a class="text-white me-3" href="tel:+8801720397476" rel="noopener noreferrer" target="_blank"> {{$settings_g['mobile_number'] ?? ''}} </a>
                         <i class="fa-solid fa-envelope text-md fa-xl"></i> {{$settings_g['email'] ?? ''}}
                     </div>
-                    <div class="col-md-6 p-2 text-white text-md-end y-1">
+                    <div class="col-md-4 p-2 text-white text-md-end y-1">
                         <div class="top-bar-left">
 
                             <ul class="social-wrap">
@@ -198,57 +198,32 @@
 
 
         <!-- Footer Area -->
-        <div class="footer-area footer-bg pt-100 pb-70">
+        <div class="footer-area footer-bg pt-40">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-3 col-md-6">
+                    <div class="col-lg-2 col-md-2">
                         <div class="footer-widget footer-widget-color">
                             <a href="{{ route('homepage') }}" class="footer-logo">
                                 <img src="{{$settings_g['dark_logo'] ?? ''}}" alt="Images">
-                                <p>{{$settings_g['title'] ?? ''}}</p>
                             </a>
-                            <ul class="footer-contact-list">
-                            </ul>
                         </div>
                     </div>
 
-                    <div class="col-lg-3 col-md-6 footer-plr">
+                    <div class="col-lg-10 col-md-10 footer-plr">
                         <div class="footer-widget footer-widget-color">
-                            <h3>BANGLADESH OFFICE</h3>
                             <ul class="footer-list">
-
                                 <li>
-                                    <span> Address:</span> {{$settings_g['street'] ?? ''}}, {{$settings_g['city'] ?? ''}}
+                                    <span> Address:</span> {{$settings_g['street'] ?? ''}}, {{$settings_g['city'] ?? ''}} - {{$settings_g['zip'] ?? ''}}, {{$settings_g['country'] ?? ''}}
                                 </li>
                                 <li>
-                                    <span>Message:</span> <a href="mailto:{{$settings_g['email'] ?? ''}}"></a> {{$settings_g['email'] ?? ''}}
+                                    <span>Phone:</span><a href="tel:{{$settings_g['mobile_number'] ?? ''}}"> {{$settings_g['mobile_number'] ?? ''}}</a>, <a href="tel:{{$settings_g['tel'] ?? ''}}"> {{$settings_g['tel'] ?? ''}}</a>
+                                    <span>Email:</span> <a href="mailto:{{$settings_g['email'] ?? ''}}"></a> {{$settings_g['email'] ?? ''}}, <a href="mailto:{{$settings_g['email2'] ?? ''}}"></a> {{$settings_g['email2'] ?? ''}}
                                 </li>
                                 <li>
-                                    <span>Phone:</span> <a href="tel:{{$settings_g['mobile_number'] ?? ''}}"> {{$settings_g['mobile_number'] ?? ''}}</a>
                                 </li>
                             </ul>
                         </div>
                     </div>
-                    @foreach ($widgets as $widget)
-                    <div class="col-lg-3 col-md-6 footer-widget-color">
-                        <div class="footer-widget footer-widget-color pl-4">
-                            <h3>{{$widget->title}}</h3>
-                            @if($widget->type == 'Menu' && $widget->Menu)
-                            <ul class="footer-list">
-                                @foreach ($widget->Menu->SingleMenuItems as $item)
-                                <li>
-                                    <a href="{{$item->menu_info['url']}}" target="_blank">
-                                        {{$item->menu_info['text']}}
-                                    </a>
-                                </li>
-                                @endforeach
-                            </ul>
-                            @else
-                            {!! $widget->text !!}
-                            @endif
-                        </div>
-                    </div>
-                    @endforeach
                 </div>
             </div>
         </div>
@@ -260,7 +235,7 @@
                     <div class="row align-items-center">
                         <div class="col-lg-6 col-md-5">
                             <div class="copy-right-icon-two">
-                                <p>© Copyright 2020 - {{ date('Y') }} TAHSINKO Limited. All Right Reserved </p>
+                                <p>© Copyright 2020 - {{ date('Y') }} {{$settings_g['title'] ?? ''}}. All Right Reserved </p>
                             </div>
                         </div>
 
