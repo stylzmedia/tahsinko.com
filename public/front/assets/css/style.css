@@ -3992,6 +3992,7 @@ Team Area
 
 .team-bg {
   position: absolute;
+  height: 100%;
 }
 
 .team-bg::before {

@@ -172,7 +172,7 @@
         font-weight: 700;
     }
 </style>
-<!-- Section Four Start -->
+<!-- Counter Start -->
     <div class="section-four bg-black">
         <div class="container">
             <div class="row counter-list justify-content-center">
@@ -202,9 +202,9 @@
             </div>
         </div>
     </div>
-<!-- Section Four End -->
+<!-- Counter End -->
 
-<!-- Section Five Start -->
+<!-- Product Line Start -->
      <div class="section-five">
         <div class="container-fluid p-0">
             <div class="row section-five-inner">
@@ -320,9 +320,9 @@
             </div>
         </div>
     </div>
-<!-- Section Five End -->
+<!-- Product Line End -->
 
-<!-- Section Six Start -->
+<!-- Trademark Certificates Start -->
     <div class="section-six">
         <div class="container-fluid">
             <div class="tm-title text-uppercase text-center mt-2">
@@ -348,9 +348,9 @@
             </div>
         </div>
     </div>
-<!-- Section Six End -->
+<!-- Trademark Certificates End -->
 
-<!-- Section Seven Start -->
+<!-- Services Start -->
     <div class="section-seven bg-black">
         <div class="container-fluid">
             <div class="section-seven-inner">
@@ -436,9 +436,9 @@
             </div>
         </div>
     </div>
-<!-- Section Seven End -->
+<!-- Services End -->
 
-<!-- Section Eight Start -->
+<!-- Products Start -->
     <div class="feature-product">
 
         <div class="container">
@@ -477,9 +477,9 @@
             </div>
         </div>
     </div>
-<!-- Section Eight End -->
+<!-- Products End -->
 
-<!-- Section Nine Start -->
+<!-- Project Start -->
     <div class="portfolio-area pb-70">
             <div class="tm-title text-uppercase text-center mt-2">
                 <h1>Our Project</h1>
@@ -512,136 +512,162 @@
                                 </div>
                             @endforeach
                         </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="text-center mt-5">
+                                    <a href="{{ url('page/our-projects') }}" class="default-btn">View All Products</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-<!-- Section Nine End -->
+<!-- Project End -->
 
-        @if(count($home_sections))
-            @foreach($home_sections as $key=>$sec)
-            @if($sec->section_design_type_id==7 && count($teams))
-            <input type="hidden" id="NoOfTeamMember" value="{{$sec->no_of_slide_col}}">
-            <div class="section9">
-                <div class="team-bg-item">
-                    <img src="{{asset('front/images/section/team-bg.png')}}" alt="" class="team-bg img-fluid">
-                </div>
-                <div class="container-fluid">
-                    <div class="team-section my-5">
-                        <div class="row justify-content-center">
-                            <div class="col-xl-4 col-lg-5 col-md-6 col-11">
-                                <div class="service-title mb-5">
-                                    <h1>Our TEAM</h1>
+<!-- Section Start -->
+    @if(count($home_sections))
+        @foreach($home_sections as $key=>$sec)
+
+            <!-- Team Start -->
+                @if($sec->section_design_type_id==7 && count($teams))
+                <input type="hidden" id="NoOfTeamMember" value="{{$sec->no_of_slide_col}}">
+                <div class="section9">
+                    <div class="team-bg-item">
+                        <img src="{{asset('front/images/section/team-bg.png')}}" alt="" class="team-bg">
+                    </div>
+                    <div class="container-fluid">
+                        <div class="team-section my-5">
+                            <div class="row justify-content-center">
+                                <div class="col-xl-4 col-lg-5 col-md-6 col-11">
+                                    <div class="service-title mb-5">
+                                        <h1>Our TEAM</h1>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row team-list justify-content-center">
-                            @foreach($teams as $team)
-                            <div class="col-lg-4 col-md-6">
-                                <div class="team-item">
-                                    <div class="team-item-inner text-center">
-                                        <div class="team-member position-relative">
-                                            <div style="top: 8%;">
-                                                <div class="hexagon">
-                                                    <div class="hexagon-inner" style="overflow: hidden;">
-                                                        <img src="{{ $team->img_paths['original'] }}" alt="" class="" >
+                            <div class="row team-list justify-content-center">
+                                @foreach($teams as $team)
+                                <div class="col-lg-4 col-md-6">
+                                    <div class="team-item">
+                                        <div class="team-item-inner text-center">
+                                            <div class="team-member position-relative">
+                                                <div style="top: 8%;">
+                                                    <div class="hexagon">
+                                                        <div class="hexagon-inner" style="overflow: hidden;">
+                                                            <img src="{{ $team->img_paths['original'] }}" alt="" class="" >
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="team-member-details text-uppercase">
-                                            <div class="social-link position-relative">
-                                                <!-- Facebook -->
-                                                <a class="btn btn-primary" style="background-color: #3b5998;" href="#" role="button"
-                                                ><i class="fab fa-facebook-f"></i
-                                                ></a>
+                                            <div class="team-member-details text-uppercase">
+                                                <div class="social-link position-relative">
+                                                    <!-- Facebook -->
+                                                    <a class="btn btn-primary" style="background-color: #3b5998;" href="#" role="button"
+                                                    ><i class="fab fa-facebook-f"></i
+                                                    ></a>
 
-                                                <!-- Twitter -->
-                                                <a class="btn btn-primary" style="background-color: #55acee;" href="#" role="button"
-                                                ><i class="fab fa-twitter"></i
-                                                ></a>
+                                                    <!-- Twitter -->
+                                                    <a class="btn btn-primary" style="background-color: #55acee;" href="#" role="button"
+                                                    ><i class="fab fa-twitter"></i
+                                                    ></a>
 
-                                                <!-- Instagram -->
-                                                <a class="btn btn-primary" style="background-color: #ac2bac;" href="#" role="button"
-                                                ><i class="fab fa-instagram"></i
-                                                ></a>
-                                            </div>
-                                            <div class="team-member-name">
-                                                <h4>{!! $team->name !!}</h4>
-                                                <p>{!! $team->designation!!}</p>
+                                                    <!-- Instagram -->
+                                                    <a class="btn btn-primary" style="background-color: #ac2bac;" href="#" role="button"
+                                                    ><i class="fab fa-instagram"></i
+                                                    ></a>
+                                                </div>
+                                                <div class="team-member-name">
+                                                    <h4>{!! $team->name !!}</h4>
+                                                    <p>{!! $team->designation!!}</p>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                                @endforeach
                             </div>
-                            @endforeach
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="text-center mt-5">
+                                        <a href="{{ url('page/our-management') }}" class="default-btn">View All</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            <!-- Team End -->
 
+            <!-- Client Start -->
+                @elseif($sec->section_design_type_id==9 && count($clients))
 
-            @elseif($sec->section_design_type_id==9 && count($clients))
-            {{-- valueable client --}}
-            <input type="hidden" id="NoOfClient" value="{{$sec->no_of_slide_col}}">
-            <div class="client-area pt-100 pb-70">
-                <div class="container">
-                    @if ($sec->section_name_is_show == 1)
-                    <div class="section-title">
-                        <h2>{{ $sec->section_name }}</h2>
+                <input type="hidden" id="NoOfClient" value="{{$sec->no_of_slide_col}}">
+                <div class="client-area pb-70">
+                    <div class="container">
+                        @if ($sec->section_name_is_show == 1)
+                        <div class="section-title">
+                            <h2>{{ $sec->section_name }}</h2>
+                        </div>
+                        @endif
+                        <section class="customer-logos slider">
+                            @foreach ($clients as $client)
+                                <div class="slide"><img src="{{ $client->img_paths['original'] }}" alt="{{ $client->title}}"></div>
+                            @endforeach
+                        </section>
+                    </div>
+                </div>
+            <!-- Client End -->
+
+            <!-- News Start -->
+                @elseif($sec->section_design_type_id==2 && count($newes))
+                    <div class="blog-area pt-100 pb-70">
+                        <div class="container">
+                            <div class="section-title-two text-center">
+                                <span class="sp-before">Recent Articles</span>
+                                <div class="section-title">
+                                    <h2>{{ $sec->section_name }}</h2>
+                                </div>
+                            </div>
+                            <div class="row pt-45">
+                                @foreach ($newes as $news)
+                                <div class="
+                                        @if($sec->col == 2)
+                                            col-lg-6 col-md-6 col-sm-12
+                                        @elseif($sec->col == 3)
+                                            col-lg-4 col-md-6 col-sm-12
+                                        @elseif($sec->col == 4)
+                                            col-lg-3 col-md-6 col-sm-12
+                                        @endif
+                                    ">
+                                    <div class="blog-card blog-card-pb">
+                                        <a href="{{ route('news.single', $news->slug) }}">
+                                            <img src="{{ $news->img_paths['medium'] }}" alt="{{ $news->title }}">
+                                        </a>
+                                        <div class="content">
+                                            <span><a href="#">Lift</a> / {{ \Carbon\Carbon::parse($news->publish_date)->format('d-m-Y')}}</span>
+                                            <h3><a href="{{ route('news.single', $news->slug) }}">{{ $news->title }}</a></h3>
+                                            <a href="{{ route('news.single', $news->slug) }}" class="learn-btn">
+                                                Read more
+                                                <i class="flaticon-right-arrow-1"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                @endforeach
+                                <div class="col-lg-12">
+                                    <div class="text-center">
+                                        <a href="{{ url('page/blog') }}" class="default-btn">View All</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     @endif
-                    <section class="customer-logos slider">
-                        @foreach ($clients as $client)
-                            <div class="slide"><img src="{{ $client->img_paths['original'] }}" alt="{{ $client->title}}"></div>
-                        @endforeach
-                    </section>
-                </div>
-            </div>
-            @elseif($sec->section_design_type_id==2 && count($newes))
-                <div class="blog-area pt-100 pb-70">
-                    <div class="container">
-                        <div class="section-title-two text-center">
-                            <span class="sp-before">Recent Articles</span>
-                            <div class="section-title">
-                                <h2>{{ $sec->section_name }}</h2>
-                            </div>
-                        </div>
-                        <div class="row pt-45">
-                            @foreach ($newes as $news)
-                            <div class="
-                                    @if($sec->col == 2)
-                                        col-lg-6 col-md-6 col-sm-12
-                                    @elseif($sec->col == 3)
-                                        col-lg-4 col-md-6 col-sm-12
-                                    @elseif($sec->col == 4)
-                                        col-lg-3 col-md-6 col-sm-12
-                                    @endif
-                                ">
-                                <div class="blog-card blog-card-pb">
-                                    <a href="{{ route('news.single', $news->slug) }}">
-                                        <img src="{{ $news->img_paths['medium'] }}" alt="{{ $news->title }}">
-                                    </a>
-                                    <div class="content">
-                                        <span><a href="#">Lift</a> / {{ \Carbon\Carbon::parse($news->publish_date)->format('d-m-Y')}}</span>
-                                        <h3><a href="{{ route('news.single', $news->slug) }}">{{ $news->title }}</a></h3>
-                                        <a href="{{ route('news.single', $news->slug) }}" class="learn-btn">
-                                            Read more
-                                            <i class="flaticon-right-arrow-1"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            @endforeach
-                        </div>
-                    </div>
-                </div>
-                {{-- end News --}}
-            @endif
-
+            <!-- News End -->
         @endforeach
     @endif
+<!-- Section End -->
 
 
 @endsection
