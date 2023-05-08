@@ -217,7 +217,7 @@
                                 </li>
                                 <li>
                                     <span>Phone:</span><a href="tel:{{$settings_g['tel'] ?? ''}}"> {{$settings_g['tel'] ?? ''}}</a> Mobile:<a href="tel:{{$settings_g['mobile_number'] ?? ''}}"> {{$settings_g['mobile_number'] ?? ''}}</a>,
-                                    <span>Email:</span> <a href="mailto:{{$settings_g['email'] ?? ''}}"></a> {{$settings_g['email'] ?? ''}}, <a href="mailto:{{$settings_g['email2'] ?? ''}}"></a> {{$settings_g['email2'] ?? ''}}
+                                    <span>Email:</span> <a href="mailto:{{$settings_g['email'] ?? ''}}"></a> {{$settings_g['email'] ?? ''}}
                                 </li>
                                 <li>
                                 </li>
