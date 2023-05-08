@@ -216,7 +216,7 @@
                                     <span> Address:</span> {{$settings_g['street'] ?? ''}}, {{$settings_g['city'] ?? ''}} - {{$settings_g['zip'] ?? ''}}, {{$settings_g['country'] ?? ''}}
                                 </li>
                                 <li>
-                                    <span>Phone:</span><a href="tel:{{$settings_g['mobile_number'] ?? ''}}"> {{$settings_g['mobile_number'] ?? ''}}</a>, <a href="tel:{{$settings_g['tel'] ?? ''}}"> {{$settings_g['tel'] ?? ''}}</a>
+                                    <span>Phone:</span><a href="tel:{{$settings_g['tel'] ?? ''}}"> {{$settings_g['tel'] ?? ''}}</a> Mobile:<a href="tel:{{$settings_g['mobile_number'] ?? ''}}"> {{$settings_g['mobile_number'] ?? ''}}</a>,
                                     <span>Email:</span> <a href="mailto:{{$settings_g['email'] ?? ''}}"></a> {{$settings_g['email'] ?? ''}}, <a href="mailto:{{$settings_g['email2'] ?? ''}}"></a> {{$settings_g['email2'] ?? ''}}
                                 </li>
                                 <li>
