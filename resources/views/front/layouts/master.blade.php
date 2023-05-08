@@ -198,7 +198,7 @@
 
 
         <!-- Footer Area -->
-        <div class="footer-area footer-bg pt-40">
+        <div class="footer-area footer-bg" style="padding-top: 40px;">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-2 col-md-2">
