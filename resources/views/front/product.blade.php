@@ -14,6 +14,9 @@
         .header {
             position: relative;
         }
+        .cart-image img {
+            height: 425px;
+        }
     </style>
 @endsection
 

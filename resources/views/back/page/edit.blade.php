@@ -128,7 +128,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="breadcrumb_title" class="form-label">breadcrumb Title</label>
-                                            <input type="text" class="form-control" id="breadcrumb_title" name="breadcrumb_title" value="{{old('breadcrumb_title') ?? $page->meta_title}}">
+                                            <input type="text" class="form-control" id="breadcrumb_title" name="breadcrumb_title" value="{{old('breadcrumb_title') ?? $page->breadcrumb_title}}">
                                         </div>
                                         <div class="form-group">
                                             <label><b>Page Template</b></label>

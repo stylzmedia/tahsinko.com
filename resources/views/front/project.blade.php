@@ -41,7 +41,7 @@
         </div>
         <div class="container">
             <div class="inner-title text-center">
-                <h3>@if(empty($page->breadcrumb_title)){{$page->title}}@else{{$page->breadcrumb_title}}@endif</h3>
+                <h3>@if(empty($page->breadcrumb_title)){{$page->title}}@else{{$page->title}}@endif</h3>
                 <ul>
                     <li>
                         <i class="flaticon-fireplace"></i>
@@ -61,7 +61,8 @@
         {{-- our project --}}
             <div class="portfolio-area pb-70">
                 <div class="tm-title text-uppercase text-center mt-2">
-                    <h1>Our Project</h1>
+                    <h1>{{ $page->breadcrumb_title }}</h1>
+
                 </div>
                 <div class="container">
                     <div class="tab portfolio-tab">
