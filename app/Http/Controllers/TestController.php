@@ -7,17 +7,20 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Session;
 
 class TestController extends Controller
 {
-    public function test(Request $request){
-
-    }
-
     public function cacheClear(){
         Artisan::call('cache:clear');
+        Session::flash('success', 'Cache Clear successfully!');
+        return redirect()->route('homepage');
+    }
 
-        dd('Success');
+    public function productsImport() {
+        Artisan::call('command:product-image-test-upload');
+        Session::flash('success', 'Product images uploaded successfully!');
+        return redirect()->route('homepage');
     }
 
     // Config

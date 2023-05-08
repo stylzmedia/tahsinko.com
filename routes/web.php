@@ -5,6 +5,7 @@ use App\Http\Controllers\Front\PageController;
 use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\TestController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 // Other Pages
 Route::get('/', [PageController::class, 'homepage'])->name('homepage');
@@ -18,11 +19,16 @@ Route::post('contact-us/form/submit', [ContactUsController::class, 'contact'])->
 
 Route::get('page/{slug}',[PageController::class, 'commonPage'])->name('common.page');
 
+
+
 Route::get('news/{blog}', [PageController::class, 'singleNews'])->name('news.single');
+
 Route::get('product/{name}', [PageController::class, 'singleProduct'])->name('product.single');
+
 Route::get('project/{id}', [PageController::class, 'singleProject'])->name('project.single');
 
 Route::get('gallery/{gallery}', [PageController::class, 'gallery'])->name('gallery');
+
 
 // Auth Routes
 Auth::routes();
@@ -34,7 +40,8 @@ Route::get('email-verify-check/{id}', [AuthController::class, 'emailVerifyCheck'
 
 
 // Test Routes
-// Route::get('test',             [TestController::class, 'test'])->name('test');
 Route::get('cache-clear',      [TestController::class, 'cacheClear'])->name('cacheClear');
-Route::get('config',           [TestController::class, 'config'])->name('config');
+// Route::get('config',           [TestController::class, 'config'])->name('config');
+Route::get('products-import',  [TestController::class, 'productsImport'])->name('productsImport');
+
 

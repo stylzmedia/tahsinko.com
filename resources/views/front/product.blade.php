@@ -1,12 +1,15 @@
 @extends('front.layouts.master')
 @php
-    $page_title="Products";
-    $products = \App\Models\Product::where(['status'=>1])->orderBy('position','ASC')->get();
+    $products = \App\Models\Product::where(['status'=>1])->orderBy('position','ASC')->paginate(12);
 @endphp
 @section('head')
-    @include('meta::manager', [
-        'title' => 'Products - ' . ($settings_g['slogan'] ?? '')
-    ])
+        @include('meta::manager', [
+            'title' => $page->meta_title. ' - ' . ($settings_g['title'] ?? ''),
+            'description' => $page->meta_description,
+            'keywords' => $page->meta_tags,
+            'image' => $page->media_id ? $page->img_paths['original'] : null,
+
+        ])
     <style>
         .header {
             position: relative;
@@ -15,6 +18,7 @@
 @endsection
 
 @section('master')
+<!-- Breadcrumb -->
     @php
     if(empty($page->breadcrumb_background)){
         $back_value="#2c3232b0";
@@ -47,13 +51,14 @@
             </div>
         </div>
     </div>
+<!-- Breadcrumb End-->
 
     {{-- all-products --}}
     <section class="all-product">
         <div class="feature-product scroll-animation-section show-on-scroll">
             <div class="container">
                 <div class="heading-title text-white">
-                    <label>{{ $page_title }}</label>
+                    <label>{{ $page->title }}</label>
                 </div>
                 <div class="row justify-content-center">
                     @foreach($products as $product)
@@ -61,7 +66,7 @@
                             <div class="cart-box">
                                 <div class="cart-image">
                                     <img src="{{$product->img_paths['original']}}"/>
-                                    <a class="text-center" href="#">
+                                    <a class="text-center" href=" {{ route('product.single', $product->name) }}">
                                         {{-- <a class="text-center" href="{{ route('product.single', $product->name) }}"> --}}
                                         <div class="feature-detail">
                                             <div class="detail-btn">Details</div> <i class="fa fa-link" ></i>
@@ -74,6 +79,9 @@
                             </div>
                         </div>
                     @endforeach
+                </div>
+                <div class="d-flex justify-content-center text-center">
+                    {{ $products->links() }}
                 </div>
             </div>
         </div>

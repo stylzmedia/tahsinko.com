@@ -1,6 +1,7 @@
 @extends('front.layouts.master')
 @php
     $projects = \App\Models\Portfolio::where(['status'=>1])->orderBy('id','DESC')->paginate(8);
+
 @endphp
 
 @section('head')

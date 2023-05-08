@@ -1,49 +1,77 @@
 @extends('front.layouts.master')
 @php
-    $page_title = $product->name;
+$similar_products = App\Models\Product::where(['status'=>1])->orderBy('position','ASC') ->where('id', '!=', $product->id)->inRandomOrder()->limit(4)->get();
 @endphp
+
+
 @section('head')
+
     @include('meta::manager', [
         'title' => $product->name.'- ' . ($settings_g['slogan'] ?? '')
     ])
-    <style>
-        .header {
-            position: relative;
-        }
-        .single-blog p{
-            color: #ddd;
-        }
-    </style>
+
+<style>
+    #product {
+    margin-top: 130px;
+}
+</style>
 
 @endsection
+
 @section('master')
-     <!-- Breadcrumb -->
-    @php
-    if(empty($page->breadcrumb_background)){
-        $back_value="#2c3232b0";
-    }else{
-        $back_value=$page->breadcrumb_background;
-    }
-    if($page->is_color == 2){
-        $bg_bread="background:rgba(0, 0, 0, 0) url('../$back_value') no-repeat scroll center center / cover;";
-    }else{
-        $bg_bread="background:".$back_value;
-    }
 
-@endphp
-<section id="page-header" class="section background" style="{{$bg_bread}}">
-<div class="container">
-    <div class="row">
-        <div class="col-sm-12 text-center">
-            <h3>@if(empty($page->breadcrumb_title)){{$page->title}}@else{{$page->breadcrumb_title}}@endif</h3>
-        </div>
-    </div><!-- end row -->
-</div><!-- end container -->
-</section>
+    <section id="product" >
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 text-center">
+                    <div class="single-product">
+                        <img src="{{ $product->img_paths['original'] }}"
+                        srcset="{{ $product->img_paths['small'] }} 400w,
+                                {{ $product->img_paths['medium'] }} 800w,
+                                {{ $product->img_paths['original'] }} 1200w"
+                        sizes="(max-width: 600px) 400px,
+                                (max-width: 900px) 800px,
+                                1200px"
+                        alt="{{ $product->name }}" >
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="product-desc">
+                        <h1>{{ $product->name }}</h1>
+                        <p>Product Description</p>
+                        <p>Product Description</p>
+                    </div>
+                </div>
+            </div><!-- end row -->
+        </div><!-- end container -->
+    </section>
 
-    {{-- single blog section --}}
-    <section class="single-blog">
+    <section id="similar-products" >
+        <div class="container  my-4">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h2>Similar Products</h2>
+                </div>
+            </div><!-- end row -->
+            <div class="row">
+                @foreach ($similar_products as $product)
+                <div class="col-md-3 col-sm-6">
+                    <div class="card">
+                        <img src="{{ $product->img_paths['small'] }}"
 
+                        alt="{{ $product->name }}" class="card-img-top">
+
+                        {{-- <img src="https://via.placeholder.com/500x500" alt="" class="card-img-top"> --}}
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $product->name }}</h5>
+                            <p class="card-text">product->description</p>
+                            <a href="{{ route('product.single', $product->name) }}" class="btn btn-primary">View Product</a>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+            </div><!-- end row -->
+        </div><!-- end container -->
     </section>
 
 @endsection

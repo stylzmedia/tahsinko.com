@@ -29,6 +29,8 @@ class PageController extends Controller
     {
         $sliders = Slider::active()->get();
         $home_sections = HomeSection::where(['status'=>1])->orderBy('position','ASC')->get();
+
+        // Fetch products with status 1, sorted in ascending order by their position
         $products = Product::where(['status'=>1])->orderBy('position','ASC')->take(4)->get();
         $projects = Portfolio::where(['status'=>1])->orderBy('position','ASC')->take(6)->get();
         $services = Service::where(['status'=>1])->orderBy('position','ASC')->take(7)->get();
@@ -86,7 +88,7 @@ class PageController extends Controller
 
     public function singleProduct($name){
         $product = Product::where('name', $name)->first();
-
+        // dd($product);
         return view('front.single-product',compact('product'));
 
     }

@@ -452,53 +452,25 @@
                 <div class="portfolio-bg">
                     <img src="{{asset('front/images/section/portfolio-bd-rignt.png')}}" alt="" class="portfolio-bd-rignt">
                 </div>
-
                 <div class="row feature-product-inner justify-content-center">
-                    <div class="col-xl-3 col-lg-6 col-md-6">
-                        <div class="card">
-                            <div class="imgBox">
-                                <img src="https://demo.tahsinko.com/uploads/2022/09/1662476048.jpg" alt="" class="product">
-                            </div>
-                            <div class="contentBox">
-                                <h3>TK-J111</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-6 col-md-6">
-                        <div class="card">
-                            <div class="imgBox">
-                                <img src="https://demo.tahsinko.com/uploads/2022/09/1662476048.jpg" alt="" class="product">
-                            </div>
-                            <div class="contentBox">
-                                <h3>TK-J111</h3>
+                    @foreach($products as $product)
+                        <div class="col-xl-3 col-lg-6 col-md-6">
+                            <div class="card">
+                                <div class="imgBox">
+                                    <img src="{{ $product->img_paths['original'] }}" alt="{{ $product->name }}" class="product">
+                                </div>
+                                <div class="contentBox">
+                                    <h3>{{ $product->name }}</h3>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-6 col-md-6">
-                        <div class="card">
-                            <div class="imgBox">
-                                <img src="https://demo.tahsinko.com/uploads/2022/09/1662476048.jpg" alt="" class="product">
-                            </div>
-                            <div class="contentBox">
-                                <h3>TK-J111</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-6 col-md-6">
-                        <div class="card">
-                            <div class="imgBox">
-                                <img src="https://demo.tahsinko.com/uploads/2022/09/1662476048.jpg" alt="" class="product">
-                            </div>
-                            <div class="contentBox">
-                                <h3>TK-J111</h3>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
+
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="text-center mt-5">
-                            <a href="#" class="default-btn">View All Products</a>
+                            <a href="{{ url('page/our-products') }}" class="default-btn">View All Products</a>
                         </div>
                     </div>
                 </div>
@@ -676,6 +648,18 @@
 
 @section('footer')
 
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.3.0/dist/sweetalert2.all.min.js"></script>
+
+@if(Session::has('success'))
+    <script>
+        Swal.fire({
+            title: 'Success!',
+            text: '{{ Session::get('success') }}',
+            icon: 'success',
+            confirmButtonText: 'OK'
+        });
+    </script>
+@endif
 
 <script>
 

@@ -3,6 +3,7 @@
 namespace App\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
+use App\Console\Commands\ProductImageTestUploadCommand;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
 class Kernel extends ConsoleKernel
@@ -14,6 +15,8 @@ class Kernel extends ConsoleKernel
      */
     protected $commands = [
         //
+        ProductImageTestUploadCommand::class,
+
     ];
 
     /**

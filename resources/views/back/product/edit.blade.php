@@ -2,6 +2,7 @@
 @section('title', 'Edit Product')
 @section('head')
 <link rel="stylesheet" href="{{asset('back/css/dropzone.css')}}">
+
 @endsection
 @section('master')
     <div class="page-content">
@@ -112,15 +113,13 @@
                                         <br>
                                         <div class="form-group">
                                             <label for="categorySelect">Category <b style="color: red;">*</b></label>
-                                            <select class="form-control" id="categorySelect"
-                                                aria-label="Floating label select example" name="category[]" multiple="multiple">
+                                            <select class="form-control" id="categorySelect" aria-label="Floating label select example" name="category[]" multiple="multiple">
                                                 @foreach ($categories as $category)
-                                                    <option
-                                                        value="{{ $category->id }}
+                                                    <option value="{{ $category->id }}"
                                                         @foreach ($product->categories as $pro_cat)
                                                             {{ $pro_cat->id == $category->id ? 'selected' : '' }}
                                                         @endforeach
-                                                    ">
+                                                    >
                                                         {{ $category->title }}
                                                     </option>
                                                 @endforeach
@@ -437,6 +436,7 @@
         $(document).ready(function() {
             $('#categorySelect').select2();
         });
+
 
         // dropzone
         $(".dropzone").dropzone({
