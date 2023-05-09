@@ -17,13 +17,8 @@ Route::get('about-us', [PageController::class, 'aboutUs'])->name('aboutUs');
 Route::get('our-ceo', [PageController::class, 'ourCeo'])->name('ourCeo');
 Route::post('contact-us/form/submit', [ContactUsController::class, 'contact'])->name('contact.us.store');
 
-<<<<<<< HEAD
 Route::get('page/{slug}',[PageController::class, 'commonPage'])->name('common.page');
 // Route::get('{slug}',[PageController::class, 'commonPage'])->name('common.page');
-=======
-// Route::get('page/{slug}',[PageController::class, 'commonPage'])->name('common.page');
-Route::get('{slug}',[PageController::class, 'commonPage'])->name('common.page');
->>>>>>> 2ceb303b4c87e2a89af61a39d555a359b155e4fb
 
 
 
