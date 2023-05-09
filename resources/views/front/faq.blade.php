@@ -133,7 +133,7 @@
     <div class="container">
         <div class="row">
             <div class="faq-image">
-                <img src="{{ $page->media_id ? $page->img_paths['original'] : null }}" class="m-auto d-block" alt="{{$page->breadcrumb_title}}">
+                <img src="{{ $page->media_id ? $page->img_paths['medium'] : null }}" class="m-auto d-block" alt="{{$page->breadcrumb_title}}">
             </div>
         </div>
         <div class="fusion-text heading-box my-5" id="qa_title"><h2>{{$page->breadcrumb_title}}</h2></div>
