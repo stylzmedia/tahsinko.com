@@ -6,7 +6,7 @@
 @section('head')
         @include('meta::manager', [
             'title' => $page->meta_title . ' - ' . ($settings_g['title'] ?? env('APP_NAME')),
-            'image' => $page->media_id ? $news->img_paths['medium'] : null,
+            'image' => $page->media_id ? $page->img_paths['medium'] : null,
             'description' => $page->meta_description
         ])
 
