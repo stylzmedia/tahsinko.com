@@ -22,8 +22,8 @@ Route::get('page/{slug}',[PageController::class, 'commonPage'])->name('common.pa
 
 
 
-// Route::get('news/{blog}', [PageController::class, 'singleNews'])->name('news.single');
-Route::get('{blog}', [PageController::class, 'singleNews'])->name('news.single');
+Route::get('news/{blog}', [PageController::class, 'singleNews'])->name('news.single');
+// Route::get('{blog}', [PageController::class, 'singleNews'])->name('news.single');
 
 Route::get('product/{name}', [PageController::class, 'singleProduct'])->name('product.single');
 
