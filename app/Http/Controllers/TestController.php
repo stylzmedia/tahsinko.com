@@ -13,6 +13,10 @@ class TestController extends Controller
 {
     public function cacheClear(){
         Artisan::call('cache:clear');
+        Artisan::call('config:cache');
+        Artisan::call('view:cache');
+        Artisan::call('route:cache');
+
         Session::flash('success', 'Cache Clear successfully!');
         return redirect()->route('homepage');
     }
