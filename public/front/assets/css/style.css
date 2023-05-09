@@ -2058,16 +2058,15 @@ Inner Banner
 }
 
 .inner-banner::before {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  right: 0;
-  background-color: #000000;
-  opacity: 0.7;
-  z-index: 1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    background-color: #000000;
+    opacity: 0.3;
+    z-index: 1;
 }
 
 /* .inner-banner .inner-title {
@@ -2078,8 +2077,9 @@ Inner Banner
 
 .inner-banner .inner-image {
     position: relative;
-    height: 500px;
+    height: 355px;
     overflow: hidden;
+    margin-top: 70px;
 }
 .inner-banner .inner-image img {
         width: 100%;
@@ -2087,10 +2087,8 @@ Inner Banner
 
 .inner-banner .inner-title {
     position: absolute;
-    top: 60%;
-    left: 50%;
-    transform: translate(-50% , -50%);
-    -webkit-transform: translate(-50%, -50%);
+    top: 70px;
+    right: 100px;
     z-index: 2;
 }
 
@@ -2098,6 +2096,21 @@ Inner Banner
   font-size: 30px;
   color: #ffffff;
   font-weight: 500;
+  text-align: left;
+}
+.inner-banner .inner-title h3:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 12px;
+    bottom: 32px;
+    right: 0;
+    background-color: #ffffff;
+    border-radius: 2px;
+}
+
+.inner-banner .inner-title ul {
+
 }
 
 .inner-banner .inner-title ul {
@@ -2110,6 +2123,7 @@ Inner Banner
   font-size: 18px;
   color: #ffffff;
   display: inline-block;
+  margin-top: 10px;
 }
 
 .inner-banner .inner-title ul li i {
