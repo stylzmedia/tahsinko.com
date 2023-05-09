@@ -58,7 +58,7 @@
             <div class="row">
                 <div class="col-lg-7 col-md-6 pr-0">
                     <div class="contact-section-img">
-                        <img src="{{ asset('front/images/section/sec1-group-photo.png') }}" alt="Images">
+                        <img src="{{ asset('front/images/section/sec1-group-photo-2.png') }}" alt="Images">
                     </div>
                 </div>
 

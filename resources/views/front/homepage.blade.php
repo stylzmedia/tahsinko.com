@@ -84,7 +84,7 @@
                 <div class="col-lg-6 col-md-6">
 
                     <div class="section-one-media">
-                        <img src="{{asset('front/images/section/sec1-group-photo.png')}}" class="group-img" alt="">
+                        <img src="{{asset('front/images/section/sec1-group-photo-2.png')}}" class="group-img" alt="">
                     </div>
                     <div class="js-shape">
                         <img src="{{asset('front/images/section/sec1-shape-1.png')}}" class="shape-1 move-1" alt="shape" >
