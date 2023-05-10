@@ -2078,7 +2078,16 @@
   }
   .inner-banner .inner-image {
     height: 500px;
-}
+  }
+  .section-two .section-content {
+    font-size: 22px;
+  }
+  .section-two-inner .sec2-bg-left {
+    width: 76%;
+  }
+  .section-two-inner .tareq {
+    height: 550px;
+  }
 }
 
 

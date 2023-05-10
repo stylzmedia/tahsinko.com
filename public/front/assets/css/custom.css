@@ -336,6 +336,7 @@ Default btn Style End
 }
 
 
+/* CEO Section Start */
 .section-two {
     background: #ff0000;
 }
@@ -349,6 +350,9 @@ Default btn Style End
 }
 .section-two-inner .sec2-bg-left {
     width: 100%;
+}
+.section-two-inner .col-lg-4 {
+    padding: 0;
 }
 
 .section-two-inner .sec2-artwork {

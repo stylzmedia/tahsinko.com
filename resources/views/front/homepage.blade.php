@@ -96,12 +96,12 @@
     </div>
 <!-- section One End -->
 
-<!-- Section Two Start -->
+<!-- CEO Section Start -->
     <div class="section-two">
         <div class="container-fluid">
             <div class="section-two-inner">
                 <div class="row">
-                    <div class="col-lg-4 col-md-4">
+                    <div class="col-lg-4 col-md-4 m-0">
                         <img src="{{asset('front/images/section/sec2-bg-left.png')}}" class="sec2-bg-left" alt="">
                         <img src="{{asset('front/images/section/sec2-ceo.png')}}" alt="" class="tareq move-3">
                     </div>
@@ -361,7 +361,7 @@
                         </div>
                     </div>
                     <div class="row service-list justify-content-center">
-                        <div class="col-xl-3 col-lg-4 col-md-6">
+                        <div class="col-xxl-2 col-xl-3 col-lg-4 col-md-6">
                             <div class="service-item">
                                 <div class="service-item-inner text-center">
                                     <div class="service-icon">
