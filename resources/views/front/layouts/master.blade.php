@@ -151,7 +151,7 @@
     <!-- Menu For Mobile Device -->
     <div class="mobile-nav">
         <a href="{{ route('homepage') }}" class="logo">
-            <img src="{{$settings_g['logo'] ?? ''}}" alt="Logo">
+            <img src="{{$settings_g['logo'] ?? ''}}" alt="{{$settings_g['title'] ?? ''}}">
         </a>
     </div>
 
