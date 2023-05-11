@@ -252,9 +252,6 @@
         </div>
         <!-- Copy-right Area two End -->
     <!-- Slick JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
-    {{-- <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script> --}}
-
     <!-- Jquery Min JS -->
     <script src="{{ asset('/front/assets/js/jquery.min.js') }}"></script>
     <!-- Bootstrap Bundle Min JS -->
@@ -263,7 +260,7 @@
     <script src="{{asset('/front/assets/js/owl.carousel.min.js')}}"></script>
 
     <!-- Magnific Popup JS -->
-    <script src="{{asset('/front/assets/js/popper.min.js')}}"></script>
+    {{-- <script src="{{asset('/front/assets/js/popper.min.js')}}"></script> --}}
     <script src="{{asset('/front/assets/js/jquery.magnific-popup.min.js')}}"></script>
     <!-- Wow Min JS -->
     <script src="{{asset('/front/assets/js/wow.min.js')}}"></script>

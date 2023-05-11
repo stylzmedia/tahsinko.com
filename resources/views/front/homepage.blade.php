@@ -361,76 +361,18 @@
                         </div>
                     </div>
                     <div class="row service-list justify-content-center">
-                        <div class="col-xxl-2 col-xl-3 col-lg-4 col-md-6">
-                            <div class="service-item">
-                                <div class="service-item-inner text-center">
-                                    <div class="service-icon">
-                                        <img src="{{asset('front/images/section/icon-planning.png')}}" alt="" class="">
-                                    </div>
-                                    <h2>Planning</h2>
-                                </div>
-                            </div>
-                        </div>
+                        @foreach ($services as $item )
                         <div class="col-xl-3 col-lg-4 col-md-6">
                             <div class="service-item">
                                 <div class="service-item-inner text-center">
                                     <div class="service-icon">
-                                        <img src="{{asset('front/images/section/icon--supply.png')}}" alt="" class="">
+                                        <img src="{{ $item->img_paths['original'] }}" alt="" class="">
                                     </div>
-                                    <h2>Supply</h2>
+                                    <h2>{{ $item->title }}</h2>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6">
-                            <div class="service-item">
-                                <div class="service-item-inner text-center">
-                                    <div class="service-icon">
-                                        <img src="{{asset('front/images/section/icon-installation.png')}}" alt="" class="">
-                                    </div>
-                                    <h2>Installation</h2>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6">
-                            <div class="service-item">
-                                <div class="service-item-inner text-center">
-                                    <div class="service-icon">
-                                        <img src="{{asset('front/images/section/icon-commissioning.png')}}" alt="" class="">
-                                    </div>
-                                    <h2>Commissioning</h2>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6">
-                            <div class="service-item">
-                                <div class="service-item-inner text-center">
-                                    <div class="service-icon">
-                                        <img src="{{asset('front/images/section/icon-service-main.png')}}" alt="" class="">
-                                    </div>
-                                    <h2>Service & Maintenance</h2>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6">
-                            <div class="service-item">
-                                <div class="service-item-inner text-center">
-                                    <div class="service-icon">
-                                        <img src="{{asset('front/images/section/icon-renovation.png')}}" alt="" class="">
-                                    </div>
-                                    <h2>Renovation</h2>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6">
-                            <div class="service-item">
-                                <div class="service-item-inner text-center">
-                                    <div class="service-icon">
-                                        <img src="{{asset('front/images/section/icon-spare-parts.png')}}" alt="" class="">
-                                    </div>
-                                    <h2>Spare Parts</h2>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -454,7 +396,7 @@
                 </div>
                 <div class="row feature-product-inner justify-content-center">
                     @foreach($products as $product)
-                        <div class="col-xl-3 col-lg-6 col-md-6">
+                        <div class="col-xl-3 col-lg-6 col-md-6 m-3">
                             <div class="card">
                                 <div class="imgBox">
                                     <img src="{{ $product->img_paths['original'] }}" alt="{{ $product->name }}" class="product">
@@ -548,7 +490,7 @@
                             </div>
                             <div class="row team-list justify-content-center">
                                 @foreach($teams as $team)
-                                <div class="col-lg-4 col-md-6">
+                                <div class="">
                                     <div class="team-item">
                                         <div class="team-item-inner text-center">
                                             <div class="team-member position-relative">
@@ -719,21 +661,31 @@ $('.portfolio-item').slick({
 });
 
 $(".team-list").slick({
-    slidesToShow: 3,
     autoplay: false,
+    mobileFirst:true,
+    slidesToScroll: 1,
     autoplaySpeed: 1500,
     infinite: true,
+    arrows: false,
     responsive:[
     {
-        breakpoint: 1200,
-        settings: {
-        slidesToShow: 3,
-        },
-        breakpoint: 520,
-        settings: {
-        slidesToShow: 1,
-        }
+    breakpoint: 1024,
+    settings: {
+              slidesToShow: 2
+            }
     },
+    {
+    breakpoint: 1200,
+    settings: {
+              slidesToShow: 3
+            }
+    },
+    {
+    breakpoint: 1800,
+    settings: {
+              slidesToShow: 4
+            }
+    }
     ]
 });
     $('.team-list').mouseover(function() {
@@ -762,7 +714,22 @@ $(".team-list").slick({
     });
 </script>
 
+<script>
+    function getNumItems() {
+  if (window.innerWidth >= 1200) {
+    return 4;
+  } else if (window.innerWidth >= 800) {
+    return 3;
+  } else {
+    return 2;
+  }
+}
 
+window.addEventListener('resize', function() {
+  var numItems = getNumItems();
+  window.location.href = '{{ route("items.index", ["numItems" => ""]) }}' + numItems;
+});
+</script>
 @endsection
 
 

@@ -1,3 +1,220 @@
+@media only screen and (max-width: 320px){
+
+    /* Main Slider Area CSS */
+    .carousel-inner {
+        height: 100%;
+    }
+    .carousel-item.active {
+        margin-top: 55px;
+    }
+    .carousel-inner {
+        height: 185px;
+    }
+    .section-two-inner .tareq {
+        height: 360px !important;
+    }
+    .counter-item-inner.text-center h2{
+        font-size: 28px;
+    }
+
+    .section-two-inner .sec2-bg-left {
+        height: 323px !important;
+    }
+
+    .section-five .section-five-inner {
+        height: 1760px;
+    }
+
+    .section-five .pline-item-content-down {
+        height: 136px;
+      }
+    .section-five  .pline-item-content-up, .pline-item-icon{
+        height: 136px;
+      }
+
+    .pline-item-content-down h5, .pline-item-content-up h5 {
+        font-size: 20px;
+    }
+
+    .pline-content h2 {
+        font-size: 15px !important;
+    }
+    .pline-title::before {
+        right: 28% !important;
+        width: 210px !important;
+    }
+    .pline-title::after {
+        left: -142px !important;
+        width: 220px !important;
+        top: 91px !important;
+    }
+    .pline-title h2::after {
+        right: 19% !important;
+        bottom: -10px !important;
+    }
+    .pline-title h2::before {
+        left: 17% !important;
+        top: -5px;
+    }
+    .team-member-name {
+        width: 265px;
+    }
+
+    .section9 .hexagon-inner {
+        padding: 123px 130px;
+    }
+    .team-member-details {
+        left: -5px;
+    }
+
+}
+
+@media only screen and (max-width: 376px){
+
+    .section-two-inner .sec2-bg-left {
+        height: 350px;
+    }
+    .section-two-inner .tareq {
+        height: 391px;
+    }
+
+}
+
+@media only screen and (max-width: 575px){
+
+    /* Main Slider Area CSS */
+    .carousel-inner {
+        height: 100%;
+    }
+    .carousel-item.active {
+        margin-top: 55px;
+    }
+
+    .section-one .bg-media .moving {
+        width: 30%;
+        top: 10%;
+    }
+    .section-one .bg-media .sec1-bg {
+        top: 0;
+        height: 52%;
+        right: 0;
+    }
+    .section-one-content{
+        margin: 0 !important;
+    }
+    .section-one .section-one-content .section-one-inner-item .tm-img{
+        height: 120px;
+    }
+
+    .section-one-media {
+        margin-top: 50px;
+    }
+
+    .section-one .js-shape .shape-2 {
+        bottom: 20%;
+        right: 4%;
+        width: 43px;
+    }
+    .section-one .js-shape .shape-1 {
+        width: 85px;
+    }
+
+    .section-two {
+        margin-top: 60px;
+    }
+    .section-two-inner .tareq {
+        position: absolute;
+        top: -39px;
+        right: 0;
+        height: 442px;
+        z-index: 999;
+    }
+
+    .section-two .section-content{
+        margin: 15px;
+    }
+    .section-two-inner .sec2-artwork {
+        display: none;
+    }
+
+    .row.section-three-vision {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .pline-bg .artwork {
+        width: 100%;
+    }
+
+    .pline-content h2{
+        font-size: 18px;
+    }
+
+    .pline-title::before{
+        right: 16%;
+        width: 220px;
+    }
+
+    .pline-title::after {
+        left: 16%;
+        width: 220px;
+        top: 80px;
+    }
+    .pline-title h2::before{
+        left: 25%;
+        height: 58px;
+    }
+    .pline-title h2::after {
+        right: 25%;
+        height: 58px;
+    }
+
+
+    .section-five-inner {
+        height: 1260px;
+    }
+
+    .section-five-inner .sec5-bgleft, .sec5-bgright  {
+        display: none;
+    }
+    /* .section-five-inner .sec5-bgright {
+        display: none;
+    } */
+
+
+
+
+    .section-six h1{
+        font-size: 100%;
+    }
+
+    .section-six .inner-bg .tm-bg {
+    }
+
+    .section-six .section-six-inner {
+    }
+
+
+    .section-six .flag-tm-left .bd-flag {
+        height: 50px;
+    }
+
+
+    .section-six .flag-tm-right .cn-flag {
+        height: 50px;
+    }
+
+    .section-six .flag-tm-left .tm-bd {
+        height: 75px;
+        top: 20%;
+    }
+
+    .section-six .flag-tm-right .tm-cn {
+        height: 75px;
+        top: 20%;
+    }
+}
+
 @media only screen and (max-width: 767px) {
   /* Default CSS */
   body {
@@ -1038,9 +1255,7 @@
     height: 50px;
   }
   /* Coming Soon End */
-}
 
-@media only screen and (min-width: 576px) and (max-width: 767px) {
   .home-slider .owl-nav .owl-prev {
     left: 45%;
   }
@@ -1192,20 +1407,7 @@
   .d-in-line {
     display: none;
   }
-  .side-nav-responsive {
-    display: block;
-  }
-  .side-nav-responsive .container .container {
-    width: 325px;
-  }
-  .side-nav-responsive .side-nav-inner .side-nav {
-    text-align: center;
-  }
-  .side-nav-responsive .side-nav-inner .side-nav .side-item {
-    padding-left: unset;
-    margin: 0 10px;
-    text-align: center;
-  }
+
   .nav-ml {
     margin-left: 0 !important;
   }
@@ -1213,185 +1415,89 @@
     display: none;
   }
   /* Navbar CSS End */
+  .section-one .section-one-content .section-one-inner-item .tm-img {
+    height: 100px;
+    }
+
+    .section-two {
+        margin-top: 60px;
+        position: relative;
+        z-index: 1;
+    }
+    .section-two .section-content {
+        margin-left: 15%;
+        margin-right: 0;
+        font-size: 12px;
+    }
+    .section-two-inner .tareq {
+        height: 300px;
+    }
+    .section-two-inner .sec2-artwork {
+        height: 100%;
+    }
+
+    .pline-title::before{
+        right: 16%;
+        width: 400px;
+    }
+
+    .pline-title::after {
+        left: 16%;
+        width: 400px;
+    }
+    .pline-title h2::before{
+        left: 11%;
+    }
+    .pline-title h2::after {
+        right: 11%;
+    }
+
+    .section-five-inner {
+        height: 925px;
+    }
+
+    .section-five-inner .sec5-bgleft {
+        width: 100%;
+        height: 925px;
+    }
+
+    .section-five-inner .sec5-bgright {
+        display: none;
+    }
+
+    .section-six .inner-bg .tm-bg {
+    }
+
+    .section-six .section-six-inner {
+    }
+
+
+    .section-six .flag-tm-left .bd-flag {
+        height: 100px;
+    }
+
+
+    .section-six .flag-tm-right .cn-flag {
+        height: 100px;
+    }
+
+    .section-six .flag-tm-left .tm-bd {
+        height: 200px;
+    }
+
+    .section-six .flag-tm-right .tm-cn {
+        height: 200px;
+    }
   /* Main Slider Area CSS */
-  .home-slider {
-    position: relative;
+
+  .carousel-inner {
+    height: 100%;
   }
-  .home-slider .thumbs-wrap {
-    display: none;
+
+  .carousel-item.active {
+    margin-top: 55px;
   }
-  .home-slider .owl-nav .owl-prev {
-    left: 45%;
-    bottom: 70px;
-    color: #ffffff !important;
-  }
-  .home-slider .owl-nav .owl-prev:hover {
-    color: #c9c8d8 !important;
-  }
-  .home-slider .owl-nav .owl-next {
-    z-index: 1;
-    right: 45%;
-    bottom: 70px;
-    color: #ffffff !important;
-  }
-  .home-slider .owl-nav .owl-next:hover {
-    color: #c9c8d8 !important;
-  }
-  .slider-item::before {
-    display: none;
-  }
-  .slider-item .social-link {
-    display: none;
-  }
-  .slider-content {
-    padding-top: 130px;
-    padding-bottom: 150px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-  }
-  .slider-content::before {
-    display: none;
-  }
-  .slider-content h1 {
-    font-size: 35px;
-    line-height: 1.2;
-    margin-bottom: 10px;
-  }
-  .slider-content p {
-    font-size: 16px;
-    margin-bottom: 20px;
-  }
-  .slider-content .slider-btn .get-btn {
-    padding: 7px 18px;
-    font-size: 15px;
-  }
-  .slider-content .slider-btn .learn-btn {
-    padding: 7px 18px;
-    font-size: 15px;
-  }
-  .banner-area .container-fluid {
-    width: 720px;
-  }
-  .banner-area .thumbs-wrap {
-    display: none;
-  }
-  .banner-area .owl-nav .owl-prev {
-    left: 45%;
-    top: auto;
-    -webkit-transform: translateY(0px);
-            transform: translateY(0px);
-    bottom: 70px;
-  }
-  .banner-area .owl-nav .owl-next {
-    z-index: 1;
-    right: 45%;
-    top: auto;
-    -webkit-transform: translateY(0px);
-            transform: translateY(0px);
-    bottom: 70px;
-  }
-  .banner-content {
-    padding-top: 130px;
-    padding-bottom: 150px;
-    margin-left: 0;
-  }
-  .banner-content h1 {
-    font-size: 35px;
-    line-height: 1.2;
-    margin-bottom: 30px;
-  }
-  .banner-content .banner-btn .learn-btn {
-    padding: 6px 16px 10px 16px;
-    font-size: 14px;
-  }
-  .banner-content .banner-btn .learn-btn i {
-    font-size: 24px;
-  }
-  .banner-content .banner-btn .get-btn {
-    margin-left: 10px;
-    padding: 6px 16px 10px 16px;
-    font-size: 14px;
-  }
-  .banner-content .banner-btn .get-btn i {
-    font-size: 24px;
-  }
-  .banner-area-two {
-    position: relative;
-  }
-  .banner-area-two .owl-nav .owl-prev {
-    width: 120px !important;
-    height: 40px !important;
-    line-height: 40px;
-    right: 115px;
-  }
-  .banner-area-two .owl-nav .owl-prev i {
-    top: -4px;
-    position: relative;
-  }
-  .banner-area-two .owl-nav .owl-prev::before {
-    bottom: 5px;
-    left: 65px;
-  }
-  .banner-area-two .owl-nav .owl-next {
-    width: 120px !important;
-    height: 40px !important;
-    line-height: 40px;
-    right: -5px;
-  }
-  .banner-area-two .owl-nav .owl-next i {
-    top: -4px;
-    position: relative;
-  }
-  .banner-area-two .owl-nav .owl-next::before {
-    right: 65px;
-    bottom: 5px;
-  }
-  .banner-item-two::after {
-    height: 40px;
-  }
-  .banner-content-two {
-    padding-top: 170px;
-    padding-bottom: 150px;
-  }
-  .banner-content-two .images {
-    top: 155px;
-  }
-  .banner-content-two .images img {
-    max-width: 200px;
-  }
-  .banner-content-two h1 {
-    font-size: 35px;
-    margin-bottom: 25px;
-    max-width: 450px;
-  }
-  .banner-content-two .banner-btn .learn-btn {
-    padding: 6px 16px 10px 16px;
-    font-size: 14px;
-  }
-  .banner-content-two .banner-btn .learn-btn i {
-    font-size: 24px;
-  }
-  .banner-content-two .banner-btn .get-btn {
-    margin-left: 10px;
-    padding: 6px 16px 10px 16px;
-    font-size: 14px;
-  }
-  .banner-content-two .banner-btn .get-btn i {
-    font-size: 24px;
-  }
-  /* Main Slider Area CSS End */
-  /* Inner Banner */
-  .inner-banner .inner-title {
-    padding-top: 120px;
-    padding-bottom: 60px;
-  }
-  .inner-banner .inner-title h3 {
-    font-size: 20px;
-  }
-  .inner-banner .inner-title ul li {
-    font-size: 16px;
-  }
+
   /* Inner Banner End */
   /* About Area CSS */
   .about-area .container-fluid {
@@ -1783,6 +1889,18 @@
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
+
+  .main-nav nav .navbar-nav .nav-item a {
+    font-size: 12px;
+  }
+  .carousel-inner {
+    height: 500px;
+  }
+
+  .carousel-item.active {
+    margin-top: 75px;
+  }
+
   .section-title h2 {
     font-size: 50px;
   }
@@ -1985,6 +2103,8 @@
 }
 
 @media only screen and (min-width: 1200px) {
+
+
     .container-max {
       max-width: 1320px !important;
       margin: 0 auto;
@@ -2058,6 +2178,10 @@
   .search-box {
     right: 0;
   }
+
+  .carousel-inner {
+    height: 850px;
+}
   .home-slider .owl-nav .owl-prev {
     left: 48.5%;
   }
@@ -2088,6 +2212,119 @@
   .section-two-inner .tareq {
     height: 550px;
   }
+
+  .section-five .animation-line::before {
+    right: 620px;
+  }
+
+  .section-five .animation-line::after {
+    left: 250px;
+  }
+
+  .section-five .animation-line h2::before {
+    top: 25px;
+  }
+  .section-five .animation-line h2::after {
+    bottom: 25px;
+  }
+  .section-five .pline-item-content-down {
+    height: 126px;
+  }
+
+  .section-five  .pline-item-content-up, .pline-item-icon{
+    height: 126px;
+  }
+
+  .section-seven .service-item-inner {
+    height: 330px;
+  }
+
+  .section-seven .service-icon {
+    height: 200px;
+    width: 200px;
+  }
+  .service-item-inner.text-center h2{
+    font-size: 25px;
+    height: 100px;
+  }
+  .feature-product .container {
+    max-width: 1460px !important;
+  }
+  .portfolio-area .container {
+    max-width: 1460px !important;
+  }
+
+}
+
+@media screen and (min-width: 2500px) {
+
+    .section-one .section-one-content .section-one-inner-item .tm-img{
+        height: 300px;
+    }
+    .section-two .section-content {
+        margin-right: 25%;
+        font-size: 40px;
+    }
+    .section-two-inner .tareq {
+        height: 1065px;
+    }
+    .section-two-inner .sec2-artwork {
+        height: 100%;
+    }
+
+    .pline-title::before{
+        right: 40%;
+        width: 400px;
+    }
+
+    .pline-title::after {
+        left: 40%;
+        width: 400px;
+    }
+    .pline-title h2::before{
+        left: 20%;
+    }
+    .pline-title h2::after {
+        right: 20%;
+    }
+
+    .section-five-inner .sec5-bgleft {
+        width: 75%;
+    }
+
+
+    .section-six .inner-bg .tm-bg {
+    }
+
+    .section-six .section-six-inner {
+    }
+
+
+    .section-six .flag-tm-left .bd-flag {
+        height: 350px;
+        top: 130%;
+    }
+
+
+    .section-six .flag-tm-right .cn-flag {
+        height: 350px;
+        top: 130%;
+    }
+
+    .section-six .flag-tm-left .tm-bd {
+        height: 550px;
+        top: 100%;
+    }
+
+    .section-six .flag-tm-right .tm-cn {
+        height: 550px;
+        top: 100%;
+    }
+
+    .section9 .team-bg{
+        width: 100%;
+        height: auto;
+    }
 }
 
 

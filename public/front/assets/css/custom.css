@@ -886,7 +886,7 @@ Default btn Style End
   transform: skewY(345deg);
   transition: 0.5s;
 }
-.feature-product .card::after {
+/* .feature-product .card::after {
     content: "CORSAIR";
     position: absolute;
     bottom: 0;
@@ -894,7 +894,7 @@ Default btn Style End
     font-weight: 600;
     font-size: 6em;
     color: rgba(0, 0, 0, 0.1);
-}
+} */
 
 
 
@@ -1647,76 +1647,13 @@ Portfolio Area
 
 /* Responsive  */
 
-@media screen and (min-width: 2500px) {
-    .section-one .section-one-content .section-one-inner-item .tm-img{
-        height: 300px;
-    }
-    .section-two .section-content {
-        margin-right: 25%;
-        font-size: 40px;
-    }
-    .section-two-inner .tareq {
-        height: 1065px;
-    }
-    .section-two-inner .sec2-artwork {
-        height: 100%;
-    }
-
-    .pline-title::before{
-        right: 40%;
-        width: 400px;
-    }
-
-    .pline-title::after {
-        left: 40%;
-        width: 400px;
-    }
-    .pline-title h2::before{
-        left: 20%;
-    }
-    .pline-title h2::after {
-        right: 20%;
-    }
-
-    .section-five-inner .sec5-bgleft {
-        width: 75%;
-    }
-
-
-    .section-six .inner-bg .tm-bg {
-    }
-
-    .section-six .section-six-inner {
-    }
-
-
-    .section-six .flag-tm-left .bd-flag {
-        height: 350px;
-        top: 130%;
-    }
-
-
-    .section-six .flag-tm-right .cn-flag {
-        height: 350px;
-        top: 130%;
-    }
-
-    .section-six .flag-tm-left .tm-bd {
-        height: 550px;
-        top: 100%;
-    }
-
-    .section-six .flag-tm-right .tm-cn {
-        height: 550px;
-        top: 100%;
-    }
-}
 
 
 
 
 
 @media only screen and (max-width: 1480px){
+
     .section-one .section-one-content .section-one-inner-item .tm-img{
         height: 150px;
     }
@@ -1741,11 +1678,7 @@ Portfolio Area
 
 @media only screen and (min-width: 1200px) {
 
-    .carousel-inner {
-        height: 685px;
-        top: -85px;
-        z-index: -1;
-    }
+
     .container-max-2 {
         max-width: 1460px !important;
         margin: 0 auto;
@@ -1797,6 +1730,7 @@ Portfolio Area
 
     .section-five-inner .sec5-bgleft {
         width: 150%;
+        height: 650px
     }
 
     .section-six .inner-bg .tm-bg {
@@ -1828,220 +1762,11 @@ Portfolio Area
 @media only screen and (max-width: 991px){
 
 
-
-
-
-    .section-one .section-one-content .section-one-inner-item .tm-img {
-        height: 100px;
-    }
-
-    .section-two {
-        margin-top: 60px;
-        position: relative;
-        z-index: 1;
-    }
-    .section-two .section-content {
-        margin-left: 15%;
-        margin-right: 0;
-        font-size: 12px;
-    }
-    .section-two-inner .tareq {
-        height: 300px;
-    }
-    .section-two-inner .sec2-artwork {
-        height: 100%;
-    }
-
-    .pline-title::before{
-        right: 16%;
-        width: 400px;
-    }
-
-    .pline-title::after {
-        left: 16%;
-        width: 400px;
-    }
-    .pline-title h2::before{
-        left: 11%;
-    }
-    .pline-title h2::after {
-        right: 11%;
-    }
-
-    .section-five-inner {
-        height: 925px;
-    }
-
-    .section-five-inner .sec5-bgleft {
-        width: 100%;
-        height: 925px;
-    }
-
-    .section-five-inner .sec5-bgright {
-        display: none;
-    }
-
-    .section-six .inner-bg .tm-bg {
-    }
-
-    .section-six .section-six-inner {
-    }
-
-
-    .section-six .flag-tm-left .bd-flag {
-        height: 100px;
-    }
-
-
-    .section-six .flag-tm-right .cn-flag {
-        height: 100px;
-    }
-
-    .section-six .flag-tm-left .tm-bd {
-        height: 200px;
-    }
-
-    .section-six .flag-tm-right .tm-cn {
-        height: 200px;
-    }
 }
 
-@media only screen and (max-width: 575px){
-    .section-one .bg-media .moving {
-        width: 30%;
-        top: 10%;
-    }
-    .section-one .bg-media .sec1-bg {
-        top: 0;
-        height: 52%;
-        right: 0;
-    }
-    .section-one-content{
-        margin: 0 !important;
-    }
-    .section-one .section-one-content .section-one-inner-item .tm-img{
-        height: 120px;
-    }
-
-    .section-one-media {
-        margin-top: 50px;
-    }
-
-    .section-one .js-shape .shape-2 {
-        bottom: 20%;
-        right: 4%;
-        width: 43px;
-    }
-    .section-one .js-shape .shape-1 {
-        width: 85px;
-    }
-
-    .section-two {
-        margin-top: 60px;
-    }
-    .section-two-inner .tareq {
-        position: absolute;
-        top: -39px;
-        right: 0;
-        height: 442px;
-        z-index: 999;
-    }
-
-    .section-two .section-content{
-        margin: 15px;
-    }
-    .section-two-inner .sec2-artwork {
-        display: none;
-    }
-
-    .row.section-three-vision {
-        display: flex;
-        flex-direction: column-reverse;
-    }
-
-    .pline-bg .artwork {
-        width: 100%;
-    }
-
-    .pline-content h2{
-        font-size: 18px;
-    }
-
-    .pline-title::before{
-        right: 16%;
-        width: 220px;
-    }
-
-    .pline-title::after {
-        left: 16%;
-        width: 220px;
-        top: 80px;
-    }
-    .pline-title h2::before{
-        left: 25%;
-        height: 58px;
-    }
-    .pline-title h2::after {
-        right: 25%;
-        height: 58px;
-    }
-
-
-    .section-five-inner {
-        height: 1400px;
-    }
-
-    .section-five-inner .sec5-bgleft {
-    }
 
 
 
 
-    .section-six h1{
-        font-size: 100%;
-    }
 
-    .section-six .inner-bg .tm-bg {
-    }
-
-    .section-six .section-six-inner {
-    }
-
-
-    .section-six .flag-tm-left .bd-flag {
-        height: 50px;
-    }
-
-
-    .section-six .flag-tm-right .cn-flag {
-        height: 50px;
-    }
-
-    .section-six .flag-tm-left .tm-bd {
-        height: 75px;
-        top: 20%;
-    }
-
-    .section-six .flag-tm-right .tm-cn {
-        height: 75px;
-        top: 20%;
-    }
-}
-
-@media only screen and (max-width: 376px){
-
-    .section-two-inner .tareq {
-        height: 391px;
-    }
-}
-
-@media only screen and (max-width: 321px){
-
-    .section-two-inner .tareq {
-        height: 336px;
-    }
-    .team-member-name {
-        width: 306px;
-    }
-}
 
