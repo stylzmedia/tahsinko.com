@@ -396,10 +396,11 @@
                 </div>
                 <div class="row feature-product-inner justify-content-center">
                     @foreach($products as $product)
-                        <div class="col-xl-3 col-lg-6 col-md-6 m-3">
+                        <div class="col-xl-3 col-lg-6 col-md-6">
                             <div class="card">
                                 <div class="imgBox">
-                                    <img src="{{ $product->img_paths['original'] }}" alt="{{ $product->name }}" class="product">
+                                    <img src="{{ $product->img_paths['original'] }}"
+                                    alt="{{ $product->name }}" class="product">
                                 </div>
                                 <div class="contentBox">
                                     <h3>{{ $product->name }}</h3>
@@ -582,7 +583,7 @@
                                             col-lg-3 col-md-6 col-sm-12
                                         @endif
                                     ">
-                                    <div class="blog-card blog-card-pb">
+                                    <div class="blog-card blog-card-pb text-center">
                                         <a href="{{ route('news.single', $news->slug) }}">
                                             <img src="{{ $news->img_paths['medium'] }}" alt="{{ $news->title }}">
                                         </a>
@@ -638,26 +639,40 @@ $("#videoeModal").on('hidden.bs.modal', function (e) {
 </script>
 
 <script>
-$('.portfolio-item').slick({
-    autoplay: true,
+    $(".portfolio-item").slick({
+    autoplay: false,
+    mobileFirst:true,
+    slidesToScroll: 1,
     autoplaySpeed: 1500,
     infinite: true,
-    slidesToShow: 4,
     arrows: true,
-    responsive: [
+    responsive:[
+
     {
-      breakpoint: 1200,
-      settings: {
-        slidesToShow: 3
-      }
+    breakpoint: 768,
+    settings: {
+              slidesToShow: 2
+            }
     },
     {
-      breakpoint: 520,
-      settings: {
-        slidesToShow: 1
-      }
+    breakpoint: 1024,
+    settings: {
+              slidesToShow: 3
+            }
+    },
+    {
+    breakpoint: 1200,
+    settings: {
+              slidesToShow: 3
+            }
+    },
+    {
+    breakpoint: 1800,
+    settings: {
+              slidesToShow: 4
+            }
     }
-  ]
+    ]
 });
 
 $(".team-list").slick({
@@ -714,22 +729,7 @@ $(".team-list").slick({
     });
 </script>
 
-<script>
-    function getNumItems() {
-  if (window.innerWidth >= 1200) {
-    return 4;
-  } else if (window.innerWidth >= 800) {
-    return 3;
-  } else {
-    return 2;
-  }
-}
 
-window.addEventListener('resize', function() {
-  var numItems = getNumItems();
-  window.location.href = '{{ route("items.index", ["numItems" => ""]) }}' + numItems;
-});
-</script>
 @endsection
 
 

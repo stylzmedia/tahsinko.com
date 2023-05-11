@@ -56,10 +56,24 @@
         left: 17% !important;
         top: -5px;
     }
+
+    .feature-product .card {
+        height: 440px;
+        margin-bottom: 10px;
+    }
+
+
+    .imgBox .product {
+        width: 85%;
+    }
+
     .team-member-name {
         width: 265px;
     }
 
+    .portfolio-item a img {
+        height: 100% !important;
+    }
     .section9 .hexagon-inner {
         padding: 123px 130px;
     }
@@ -151,27 +165,47 @@
     }
 
     .pline-title::before{
-        right: 16%;
+        right: 35%;
         width: 220px;
     }
 
     .pline-title::after {
-        left: 16%;
+        left: -18%;
         width: 220px;
-        top: 80px;
+        top: 90px;
     }
     .pline-title h2::before{
         left: 25%;
         height: 58px;
+        top: -10px;
     }
+
     .pline-title h2::after {
         right: 25%;
         height: 58px;
+        bottom: -8px;
     }
+
+    .section-five .pline-item-content-down {
+    height: 126px;
+   }
+
+   .section-five  .pline-item-content-up, .pline-item-icon{
+    height: 126px;
+   }
+   .pline-item-content-down h5, .pline-item-content-up h5 {
+    font-size: 20px;
+   }
+
+   .section-seven .service-item-inner {
+    height: 330px;
+   }
+
+
 
 
     .section-five-inner {
-        height: 1260px;
+        height: 1670px;
     }
 
     .section-five-inner .sec5-bgleft, .sec5-bgright  {
@@ -212,6 +246,17 @@
     .section-six .flag-tm-right .tm-cn {
         height: 75px;
         top: 20%;
+    }
+    .imgBox .product {
+        width: 85%;
+    }
+    .feature-product .card {
+        height: 570px;
+        margin-bottom: 10px;
+    }
+    .portfolio-item a img {
+        max-width: 100% !important;
+        height: 100% !important;
     }
 }
 
@@ -2017,6 +2062,9 @@
   }
   .portfolio-item-two .content ul li a {
     font-size: 13px;
+  }
+  .portfolio-item .slick-next:before{
+    opacity: -1;
   }
   .banner-content h1 {
     font-size: 75px;
