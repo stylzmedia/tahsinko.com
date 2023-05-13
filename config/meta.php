@@ -82,7 +82,7 @@ return [
     | or a specific page page.
     |
     */
-	'image' => 'https://demo.tahsinko.com/uploads/info/og_image.png',
+	'image' => 'https://tahsinko.com/uploads/info/og_image.jpg',
 
 	/*
     |--------------------------------------------------------------------------

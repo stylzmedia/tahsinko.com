@@ -16,6 +16,7 @@ class CreateSectionNamesTable extends Migration
         Schema::create('section_names', function (Blueprint $table) {
             $table->id();
             $table->string('section_names',191);
+            $table->timestamp('deleted_at')->nullable();
             $table->timestamps();
         });
     }

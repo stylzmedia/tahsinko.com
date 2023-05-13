@@ -42,6 +42,8 @@ class CreateHomeSectionsTable extends Migration
             $table->integer('no_of_slide_col')->default(0);
             $table->string('feature_video',191)->nullable();
 
+            $table->tinyInteger('is_background_color')->default(1);
+            $table->string('background_image')->nullable();
 
             $table->unsignedInteger('created_by')->nullable();
             $table->unsignedInteger('updated_by')->nullable();

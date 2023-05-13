@@ -18,6 +18,18 @@
     <!-- FabIcons -->
     <link rel="shortcut icon" href="{{$settings_g['favicon'] ?? ''}}">
 
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0JY61M6DLL">
+    </script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-0JY61M6DLL');
+    </script>
+    <!-- Google Tag  -->
+
     @yield('head')
 
     <!-- Font Awesome CSS -->

@@ -423,59 +423,63 @@
     </div>
 <!-- Products End -->
 
-<!-- Project Start -->
-    <div class="portfolio-area pb-70">
-            <div class="tm-title text-uppercase text-center mt-2">
-                <h1>Our Project</h1>
-            </div>
-        <div class="container">
-            <div class="tab portfolio-tab">
-                <div class="tab_content current active pt-45">
-                    <div class="tabs_item current">
-                        <div class="row portfolio-item">
-                            @foreach($projects as $project)
-                                <div class="col-lg-3 col-sm-6">
-                                    <div class="portfolio-item-two">
-                                        <a href="{{ route('project.single', $project->id) }}">
-                                            <img src="{{ $project->img_paths['original'] }}" alt="{{ $project->title }}">
-                                        </a>
-                                        <div class="content active">
-                                            <div class="title">
-                                                <h3><a href="{{ route('project.single', $project->id) }}">{{ $project->title }}</a></h3>
+
+
+<!-- Section Start -->
+    @if(count($home_sections))
+
+        @foreach($home_sections as $key=>$sec)
+
+                @if($sec->section_design_type_id==7 && count($projects))
+                <input type="hidden" id="NoOfTeamMember" value="{{$sec->no_of_slide_col}}">
+            <!-- Project Start -->
+                <div class="portfolio-area pb-70">
+                    <div class="tm-title text-uppercase text-center mt-2">
+                        <h1>Our Project</h1>
+                    </div>
+                <div class="container">
+                    <div class="tab portfolio-tab">
+                        <div class="tab_content current active pt-45">
+                            <div class="tabs_item current">
+                                <div class="row portfolio-item">
+                                    @foreach($projects as $project)
+                                        <div class="col-lg-3 col-sm-6">
+                                            <div class="portfolio-item-two">
+                                                <a href="{{ route('project.single', $project->id) }}">
+                                                    <img src="{{ $project->img_paths['original'] }}" alt="{{ $project->title }}">
+                                                </a>
+                                                <div class="content active">
+                                                    <div class="title">
+                                                        <h3><a href="{{ route('project.single', $project->id) }}">{{ $project->title }}</a></h3>
+                                                    </div>
+                                                    <ul>
+                                                        <li>
+                                                            <a href="{{ route('project.single', $project->id) }}">{{ $project->lift_type }}</a>
+                                                        </li>
+                                                        <li>
+                                                            <a>{{ $project->location }}</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
                                             </div>
-                                            <ul>
-                                                <li>
-                                                    <a href="{{ route('project.single', $project->id) }}">{{ $project->lift_type }}</a>
-                                                </li>
-                                                <li>
-                                                    <a>{{ $project->location }}</a>
-                                                </li>
-                                            </ul>
+                                        </div>
+                                    @endforeach
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="text-center mt-5">
+                                            <a href="{{ url('page/our-projects') }}" class="default-btn">View All Products</a>
                                         </div>
                                     </div>
-                                </div>
-                            @endforeach
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="text-center mt-5">
-                                    <a href="{{ url('page/our-projects') }}" class="default-btn">View All Products</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-<!-- Project End -->
+            <!-- Project End -->
 
-<!-- Section Start -->
-    @if(count($home_sections))
-        @foreach($home_sections as $key=>$sec)
-
-            <!-- Team Start -->
-                @if($sec->section_design_type_id==7 && count($teams))
+        <!-- Team Start -->
+                @elseif($sec->section_design_type_id==7 && count($teams))
                 <input type="hidden" id="NoOfTeamMember" value="{{$sec->no_of_slide_col}}">
                 <div class="section9">
                     <div class="team-bg-item">

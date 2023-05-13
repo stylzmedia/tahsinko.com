@@ -20,8 +20,12 @@ class CreatePagesTable extends Migration
             $table->string("slug", 300);
             $table->text('short_description')->nullable();
             $table->longText('description')->nullable();
+
+            $table->string('breadcrumb_title')->nullable();
+            $table->tinyInteger('is_color')->default(1);
+            $table->string('breadcrumb_background')->nullable();
+
             $table->string('pdf_file',191)->nullable();
-            $table->longText('description')->nullable();
             $table->integer('position')->nullable()->default(1000);
             $table->boolean('featured')->default(0);
             $table->string('meta_title')->nullable();
@@ -30,6 +34,8 @@ class CreatePagesTable extends Migration
             $table->string('image')->nullable();
             $table->unsignedBigInteger('media_id')->nullable();
             $table->string('template')->nullable();
+
+
             $table->softDeletes();
             $table->timestamps();
         });
