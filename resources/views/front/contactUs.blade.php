@@ -1,10 +1,15 @@
 @extends('front.layouts.master')
 @php
     $socials = \App\Models\Settings::where(['group'=>'social'])->get();
+    // $page = \App\Models\Page::where('title', 'Contact Us')->first();
 @endphp
 @section('head')
     @include('meta::manager', [
-        'title' => 'Contact Us'
+        'title' => $page->meta_title. ' - ' . ($settings_g['title'] ?? ''),
+        'description' => $page->meta_description,
+        'keywords' => $page->meta_tags,
+        'image' => $page->media_id ? $page->img_paths['original'] : null,
+
     ])
     <style>
         #background-video {
@@ -18,6 +23,7 @@
         min-width: 50%;
         position: absolute;
         }
+
         .video-inner {
         position: relative;
         height: 500px;
@@ -25,10 +31,10 @@
         }
     </style>
 
-
 @endsection
 
 @section('master')
+  <!-- Breadcrumb Start -->
     <div class="inner-banner-video">
             <div class="video-inner">
                 <video id="background-video" autoplay loop muted poster="{{ asset('front/video/ElevatorsGoingUpAndDown.png') }}">
@@ -50,7 +56,7 @@
             </div>
         </div>
     </div>
-    <!-- Inner Banner End -->
+    <!-- Breadcrumb End -->
 
     <!-- Contact Section -->
     <div class="contact-section pt-100 pb-70">

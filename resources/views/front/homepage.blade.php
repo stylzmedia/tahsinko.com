@@ -390,10 +390,10 @@
                     <h1>Latest Products</h1>
                 </div>
                 <div class="portfolio-bg">
-                    <img src="{{asset('front/images/section/portfolio-bd-left.png')}}" alt="{{ $product->name }}" class="portfolio-bd-left">
+                    <img src="{{asset('front/images/section/portfolio-bd-left.png')}}" alt="Latest Products" class="portfolio-bd-left">
                 </div>
                 <div class="portfolio-bg">
-                    <img src="{{asset('front/images/section/portfolio-bd-rignt.png')}}" alt="{{ $product->name }}" class="portfolio-bd-rignt">
+                    <img src="{{asset('front/images/section/portfolio-bd-rignt.png')}}" alt="Latest Products" class="portfolio-bd-rignt">
                 </div>
                 <div class="row feature-product-inner justify-content-center">
                     @foreach($products as $product)
@@ -479,7 +479,7 @@
                 <input type="hidden" id="NoOfTeamMember" value="{{$sec->no_of_slide_col}}">
                 <div class="section9">
                     <div class="team-bg-item">
-                        <img src="{{asset('front/images/section/team-bg.png')}}" alt="{!! $team->name !!}" class="team-bg">
+                        <img src="{{asset('front/images/section/team-bg.png')}}" alt="Our TEAM" class="team-bg">
                     </div>
                     <div class="container-fluid">
                         <div class="team-section my-5">
