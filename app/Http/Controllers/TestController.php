@@ -2,10 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Session;
 
@@ -13,9 +10,7 @@ class TestController extends Controller
 {
     public function cacheClear(){
         Artisan::call('cache:clear');
-        Artisan::call('config:cache');
-        Artisan::call('view:cache');
-        Artisan::call('route:cache');
+        Artisan::call('route:clear');
 
         Session::flash('success', 'Cache, Config, View, Route Clear successfully!');
         return redirect()->route('homepage');
@@ -29,24 +24,10 @@ class TestController extends Controller
 
     // Config
     public function config(){
-        // $admin = User::where('email', 'admin@me.com')->first();
-        // if(!$admin){
-        //     $admin = new User;
-        //     $admin->type = 'admin';
-        //     $admin->last_name = 'Admin';
-        //     $admin->email = 'admin@me.com';
-        //     $admin->mobile_number = '123456789';
-        //     $admin->password = Hash::make(123456789);
-        // }else{
-        //     $admin->password = Hash::make(123456789);
-        // }
-
-        // $admin->save();
-
-        // Some Settings
         $where = array();
         $where['group'] = 'general';
 
+        // Web Info
         $where['name'] = 'title';
         $insert['value'] = env('APP_NAME');
         DB::table('settings')->updateOrInsert($where, $insert);
@@ -102,6 +83,25 @@ class TestController extends Controller
 
         $where['name'] = 'keywords';
         $insert['value'] = 'lift company in bangladesh, lift in bangladesh, elevator company in bangladesh,  lift in dhaka, lift price in bangladesh, elevator price in bangladesh, escalator company in bangladesh';
+        DB::table('settings')->updateOrInsert($where, $insert);
+
+        $where['group'] = 'social';
+
+        // Social
+        $where['name'] = 'facebook';
+        $insert['value'] = 'https://www.facebook.com/tahsinkolift/';
+        DB::table('settings')->updateOrInsert($where, $insert);
+
+        $where['name'] = 'twitter';
+        $insert['value'] = 'https://twitter.com/tahsinkolift/';
+        DB::table('settings')->updateOrInsert($where, $insert);
+
+        $where['name'] = 'youtube';
+        $insert['value'] = 'https://www.youtube.com/@tahsinkolift7692/';
+        DB::table('settings')->updateOrInsert($where, $insert);
+
+        $where['name'] = 'linkedin';
+        $insert['value'] = 'https://www.linkedin.com/company/tahsinko-limited/';
         DB::table('settings')->updateOrInsert($where, $insert);
 
         //Logo & Fabicons

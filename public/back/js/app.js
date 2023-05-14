@@ -11473,7 +11473,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.custom_image_size{\r\n    width: 45%;\n}\n.form-group {\r\n    margin: 10px 0;\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.custom_image_size{\n    width: 45%;\n}\n.form-group {\n    margin: 10px 0;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -25261,7 +25261,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "form-group" }, [
-      _c("label", [_c("b", [_vm._v("CEO Name*")])]),
+      _c("label", [_c("b", [_vm._v("CEO Names*")])]),
       _vm._v(" "),
       _c("input", {
         staticClass: "form-control",
@@ -26132,7 +26132,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("label", [_c("b", [_vm._v("CEO Name")])])
+    return _c("label", [_c("b", [_vm._v("CEO Names")])])
   },
   function () {
     var _vm = this

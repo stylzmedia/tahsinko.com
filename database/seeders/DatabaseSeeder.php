@@ -13,14 +13,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\Testimonial::factory(5)->create();
-        $this->call(SectionDesignTypeSeeder::class);
-        $this->call(SettingSeeder::class);
-        $this->call(UserSeeder::class);
         $this->call(RoleSeeder::class);
-
-
-
-        // \App\Models\RequestContact::factory(5)->create();
+        $this->call(SectionDesignTypeSeeder::class);
+        $this->call(UserSeeder::class);
     }
 }

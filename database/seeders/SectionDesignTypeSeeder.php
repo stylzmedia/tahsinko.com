@@ -16,57 +16,68 @@ class SectionDesignTypeSeeder extends Seeder
     {
         DB::table('section_design_types')->insert(
             [
-                'id'=>1,
-                'name'=>"About",
+                [
+                    'name'=>"About",
+                    'is_active'=>1,
+                    'created_at' => now(),
+                    'updated_at' => now()
+                ],
+                [
+                    'name'=>"CEO",
+                    'is_active'=>1,
+                    'created_at' => now(),
+                    'updated_at' => now()
+                ],
+                [
+                    'name'=>"Mission & Vision",
+                    'is_active'=>1,
+                    'created_at' => now(),
+                    'updated_at' => now()
+                ],
+                [
+                    'name'=>"Counter",
+                    'is_active'=>1,
+                    'created_at' => now(),
+                    'updated_at' => now()
+                ],
+                [
+                    'name'=>"Product Line",
+                    'is_active'=>1,
+                    'created_at' => now(),
+                    'updated_at' => now()
+                ],
+                [
+                    'name'=>"TradeMark",
+                    'is_active'=>1,
+                    'created_at' => now(),
+                    'updated_at' => now()
+                ],
+                [
+                    'name'=>"Our Services",
+                    'is_active'=>1,
+                    'created_at' => now(),
+                    'updated_at' => now()
+                ],
+                [
+                    'name'=>"Latest Products",
+                    'is_active'=>1,
+                    'created_at' => now(),
+                    'updated_at' => now()
+                ],
+                [
+                    'name'=>"Our Products",
+                    'is_active'=>1,
+                    'created_at' => now(),
+                    'updated_at' => now()
+                ],
+                [
+                    'name'=>"Clients",
+                    'is_active'=>1,
+                    'created_at' => now(),
+                    'updated_at' => now()
+                ]
             ]
         );
-        DB::table('section_design_types')->insert(
-            [
-                'id'=>2,
-                'name'=>"News",
-            ]
-        );
-        DB::table('section_design_types')->insert(
-            [
-                'id'=>3,
-                'name'=>"Latest Products",
-            ]
-        );
-        DB::table('section_design_types')->insert(
-            [
-                'id'=>4,
-                'name'=>"Product Category",
-            ]
-        );
-        DB::table('section_design_types')->insert(
-            [
-                'id'=>5,
-                'name'=>"Full Parallax",
-            ]
-        );
-        DB::table('section_design_types')->insert(
-            [
-                'id'=>6,
-                'name'=>"Portfolio",
-            ]
-        );
-        DB::table('section_design_types')->insert(
-            [
-                'id'=>7,
-                'name'=>"Team Members",
-            ]
-        );
-        DB::table('section_design_types')->insert(
-            [
-                'id'=>8,
-                'name'=>"Executive Members",
-            ]
-        );
-        DB::table('section_design_types')->insert(
-            [
-                'id'=>9,
-                'name'=>"Clients",
-            ]
-        );
+
     }
 }
