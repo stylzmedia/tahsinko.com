@@ -47,6 +47,13 @@ class SectionDesignTypeSeeder extends Seeder
                     'updated_at' => now()
                 ],
                 [
+                    'name'=>"Our Projects",
+                    'is_active'=>1,
+                    'created_at' => now(),
+                    'updated_at' => now()
+                ],
+
+                [
                     'name'=>"TradeMark",
                     'is_active'=>1,
                     'created_at' => now(),
@@ -65,11 +72,18 @@ class SectionDesignTypeSeeder extends Seeder
                     'updated_at' => now()
                 ],
                 [
-                    'name'=>"Our Products",
+                    'name'=>"Our Team",
                     'is_active'=>1,
                     'created_at' => now(),
                     'updated_at' => now()
                 ],
+                [
+                    'name'=>"Blog",
+                    'is_active'=>1,
+                    'created_at' => now(),
+                    'updated_at' => now()
+                ],
+
                 [
                     'name'=>"Clients",
                     'is_active'=>1,

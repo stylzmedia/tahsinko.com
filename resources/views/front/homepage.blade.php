@@ -70,8 +70,7 @@
     @if(count($home_sections))
         @foreach($home_sections as $key=>$sec)
 
-                @if($sec->section_design_type_id==7 && count($projects))
-                <input type="hidden" id="NoOfTeamMember" value="{{$sec->no_of_slide_col}}">
+                @if($sec->section_design_type_id==1)
             <!-- section One Start -->
                 <div class="section-one">
                     <div class="container-fluid">
@@ -96,7 +95,7 @@
                             <div class="col-lg-6 col-md-6">
 
                                 <div class="section-one-media">
-                                    <img src="{{asset('front/images/section/sec1-group-photo-2.png')}}" class="group-img" alt="1st Trademark™ Registered® Lift Brand in Bangladesh">
+                                    <img src="{{ $sec->img_paths['original'] }}" class="group-img" alt="1st Trademark™ Registered® Lift Brand in Bangladesh">
                                 </div>
                                 <div class="js-shape">
                                     <img src="{{asset('front/images/section/sec1-shape-1.png')}}" class="shape-1 move-1" alt="TAHSINKO® Lift & Escalator Shape-1" >
@@ -108,8 +107,7 @@
                 </div>
             <!-- section One End -->
 
-                @elseif($sec->section_design_type_id==7 && count($services))
-                <input type="hidden" id="NoOfTeamMember" value="{{$sec->no_of_slide_col}}">
+                @elseif($sec->section_design_type_id==2)
             <!-- CEO Start -->
                 <div class="section-two">
                     <div class="container-fluid">
@@ -123,10 +121,7 @@
                                     <img src="{{asset('front/images/section/sec2-artwork.png')}}" class="sec2-artwork move-1" alt="1st Trademark™ Registered® Bangladeshi Lift Brand in China">
                                     <div class="section-content">
                                         <div class="section-content-inner">
-                                            <p>
-                                                Our products and solutions allow us to install lifts of any size, configuration, speed and load for every section of industry. Working closely with all stakeholders, architects, principal designers and end user, TAHSINKO® Limited can provide our clients with full turnkey projects, or small bespoke single private sector works. Our installation teams work to the highest levels of safety and quality alongside our very experienced Project Managers. TAHSINKO® is our own brand that’s why its quality different then others. We invite you to be proud owner of our lift at your prestigious project.
-                                            </p>
-                                            <p>- Tarequl Islam, CEO</p>
+                                            <p>{!! $sec->description !!}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -136,8 +131,7 @@
                 </div>
             <!-- CEO End -->
 
-                @elseif($sec->section_design_type_id==7 && count($services))
-                <input type="hidden" id="NoOfTeamMember" value="{{$sec->no_of_slide_col}}">
+                @elseif($sec->section_design_type_id==3)
             <!-- Mission & Vision Start -->
                 <div class="section-three">
                     <div class="container-fluid">
@@ -154,7 +148,7 @@
                                             <img src="{{asset('front/images/section/quote.png')}}" class="quote" alt="Our mission in to provide innovative and reliable vertical transportation solutions ">
                                         </div>
                                         <div class="inner">
-                                            <p>Our mission in to provide innovative and reliable vertical transportation solutions that enable people to move safety and efficiently in buildings of all sizes and types, while also promoting sustainability, accessibility, and exceptional customer service in Bangladesh.</p>
+                                            <p>{!! $sec->description !!}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -167,7 +161,7 @@
                                             <img src="{{asset('front/images/section/quote.png')}}" class="quote" alt="Our vision is to lead the elevator industry by providing smart, sustainable, and user-centered vertical transportation solutions ">
                                         </div>
                                         <div class="inner">
-                                            <p>Our vision is to lead the elevator industry by providing smart, sustainable, and user-centered vertical transportation solutions that enhance the human experience, improve urban mobility, and create more livable and inclusive cities around the world.</p>
+                                            <p>{!! $sec->description2 !!}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -182,8 +176,7 @@
                 </div>
             <!--  Mission & Vision End -->
 
-                @elseif($sec->section_design_type_id==7 && count($services))
-                <input type="hidden" id="NoOfTeamMember" value="{{$sec->no_of_slide_col}}">
+                @elseif($sec->section_design_type_id==4)
             <!-- Counter Start -->
                 <div class="section-four bg-black">
                     <div class="container">
@@ -192,8 +185,6 @@
                                 <div class="counter-item">
                                     <div class="counter-item-inner justify-content-center text-center d-flex">
                                         <h2>Completed Projects<span>375+</span></h2>
-
-                                        {{-- <p data-target="1000" class="count-number">0</p> --}}
                                     </div>
                                 </div>
                             </div>
@@ -217,8 +208,7 @@
             <!-- Counter End -->
 
 
-                @elseif($sec->section_design_type_id==7 && count($services))
-                <input type="hidden" id="NoOfTeamMember" value="{{$sec->no_of_slide_col}}">
+                @elseif($sec->section_design_type_id==5)
             <!-- Product Line Start -->
                 <div class="section-five">
                     <div class="container-fluid p-0">
@@ -235,7 +225,7 @@
                                 <div class="row justify-content-center">
                                     <div class="col-xxl-3 col-xl-4 col-lg-6 col-md-8 col-sm-12 col-12">
                                         <div class="pline-title animate-4 my-5">
-                                            <h2>product line</h2>
+                                            <h2>{{ $sec->section_name }}</h2>
                                         </div>
                                     </div>
                                 </div>
@@ -337,12 +327,12 @@
                 </div>
             <!-- Product Line End -->
 
-                @elseif($sec->section_design_type_id==7 && count($services))
-                <input type="hidden" id="NoOfTeamMember" value="{{$sec->no_of_slide_col}}">
+            @elseif($sec->section_design_type_id==6 && count($projects))
+            <input type="hidden" id="NoOfTeamMember" value="{{$sec->no_of_slide_col}}">
             <!-- Project Start -->
                 <div class="portfolio-area pb-70">
                     <div class="tm-title text-uppercase text-center mt-2">
-                        <h1>Our Project</h1>
+                        <h1>{{ $sec->section_name }}</h1>
                     </div>
                     <div class="container">
                         <div class="tab portfolio-tab">
@@ -386,13 +376,12 @@
                 </div>
             <!-- Project End -->
 
-                @elseif($sec->section_design_type_id==7 && count($services))
-                <input type="hidden" id="NoOfTeamMember" value="{{$sec->no_of_slide_col}}">
+            @elseif($sec->section_design_type_id==7)
             <!-- Trademark Certificates Start -->
                 <div class="section-six">
                     <div class="container-fluid">
                         <div class="tm-title text-uppercase text-center mt-2">
-                            <h1>Trademark Certificates</h1>
+                            <h1>{{ $sec->section_name }}</h1>
                         </div>
                         <div class="inner-bg">
                             <img src="{{asset('front/images/section/tm-bg.png')}}" alt="1st Trademark™ Registered® Lift Brand in Bangladesh" class="tm-bg">
@@ -416,8 +405,7 @@
                 </div>
             <!-- Trademark Certificates End -->
 
-                @elseif($sec->section_design_type_id==7 && count($services))
-                <input type="hidden" id="NoOfTeamMember" value="{{$sec->no_of_slide_col}}">
+            @elseif($sec->section_design_type_id==8 && count($services))
             <!-- Services Start -->
                 <div class="section-seven bg-black">
                     <div class="container-fluid">
@@ -425,12 +413,21 @@
                             <div class="row justify-content-center">
                                 <div class="col-xl-4 col-lg-5 col-md-6 col-11">
                                     <div class="service-title">
-                                        <h1>Our Services</h1>
+                                        <h1>{{ $sec->section_name }}</h1>
                                     </div>
                                 </div>
                                 <div class="row service-list justify-content-center">
                                     @foreach ($services as $item )
-                                    <div class="col-xl-3 col-lg-4 col-md-6">
+                                    {{-- <div class="col-xl-3 col-lg-4 col-md-6"> --}}
+                                    <div class="
+                                    @if($sec->col == 2)
+                                        col-lg-6 col-md-6 col-sm-12
+                                    @elseif($sec->col == 3)
+                                        col-lg-4 col-md-6 col-sm-12
+                                    @elseif($sec->col == 4)
+                                        col-lg-3 col-md-6 col-sm-12
+                                    @endif">
+
                                         <div class="service-item">
                                             <div class="service-item-inner text-center">
                                                 <div class="service-icon">
@@ -448,14 +445,13 @@
                 </div>
             <!-- Services End -->
 
-                @elseif($sec->section_design_type_id==7 && count($products))
-                <input type="hidden" id="NoOfTeamMember" value="{{$sec->no_of_slide_col}}">
+            @elseif($sec->section_design_type_id==9 && count($products))
             <!-- Products Start -->
                 <div class="feature-product">
                     <div class="container">
                         <div class="inner">
                             <div class="tm-title text-uppercase text-center mt-2">
-                                <h1>Latest Products</h1>
+                                <h1>{{ $sec->section_name }}</h1>
                             </div>
                             <div class="portfolio-bg">
                                 <img src="{{asset('front/images/section/portfolio-bd-left.png')}}" alt="Latest Products" class="portfolio-bd-left">
@@ -491,7 +487,7 @@
                 </div>
             <!-- Products End -->
 
-            @elseif($sec->section_design_type_id==7 && count($teams))
+            @elseif($sec->section_design_type_id==10 && count($teams))
             <input type="hidden" id="NoOfTeamMember" value="{{$sec->no_of_slide_col}}">
             <!-- Team Start -->
                 <div class="section9">
@@ -560,27 +556,8 @@
                 </div>
             <!-- Team End -->
 
-            @elseif($sec->section_design_type_id==9 && count($clients))
-            <input type="hidden" id="NoOfClient" value="{{$sec->no_of_slide_col}}">
-            <!-- Client Start -->
-                <div class="client-area pb-70">
-                    <div class="container">
-                        @if ($sec->section_name_is_show == 1)
-                        <div class="section-title">
-                            <h2>{{ $sec->section_name }}</h2>
-                        </div>
-                        @endif
-                        <section class="customer-logos slider">
-                            @foreach ($clients as $client)
-                                <div class="slide"><img src="{{ $client->img_paths['original'] }}" alt="{{ $client->title}}"></div>
-                            @endforeach
-                        </section>
-                    </div>
-                </div>
-            <!-- Client End -->
-
-            @elseif($sec->section_design_type_id==2 && count($newes))
-            <!-- News Start -->
+            @elseif($sec->section_design_type_id==11 && count($newes))
+            <!-- Blog Start -->
                     <div class="blog-area pt-100 pb-70">
                         <div class="container">
                             <div class="section-title-two text-center">
@@ -623,8 +600,28 @@
                             </div>
                         </div>
                     </div>
-                    @endif
-            <!-- News End -->
+
+            <!-- Blog End -->
+
+            @elseif($sec->section_design_type_id==12 && count($clients))
+            <input type="hidden" id="NoOfClient" value="{{$sec->no_of_slide_col}}">
+            <!-- Client Start -->
+                <div class="client-area pb-70">
+                    <div class="container">
+                        @if ($sec->section_name_is_show == 1)
+                        <div class="section-title">
+                            <h2>{{ $sec->section_name }}</h2>
+                        </div>
+                        @endif
+                        <section class="customer-logos slider">
+                            @foreach ($clients as $client)
+                                <div class="slide"><img src="{{ $client->img_paths['original'] }}" alt="{{ $client->title}}"></div>
+                            @endforeach
+                        </section>
+                    </div>
+                </div>
+            <!-- Client End -->
+            @endif
         @endforeach
     @endif
 <!-- Section End -->
@@ -634,7 +631,8 @@
 
 @section('footer')
 
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.3.0/dist/sweetalert2.all.min.js"></script>
+<!-- Sweet Alert 2 JS -->
+<script src="{{ asset('plugins/sweetalert2@9.3.0/sweetalert2.all.min.js') }}"></script>
 
 @if(Session::has('success'))
     <script>

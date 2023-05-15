@@ -2621,112 +2621,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -2762,7 +2656,7 @@ vue__WEBPACK_IMPORTED_MODULE_3__["default"].use((v_toaster__WEBPACK_IMPORTED_MOD
       section_design_id: null,
       is_loading: false,
       optional_designs: [2, 3, 6, 7, 8, 9, 10, 11, 12],
-      short_description: '',
+      description2: '',
       description: '',
       colour: '#000000'
     };
@@ -2793,7 +2687,7 @@ vue__WEBPACK_IMPORTED_MODULE_3__["default"].use((v_toaster__WEBPACK_IMPORTED_MOD
               case 0:
                 _this.is_loading = true;
                 data = new FormData(_this.$refs.section_add_form);
-                data.append('short_description', _this.short_description);
+                data.append('description2', _this.description2);
                 data.append('description', _this.description);
                 _context.next = 6;
                 return axios__WEBPACK_IMPORTED_MODULE_4___default().post("".concat(_this.app_url, "/adminx/frontend/section/store"), data).then(function (response) {
@@ -2879,104 +2773,6 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -24945,9 +24741,9 @@ var render = function () {
                       { key: key, domProps: { value: type.id } },
                       [
                         _vm._v(
-                          "\n              " +
+                          "\n                    " +
                             _vm._s(type.name) +
-                            "\n            "
+                            "\n                    "
                         ),
                       ]
                     )
@@ -24962,14 +24758,19 @@ var render = function () {
         _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-12" }, [
             _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col-md-10" }, [
+              _c("div", { staticClass: "col-md-8" }, [
                 _vm.design_type === 1 ||
                 _vm.design_type === 2 ||
                 _vm.design_type === 3 ||
                 _vm.design_type === 4 ||
+                _vm.design_type === 5 ||
                 _vm.design_type === 6 ||
                 _vm.design_type === 7 ||
-                _vm.design_type === 9
+                _vm.design_type === 8 ||
+                _vm.design_type === 9 ||
+                _vm.design_type === 10 ||
+                _vm.design_type === 11 ||
+                _vm.design_type === 12
                   ? _c("div", { staticClass: "col-md-12" }, [_vm._m(1)])
                   : _vm._e(),
                 _vm._v(" "),
@@ -24981,9 +24782,14 @@ var render = function () {
                     _vm.design_type === 2 ||
                     _vm.design_type === 3 ||
                     _vm.design_type === 4 ||
+                    _vm.design_type === 5 ||
                     _vm.design_type === 6 ||
                     _vm.design_type === 7 ||
-                    _vm.design_type === 9
+                    _vm.design_type === 8 ||
+                    _vm.design_type === 9 ||
+                    _vm.design_type === 10 ||
+                    _vm.design_type === 11 ||
+                    _vm.design_type === 12
                       ? _c("div", { staticClass: "col-md-6" }, [
                           _c("div", { staticClass: "form-group" }, [
                             _vm._m(2),
@@ -25011,25 +24817,20 @@ var render = function () {
                         ])
                       : _vm._e(),
                     _vm._v(" "),
-                    _vm.design_type === 7
+                    _vm.design_type === 12
                       ? _c("div", { staticClass: "col-md-6" }, [_vm._m(3)])
                       : _vm._e(),
                     _vm._v(" "),
-                    _vm.design_type === 1
-                      ? _c("div", { staticClass: "col-md-6" }, [_vm._m(4)])
+                    _vm.design_type === 4 ||
+                    _vm.design_type === 6 ||
+                    _vm.design_type === 8 ||
+                    _vm.design_type === 9 ||
+                    _vm.design_type === 10 ||
+                    _vm.design_type === 11
+                      ? [_vm._m(4)]
                       : _vm._e(),
                     _vm._v(" "),
-                    _vm.design_type === 2 ||
-                    _vm.design_type === 3 ||
-                    _vm.design_type === 6
-                      ? [_vm._m(5)]
-                      : _vm._e(),
-                    _vm._v(" "),
-                    _vm.design_type === 2 ||
-                    _vm.design_type === 3 ||
-                    _vm.design_type === 9
-                      ? [_vm._m(6)]
-                      : _vm._e(),
+                    _vm.design_type === 9 ? [_vm._m(5)] : _vm._e(),
                   ],
                   2
                 ),
@@ -25038,20 +24839,14 @@ var render = function () {
                   "div",
                   { staticClass: "row" },
                   [
-                    [
-                      _vm.design_type === 1
-                        ? _c("div", { staticClass: "col-md-12" }, [_vm._m(7)])
-                        : _vm._e(),
-                    ],
-                    _vm._v(" "),
-                    _vm.design_type === 1 || _vm.design_type === 4
+                    _vm.design_type === 2 || _vm.design_type === 3
                       ? [
                           _c("div", { staticClass: "col-md-12" }, [
                             _c(
                               "div",
                               { staticClass: "form-group" },
                               [
-                                _vm._m(8),
+                                _vm._m(6),
                                 _vm._v(" "),
                                 _c("vue-editor", {
                                   attrs: { name: "description" },
@@ -25070,40 +24865,28 @@ var render = function () {
                         ]
                       : _vm._e(),
                     _vm._v(" "),
-                    _vm.design_type === 1
+                    _vm.design_type === 3
                       ? [
                           _c("div", { staticClass: "col-md-12" }, [
-                            _c("div", { staticClass: "row" }, [
-                              _c("div", { staticClass: "col-md-8" }, [
-                                _vm._m(9),
+                            _c(
+                              "div",
+                              { staticClass: "form-group" },
+                              [
+                                _vm._m(7),
                                 _vm._v(" "),
-                                _c("input", {
-                                  ref: "feature_video",
-                                  staticClass: "form-control feature_video",
-                                  attrs: {
-                                    id: "feature_video",
-                                    type: "text",
-                                    value: "",
-                                    name: "feature_video",
+                                _c("vue-editor", {
+                                  attrs: { name: "description2" },
+                                  model: {
+                                    value: _vm.description2,
+                                    callback: function ($$v) {
+                                      _vm.description2 = $$v
+                                    },
+                                    expression: "description2",
                                   },
-                                  on: { input: _vm.show_video_pre },
                                 }),
-                              ]),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "col-md-4" }, [
-                                _c(
-                                  "div",
-                                  { staticClass: "img_group video mt-4" },
-                                  [
-                                    _c("iframe", {
-                                      ref: "feature_video_preview",
-                                      staticClass: "embed-responsive-item",
-                                      attrs: { src: "", allowfullscreen: "" },
-                                    }),
-                                  ]
-                                ),
-                              ]),
-                            ]),
+                              ],
+                              1
+                            ),
                           ]),
                         ]
                       : _vm._e(),
@@ -25112,8 +24895,8 @@ var render = function () {
                 ),
               ]),
               _vm._v(" "),
-              _c("div", { staticClass: "col-md-2" }, [
-                _vm.design_type === 4 || _vm.design_type === 1
+              _c("div", { staticClass: "col-md-4" }, [
+                _vm.design_type === 1
                   ? _c("div", { staticClass: "col-md-12" }, [
                       _c(
                         "div",
@@ -25128,41 +24911,7 @@ var render = function () {
                         ]
                       ),
                       _vm._v(" "),
-                      _vm._m(10),
-                    ])
-                  : _vm._e(),
-                _vm._v(" "),
-                _vm.design_type === 1
-                  ? _c("div", { staticClass: "col-md-12" }, [
-                      _c(
-                        "div",
-                        { staticClass: "card border-light mt-3 shadow" },
-                        [
-                          _c("div", { staticClass: "card-body" }, [
-                            _c("img", {
-                              staticClass: "img-thumbnail uploaded_img2",
-                              attrs: { src: "/img/default-img.png", alt: "" },
-                            }),
-                          ]),
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _vm._m(11),
-                      _vm._v(" "),
-                      _c(
-                        "div",
-                        { staticClass: "card border-light mt-3 shadow" },
-                        [
-                          _c("div", { staticClass: "card-body" }, [
-                            _c("img", {
-                              staticClass: "img-thumbnail uploaded_img3",
-                              attrs: { src: "/img/default-img.png", alt: "" },
-                            }),
-                          ]),
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _vm._m(12),
+                      _vm._m(8),
                     ])
                   : _vm._e(),
               ]),
@@ -25187,7 +24936,9 @@ var render = function () {
                     },
                     [
                       _c("b-spinner", { attrs: { small: "" } }),
-                      _vm._v("\n          publishing...\n        "),
+                      _vm._v(
+                        "\n                publishing...\n                "
+                      ),
                     ],
                     1
                   )
@@ -25197,13 +24948,13 @@ var render = function () {
                 ? _c(
                     "b-button",
                     { attrs: { type: "submit", variant: "success" } },
-                    [_vm._v("\n          publish\n        ")]
+                    [_vm._v("\n                publish\n                ")]
                   )
                 : _vm._e(),
               _vm._v(" "),
               _c("br"),
               _vm._v(" "),
-              _vm._m(13),
+              _vm._m(9),
             ],
             1
           ),
@@ -25217,7 +24968,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("label", [_c("b", [_vm._v("Design Type *")])])
+    return _c("label", [_c("b", [_vm._v("Design Type*")])])
   },
   function () {
     var _vm = this
@@ -25253,24 +25004,6 @@ var staticRenderFns = [
       _c("input", {
         staticClass: "form-control",
         attrs: { type: "number", name: "no_of_slide_col", required: "" },
-      }),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "form-group" }, [
-      _c("label", [_c("b", [_vm._v("CEO Names*")])]),
-      _vm._v(" "),
-      _c("input", {
-        staticClass: "form-control",
-        attrs: {
-          type: "text",
-          name: "ceo_name",
-          placeholder: "CEO Name",
-          required: "",
-        },
       }),
     ])
   },
@@ -25321,31 +25054,13 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "form-group" }, [
-      _c("label", [_c("b", [_vm._v("Title *")])]),
-      _vm._v(" "),
-      _c("input", {
-        staticClass: "form-control",
-        attrs: {
-          type: "text",
-          name: "title",
-          placeholder: "Title write here..",
-          required: "",
-        },
-      }),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
     return _c("label", [_c("b", [_vm._v("Description*")])])
   },
   function () {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("label", [_c("b", [_vm._v("YouTube Video*")])])
+    return _c("label", [_c("b", [_vm._v("Vision*")])])
   },
   function () {
     var _vm = this
@@ -25373,68 +25088,6 @@ var staticRenderFns = [
               name: "image",
               accept: "image/*",
               required: "",
-            },
-          }),
-        ]),
-      ]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-md-12 text-center" }, [
-      _c("div", { staticClass: "form-group" }, [
-        _c("label", [_c("b", [_vm._v("Signature")])]),
-        _vm._v(" "),
-        _c("div", { staticClass: "custom-file text-left" }, [
-          _c(
-            "label",
-            { staticClass: "image-button", attrs: { for: "signature" } },
-            [
-              _c("i", { staticClass: "ri-gallery-upload-line" }),
-              _vm._v(" Upload"),
-            ]
-          ),
-          _vm._v(" "),
-          _c("input", {
-            staticClass: "form-control custom-file-input image_upload2",
-            attrs: {
-              type: "file",
-              id: "signature",
-              name: "signature_light",
-              accept: "image/*",
-            },
-          }),
-        ]),
-      ]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-md-12 text-center" }, [
-      _c("div", { staticClass: "form-group" }, [
-        _c("label", [_c("b", [_vm._v("Signature Dark")])]),
-        _vm._v(" "),
-        _c("div", { staticClass: "custom-file text-left" }, [
-          _c(
-            "label",
-            { staticClass: "image-button", attrs: { for: "signature_dark" } },
-            [
-              _c("i", { staticClass: "ri-gallery-upload-line" }),
-              _vm._v(" Upload"),
-            ]
-          ),
-          _vm._v(" "),
-          _c("input", {
-            staticClass: "form-control custom-file-input image_upload3",
-            attrs: {
-              type: "file",
-              id: "signature_dark",
-              name: "signature_dark",
-              accept: "image/*",
             },
           }),
         ]),
@@ -25491,19 +25144,107 @@ var render = function () {
         },
       },
       [
-        _c(
-          "div",
-          { staticClass: "row" },
-          [
-            _c("div", { staticClass: "col-md-12" }, [
-              _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12" }, [
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-md-6" }, [
+                _c("div", { staticClass: "form-group" }, [
+                  _vm._m(0),
+                  _vm._v(" "),
+                  _c(
+                    "select",
+                    {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model.number",
+                          value: _vm.home_section.status,
+                          expression: "home_section.status",
+                          modifiers: { number: true },
+                        },
+                      ],
+                      staticClass: "form-select",
+                      attrs: { name: "status", required: "" },
+                      on: {
+                        change: function ($event) {
+                          var $$selectedVal = Array.prototype.filter
+                            .call($event.target.options, function (o) {
+                              return o.selected
+                            })
+                            .map(function (o) {
+                              var val = "_value" in o ? o._value : o.value
+                              return _vm._n(val)
+                            })
+                          _vm.$set(
+                            _vm.home_section,
+                            "status",
+                            $event.target.multiple
+                              ? $$selectedVal
+                              : $$selectedVal[0]
+                          )
+                        },
+                      },
+                    },
+                    [
+                      _c("option", { attrs: { value: "1" } }, [
+                        _vm._v("Active"),
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "0" } }, [
+                        _vm._v("Inactive"),
+                      ]),
+                    ]
+                  ),
+                ]),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-md-8" }, [
+                _c("div", { staticClass: "col-md-12" }, [
+                  _c("div", { staticClass: "form-group" }, [
+                    _vm._m(1),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.home_section.section_name,
+                          expression: "home_section.section_name",
+                        },
+                      ],
+                      staticClass: "form-control",
+                      attrs: {
+                        type: "text",
+                        name: "section_name",
+                        placeholder: "write section here",
+                        required: "",
+                      },
+                      domProps: { value: _vm.home_section.section_name },
+                      on: {
+                        input: function ($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.home_section,
+                            "section_name",
+                            $event.target.value
+                          )
+                        },
+                      },
+                    }),
+                  ]),
+                ]),
+                _vm._v(" "),
                 _c(
                   "div",
-                  { staticClass: "col-md-10" },
+                  { staticClass: "row" },
                   [
                     _c("div", { staticClass: "col-md-6" }, [
                       _c("div", { staticClass: "form-group" }, [
-                        _vm._m(0),
+                        _vm._m(2),
                         _vm._v(" "),
                         _c(
                           "select",
@@ -25511,14 +25252,16 @@ var render = function () {
                             directives: [
                               {
                                 name: "model",
-                                rawName: "v-model.number",
-                                value: _vm.home_section.status,
-                                expression: "home_section.status",
-                                modifiers: { number: true },
+                                rawName: "v-model",
+                                value: _vm.home_section.section_name_is_show,
+                                expression: "home_section.section_name_is_show",
                               },
                             ],
-                            staticClass: "form-select",
-                            attrs: { name: "status", required: "" },
+                            staticClass: "form-control",
+                            attrs: {
+                              name: "section_name_is_show",
+                              required: "",
+                            },
                             on: {
                               change: function ($event) {
                                 var $$selectedVal = Array.prototype.filter
@@ -25527,11 +25270,11 @@ var render = function () {
                                   })
                                   .map(function (o) {
                                     var val = "_value" in o ? o._value : o.value
-                                    return _vm._n(val)
+                                    return val
                                   })
                                 _vm.$set(
                                   _vm.home_section,
-                                  "status",
+                                  "section_name_is_show",
                                   $event.target.multiple
                                     ? $$selectedVal
                                     : $$selectedVal[0]
@@ -25540,178 +25283,26 @@ var render = function () {
                             },
                           },
                           [
-                            _c("option", { attrs: { value: "1" } }, [
-                              _vm._v("Active"),
+                            _c("option", { domProps: { value: 1 } }, [
+                              _vm._v("Yes"),
                             ]),
                             _vm._v(" "),
-                            _c("option", { attrs: { value: "0" } }, [
-                              _vm._v("Inactive"),
+                            _c("option", { domProps: { value: 0 } }, [
+                              _vm._v("No"),
                             ]),
                           ]
                         ),
                       ]),
                     ]),
                     _vm._v(" "),
-                    _c("div", { staticClass: "col-md-12" }, [
-                      parseInt(_vm.home_section.section_design_type_id) === 1 ||
-                      parseInt(_vm.home_section.section_design_type_id) === 2 ||
-                      parseInt(_vm.home_section.section_design_type_id) === 3 ||
-                      parseInt(_vm.home_section.section_design_type_id) === 4 ||
-                      parseInt(_vm.home_section.section_design_type_id) === 6 ||
-                      parseInt(_vm.home_section.section_design_type_id) === 7 ||
-                      parseInt(_vm.home_section.section_design_type_id) === 9
-                        ? _c("div", { staticClass: "form-group" }, [
-                            _vm._m(1),
-                            _vm._v(" "),
-                            _c("input", {
-                              directives: [
-                                {
-                                  name: "model",
-                                  rawName: "v-model",
-                                  value: _vm.home_section.section_name,
-                                  expression: "home_section.section_name",
-                                },
-                              ],
-                              staticClass: "form-control",
-                              attrs: {
-                                type: "text",
-                                name: "section_name",
-                                placeholder: "write section here",
-                                required: "",
-                              },
-                              domProps: {
-                                value: _vm.home_section.section_name,
-                              },
-                              on: {
-                                input: function ($event) {
-                                  if ($event.target.composing) {
-                                    return
-                                  }
-                                  _vm.$set(
-                                    _vm.home_section,
-                                    "section_name",
-                                    $event.target.value
-                                  )
-                                },
-                              },
-                            }),
-                          ])
-                        : _vm._e(),
-                    ]),
-                    _vm._v(" "),
-                    parseInt(_vm.home_section.section_design_type_id) === 1 ||
-                    parseInt(_vm.home_section.section_design_type_id) === 2 ||
-                    parseInt(_vm.home_section.section_design_type_id) === 3 ||
                     parseInt(_vm.home_section.section_design_type_id) === 4 ||
-                    parseInt(_vm.home_section.section_design_type_id) === 6 ||
-                    parseInt(_vm.home_section.section_design_type_id) === 7 ||
-                    parseInt(_vm.home_section.section_design_type_id) === 9
-                      ? _c("div", { staticClass: "col-md-6" }, [
-                          _c("div", { staticClass: "form-group" }, [
-                            _vm._m(2),
-                            _vm._v(" "),
-                            _c(
-                              "select",
-                              {
-                                directives: [
-                                  {
-                                    name: "model",
-                                    rawName: "v-model",
-                                    value:
-                                      _vm.home_section.section_name_is_show,
-                                    expression:
-                                      "home_section.section_name_is_show",
-                                  },
-                                ],
-                                staticClass: "form-control",
-                                attrs: {
-                                  name: "section_name_is_show",
-                                  required: "",
-                                },
-                                on: {
-                                  change: function ($event) {
-                                    var $$selectedVal = Array.prototype.filter
-                                      .call(
-                                        $event.target.options,
-                                        function (o) {
-                                          return o.selected
-                                        }
-                                      )
-                                      .map(function (o) {
-                                        var val =
-                                          "_value" in o ? o._value : o.value
-                                        return val
-                                      })
-                                    _vm.$set(
-                                      _vm.home_section,
-                                      "section_name_is_show",
-                                      $event.target.multiple
-                                        ? $$selectedVal
-                                        : $$selectedVal[0]
-                                    )
-                                  },
-                                },
-                              },
-                              [
-                                _c("option", { domProps: { value: 1 } }, [
-                                  _vm._v("Yes"),
-                                ]),
-                                _vm._v(" "),
-                                _c("option", { domProps: { value: 0 } }, [
-                                  _vm._v("No"),
-                                ]),
-                              ]
-                            ),
-                          ]),
-                        ])
-                      : _vm._e(),
-                    _vm._v(" "),
-                    parseInt(_vm.home_section.section_design_type_id) === 1
-                      ? _c("div", { staticClass: "col-md-6" }, [
-                          _c("div", { staticClass: "form-group" }, [
-                            _vm._m(3),
-                            _vm._v(" "),
-                            _c("input", {
-                              directives: [
-                                {
-                                  name: "model",
-                                  rawName: "v-model",
-                                  value: _vm.home_section.ceo_name,
-                                  expression: "home_section.ceo_name",
-                                },
-                              ],
-                              staticClass: "form-control",
-                              attrs: {
-                                type: "text",
-                                name: "ceo_name",
-                                placeholder: "CEO Name",
-                              },
-                              domProps: { value: _vm.home_section.ceo_name },
-                              on: {
-                                input: function ($event) {
-                                  if ($event.target.composing) {
-                                    return
-                                  }
-                                  _vm.$set(
-                                    _vm.home_section,
-                                    "ceo_name",
-                                    $event.target.value
-                                  )
-                                },
-                              },
-                            }),
-                          ]),
-                        ])
-                      : _vm._e(),
-                    _vm._v(" "),
-                    parseInt(_vm.home_section.section_design_type_id) === 2 ||
-                    parseInt(_vm.home_section.section_design_type_id) === 3 ||
-                    parseInt(_vm.home_section.section_design_type_id) === 10 ||
-                    parseInt(_vm.home_section.section_design_type_id) === 6
+                    parseInt(_vm.home_section.section_design_type_id) === 8 ||
+                    parseInt(_vm.home_section.section_design_type_id) === 9 ||
+                    parseInt(_vm.home_section.section_design_type_id) === 11
                       ? [
                           _c("div", { staticClass: "col-md-6" }, [
                             _c("div", { staticClass: "form-group" }, [
-                              _vm._m(4),
+                              _vm._m(3),
                               _vm._v(" "),
                               _c(
                                 "select",
@@ -25763,16 +25354,21 @@ var render = function () {
                                     _vm._v("4"),
                                   ]),
                                   _vm._v(
-                                    ">\n                                    "
+                                    ">\n                                        "
                                   ),
                                 ]
                               ),
                             ]),
                           ]),
-                          _vm._v(" "),
+                        ]
+                      : _vm._e(),
+                    _vm._v(" "),
+                    parseInt(_vm.home_section.section_design_type_id) === 11 ||
+                    parseInt(_vm.home_section.section_design_type_id) === 11
+                      ? [
                           _c("div", { staticClass: "col-md-6" }, [
                             _c("div", { staticClass: "form-group" }, [
-                              _vm._m(5),
+                              _vm._m(4),
                               _vm._v(" "),
                               _c("input", {
                                 directives: [
@@ -25809,12 +25405,13 @@ var render = function () {
                         ]
                       : _vm._e(),
                     _vm._v(" "),
-                    parseInt(_vm.home_section.section_design_type_id) === 7 ||
-                    parseInt(_vm.home_section.section_design_type_id) === 9
+                    parseInt(_vm.home_section.section_design_type_id) === 6 ||
+                    parseInt(_vm.home_section.section_design_type_id) === 10 ||
+                    parseInt(_vm.home_section.section_design_type_id) === 12
                       ? [
                           _c("div", { staticClass: "col-md-6" }, [
                             _c("div", { staticClass: "form-group" }, [
-                              _vm._m(6),
+                              _vm._m(5),
                               _vm._v(" "),
                               _c("input", {
                                 directives: [
@@ -25852,259 +25449,148 @@ var render = function () {
                           ]),
                         ]
                       : _vm._e(),
-                    _vm._v(" "),
-                    !_vm.optional_designs.includes(
-                      parseInt(_vm.home_section.section_design_type_id)
-                    ) && parseInt(_vm.home_section.section_design_type_id) !== 4
+                  ],
+                  2
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "row" },
+                  [
+                    parseInt(_vm.home_section.section_design_type_id) === 2 ||
+                    parseInt(_vm.home_section.section_design_type_id) === 3
                       ? [
                           _c("div", { staticClass: "col-md-12" }, [
-                            _c("div", { staticClass: "form-group" }, [
-                              _vm._m(7),
-                              _vm._v(" "),
-                              _c("input", {
-                                directives: [
-                                  {
-                                    name: "model",
-                                    rawName: "v-model",
-                                    value: _vm.home_section.title,
-                                    expression: "home_section.title",
+                            _c(
+                              "div",
+                              { staticClass: "form-group" },
+                              [
+                                _vm._m(6),
+                                _vm._v(" "),
+                                _c("vue-editor", {
+                                  attrs: { name: "description" },
+                                  model: {
+                                    value: _vm.home_section.description,
+                                    callback: function ($$v) {
+                                      _vm.$set(
+                                        _vm.home_section,
+                                        "description",
+                                        $$v
+                                      )
+                                    },
+                                    expression: "home_section.description",
                                   },
-                                ],
-                                staticClass: "form-control",
-                                attrs: {
-                                  type: "text",
-                                  name: "title",
-                                  placeholder: "Title write here..",
-                                  required: "",
-                                },
-                                domProps: { value: _vm.home_section.title },
-                                on: {
-                                  input: function ($event) {
-                                    if ($event.target.composing) {
-                                      return
-                                    }
-                                    _vm.$set(
-                                      _vm.home_section,
-                                      "title",
-                                      $event.target.value
-                                    )
+                                }),
+                              ],
+                              1
+                            ),
+                          ]),
+                        ]
+                      : _vm._e(),
+                    _vm._v(" "),
+                    parseInt(_vm.home_section.section_design_type_id) === 3
+                      ? [
+                          _c("div", { staticClass: "col-md-12" }, [
+                            _c(
+                              "div",
+                              { staticClass: "form-group" },
+                              [
+                                _vm._m(7),
+                                _vm._v(" "),
+                                _c("vue-editor", {
+                                  attrs: { name: "description2" },
+                                  model: {
+                                    value: _vm.home_section.description2,
+                                    callback: function ($$v) {
+                                      _vm.$set(
+                                        _vm.home_section,
+                                        "description2",
+                                        $$v
+                                      )
+                                    },
+                                    expression: "home_section.description2",
                                   },
-                                },
-                              }),
-                            ]),
+                                }),
+                              ],
+                              1
+                            ),
                           ]),
                         ]
                       : _vm._e(),
                   ],
                   2
                 ),
-                _vm._v(" "),
-                !_vm.optional_designs.includes(
-                  parseInt(_vm.home_section.section_design_type_id)
-                )
-                  ? _c("div", { staticClass: "col-md-2" }, [
-                      _c("div", { staticClass: "col-md-12" }, [
-                        _c(
-                          "div",
-                          { staticClass: "card border-light mt-3 shadow" },
-                          [
-                            _c("div", { staticClass: "card-body" }, [
-                              _c("img", {
-                                staticClass: "img-thumbnail uploaded_img",
-                                attrs: {
-                                  src: _vm.image_path
-                                    ? _vm.image_path
-                                    : "/img/default-img.png",
-                                  alt: "",
-                                },
-                              }),
-                            ]),
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _vm._m(8),
-                      ]),
-                      _vm._v(" "),
-                      parseInt(_vm.home_section.section_design_type_id) === 1
-                        ? _c("div", { staticClass: "col-md-12" }, [
-                            _c(
-                              "div",
-                              { staticClass: "card border-light mt-3 shadow" },
-                              [
-                                _c("div", { staticClass: "card-body" }, [
-                                  _c("img", {
-                                    staticClass: "img-thumbnail uploaded_img2",
-                                    attrs: {
-                                      src: _vm.image_path2
-                                        ? _vm.image_path2
-                                        : "/img/default-img.png",
-                                      alt: "",
-                                    },
-                                  }),
-                                ]),
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _vm._m(9),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              { staticClass: "card border-light mt-3 shadow" },
-                              [
-                                _c("div", { staticClass: "card-body" }, [
-                                  _c("img", {
-                                    staticClass: "img-thumbnail uploaded_img3",
-                                    attrs: {
-                                      src: _vm.image_path3
-                                        ? _vm.image_path3
-                                        : "/img/default-img.png",
-                                      alt: "",
-                                    },
-                                  }),
-                                ]),
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _vm._m(10),
-                          ])
-                        : _vm._e(),
-                    ])
-                  : _vm._e(),
               ]),
-            ]),
-            _vm._v(" "),
-            !_vm.optional_designs.includes(
-              parseInt(_vm.home_section.section_design_type_id)
-            ) && parseInt(_vm.home_section.section_design_type_id) !== 2
-              ? [
-                  _c("div", { staticClass: "col-md-10" }, [
-                    _c(
-                      "div",
-                      { staticClass: "form-group" },
-                      [
-                        _vm._m(11),
-                        _vm._v(" "),
-                        _c("vue-editor", {
-                          attrs: { name: "description" },
-                          model: {
-                            value: _vm.home_section.description,
-                            callback: function ($$v) {
-                              _vm.$set(_vm.home_section, "description", $$v)
-                            },
-                            expression: "home_section.description",
-                          },
-                        }),
-                      ],
-                      1
-                    ),
-                  ]),
-                ]
-              : _vm._e(),
-            _vm._v(" "),
-            parseInt(_vm.home_section.section_design_type_id) === 1
-              ? [
-                  _c("div", { staticClass: "col-md-10" }, [
-                    _c("div", { staticClass: "row" }, [
-                      _c("div", { staticClass: "col-md-8" }, [
-                        _vm._m(12),
-                        _vm._v(" "),
-                        _c("input", {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: _vm.home_section.feature_video,
-                              expression: "home_section.feature_video",
-                            },
-                          ],
-                          ref: "feature_video",
-                          staticClass: "form-control feature_video",
-                          attrs: {
-                            id: "feature_video",
-                            type: "text",
-                            name: "feature_video",
-                          },
-                          domProps: { value: _vm.home_section.feature_video },
-                          on: {
-                            input: [
-                              function ($event) {
-                                if ($event.target.composing) {
-                                  return
-                                }
-                                _vm.$set(
-                                  _vm.home_section,
-                                  "feature_video",
-                                  $event.target.value
-                                )
+              _vm._v(" "),
+              parseInt(_vm.home_section.section_design_type_id) === 1
+                ? _c("div", { staticClass: "col-md-4" }, [
+                    _c("div", { staticClass: "col-md-12" }, [
+                      _c(
+                        "div",
+                        { staticClass: "card border-light mt-3 shadow" },
+                        [
+                          _c("div", { staticClass: "card-body" }, [
+                            _c("img", {
+                              staticClass: "img-thumbnail uploaded_img",
+                              attrs: {
+                                src: _vm.image_path
+                                  ? _vm.image_path
+                                  : "/img/default-img.png",
+                                alt: "",
                               },
-                              _vm.show_video_pre,
-                            ],
-                          },
-                        }),
-                      ]),
+                            }),
+                          ]),
+                        ]
+                      ),
                       _vm._v(" "),
-                      _c("div", { staticClass: "col-md-4" }, [
-                        _c("div", { staticClass: "img_group video mt-4" }, [
-                          _c("iframe", {
-                            ref: "feature_video_preview",
-                            staticClass: "embed-responsive-item",
-                            attrs: {
-                              src: _vm.home_section.feature_video
-                                ? _vm.home_section.feature_video
-                                : "https://www.youtube.com/embed/gSXnyDDwvUY",
-                              allowfullscreen: "",
-                            },
-                          }),
-                        ]),
-                      ]),
+                      _vm._m(8),
                     ]),
-                  ]),
-                ]
-              : _vm._e(),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-md-12" }),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "card-footer" },
-              [
-                _vm.is_loading
-                  ? _c(
-                      "b-button",
-                      {
-                        attrs: {
-                          type: "submit",
-                          variant: "success",
-                          disabled: "",
-                        },
+                  ])
+                : _vm._e(),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-md-12" }),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "card-footer" },
+            [
+              _vm.is_loading
+                ? _c(
+                    "b-button",
+                    {
+                      attrs: {
+                        type: "submit",
+                        variant: "success",
+                        disabled: "",
                       },
-                      [
-                        _c("b-spinner", { attrs: { small: "" } }),
-                        _vm._v(
-                          "\n                    updating...\n                "
-                        ),
-                      ],
-                      1
-                    )
-                  : _vm._e(),
-                _vm._v(" "),
-                !_vm.is_loading
-                  ? _c(
-                      "b-button",
-                      { attrs: { type: "submit", variant: "success" } },
-                      [_vm._v("\n                    Update\n                ")]
-                    )
-                  : _vm._e(),
-                _vm._v(" "),
-                _c("br"),
-                _vm._v(" "),
-                _vm._m(13),
-              ],
-              1
-            ),
-          ],
-          2
-        ),
+                    },
+                    [
+                      _c("b-spinner", { attrs: { small: "" } }),
+                      _vm._v(
+                        "\n                    updating...\n                "
+                      ),
+                    ],
+                    1
+                  )
+                : _vm._e(),
+              _vm._v(" "),
+              !_vm.is_loading
+                ? _c(
+                    "b-button",
+                    { attrs: { type: "submit", variant: "success" } },
+                    [_vm._v("\n                    Update\n                ")]
+                  )
+                : _vm._e(),
+              _vm._v(" "),
+              _c("br"),
+              _vm._v(" "),
+              _vm._m(9),
+            ],
+            1
+          ),
+        ]),
       ]
     ),
   ])
@@ -26132,12 +25618,6 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("label", [_c("b", [_vm._v("CEO Names")])])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
     return _c("label", [_c("b", [_vm._v("Number of Column *")])])
   },
   function () {
@@ -26156,7 +25636,13 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("label", [_c("b", [_vm._v("Title *")])])
+    return _c("label", [_c("b", [_vm._v("Description*")])])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", [_c("b", [_vm._v("Vision*")])])
   },
   function () {
     var _vm = this
@@ -26188,80 +25674,6 @@ var staticRenderFns = [
         ]),
       ]),
     ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-md-12 text-center" }, [
-      _c("div", { staticClass: "form-group" }, [
-        _c("label", [_c("b", [_vm._v("Signature Light")])]),
-        _vm._v(" "),
-        _c("div", { staticClass: "custom-file text-left" }, [
-          _c(
-            "label",
-            { staticClass: "image-button", attrs: { for: "signature_light" } },
-            [
-              _c("i", { staticClass: "ri-gallery-upload-line" }),
-              _vm._v(" Upload"),
-            ]
-          ),
-          _vm._v(" "),
-          _c("input", {
-            staticClass: "form-control custom-file-input image_upload2",
-            attrs: {
-              type: "file",
-              id: "signature_light",
-              name: "signature_light",
-              accept: "image/*",
-            },
-          }),
-        ]),
-      ]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-md-12 text-center" }, [
-      _c("div", { staticClass: "form-group" }, [
-        _c("label", [_c("b", [_vm._v("Signature Dark")])]),
-        _vm._v(" "),
-        _c("div", { staticClass: "custom-file text-left" }, [
-          _c(
-            "label",
-            { staticClass: "image-button", attrs: { for: "signature_dark" } },
-            [
-              _c("i", { staticClass: "ri-gallery-upload-line" }),
-              _vm._v(" Upload"),
-            ]
-          ),
-          _vm._v(" "),
-          _c("input", {
-            staticClass: "form-control custom-file-input image_upload3",
-            attrs: {
-              type: "file",
-              id: "signature_dark",
-              name: "signature_dark",
-              accept: "image/*",
-            },
-          }),
-        ]),
-      ]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("label", [_c("b", [_vm._v("Description*")])])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("label", [_c("b", [_vm._v("YouTube Video*")])])
   },
   function () {
     var _vm = this

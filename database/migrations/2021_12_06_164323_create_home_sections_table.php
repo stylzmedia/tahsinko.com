@@ -22,6 +22,7 @@ class CreateHomeSectionsTable extends Migration
             $table->integer('position')->default(1000);
             $table->string('title',191);
             $table->longText('description')->nullable();
+            $table->longText('description2')->nullable();
             $table->boolean('status')->default(true);
             $table->integer('col')->default(1);
             $table->integer('row')->default(3);
@@ -37,7 +38,7 @@ class CreateHomeSectionsTable extends Migration
             $table->unsignedBigInteger('media_id2')->nullable();
             $table->unsignedBigInteger('media_id3')->nullable();
 
-            $table->string('ceo_name',191)->nullable();
+            //$table->string('ceo_name',191)->nullable();
 
             $table->integer('no_of_slide_col')->default(0);
             $table->string('feature_video',191)->nullable();

@@ -53,16 +53,6 @@ class PageController extends Controller
         ));
     }
 
-    public function contactUs(){
-        //$page=Page::where('')
-        return view('front.contactUs');
-    }
-    public function aboutUs(){
-        return view('front.about-us');
-    }
-    public function ourCeo(){
-        return view('front.our-ceo');
-    }
     /*
      * method for single home section page
      * */

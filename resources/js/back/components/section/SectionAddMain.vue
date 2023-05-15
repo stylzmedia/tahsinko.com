@@ -1,308 +1,202 @@
 <template>
     <div>
-      <form
-        action="javascript:void(0)"
-        method="POST"
-        enctype="multipart/form-data"
-        @submit="sectionSubmit()"
-        ref="section_add_form"
-        id="productForm"
-      >
+        <form
+            action="javascript:void(0)"
+            method="POST"
+            enctype="multipart/form-data"
+            @submit="sectionSubmit()"
+            ref="section_add_form"
+            id="productForm">
 
-          <div class="row">
-            <div class="col-md-4">
-            <div class="form-group">
-              <label><b>Design Type *</b></label>
-              <select
-                class="form-select"
-                v-model="design_type"
-                name="section_design_type_id"
-                required
-              >
-                <option value="null">Select One</option>
-                <option
-                  v-for="(type,key) in section_design_types"
-                  :value="type.id"
-                  :key="key"
-                >
-                  {{ type.name }}
-                </option>
-              </select>
-            </div>
-          </div>
-          </div>
-        <div class="row">
-          <div class="col-md-12">
             <div class="row">
-              <div class="col-md-10">
-                <!-- Section Name  -->
-                <div class="col-md-12" v-if="design_type === 1 || design_type === 2 || design_type === 3 || design_type === 4 || design_type === 6 || design_type === 7 || design_type === 9">
-                  <div class="form-group">
-                    <label><b>Section Name*</b></label>
-                    <input
-                      type="text"
-                      name="section_name"
-                      class="form-control"
-                      placeholder="write section name here"
-                      required
-                    />
-                  </div>
-                </div>
-                <!-- Section Name End  -->
-                <div class="row">
-                                    <!-- Display Section Title -->
-                <div class="col-md-6" v-if="design_type === 1 || design_type === 2 || design_type === 3 || design_type === 4 || design_type === 6 || design_type === 7 || design_type === 9 ">
-                <div class="form-group">
-                    <label><b>Display Section Title*</b></label>
+                <div class="col-md-4">
+                    <div class="form-group">
+                    <label><b>Design Type*</b></label>
                     <select
-                    class="form-select"
-                    name="section_name_is_show"
-                    required
+                        class="form-select"
+                        v-model="design_type"
+                        name="section_design_type_id"
+                        required
                     >
-                    <option :value="1">Yes</option>
-                    <option :value="0">No</option>
+                        <option value="null">Select One</option>
+                        <option
+                        v-for="(type,key) in section_design_types"
+                        :value="type.id"
+                        :key="key"
+                        >
+                        {{ type.name }}
+                        </option>
                     </select>
-                </div>
-                </div>
-                <!-- Display Section Title End  -->
-
-
-                <!-- Number of Slide Col -->
-                <div class="col-md-6" v-if="design_type === 7">
-                    <div class="form-group">
-                      <label><b>Number of Slide Col*</b></label>
-                      <input
-                        type="number"
-                        name="no_of_slide_col"
-                        class="form-control"
-                        required
-                      />
                     </div>
-                  </div>
-                  <!-- CNumber of Slide Col End -->
-
-                <!-- CEO Name -->
-                  <div class="col-md-6" v-if="design_type === 1">
-                    <div class="form-group">
-                      <label><b>CEO Name*</b></label>
-                      <input
-                        type="text"
-                        name="ceo_name"
-                        class="form-control"
-                        placeholder="CEO Name"
-                        required
-                      />
-                    </div>
-                  </div>
-                  <!-- CEO Name End -->
-                <!-- Number of Column -->
-                <template v-if="design_type === 2 || design_type === 3 || design_type === 6">
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label><b>Number of Column *</b></label>
-                      <select class="form-select" name="col" required>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                      </select>
-                    </div>
-                  </div>
-                </template>
-                <!-- Number of Column End  -->
-
-                <!-- Number of Row  -->
-                <template v-if="design_type === 2 ||design_type === 3 || design_type === 9 ">
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label><b>Number of Row*</b></label>
-                      <input
-                        type="number"
-                        name="row"
-                        class="form-control"
-                        value="1"
-                        placeholder="write number of row here"
-                        required
-                      />
-                    </div>
-                  </div>
-                </template>
-                <!-- Number of Row End  -->
-
-                </div>
-                <div class="row">
-                <!-- Title -->
-                  <template>
-                    <div class="col-md-12" v-if="design_type===1">
-                      <div class="form-group">
-                        <label><b>Title *</b></label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          name="title"
-                          placeholder="Title write here.."
-                          required
-                        />
-                      </div>
-                    </div>
-                  </template>
-                <!-- Title End  -->
-                <!-- Description  -->
-                  <template v-if="design_type === 1 || design_type === 4 ">
-                    <div class="col-md-12">
-                      <div class="form-group">
-                        <label><b>Description*</b></label>
-                        <vue-editor
-                          v-model="description"
-                          name="description"
-                        ></vue-editor>
-                      </div>
-                    </div>
-                  </template>
-                <!-- Description End  -->
-
-                <!-- YouTube Video -->
-                  <template v-if="design_type ===1">
-                    <div class="col-md-12">
-                      <div class="row">
+            </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row">
                         <div class="col-md-8">
-                          <label><b>YouTube Video*</b></label>
-                          <input
-                            @input="show_video_pre"
-                            ref = "feature_video"
-                            id="feature_video"
-                            type="text"
-                            class="form-control feature_video"
-                            value=""
-                            name="feature_video"
-                          />
+                            <!-- Section Name  -->
+                            <div class="col-md-12" v-if="design_type === 1 || design_type === 2 || design_type === 3 || design_type === 4 || design_type === 5 || design_type === 6 || design_type === 7 || design_type === 8 || design_type === 9 || design_type === 10 || design_type === 11 || design_type === 12">
+                                <div class="form-group">
+                                    <label><b>Section Name*</b></label>
+                                    <input
+                                    type="text"
+                                    name="section_name"
+                                    class="form-control"
+                                    placeholder="write section name here"
+                                    required
+                                    />
+                                </div>
+                            </div>
+                            <!-- Section Name End  -->
+                            <div class="row">
+                                <!-- Display Section Title -->
+                                <div class="col-md-6" v-if="design_type === 1 || design_type === 2 || design_type === 3 || design_type === 4 || design_type === 5 || design_type === 6 || design_type === 7 || design_type === 8 || design_type === 9 || design_type === 10 || design_type === 11 || design_type === 12">
+                                <div class="form-group">
+                                    <label><b>Display Section Title*</b></label>
+                                    <select
+                                    class="form-select"
+                                    name="section_name_is_show"
+                                    required
+                                    >
+                                    <option :value="1">Yes</option>
+                                    <option :value="0">No</option>
+                                    </select>
+                                </div>
+                                </div>
+                                <!-- Display Section Title End  -->
+
+
+                                <!-- Number of Slide Col -->
+                                <div class="col-md-6" v-if="design_type === 12">
+                                    <div class="form-group">
+                                    <label><b>Number of Slide Col*</b></label>
+                                    <input
+                                        type="number"
+                                        name="no_of_slide_col"
+                                        class="form-control"
+                                        required
+                                    />
+                                    </div>
+                                </div>
+                                <!-- CNumber of Slide Col End -->
+
+
+                                <!-- Number of Column -->
+                                <template v-if="design_type === 4 || design_type === 6 || design_type === 8 || design_type === 9 || design_type === 10 || design_type === 11">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                    <label><b>Number of Column *</b></label>
+                                    <select class="form-select" name="col" required>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                    </select>
+                                    </div>
+                                </div>
+                                </template>
+                                <!-- Number of Column End  -->
+
+                                <!-- Number of Row  -->
+                                <template v-if="design_type === 9 ">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                        <label><b>Number of Row*</b></label>
+                                        <input
+                                            type="number"
+                                            name="row"
+                                            class="form-control"
+                                            value="1"
+                                            placeholder="write number of row here"
+                                            required/>
+                                        </div>
+                                    </div>
+                                </template>
+                                <!-- Number of Row End  -->
+                            </div>
+                            <div class="row">
+                                <!-- Description  -->
+                                <template v-if="design_type === 2 || design_type === 3">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label><b>Description*</b></label>
+                                            <vue-editor
+                                            v-model="description"
+                                            name="description"
+                                            ></vue-editor>
+                                        </div>
+                                    </div>
+                                </template>
+                                <!-- Description End  -->
+
+                                <!-- Description 2 -->
+                                <template v-if="design_type === 3">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label><b>Vision*</b></label>
+                                            <vue-editor
+                                            v-model="description2"
+                                            name="description2"
+                                            ></vue-editor>
+                                        </div>
+                                    </div>
+                                </template>
+                                <!-- Description End  -->
+                            </div>
                         </div>
 
                         <div class="col-md-4">
-                          <div class="img_group video mt-4">
-                            <iframe
-                                ref = "feature_video_preview"
-                                class="embed-responsive-item"
-                                src=""
-                                allowfullscreen
-                            ></iframe>
-                          </div>
+                            <!-- Image Upload  -->
+                            <div class="col-md-12" v-if="design_type === 1">
+                            <div class="card border-light mt-3 shadow">
+                                <div class="card-body">
+                                <img
+                                    class="img-thumbnail uploaded_img"
+                                    :src="'/img/default-img.png'"
+                                    alt=""
+                                />
+                                </div>
+                            </div>
+                            <div class="col-md-12 text-center">
+                                <div class="form-group">
+                                <label><b>Image*</b></label>
+                                <div class="custom-file text-left">
+                                    <label for="imageInput" class="image-button"
+                                    ><i class="ri-gallery-upload-line"></i> Upload</label
+                                    >
+                                    <input
+                                    type="file"
+                                    id="imageInput"
+                                    class="form-control custom-file-input image_upload"
+                                    name="image"
+                                    accept="image/*"
+                                    required
+                                    />
+                                </div>
+                                </div>
+                            </div>
+                            </div>
+                            <!-- Image Upload End  -->
                         </div>
-                      </div>
                     </div>
-                  </template>
-                  <!-- YouTube Video End  -->
                 </div>
-              </div>
-              <div class="col-md-2">
-                <!-- Image Upload  -->
-                <div class="col-md-12" v-if="design_type === 4 || design_type === 1">
-                  <div class="card border-light mt-3 shadow">
-                    <div class="card-body">
-                      <img
-                        class="img-thumbnail uploaded_img"
-                        :src="'/img/default-img.png'"
-                        alt=""
-                      />
-                    </div>
-                  </div>
-                  <div class="col-md-12 text-center">
-                    <div class="form-group">
-                      <label><b>Image*</b></label>
-                      <div class="custom-file text-left">
-                        <label for="imageInput" class="image-button"
-                          ><i class="ri-gallery-upload-line"></i> Upload</label
-                        >
-                        <input
-                          type="file"
-                          id="imageInput"
-                          class="form-control custom-file-input image_upload"
-                          name="image"
-                          accept="image/*"
-                          required
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- Image Upload End  -->
 
-                <!-- Signature Uplaod  -->
-                <div class="col-md-12" v-if="design_type === 1">
-                  <div class="card border-light mt-3 shadow">
-                    <div class="card-body">
-                      <img
-                        class="img-thumbnail uploaded_img2"
-                        :src="'/img/default-img.png'"
-                        alt=""
-                      />
-                    </div>
-                  </div>
-                  <div class="col-md-12 text-center">
-                    <div class="form-group">
-                      <label><b>Signature</b></label>
-                      <div class="custom-file text-left">
-                        <label for="signature" class="image-button"
-                          ><i class="ri-gallery-upload-line"></i> Upload</label
-                        >
-                        <input
-                          type="file"
-                          id="signature"
-                          class="form-control custom-file-input image_upload2"
-                          name="signature_light"
-                          accept="image/*"
-                        />
-                      </div>
-                    </div>
-                  </div>
+                <div class="col-md-12"></div>
 
-                  <div class="card border-light mt-3 shadow">
-                    <div class="card-body">
-                      <img
-                        class="img-thumbnail uploaded_img3"
-                        :src="'/img/default-img.png'"
-                        alt=""
-                      />
-                    </div>
-                  </div>
-                  <div class="col-md-12 text-center">
-                    <div class="form-group">
-                      <label><b>Signature Dark</b></label>
-                      <div class="custom-file text-left">
-                        <label for="signature_dark" class="image-button"
-                          ><i class="ri-gallery-upload-line"></i> Upload</label
-                        >
-                        <input
-                          type="file"
-                          id="signature_dark"
-                          class="form-control custom-file-input image_upload3"
-                          name="signature_dark"
-                          accept="image/*"
-                        />
-                      </div>
-                    </div>
-                  </div>
+                <div class="card-footer">
+                    <b-button type="submit" v-if="is_loading" variant="success" disabled>
+                    <b-spinner small></b-spinner>
+                    publishing...
+                    </b-button>
+                    <b-button type="submit" v-if="!is_loading" variant="success">
+                    publish
+                    </b-button>
+                    <br />
+                    <small><b>NB: *</b> marked are required field.</small>
                 </div>
-                <!-- Signature Uplaod End  -->
-              </div>
             </div>
-          </div>
-          <div class="col-md-12"></div>
-
-          <div class="card-footer">
-            <b-button type="submit" v-if="is_loading" variant="success" disabled>
-              <b-spinner small></b-spinner>
-              publishing...
-            </b-button>
-            <b-button type="submit" v-if="!is_loading" variant="success">
-              publish
-            </b-button>
-            <br />
-            <small><b>NB: *</b> marked are required field.</small>
-          </div>
-        </div>
-      </form>
+        </form>
     </div>
-  </template>
+</template>
 
   <script>
   import Vue from 'vue'
@@ -336,7 +230,7 @@
             section_design_id:null,
             is_loading:false,
             optional_designs:[2,3,6,7,8,9,10,11,12],
-            short_description:'',
+            description2:'',
             description:'',
             colour: '#000000',
         }
@@ -359,7 +253,7 @@
           async sectionSubmit(){
               this.is_loading=true;
               let data =new FormData(this.$refs.section_add_form);
-              data.append('short_description',this.short_description);
+              data.append('description2',this.description2);
               data.append('description',this.description);
               await axios.post(`${this.app_url}/adminx/frontend/section/store`,data).then((response)=>{
                   this.is_loading=false;

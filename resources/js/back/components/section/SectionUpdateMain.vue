@@ -4,91 +4,91 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="row">
-                        <div class="col-md-10">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label><b>Status *</b></label>
-                                    <select class="form-select" v-model.number="home_section.status" name="status" required>
-                                        <option value="1">Active</option>
-                                        <option value="0">Inactive</option>
-                                    </select>
-                                </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label><b>Status *</b></label>
+                                <select class="form-select" v-model.number="home_section.status" name="status" required>
+                                    <option value="1">Active</option>
+                                    <option value="0">Inactive</option>
+                                </select>
                             </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8">
                             <div class="col-md-12">
-                                <div class="form-group" v-if="parseInt(home_section.section_design_type_id) ===1 || parseInt(home_section.section_design_type_id) ===2  || parseInt(home_section.section_design_type_id) ===3 || parseInt(home_section.section_design_type_id) ===4 || parseInt(home_section.section_design_type_id) ===6 || parseInt(home_section.section_design_type_id) ===7 ||  parseInt(home_section.section_design_type_id) ===9">
+                                <div class="form-group">
                                     <label><b>Section Name*</b></label>
                                     <input type="text" name="section_name" v-model="home_section.section_name" class="form-control" placeholder="write section here" required>
                                 </div>
                             </div>
-                            <div class="col-md-6" v-if="parseInt(home_section.section_design_type_id) ===1 || parseInt(home_section.section_design_type_id) ===2 || parseInt(home_section.section_design_type_id) ===3 || parseInt(home_section.section_design_type_id) ===4 || parseInt(home_section.section_design_type_id) ===6 || parseInt(home_section.section_design_type_id) ===7 || parseInt(home_section.section_design_type_id) ===9">
-                                <div class="form-group">
-                                    <label><b>Display Section Title *</b></label>
-                                    <select class="form-control" v-model="home_section.section_name_is_show" name="section_name_is_show" required>
-                                        <option :value="1">Yes</option>
-                                        <option :value="0">No</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <!-- CEO Name -->
-                            <div class="col-md-6" v-if="parseInt(home_section.section_design_type_id) ===1">
-                                <div class="form-group">
-                                <label><b>CEO Name</b></label>
-                                <input
-                                    type="text"
-                                    name="ceo_name"
-                                    v-model="home_section.ceo_name"
-                                    class="form-control"
-                                    placeholder="CEO Name"
-                                />
-                                </div>
-                            </div>
-                            <!-- CEO Name End -->
-                            <!-- <div class="col-md-12">
-                                <div></div>
-                                <div class="form-group">
-                                    <label><b>Background colordd *</b></label>
-                                    <input type="color" name="background_color" v-model="home_section.background_color" class="form-control form-control-color w-100 colorpicker"  required>
-                                </div>
-                            </div> -->
-
-                            <template v-if="parseInt(home_section.section_design_type_id) ===2 || parseInt(home_section.section_design_type_id) === 3 ||parseInt(home_section.section_design_type_id) ===10 || parseInt(home_section.section_design_type_id) ===6">
+                            <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label><b>Number of Column *</b></label>
-                                        <select class="form-select" v-model="home_section.col" name="col" required>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>>
+                                        <label><b>Display Section Title *</b></label>
+                                        <select class="form-control" v-model="home_section.section_name_is_show" name="section_name_is_show" required>
+                                            <option :value="1">Yes</option>
+                                            <option :value="0">No</option>
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label><b>Number of row *</b></label>
-                                        <input type="number" name="row" v-model="home_section.row" class="form-control" placeholder="write number of row here" required>
-                                    </div>
-                                </div>
-                            </template>
-
-                            <template  v-if="parseInt(home_section.section_design_type_id) ===7 || parseInt(home_section.section_design_type_id) ===9">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label><b>Number of Slide Col*</b></label>
-                                        <input type="number" name="no_of_slide_col" v-model="home_section.no_of_slide_col" class="form-control" placeholder="write number of card here" required>
-                                    </div>
-                                </div>
-                            </template>
-                                <template v-if="!optional_designs.includes(parseInt(home_section.section_design_type_id)) && parseInt(home_section.section_design_type_id) !== 4">
-                                    <div class="col-md-12">
+                                <template v-if="parseInt(home_section.section_design_type_id) ===4 || parseInt(home_section.section_design_type_id) ===8 ||parseInt(home_section.section_design_type_id) ===9 || parseInt(home_section.section_design_type_id) ===11 ">
+                                    <div class="col-md-6">
                                         <div class="form-group">
-                                            <label><b>Title *</b></label>
-                                            <input type="text" class="form-control" v-model="home_section.title" name="title" placeholder="Title write here.." required>
+                                            <label><b>Number of Column *</b></label>
+                                            <select class="form-select" v-model="home_section.col" name="col" required>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>>
+                                            </select>
                                         </div>
                                     </div>
                                 </template>
 
+
+                                <template v-if="parseInt(home_section.section_design_type_id) ===11  || parseInt(home_section.section_design_type_id) ===11">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label><b>Number of row *</b></label>
+                                            <input type="number" name="row" v-model="home_section.row" class="form-control" placeholder="write number of row here" required>
+                                        </div>
+                                    </div>
+                                </template>
+
+                                <template  v-if="parseInt(home_section.section_design_type_id) ===6 || parseInt(home_section.section_design_type_id) ===10 || parseInt(home_section.section_design_type_id) ===12">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label><b>Number of Slide Col*</b></label>
+                                            <input type="number" name="no_of_slide_col" v-model="home_section.no_of_slide_col" class="form-control" placeholder="write number of card here" required>
+                                        </div>
+                                    </div>
+                                </template>
+                            </div>
+
+
+
+
+                            <div class="row">
+                                <template v-if="parseInt(home_section.section_design_type_id) ===2 || parseInt(home_section.section_design_type_id) ===3">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label><b>Description*</b></label>
+                                            <vue-editor v-model="home_section.description" name="description" ></vue-editor>
+                                        </div>
+                                    </div>
+                                </template>
+                                <template v-if="parseInt(home_section.section_design_type_id) ===3">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label><b>Vision*</b></label>
+                                            <vue-editor v-model="home_section.description2" name="description2" ></vue-editor>
+                                        </div>
+                                    </div>
+                                </template>
+                            </div>
                         </div>
-                        <div class="col-md-2" v-if="!optional_designs.includes(parseInt(home_section.section_design_type_id))">
+
+                        <div class="col-md-4" v-if="parseInt(home_section.section_design_type_id) ===1">
                             <div class="col-md-12">
                                 <div class="card border-light mt-3 shadow">
                                     <div class="card-body">
@@ -105,110 +105,12 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- Signature Uplaod  -->
-                            <div class="col-md-12" v-if="parseInt(home_section.section_design_type_id) ===1">
-                            <div class="card border-light mt-3 shadow">
-                                <div class="card-body">
-                                <img
-                                    class="img-thumbnail uploaded_img2"
-                                    :src="image_path2?image_path2:'/img/default-img.png'"
-                                    alt=""
-                                />
-                                </div>
-                            </div>
-                            <div class="col-md-12 text-center">
-                                <div class="form-group">
-                                <label><b>Signature Light</b></label>
-                                <div class="custom-file text-left">
-                                    <label for="signature_light" class="image-button"
-                                    ><i class="ri-gallery-upload-line"></i> Upload</label
-                                    >
-                                    <input
-                                    type="file"
-                                    id="signature_light"
-                                    class="form-control custom-file-input image_upload2"
-                                    name="signature_light"
-                                    accept="image/*"
-                                    />
-                                </div>
-                                </div>
-                            </div>
-
-
-
-                            <div class="card border-light mt-3 shadow">
-                                <div class="card-body">
-                                <img
-                                    class="img-thumbnail uploaded_img3"
-                                    :src="image_path3?image_path3:'/img/default-img.png'"
-                                    alt=""
-                                />
-                                </div>
-                            </div>
-                            <div class="col-md-12 text-center">
-                                <div class="form-group">
-                                <label><b>Signature Dark</b></label>
-                                <div class="custom-file text-left">
-                                    <label for="signature_dark" class="image-button"
-                                    ><i class="ri-gallery-upload-line"></i> Upload</label
-                                    >
-                                    <input
-                                    type="file"
-                                    id="signature_dark"
-                                    class="form-control custom-file-input image_upload3"
-                                    name="signature_dark"
-                                    accept="image/*"
-                                    />
-                                </div>
-                                </div>
-                            </div>
-                            </div>
-
-
-                            <!-- Signature Uplaod End  -->
                         </div>
+
                     </div>
                 </div>
-                <template v-if="!optional_designs.includes(parseInt(home_section.section_design_type_id)) && parseInt(home_section.section_design_type_id) !== 2">
-                    <div class="col-md-10">
-                        <div class="form-group">
-                            <label><b>Description*</b></label>
-                            <vue-editor v-model="home_section.description" name="description" ></vue-editor>
-                        </div>
-                    </div>
-                </template>
-                <!-- YouTube Video -->
-                <template v-if="parseInt(home_section.section_design_type_id)===1">
-                    <div class="col-md-10">
-                      <div class="row">
-                        <div class="col-md-8">
-                          <label><b>YouTube Video*</b></label>
-                          <input
-                            @input="show_video_pre"
-                            ref = "feature_video"
-                            id="feature_video"
-                            type="text"
-                            class="form-control feature_video"
-                            v-model="home_section.feature_video"
-                            name="feature_video"
-                          />
-                        </div>
 
-                        <div class="col-md-4">
-                          <div class="img_group video mt-4">
-                            <iframe
-                                ref = "feature_video_preview"
-                              class="embed-responsive-item"
-                              :src="home_section.feature_video ? home_section.feature_video : 'https://www.youtube.com/embed/gSXnyDDwvUY'"
-                              allowfullscreen
-                            ></iframe>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </template>
-                <div class="col-md-12">
-                </div>
+                <div class="col-md-12"></div>
 
                 <div class="card-footer">
                     <b-button type="submit" v-if="is_loading" variant="success" disabled>

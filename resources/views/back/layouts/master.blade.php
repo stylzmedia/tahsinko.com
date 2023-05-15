@@ -27,12 +27,9 @@
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
 
     <!--data table-->
-    <link rel="stylesheet" href="{{ asset('plugins/datatables/css/jquery.dataTables.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
-    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.6.5/css/buttons.dataTables.min.css">
-    <link rel="stylesheet" href="{{ asset('plugins/datatables-select/css/select.dataTables.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('plugins/select2/css/select2.min.css') }}">
+    <link href="{{ asset('plugins/DataTables/datatables.min.css') }}" rel="stylesheet"/>
+
+    <link rel="stylesheet" href="{{ asset('plugins/select2@4.1.0-rc.0/css/select2.min.css') }}">
     <link rel="stylesheet" href="{{ asset('plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css') }}">
 
     <!-- App Css-->
@@ -298,19 +295,6 @@
                                     <li class="nav-item">
                                         <a href="{{route('back.product.category')}}" class="nav-link {{Route::is('back.product.category') ? 'active' : ''}}" data-key="t-mailbox"> Category </a>
                                     </li>
-                                    {{-- <li class="nav-item">
-                                        <a href="#sidebarPortfolios" class="nav-link collapsed {{(Route::is('back.portfolio.index') || Route::is('back.portfolio.create') || Route::is('back.portfolio.edit')) ? 'active' : 'collapsed'}}" data-bs-toggle="collapse" role="button" aria-expanded="{{(Route::is('back.portfolio.index') || Route::is('back.portfolio.create') || Route::is('back.portfolio.edit')) ? 'true' : 'false'}}" aria-controls="sidebarPortfolios">Portfolios</a>
-                                        <div class="collapse menu-dropdown {{(Route::is('back.portfolio.index') || Route::is('back.portfolio.create') || Route::is('back.portfolio.edit')) ? 'show' : ''}}" id="sidebarPortfolios">
-                                            <ul class="nav nav-sm flex-column">
-                                                <li class="nav-item">
-                                                    <a href="{{ route('back.portfolio.index') }}" class="nav-link {{Route::is('back.portfolio.index') ? 'active' : ''}}">All</a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="{{ route('back.portfolio.create') }}" class="nav-link {{Route::is('back.portfolio.create') ? 'active' : ''}}">Add New</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li> --}}
                                 </ul>
                             </div>
                         </li>
@@ -599,8 +583,6 @@
     </div>
     <!-- END layout-wrapper -->
 
-
-
     <!--start back-to-top-->
     <button onclick="topFunction()" class="btn btn-danger btn-icon" id="back-to-top">
         <i class="ri-arrow-up-line"></i>
@@ -608,7 +590,6 @@
     <!--end back-to-top-->
 
     <!-- JAVASCRIPT -->
-    <script src="{{ asset('back/assets/libs/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('back/assets/libs/simplebar/simplebar.min.js') }}"></script>
     <script src="{{ asset('back/assets/libs/node-waves/waves.min.js') }}"></script>
     <script src="{{ asset('back/assets/libs/feather-icons/feather.min.js') }}"></script>
@@ -629,28 +610,17 @@
     <script src="{{ asset('back/assets/js/pages/dashboard-ecommerce.init.js') }}"></script>
 
      <!--data table-->
-     <script src="{{ asset('plugins/datatables/js/jquery.dataTables.min.js') }}"></script>
-     <script src="{{ asset('plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
-     <script src="{{ asset('plugins/datatables-responsive/js/dataTables.responsive.min.js') }}"></script>
-     <script src="{{ asset('plugins/datatables-responsive/js/responsive.bootstrap4.min.js') }}"></script>
-     <script src="{{ asset('plugins/datatables-select/js/dataTables.select.min.js') }}"></script>
-     <script src="https://cdn.datatables.net/buttons/1.6.4/js/dataTables.buttons.min.js"></script>
-     <script src="https://cdn.datatables.net/buttons/1.6.5/js/buttons.flash.min.js"></script>
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
-     <script src="https://cdn.datatables.net/buttons/1.6.5/js/buttons.html5.min.js "></script>
-     <script src="https://cdn.datatables.net/buttons/1.6.4/js/buttons.print.min.js"></script>
-     <script src="{{ asset('plugins/datatables-buttons/js/buttons.colVis.min.js') }}"></script>
+     <script src="{{ asset('plugins/DataTables/datatables.min.js') }}"></script>
+
+
      <!-- Select2 -->
-     <script src="{{ asset('plugins/select2/js/select2.full.min.js') }}"></script>
-     <!-- Select2 -->
-     <!--data table-->
+     <script src="{{ asset('plugins/select2@4.1.0-rc.0/js/select2.full.min.js') }}"></script>
+
     <!-- App js -->
     <script src="{{ asset('back/assets/js/app.js') }}"></script>
 
     <!-- Sweetalert2 -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.3.0/dist/sweetalert2.all.min.js"></script>
+    <script src="{{ asset('plugins/sweetalert2@9.3.0/sweetalert2.all.min.js') }}"></script>
 
     <script src="{{asset('back/js/main.js')}}"></script>
 

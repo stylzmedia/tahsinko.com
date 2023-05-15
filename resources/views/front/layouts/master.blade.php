@@ -33,16 +33,7 @@
     @yield('head')
 
     <!-- Font Awesome CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
-     {{-- <!-- Bootstrap CSS -->
-     <link rel="stylesheet" href="{{asset('/front/assets/css/bootstrap.min.css') }}">
-     <!-- Boxicons CSS -->
-     <link rel="stylesheet" href="{{asset('/front/assets/css/boxicons.min.css')}}"> --}}
-
-     <!-- Flaticon CSS -->
-     <link rel="stylesheet" href="{{ asset('front/assets/fonts/flaticon.css') }}">
-     <!-- Font Awesome CSS -->
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
+    <link rel="stylesheet" href="{{ asset('plugins/font-awesome@6.1.2/css/all.min.css') }}" />
      <!-- Owl Carousel Min CSS -->
      <link rel="stylesheet" href="{{asset('/front/assets/css/owl.carousel.min.css')}}">
      <link rel="stylesheet" href="{{asset('/front/assets/css/owl.theme.default.min.css')}}">
@@ -57,7 +48,6 @@
      <!-- Style CSS -->
      <link rel="stylesheet" href="{{asset('/front/assets/css/style.css')}}">
      <link rel="stylesheet" href="{{asset('/front/assets/css/custom.css')}}">
-     {{-- <link rel="stylesheet" href="{{asset('/front/css/main.css')}}"> --}}
 
     <!-- Add the slick-theme.css if you want default styling -->
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
@@ -68,12 +58,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
      <!-- Bootstrap CSS v5.2.1 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    <link href="{{ asset('plugins/bootstrap@5.2.1/css/bootstrap.min.css') }}" rel="stylesheet"
     integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-
-
-    <!-- Font-Awesome 6 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
      <!-- Responsive CSS -->
      <link rel="stylesheet" href="{{asset('/front/assets/css/responsive.css') }}">
