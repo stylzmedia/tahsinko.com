@@ -10,12 +10,7 @@ use Illuminate\Support\Facades\Auth;
 // Other Pages
 Route::get('/', [PageController::class, 'homepage'])->name('homepage');
 
-Route::get('contact-us', [PageController::class, 'contactUs'])->name('contactUs');
-Route::get('about-us', [PageController::class, 'aboutUs'])->name('aboutUs');
-Route::get('our-ceo', [PageController::class, 'ourCeo'])->name('ourCeo');
 Route::post('contact-us/form/submit', [ContactUsController::class, 'contact'])->name('contact.us.store');
-
-Route::get('page/{slug}',[PageController::class, 'commonPage'])->name('common.page');
 
 Route::get('news/{blog}', [PageController::class, 'singleNews'])->name('news.single');
 
@@ -41,3 +36,4 @@ Route::get('config',           [TestController::class, 'config'])->name('config'
 Route::get('products-import',  [TestController::class, 'productsImport'])->name('productsImport');
 
 
+Route::get('{slug}',[PageController::class, 'commonPage'])->name('common.page');

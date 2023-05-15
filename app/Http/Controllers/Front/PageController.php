@@ -62,7 +62,8 @@ class PageController extends Controller
     }
 
     public function commonPage($slug){
-        $page = Page::where('slug',$slug)->first();
+        //dd($slug);
+        $page = Page::where('slug',$slug)->firstOrFail();
         if ($page->template) {
             return view('front.' . $page->template, compact('page'));
         }
