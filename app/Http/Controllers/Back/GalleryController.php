@@ -117,45 +117,79 @@ class GalleryController extends Controller
         return redirect()->back()->with('success-alert', 'Gallery deleted successfully.');
     }
 
-    public function uploadPhoto(Request $request, $id)
-    {
+    public function uploadPhoto(Request $request, $id){
+
         ini_set('memory_limit', '256M');
-
         $image = $request->file('file');
-        $imageName = time() . '.' . $image->getClientOriginalExtension();
+        $imageName = 'tahsinko-lift-dhaka-bangladesh-'.time().'-'.$image ->getClientOriginalName();
+        $path = public_path() . '/uploads' . '/gallery' . '/' . date('Y') . '/' . date('m') . '/';
+        File::makeDirectory($path, $mode = 0775, true, true);
+        $path = '/uploads' . '/gallery' . '/' . date('Y') . '/' . date('m') . '/';
 
-        $sm_h = Info::Settings('media', 'small_height') ?? 150;
-        $sm_w = Info::Settings('media', 'small_width') ?? 150;
-        $md_h = Info::Settings('media', 'medium_height') ?? 410;
-        $md_w = Info::Settings('media', 'medium_width') ?? 410;
-        $lg_h = Info::Settings('media', 'large_height') ?? 980;
-        $lg_w = Info::Settings('media', 'large_width') ?? 980;
+        $small_width = Info::Settings('media', 'large_width') ?? 150;
+        $small_height = Info::Settings('media', 'large_height');
 
-        // sm
-        $path = public_path() . '/uploads/gallery/small/';
-        File::makeDirectory($path, $mode = 0777, true, true);
+        $medium_width = Info::Settings('media', 'large_width') ?? 410;
+        $medium_height = Info::Settings('media', 'large_height');
+
+        $large_width = Info::Settings('media', 'large_width') ?? 1200;
+        $large_height = Info::Settings('media', 'large_height');
+
+        // Resize Small Image
         $image_resize = Image::make($image->getRealPath());
-        $image_resize->fit($sm_w, $sm_h);
-        $image_resize->save(public_path('/uploads/gallery/small/' . $imageName));
-        // md
-        $path = public_path() . '/uploads/gallery/medium/';
-        File::makeDirectory($path, $mode = 0777, true, true);
-        $image_resize = Image::make($image->getRealPath());
-        $image_resize->fit($md_w, $md_h);
-        $image_resize->save(public_path('/uploads/gallery/medium/' . $imageName));
-        // lg
-        $path = public_path() . '/uploads/gallery/large/';
-        File::makeDirectory($path, $mode = 0777, true, true);
-        $image_resize = Image::make($image->getRealPath());
-        $image_resize->fit($lg_w, $lg_h);
-        $image_resize->save(public_path('/uploads/gallery/large/' . $imageName));
+        if ($small_width && $small_height) {
+            $image_resize->resize($small_width, $small_height);
+        } elseif ($small_width) {
+            $image_resize->resize($small_width, null, function ($constraint) {
+                $constraint->aspectRatio();
+            });
+        } elseif ($small_height) {
+            $image_resize->resize(null, $small_height, function ($constraint) {
+                $constraint->aspectRatio();
+            });
+        }
+        $image_resize->save(public_path($path . 'small_' . $imageName));
 
-        // Original
-        $image->move(public_path('uploads/gallery'), $imageName);
+        // Resize Medium Image
+        $image_resize = Image::make($image->getRealPath());
+        if ($medium_width && $medium_height) {
+            $image_resize->resize($medium_width, $medium_height);
+        } elseif ($medium_width) {
+            $image_resize->resize($medium_width, null, function ($constraint) {
+                $constraint->aspectRatio();
+            });
+        } elseif ($medium_height) {
+            $image_resize->resize(null, $medium_height, function ($constraint) {
+                $constraint->aspectRatio();
+            });
+        }
+        $image_resize->save(public_path($path . 'medium_' . $imageName));
 
+        // Resize Large Image
+        $image_resize = Image::make($image->getRealPath());
+        if ($large_width && $large_height) {
+            $image_resize->resize($large_width, $large_height);
+        } elseif ($large_width) {
+            $image_resize->resize($large_width, null, function ($constraint) {
+                $constraint->aspectRatio();
+            });
+        } elseif ($large_height) {
+            $image_resize->resize(null, $large_height, function ($constraint) {
+                $constraint->aspectRatio();
+            });
+        }
+        $image_resize->save(public_path($path . 'large_' . $imageName));
+
+        // Original file
+        $destination = public_path() . $path;
+        $image->move($destination, $imageName);
+
+        // Store Media Data
         $gallery_item = new GalleryItem;
         $gallery_item->image = $imageName;
         $gallery_item->gallery_id = $id;
+        $gallery_item->year = date('Y');
+        $gallery_item->month = date('m');
         $gallery_item->save();
 
         return $gallery_item->id;
@@ -285,12 +319,12 @@ class GalleryController extends Controller
             $image = $request->file('file');
             $imageName = time() . '.' . $image->getClientOriginalExtension();
 
-            $sm_h = Info::Settings('media', 'small_height') ?? 150;
             $sm_w = Info::Settings('media', 'small_width') ?? 150;
-            $md_h = Info::Settings('media', 'medium_height') ?? 410;
+            $sm_h = Info::Settings('media', 'small_height');
             $md_w = Info::Settings('media', 'medium_width') ?? 410;
-            $lg_h = Info::Settings('media', 'large_height') ?? 980;
-            $lg_w = Info::Settings('media', 'large_width') ?? 980;
+            $md_h = Info::Settings('media', 'medium_height');
+            $lg_w = Info::Settings('media', 'large_width') ?? 1200;
+            $lg_h = Info::Settings('media', 'large_height');
 
             // sm
             $path = public_path() . '/uploads/gallery/small/';

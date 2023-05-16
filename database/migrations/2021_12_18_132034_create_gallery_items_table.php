@@ -19,6 +19,8 @@ class CreateGalleryItemsTable extends Migration
             $table->unsignedBigInteger('gallery_id')->nullable();
             $table->text('description')->nullable();
             $table->string('image',191)->nullable();
+            $table->string('year', 5);
+            $table->string('month', 5);
             $table->string('video',191)->nullable();
             $table->text('video_embade_code')->nullable();
             $table->string('pdf_file',191)->nullable();

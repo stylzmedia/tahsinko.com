@@ -248,13 +248,6 @@
                                             <i class="ri-drag-move-fill"></i>
                                             <img src="{{ $item->img_paths['small'] }}">
 
-                                            {{-- <input id="image_title_{{ $item->id }}" type="text" name="title"
-                                                placeholder="Enter Image name" value="{{ $item->title }}">
-
-                                            <button type="button" class="title_update btn btn-info"
-                                                onclick="dataUpdate({{ $item->id }})" id="update_data_{{ $item->id }}"
-                                                value="{{ $item->id }}">update</button> --}}
-
                                             <input type="hidden" name="position[]" value="{{ $item->id }}">
 
                                             <div class="float-right">

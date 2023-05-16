@@ -30,10 +30,10 @@ class ProductImageTestUploadCommand extends Command
      */
     public function handle()
     {
-            // Get all product images from the original image folder
-            $originalImageFolder = public_path('product-img');
-            $originalImageFiles = scandir($originalImageFolder);
-            $originalImageFiles = array_diff($originalImageFiles, array('.', '..'));
+        // Get all product images from the original image folder
+        $originalImageFolder = public_path('product-img');
+        $originalImageFiles = scandir($originalImageFolder);
+        $originalImageFiles = array_diff($originalImageFiles, array('.', '..'));
 
         foreach ($originalImageFiles as $filename) {
             $productId = (int) substr($filename, 6, -4);
@@ -45,15 +45,22 @@ class ProductImageTestUploadCommand extends Command
             $largeImagePath = public_path('uploads/2023/05/large_' . $filename);
             $originalUploadPath = 'uploads/2023/05/' . $filename;
 
-            // Resize images
+            // Resize images while maintaining aspect ratio
             $image = Image::make($originalImagePath);
-            $image->resize(150, 150)->save($smallImagePath);
-            $image->resize(600, 400)->save($mediumImagePath);
-            $image->resize(800, 1200)->save($largeImagePath);
+            $image->resize(150, null, function ($constraint) {
+                $constraint->aspectRatio();
+            })->save($smallImagePath);
+
+            $image->resize(410, null, function ($constraint) {
+                $constraint->aspectRatio();
+            })->save($mediumImagePath);
+
+            $image->resize(1200, null, function ($constraint) {
+                $constraint->aspectRatio();
+            })->save($largeImagePath);
 
             // Copy original uploaded image to new location
             copy($originalImagePath, public_path($originalUploadPath));
-
 
             // Get the last inserted ID
             $lastId = DB::table('media')->orderBy('id', 'desc')->value('id');
@@ -95,11 +102,11 @@ class ProductImageTestUploadCommand extends Command
         $categoryId = 15;
         DB::table('category_product')->insertUsing(['category_id', 'product_id'], function ($query) use ($categoryId) {
             $query->select([DB::raw("$categoryId as category_id"), 'id as product_id'])
-                ->from('products')
-                ->where('status', 1);
-        });
-
-        $this->info('Product images uploaded successfully!');
-        return 0;
-    }
+            ->from('products')
+            ->where('status', 1);
+            });
+            $this->info('Product images uploaded successfully!');
+            return 0;
+        }
 }
+

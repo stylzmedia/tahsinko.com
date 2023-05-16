@@ -9,35 +9,69 @@ use Intervention\Image\ImageManagerStatic as Image;
 
 class MediaRepo {
     public static function upload($file,$name=''){
-        $filename = $name.time() . '.' . $file->getClientOriginalExtension();
+        $filename = 'tahsinko-lift-dhaka-bangladesh-'.time().'-'.$file ->getClientOriginalName();
         $filename_string = date('Y') . '/' . date('m') . '/' . $filename;
         $path = public_path() . '/uploads' . '/' . date('Y') . '/' . date('m') . '/';
         File::makeDirectory($path, $mode = 0775, true, true);
         $path = '/uploads' . '/' . date('Y') . '/' . date('m') . '/';
 
         if(strpos($file->getMimeType(), 'image') !== false){
+
             $small_width = Info::Settings('media', 'small_width') ?? 150;
-            $small_height = Info::Settings('media', 'small_height') ?? 150;
+            $small_height = Info::Settings('media', 'small_height');
 
-            $medium_width = Info::Settings('media', 'medium_width') ?? 410;
-            $medium_height = Info::Settings('media', 'medium_height') ?? 410;
+            $medium_width = Info::Settings('media', 'medium_width')?? 410;
+            $medium_height = Info::Settings('media', 'medium_height');
 
-            $large_width = Info::Settings('media', 'large_width') ?? 980;
-            $large_height = Info::Settings('media', 'large_height') ?? 980;
+            $large_width = Info::Settings('media', 'large_width')?? 1200;
+            $large_height = Info::Settings('media', 'large_height');
 
-            // Resize Image small
+
+            // Resize Image Small
             $image_resize = Image::make($file->getRealPath());
-            $image_resize->fit($small_width, $small_height);
+            if ($small_width && $small_height) {
+                $image_resize->resize($small_width, $small_height);
+            } elseif ($small_width) {
+                $image_resize->resize($small_width, null, function ($constraint) {
+                    $constraint->aspectRatio();
+                });
+            } elseif ($small_height) {
+                $image_resize->resize(null, $small_height, function ($constraint) {
+                    $constraint->aspectRatio();
+                });
+            }
             $image_resize->save(public_path($path . 'small_' . $filename));
+
 
             // Resize Image medium
             $image_resize = Image::make($file->getRealPath());
-            $image_resize->fit($medium_width, $medium_height);
+            if ($medium_width && $medium_height) {
+                $image_resize->resize($medium_width, $medium_height);
+            } elseif ($medium_width) {
+                $image_resize->resize($medium_width, null, function ($constraint) {
+                    $constraint->aspectRatio();
+                });
+            } elseif ($medium_height) {
+                $image_resize->resize(null, $medium_height, function ($constraint) {
+                    $constraint->aspectRatio();
+                });
+            }
             $image_resize->save(public_path($path . 'medium_' . $filename));
+
 
             // Resize Image large
             $image_resize = Image::make($file->getRealPath());
-            $image_resize->fit($large_width, $large_height);
+            if ($large_width && $large_height) {
+                $image_resize->resize($large_width, $large_height);
+            } elseif ($large_width) {
+                $image_resize->resize($large_width, null, function ($constraint) {
+                    $constraint->aspectRatio();
+                });
+            } elseif ($large_height) {
+                $image_resize->resize(null, $large_height, function ($constraint) {
+                    $constraint->aspectRatio();
+                });
+            }
             $image_resize->save(public_path($path . 'large_' . $filename));
         }
 
@@ -94,28 +128,61 @@ class MediaRepo {
             file_put_contents($file, $data);
 
             $small_width = Info::Settings('media', 'small_width') ?? 150;
-            $small_height = Info::Settings('media', 'small_height') ?? 150;
+            $small_height = Info::Settings('media', 'small_height');
 
-            $medium_width = Info::Settings('media', 'medium_width') ?? 410;
-            $medium_height = Info::Settings('media', 'medium_height') ?? 410;
+            $medium_width = Info::Settings('media', 'medium_width')?? 410;
+            $medium_height = Info::Settings('media', 'medium_height');
 
-            $large_width = Info::Settings('media', 'large_width') ?? 980;
-            $large_height = Info::Settings('media', 'large_height') ?? 980;
-
-            // Resize Image small
-            $image_resize = Image::make($image);
-            $image_resize->fit($small_width, $small_height);
-            $image_resize->save(public_path($path . 'small_' . $filename));
+            $large_width = Info::Settings('media', 'large_width')?? 980;
+            $large_height = Info::Settings('media', 'large_height');
 
             // Resize Image medium
             $image_resize = Image::make($image);
-            $image_resize->fit($medium_width, $medium_height);
+            if ($small_width && $small_height) {
+                $image_resize->resize($small_width, $small_height);
+            } elseif ($small_width) {
+                $image_resize->resize($small_width, null, function ($constraint) {
+                    $constraint->aspectRatio();
+                });
+            } elseif ($small_height) {
+                $image_resize->resize(null, $small_height, function ($constraint) {
+                    $constraint->aspectRatio();
+                });
+            }
+            $image_resize->save(public_path($path . 'small_' . $filename));
+
+
+            // Resize Image medium
+            $image_resize = Image::make($image);
+            if ($medium_width && $medium_height) {
+                $image_resize->resize($medium_width, $medium_height);
+            } elseif ($medium_width) {
+                $image_resize->resize($medium_width, null, function ($constraint) {
+                    $constraint->aspectRatio();
+                });
+            } elseif ($medium_height) {
+                $image_resize->resize(null, $medium_height, function ($constraint) {
+                    $constraint->aspectRatio();
+                });
+            }
             $image_resize->save(public_path($path . 'medium_' . $filename));
+
 
             // Resize Image large
             $image_resize = Image::make($image);
-            $image_resize->fit($large_width, $large_height);
+            if ($large_width && $large_height) {
+                $image_resize->resize($large_width, $large_height);
+            } elseif ($large_width) {
+                $image_resize->resize($large_width, null, function ($constraint) {
+                    $constraint->aspectRatio();
+                });
+            } elseif ($large_height) {
+                $image_resize->resize(null, $large_height, function ($constraint) {
+                    $constraint->aspectRatio();
+                });
+            }
             $image_resize->save(public_path($path . 'large_' . $filename));
+
 
             // Store Media Data
             $media = new Media;
