@@ -105,7 +105,7 @@
                                                     @if($user->profile_image)
                                                         <img class="img-thumbnail uploaded_img" src="{{$user->profile_path}}">
                                                     @else
-                                                        <img class="img-thumbnail uploaded_img" src="{{asset('img/default-img.png')}}">
+                                                        <img class="img-thumbnail uploaded_img" src="{{asset('images/default-img.png')}}">
                                                     @endif
 
                                                     @if($user->profile_image)

@@ -23,23 +23,23 @@ class GalleryItem extends Model
         if(file_exists(public_path("uploads/gallery/$year_month/$file_name"))){
             $output['small'] = asset("uploads/gallery/$year_month/$file_name");
         }else{
-            $output['small'] = asset('img/no-image.png');
+            $output['small'] = asset('images/no-image.png');
         }
 
         if(file_exists(public_path("uploads/gallery/$year_month/$file_name"))){
             $output['medium'] = asset("uploads/gallery/$year_month/$file_name");
         }else{
-            $output['medium'] = asset('img/no-image.png');
+            $output['medium'] = asset('images/no-image.png');
         }
         if(file_exists(public_path("uploads/gallery/$year_month/$file_name"))){
             $output['large'] = asset("uploads/gallery/$year_month/$file_name");
         }else{
-            $output['large'] = asset('img/no-image.png');
+            $output['large'] = asset('images/no-image.png');
         }
         if(file_exists(public_path("uploads/gallery/$year_month/$file_name"))){
             $output['original'] = asset("uploads/gallery/$year_month/$file_name");
         }else{
-            $output['original'] = asset('img/no-image.png');
+            $output['original'] = asset('images/no-image.png');
         }
 
         return $output;

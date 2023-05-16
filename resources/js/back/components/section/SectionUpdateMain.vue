@@ -92,7 +92,7 @@
                             <div class="col-md-12">
                                 <div class="card border-light mt-3 shadow">
                                     <div class="card-body">
-                                        <img class="img-thumbnail uploaded_img"  :src="image_path?image_path:'/img/default-img.png'" alt="">
+                                        <img class="img-thumbnail uploaded_img"  :src="image_path?image_path:'/images/default-img.png'" alt="">
                                     </div>
                                 </div>
                                 <div class="col-md-12 text-center">
@@ -143,12 +143,6 @@ export default {
             required:true,
         },
         image_path:{
-            required: false,
-        },
-        image_path2:{
-            required: false,
-        },
-        image_path3:{
             required: false,
         },
         app_url:{

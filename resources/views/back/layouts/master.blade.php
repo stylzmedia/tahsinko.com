@@ -142,7 +142,7 @@
                                     @if (auth()->user()->profile_image != Null)
                                         <img class="rounded-circle header-profile-user" src="{{auth()->user()->profile_path}}" alt="{{ auth()->user()->last_name }}">
                                     @else
-                                        <img class="rounded-circle header-profile-user" src="{{ asset('back/assets/images/avatar.png') }}"
+                                        <img class="rounded-circle header-profile-user" src="{{ asset('images/avatar.png') }}"
                                     alt="{{ auth()->user()->last_name }}">
                                     @endif
                                     <span class="text-start ms-xl-2">

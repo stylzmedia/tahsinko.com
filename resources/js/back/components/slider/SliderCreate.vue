@@ -97,7 +97,7 @@
 
                             </div>
                             <div class="text-center" v-if="slider_type===1">
-                            <img class="img-thumbnail uploaded_img" style="width: 70%" :src="'/img/default-img.png'" alt="">
+                            <img class="img-thumbnail uploaded_img" style="width: 70%" :src="'/images/default-img.png'" alt="">
 
                             <div class="form-group">
                                 <label><b>Slider Image*</b></label>

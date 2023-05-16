@@ -59,7 +59,7 @@
                             <div class="text-center">
                                 @if ($gallery->image != NULL)
                                     <div class="img_group">
-                                        <img class="img-thumbnail uploaded_img" style="height: 200px; width: 200px;" src="{{$gallery->img_paths['small']?$gallery->img_paths['small']:asset('img/default-img.png')}}">
+                                        <img class="img-thumbnail uploaded_img" style="height: 200px; width: 200px;" src="{{$gallery->img_paths['small']?$gallery->img_paths['small']:asset('images/default-img.png')}}">
 
                                         <div class="form-group text-center">
                                             <label><b>Image</b></label>

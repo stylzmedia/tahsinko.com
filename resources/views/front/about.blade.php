@@ -83,7 +83,7 @@
 <!-- Breadcrumb End-->
 
 <div class="shape-top-corner position-absolute ">
-    <img src="{{ asset('front/assets/img/shape/top-right-corner.png') }}" alt="">
+    <img src="{{ asset('images/shapes/top-right-corner.png') }}" alt="">
 </div>
 <section class="about-us my-5">
     <div class="container">

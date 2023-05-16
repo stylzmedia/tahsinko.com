@@ -96,7 +96,7 @@
                                     <div class="card-body">
                                         <div class="img_group">
                                             <img class="img-thumbnail uploaded_img"
-                                                src="{{ asset('img/default-img.png') }}">
+                                                src="{{ asset('images/default-img.png') }}">
                                             <br>
                                             <div class="form-group text-center">
                                                 <div class="custom-file text-left ft_image">

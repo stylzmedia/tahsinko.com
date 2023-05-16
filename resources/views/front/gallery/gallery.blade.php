@@ -71,5 +71,5 @@
 @endsection
 
 @section('footer')
-<script src="{{asset('front/js/fslightbox/fslightbox.js')}}"></script>
+<script src="{{asset('js/fslightbox.js')}}"></script>
 @endsection

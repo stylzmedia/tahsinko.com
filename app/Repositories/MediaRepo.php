@@ -17,13 +17,13 @@ class MediaRepo {
 
         if(strpos($file->getMimeType(), 'image') !== false){
 
-            $small_width = Info::Settings('media', 'small_width') ?? 150;
+            $small_width = Info::Settings('media', 'small_width');
             $small_height = Info::Settings('media', 'small_height');
 
-            $medium_width = Info::Settings('media', 'medium_width')?? 410;
+            $medium_width = Info::Settings('media', 'medium_width');
             $medium_height = Info::Settings('media', 'medium_height');
 
-            $large_width = Info::Settings('media', 'large_width')?? 1200;
+            $large_width = Info::Settings('media', 'large_width');
             $large_height = Info::Settings('media', 'large_height');
 
 
@@ -77,7 +77,6 @@ class MediaRepo {
 
         // Original file
         $destination = public_path() . $path;
-        // dd($destination);
         $file->move($destination, $filename);
 
         // Store Media Data
@@ -127,13 +126,13 @@ class MediaRepo {
             $file = $UPLOAD_DIR . $name;
             file_put_contents($file, $data);
 
-            $small_width = Info::Settings('media', 'small_width') ?? 150;
+            $small_width = Info::Settings('media', 'small_width');
             $small_height = Info::Settings('media', 'small_height');
 
-            $medium_width = Info::Settings('media', 'medium_width')?? 410;
+            $medium_width = Info::Settings('media', 'medium_width');
             $medium_height = Info::Settings('media', 'medium_height');
 
-            $large_width = Info::Settings('media', 'large_width')?? 980;
+            $large_width = Info::Settings('media', 'large_width');
             $large_height = Info::Settings('media', 'large_height');
 
             // Resize Image medium

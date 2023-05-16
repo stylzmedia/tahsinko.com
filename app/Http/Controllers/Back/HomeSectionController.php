@@ -39,33 +39,14 @@ class HomeSectionController extends Controller
             'section_name_is_show'=>'required',
             'title' => 'max:191',
             'image' => 'image|mimes:jpg,png,jpeg,gif',
-            'signature_light' => 'image|mimes:jpg,png,jpeg,gif',
-            'signature_dark' => 'image|mimes:jpg,png,jpeg,gif'
         ]);
-        $home_section=$request->except('image','signature_light','signature_dark');
+        $home_section=$request->except('image');
         if($request->file('image')){
             $uploaded_file = MediaRepo::upload($request->file('image'));
             $home_section += [
                 'image'=> $uploaded_file['file_name'],
                 'image_path'=> $uploaded_file['file_path'],
                 'media_id'=> $uploaded_file['media_id'],
-            ];
-        }
-        if($request->file('signature_light')){
-            $uploaded_file2 = MediaRepo::upload($request->file('signature_light'),'signature_light');
-
-            $home_section += [
-                'signature_light'=> $uploaded_file2['file_name'],
-                'image_path2'=> $uploaded_file2['file_path'],
-                'media_id2'=> $uploaded_file2['media_id'],
-            ];
-        }
-        if($request->file('signature_dark')){
-            $uploaded_file3 = MediaRepo::upload($request->file('signature_dark'),'signature_dark');
-            $home_section += [
-                'signature_dark'=> $uploaded_file3['file_name'],
-                'image_path3'=> $uploaded_file3['file_path'],
-                'media_id3'=> $uploaded_file3['media_id'],
             ];
         }
         if($request->feature_video != "") {
@@ -91,7 +72,6 @@ class HomeSectionController extends Controller
     public function edit(HomeSection $homeSection)
     {
         $sliders = HomeSection::orderBy('position','ASC')->get();
-        //dd($homeSection->img_paths2);
         return view('back.frontend.section.edit', compact('homeSection','sliders'));
     }
 
@@ -101,34 +81,15 @@ class HomeSectionController extends Controller
             'section_name'=>'required|string|max:191',
             'section_name_is_show'=>'required',
             'title' => 'max:191',
-            'image' => 'image|mimes:jpg,png,jpeg,gif',
-            'signature_light' => 'image|mimes:jpg,png,jpeg,gif',
-            'signature_dark' => 'image|mimes:jpg,png,jpeg,gif'
+            'image' => 'image|mimes:jpg,png,jpeg,gif'
         ]);
-        $home_section=$request->except('image','signature_light');
+        $home_section=$request->except('image');
         if($request->file('image')){
             $uploaded_file = MediaRepo::upload($request->file('image'));
             $home_section += [
                 'image'=> $uploaded_file['file_name'],
                 'image_path'=> $uploaded_file['file_path'],
                 'media_id'=> $uploaded_file['media_id'],
-            ];
-        }
-        if($request->file('signature_light')){
-            $uploaded_file2 = MediaRepo::upload($request->file('signature_light'),'signature_light');
-
-            $home_section += [
-                'signature_light'=> $uploaded_file2['file_name'],
-                'image_path2'=> $uploaded_file2['file_path'],
-                'media_id2'=> $uploaded_file2['media_id'],
-            ];
-        }
-        if($request->file('signature_dark')){
-            $uploaded_file3 = MediaRepo::upload($request->file('signature_dark'),'signature_dark');
-            $home_section += [
-                'signature_dark'=> $uploaded_file3['file_name'],
-                'image_path3'=> $uploaded_file3['file_path'],
-                'media_id3'=> $uploaded_file3['media_id'],
             ];
         }
         if($request->feature_video != "") {

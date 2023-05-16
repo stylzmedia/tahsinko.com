@@ -71,7 +71,7 @@ class User extends Authenticatable implements MustVerifyEmail
             return asset('uploads/user/' . $this->profile_image);
         }
 
-        return asset('img/user-img.jpg');
+        return asset('images/user-img.jpg');
     }
 
     public function getFullNameAttribute()

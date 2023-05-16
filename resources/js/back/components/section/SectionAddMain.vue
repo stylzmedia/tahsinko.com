@@ -151,7 +151,7 @@
                                 <div class="card-body">
                                 <img
                                     class="img-thumbnail uploaded_img"
-                                    :src="'/img/default-img.png'"
+                                    :src="'/images/default-img.png'"
                                     alt=""
                                 />
                                 </div>

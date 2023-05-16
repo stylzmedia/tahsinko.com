@@ -37,8 +37,8 @@
   <!-- Breadcrumb Start -->
     <div class="inner-banner-video">
             <div class="video-inner">
-                <video id="background-video" autoplay loop muted poster="{{ asset('front/video/ElevatorsGoingUpAndDown.png') }}">
-                    <source src="{{ asset('front/video/ElevatorsGoingUpAndDown.mp4') }}" type="video/mp4">
+                <video id="background-video" autoplay loop muted poster="{{ asset('video/ElevatorsGoingUpAndDown.png') }}">
+                    <source src="{{ asset('video/ElevatorsGoingUpAndDown.mp4') }}" type="video/mp4">
                 </video>
             </div>
         <div class="container">
@@ -64,7 +64,7 @@
             <div class="row">
                 <div class="col-lg-7 col-md-6 pr-0">
                     <div class="contact-section-img">
-                        <img src="{{ asset('front/images/section/sec1-group-photo-2.png') }}" alt="Images">
+                        <img src="{{ $page->media_id ? $page->img_paths['original'] : null }}" alt="Images">
                     </div>
                 </div>
 

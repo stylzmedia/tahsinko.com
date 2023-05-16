@@ -43,7 +43,7 @@
                         <div class="col-md-12">
                             <div class="text-center">
                                 <div class="img_group">
-                                    <img class="img-thumbnail uploaded_img" src="{{asset('img/default-img.png')}}">
+                                    <img class="img-thumbnail uploaded_img" src="{{asset('images/default-img.png')}}">
 
                                     <div class="form-group text-center">
                                         <label><b>Category Image</b></label>

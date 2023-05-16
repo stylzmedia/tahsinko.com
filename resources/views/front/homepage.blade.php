@@ -38,7 +38,7 @@
                         @elseif($slider->slider_type==2)
 
                             <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
-                                <video class="img-fluid" autoplay loop muted poster="{{ asset('front/images/section/slider-poster.jpg') }}" alt="{{$settings_g['title'] ?? ''}}">
+                                <video class="img-fluid" autoplay loop muted poster="{{ asset('video/slider-poster.jpg') }}" alt="{{$settings_g['title'] ?? ''}}">
                                     <source src="{{ $slider->video_path }}" type="video/mp4" />
                                 </video>
                             </div>
@@ -77,18 +77,18 @@
                         <div class="row section-one-inner">
                             <div class="col-lg-6 col-md-6">
                                 <div class="bg-media">
-                                    <img src="{{ asset('front/images/section/moving-together.png') }}" class="moving" alt="1st Trademark™ Registered® Lift Brand in Bangladesh">
-                                    <img src="{{ asset('front/images/section/sec1-bg.png') }}" class="sec1-bg" alt="1st Trademark™ Registered® Lift Brand in Bangladesh" >
+                                    <img src="{{ asset('images/section/moving-together.png') }}" class="moving" alt="1st Trademark™ Registered® Lift Brand in Bangladesh">
+                                    <img src="{{ asset('images/section/sec1-bg.png') }}" class="sec1-bg" alt="1st Trademark™ Registered® Lift Brand in Bangladesh" >
                                 </div>
                                 <div class="section-one-content ms-5">
                                     <div class="section-one-inner-item">
-                                        <img src="{{ asset('front/images/section/tahsinko-liftnescalator.png') }}" class="tahsinko-logo" alt="TAHSINKO® Lift & Escalator Logo" >
+                                        <img src="{{$settings_g['logo'] ?? asset('images/tahsinko-lift-n-escalator.png')}}" class="tahsinko-logo" alt="TAHSINKO® Lift & Escalator Logo" >
                                     </div>
                                     <div class="section-one-inner-item">
-                                    <img src="{{ asset('front/images/section/1st-tm-bd.png') }}" class="tm-img animate-1" alt="1st Trademark™ Registered® Lift Brand in Bangladesh">
+                                    <img src="{{ asset('images/section/1st-tm-bd.png') }}" class="tm-img animate-1" alt="1st Trademark™ Registered® Lift Brand in Bangladesh">
                                     </div>
                                     <div class="section-one-inner-item">
-                                    <img src="{{ asset('front/images/section/1st-tm-china.png') }}" class="tm-img animate-1" alt="1st Trademark™ Registered® Bangladeshi Lift Brand in China" >
+                                    <img src="{{ asset('images/section/1st-tm-china.png') }}" class="tm-img animate-1" alt="1st Trademark™ Registered® Bangladeshi Lift Brand in China" >
                                     </div>
                                 </div>
                             </div>
@@ -98,8 +98,8 @@
                                     <img src="{{ $sec->img_paths['original'] }}" class="group-img" alt="1st Trademark™ Registered® Lift Brand in Bangladesh">
                                 </div>
                                 <div class="js-shape">
-                                    <img src="{{asset('front/images/section/sec1-shape-1.png')}}" class="shape-1 move-1" alt="TAHSINKO® Lift & Escalator Shape-1" >
-                                    <img src="{{asset('front/images/section/sec1-shape-2.png')}}" class="shape-2 move-1" alt="TAHSINKO® Lift & Escalator Shape-2" >
+                                    <img src="{{asset('images/section/sec1-shape-1.png')}}" class="shape-1 move-1" alt="TAHSINKO® Lift & Escalator Shape-1" >
+                                    <img src="{{asset('images/section/sec1-shape-2.png')}}" class="shape-2 move-1" alt="TAHSINKO® Lift & Escalator Shape-2" >
                                 </div>
                             </div>
                         </div>
@@ -114,11 +114,11 @@
                         <div class="section-two-inner">
                             <div class="row">
                                 <div class="col-lg-4 col-md-4 m-0">
-                                    <img src="{{asset('front/images/section/sec2-bg-left.png')}}" class="sec2-bg-left" alt="1st Trademark™ Registered® Lift Brand in Bangladesh">
-                                    <img src="{{asset('front/images/section/sec2-ceo.png')}}" alt="TAHSINKO® CEO Tarequl Islam Shopon" class="tareq move-3">
+                                    <img src="{{asset('images/section/sec2-bg-left.png')}}" class="sec2-bg-left" alt="1st Trademark™ Registered® Lift Brand in Bangladesh">
+                                    <img src="{{asset('images/section/sec2-ceo.png')}}" alt="TAHSINKO® CEO Tarequl Islam Shopon" class="tareq move-3">
                                 </div>
                                 <div class="col-lg-8 col-md-8">
-                                    <img src="{{asset('front/images/section/sec2-artwork.png')}}" class="sec2-artwork move-1" alt="1st Trademark™ Registered® Bangladeshi Lift Brand in China">
+                                    <img src="{{asset('images/section/sec2-artwork.png')}}" class="sec2-artwork move-1" alt="1st Trademark™ Registered® Bangladeshi Lift Brand in China">
                                     <div class="section-content">
                                         <div class="section-content-inner">
                                             <p>{!! $sec->description !!}</p>
@@ -145,7 +145,7 @@
                                 <div class="col-lg-8 col-md-8">
                                     <div class="section-three-content">
                                         <div class="quote">
-                                            <img src="{{asset('front/images/section/quote.png')}}" class="quote" alt="Our mission in to provide innovative and reliable vertical transportation solutions ">
+                                            <img src="{{asset('images/section/quote.png')}}" class="quote" alt="Our mission in to provide innovative and reliable vertical transportation solutions ">
                                         </div>
                                         <div class="inner">
                                             <p>{!! $sec->description !!}</p>
@@ -158,7 +158,7 @@
                                 <div class="col-lg-8 col-md-8">
                                     <div class="section-three-content">
                                         <div class="quote">
-                                            <img src="{{asset('front/images/section/quote.png')}}" class="quote" alt="Our vision is to lead the elevator industry by providing smart, sustainable, and user-centered vertical transportation solutions ">
+                                            <img src="{{asset('images/section/quote.png')}}" class="quote" alt="Our vision is to lead the elevator industry by providing smart, sustainable, and user-centered vertical transportation solutions ">
                                         </div>
                                         <div class="inner">
                                             <p>{!! $sec->description2 !!}</p>
@@ -215,10 +215,10 @@
                         <div class="row section-five-inner">
 
                             <div class="col-xxl-3 col-xl-4 col-lg-6 col-md-12 col-sm-12 col-12">
-                                <img src="{{asset('front/images/section/sec5-bgleft.png')}}" alt="1st Trademark™ Registered® Lift Brand in Bangladesh" class="sec5-bgleft">
+                                <img src="{{asset('images/section/sec5-bgleft.png')}}" alt="1st Trademark™ Registered® Lift Brand in Bangladesh" class="sec5-bgleft">
                             </div>
                             <div class="col-xxl-3 col-xl-4 col-lg-6 col-md-8 col-sm-12 col-12">
-                                <img src="{{asset('front/images/section/sec5-bgright.png')}}" alt="1st Trademark™ Registered® Lift Brand in Bangladesh" class="sec5-bgright float-end">
+                                <img src="{{asset('images/section/sec5-bgright.png')}}" alt="1st Trademark™ Registered® Lift Brand in Bangladesh" class="sec5-bgright float-end">
                             </div>
 
                             <div class="pline-content position-absolute my-2">
@@ -237,12 +237,12 @@
                                             </div>
                                         </div>
                                         <div class="pline-item-icon mb-4">
-                                            <img src="{{asset('front/images/section/icon-elevators.png')}}" class="img-fluid rounded-top" alt="Elevators">
+                                            <img src="{{asset('images/section/icon-elevators.png')}}" class="img-fluid rounded-top" alt="Elevators">
                                         </div>
                                     </div>
                                     <div class="col-xl-1 col-lg-2 col-md-3 col-6">
                                         <div class="pline-item-icon mb-4">
-                                            <img src="{{asset('front/images/section/icon-home-elevators.png')}}" class="img-fluid rounded-top" alt="Home Elevator">
+                                            <img src="{{asset('images/section/icon-home-elevators.png')}}" class="img-fluid rounded-top" alt="Home Elevator">
                                         </div>
                                         <div class="pline-item-content-up mb-4">
                                             <h5>Home Elevator</h5>
@@ -257,12 +257,12 @@
                                             </div>
                                         </div>
                                         <div class="pline-item-icon mb-4">
-                                            <img src="{{asset('front/images/section/icon-hospital-elevator.png')}}" class="img-fluid rounded-top" alt="Hospital Elevator">
+                                            <img src="{{asset('images/section/icon-hospital-elevator.png')}}" class="img-fluid rounded-top" alt="Hospital Elevator">
                                         </div>
                                     </div>
                                     <div class="col-xl-1 col-lg-2 col-md-3 col-6">
                                         <div class="pline-item-icon mb-4">
-                                            <img src="{{asset('front/images/section/icon-passenger-elevator.png')}}" class="img-fluid rounded-top" alt="Passenger Elevator">
+                                            <img src="{{asset('images/section/icon-passenger-elevator.png')}}" class="img-fluid rounded-top" alt="Passenger Elevator">
                                         </div>
                                         <div class="pline-item-content-up mb-4">
                                             <h5>Passenger Elevator</h5>
@@ -277,12 +277,12 @@
                                             </div>
                                         </div>
                                         <div class="pline-item-icon mb-4">
-                                            <img src="{{asset('front/images/section/icon-car-elevator.png')}}" class="img-fluid rounded-top" alt="Car Elevator">
+                                            <img src="{{asset('images/section/icon-car-elevator.png')}}" class="img-fluid rounded-top" alt="Car Elevator">
                                         </div>
                                     </div>
                                     <div class="col-xl-1 col-lg-2 col-md-3 col-6">
                                         <div class="pline-item-icon mb-4">
-                                            <img src="{{asset('front/images/section/icon-escalator.png')}}" class="img-fluid rounded-top" alt="Escalator">
+                                            <img src="{{asset('images/section/icon-escalator.png')}}" class="img-fluid rounded-top" alt="Escalator">
                                         </div>
                                         <div class="pline-item-content-up mb-4">
                                             <h5>Escalator</h5>
@@ -297,12 +297,12 @@
                                             </div>
                                         </div>
                                         <div class="pline-item-icon mb-4">
-                                            <img src="{{asset('front/images/section/icon-observation.png')}}" class="img-fluid rounded-top" alt="Observation Elevator">
+                                            <img src="{{asset('images/section/icon-observation.png')}}" class="img-fluid rounded-top" alt="Observation Elevator">
                                         </div>
                                     </div>
                                     <div class="col-xl-1 col-lg-2 col-md-3 col-6">
                                         <div class="pline-item-icon mb-4">
-                                            <img src="{{asset('front/images/section/icon-freight-elevator.png')}}" class="img-fluid rounded-top" alt="Freight Elevator<">
+                                            <img src="{{asset('images/section/icon-freight-elevator.png')}}" class="img-fluid rounded-top" alt="Freight Elevator<">
                                         </div>
                                         <div class="pline-item-content-up mb-4">
                                             <h5>Freight Elevator</h5>
@@ -317,7 +317,7 @@
                                             </div>
                                         </div>
                                         <div class="pline-item-icon mb-4">
-                                            <img src="{{asset('front/images/section/icon-dumbwaiter.png')}}" class="img-fluid rounded-top" alt="Dumb Waiter">
+                                            <img src="{{asset('images/section/icon-dumbwaiter.png')}}" class="img-fluid rounded-top" alt="Dumb Waiter">
                                         </div>
                                     </div>
                                 </div>
@@ -384,19 +384,19 @@
                             <h1>{{ $sec->section_name }}</h1>
                         </div>
                         <div class="inner-bg">
-                            <img src="{{asset('front/images/section/tm-bg.png')}}" alt="1st Trademark™ Registered® Lift Brand in Bangladesh" class="tm-bg">
+                            <img src="{{asset('images/section/tm-bg.png')}}" alt="1st Trademark™ Registered® Lift Brand in Bangladesh" class="tm-bg">
                         </div>
                         <div class="row section-six-inner">
                             <div class="col-xl-6 col-lg-6 col-md-6">
                                 <div class="flag-tm-left">
-                                    <img src="{{asset('front/images/section/bd-flag.png')}}" alt="1st Trademark™ Registered® Lift Brand in Bangladesh" class="bd-flag animate-5">
-                                    <img src="{{asset('front/images/section/tm-bd.png')}}" alt="1st Trademark™ Registered® Lift Brand in Bangladesh" class="tm-bd">
+                                    <img src="{{asset('images/section/bd-flag.png')}}" alt="1st Trademark™ Registered® Lift Brand in Bangladesh" class="bd-flag animate-5">
+                                    <img src="{{asset('images/section/tm-bd.png')}}" alt="1st Trademark™ Registered® Lift Brand in Bangladesh" class="tm-bd">
                                 </div>
                             </div>
                             <div class="col-xl-6 col-lg-6 col-md-6">
                                 <div class="flag-tm-right">
-                                    <img src="{{asset('front/images/section/tm-cn.png')}}" alt="1st Trademark™ Registered® Bangladeshi Lift Brand in China" class="tm-cn">
-                                    <img src="{{asset('front/images/section/cn-flag.png')}}" alt="1st Trademark™ Registered® Bangladeshi Lift Brand in China" class="cn-flag animate-6">
+                                    <img src="{{asset('images/section/tm-cn.png')}}" alt="1st Trademark™ Registered® Bangladeshi Lift Brand in China" class="tm-cn">
+                                    <img src="{{asset('images/section/cn-flag.png')}}" alt="1st Trademark™ Registered® Bangladeshi Lift Brand in China" class="cn-flag animate-6">
                                 </div>
 
                             </div>
@@ -454,10 +454,10 @@
                                 <h1>{{ $sec->section_name }}</h1>
                             </div>
                             <div class="portfolio-bg">
-                                <img src="{{asset('front/images/section/portfolio-bd-left.png')}}" alt="Latest Products" class="portfolio-bd-left">
+                                <img src="{{asset('images/section/portfolio-bd-left.png')}}" alt="Latest Products" class="portfolio-bd-left">
                             </div>
                             <div class="portfolio-bg">
-                                <img src="{{asset('front/images/section/portfolio-bd-rignt.png')}}" alt="Latest Products" class="portfolio-bd-rignt">
+                                <img src="{{asset('images/section/portfolio-bd-rignt.png')}}" alt="Latest Products" class="portfolio-bd-rignt">
                             </div>
                             <div class="row feature-product-inner justify-content-center">
                                 @foreach($products as $product)
@@ -492,7 +492,7 @@
             <!-- Team Start -->
                 <div class="section9">
                     <div class="team-bg-item">
-                        <img src="{{asset('front/images/section/team-bg.png')}}" alt="Our TEAM" class="team-bg">
+                        <img src="{{asset('images/section/team-bg.png')}}" alt="Our TEAM" class="team-bg">
                     </div>
                     <div class="container-fluid">
                         <div class="team-section my-5">

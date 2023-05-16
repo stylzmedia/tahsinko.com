@@ -30,10 +30,10 @@ class Category extends Model
             return $this->Media->paths;
         }else{
             return [
-                'original' => asset('img/no-image.png'),
-                'small' => asset('img/no-image.png'),
-                'medium' => asset('img/no-image.png'),
-                'large' => asset('img/no-image.png')
+                'original' => asset('images/no-image.png'),
+                'small' => asset('images/no-image.png'),
+                'medium' => asset('images/no-image.png'),
+                'large' => asset('images/no-image.png')
             ];
         }
     }

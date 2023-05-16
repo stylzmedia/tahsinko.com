@@ -132,7 +132,7 @@
                             </div>
                         </div>
                         <div class="col-md-4 text-center" v-if="slider_type===0">
-                            <img class="img-thumbnail uploaded_img" style="width: 70%" :src="service.image?app_url+service.image:'/img/default-img.png'" alt="">
+                            <img class="img-thumbnail uploaded_img" style="width: 70%" :src="service.image?app_url+service.image:'/images/default-img.png'" alt="">
 
                             <div class="form-group">
                                 <label><b>Image*</b></label>

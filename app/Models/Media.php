@@ -19,17 +19,17 @@ class Media extends Model
         if(file_exists(public_path("uploads/$year_month/small_$file_name"))){
             $output['small'] = asset("uploads/$year_month/small_$file_name");
         }else{
-            $output['small'] = asset('img/no-image.png');
+            $output['small'] = asset('images/no-image.png');
         }
         if(file_exists(public_path("uploads/$year_month/medium_$file_name"))){
             $output['medium'] = asset("uploads/$year_month/medium_$file_name");
         }else{
-            $output['medium'] = asset('img/no-image.png');
+            $output['medium'] = asset('images/no-image.png');
         }
         if(file_exists(public_path("uploads/$year_month/large_$file_name"))){
             $output['large'] = asset("uploads/$year_month/large_$file_name");
         }else{
-            $output['large'] = asset('img/no-image.png');
+            $output['large'] = asset('images/no-image.png');
         }
 
         return $output;

@@ -69,10 +69,10 @@
                                                         <i class="ri-archive-line d-block fs-20 mb-1"></i>
                                                         Typography
                                                     </a>
-                                                    <a class="nav-link" id="v-pills-footerdescription-tab" data-bs-toggle="pill" href="#v-pills-footerdescription" role="tab" aria-controls="v-pills-footerdescription" aria-selected="false">
+                                                    {{-- <a class="nav-link" id="v-pills-footerdescription-tab" data-bs-toggle="pill" href="#v-pills-footerdescription" role="tab" aria-controls="v-pills-footerdescription" aria-selected="false">
                                                         <i class="ri-file-text-line d-block fs-20 mb-1"></i>
                                                         Footer Description
-                                                    </a>
+                                                    </a> --}}
                                                 </div>
                                             </div>
 
@@ -177,7 +177,7 @@
                                                             <div class="row">
                                                                 <div class="col-md-3 text-center">
                                                                     <div class="img_group">
-                                                                        <img class="img-thumbnail uploaded_img_dark" style="width: 70%; height: auto;" src="{{$settings_g['dark_logo'] ?? asset('img/default-img.png')}}">
+                                                                        <img class="img-thumbnail uploaded_img_dark" style="width: 70%; height: auto;" src="{{$settings_g['dark_logo'] ?? asset('images/default-img.png')}}">
 
                                                                         <div class="form-group">
                                                                             <label><b>Dark Theme Logo </b></label>
@@ -190,7 +190,7 @@
                                                                 </div>
                                                                 <div class="col-md-3 text-center">
                                                                     <div class="img_group">
-                                                                        <img class="img-thumbnail uploaded_img" style="width: 70%; height: auto;" src="{{$settings_g['logo'] ?? asset('img/default-img.png')}}">
+                                                                        <img class="img-thumbnail uploaded_img" style="width: 70%; height: auto;" src="{{$settings_g['logo'] ?? asset('images/default-img.png')}}">
 
                                                                         <div class="form-group">
                                                                             <label><b>Light Theme Logo</b></label>
@@ -204,7 +204,7 @@
 
                                                                 <div class="col-md-3 text-center">
                                                                     <div class="img_group">
-                                                                        <img class="img-thumbnail uploaded_img_favicon" style="width: 70%;" src="{{$settings_g['favicon'] ?? asset('img/default-img.png')}}">
+                                                                        <img class="img-thumbnail uploaded_img_favicon" style="width: 70%;" src="{{$settings_g['favicon'] ?? asset('images/default-img.png')}}">
 
                                                                         <div class="form-group">
                                                                             <label><b>Favicon</b></label>
@@ -218,7 +218,7 @@
 
                                                                 <div class="col-md-3 text-center">
                                                                     <div class="img_group">
-                                                                        <img class="img-thumbnail uploaded_img_og" style="width: 70%;" src="{{$settings_g['og_image'] ?? asset('img/default-img.png')}}">
+                                                                        <img class="img-thumbnail uploaded_img_og" style="width: 70%;" src="{{$settings_g['og_image'] ?? asset('images/default-img.png')}}">
 
                                                                         <div class="form-group">
                                                                             <label><b>OG Image</b></label>
@@ -326,7 +326,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="tab-pane fade" id="v-pills-footerdescription" role="tabpanel" aria-labelledby="v-pills-footerdescription-tab">
+                                                <!div class="tab-pane fade" id="v-pills-footerdescription" role="tabpanel" aria-labelledby="v-pills-footerdescription-tab">
                                                     <div class="form-group row">
 
                                                         <div class="col-sm-8">
@@ -338,7 +338,7 @@
                                                         </div>
                                                     </div>
 
-                                                </div>
+                                                </!div>
                                             </div>
                                             </div>
                                         </div>

@@ -28,16 +28,17 @@ class Gallery extends Model
     }
 
     public function getImgPathsAttribute(){
+        $year_month = $this->year . '/' . $this->month;
         $file_name = $this->image;
         $output = array();
 
         if(isset($this->GalleryItems[0])){
             return $this->GalleryItems[0]->img_paths;
         }else{
-            $output['small'] = asset('img/no-image.png');
-            $output['medium'] = asset('img/no-image.png');
-            $output['large'] = asset("uploads/gallery/large/$file_name");
-            $output['original'] = asset("uploads/gallery/$file_name");
+            $output['small'] = asset('images/no-image.png');
+            $output['medium'] = asset('images/no-image.png');
+            $output['large'] = asset("uploads/gallery/$year_month/$file_name");
+            $output['original'] = asset("uploads/gallery/$year_month/$file_name");
         }
 
         return $output;

@@ -77,7 +77,7 @@
                     </div>
                     <div class="card border-light mt-3 shadow">
                         <div class="card-body">
-                            <section-update-main-component :home_section="{{ $homeSection }}" image_path="{{ $homeSection->img_paths['original'] }}" image_path3="{{ $homeSection->img_paths3['original'] }}" image_path2="{{ $homeSection->img_paths2['original'] }}" app_url="{{env('APP_URL')}}"></section-update-main-component>
+                            <section-update-main-component :home_section="{{ $homeSection }}" image_path="{{ $homeSection->img_paths['original'] }}" app_url="{{env('APP_URL')}}"></section-update-main-component>
                         </div>
                     </div>
                 </div>
