@@ -337,6 +337,14 @@ Default btn Style End
 
 
 /* CEO Section Start */
+.ceo-img .tareq {
+    position: absolute;
+    z-index: 1;
+    margin-top: -77px;
+    height: 500px;
+    left: 200px;
+}
+
 .section-two {
     background: #ff0000;
 }
@@ -347,6 +355,7 @@ Default btn Style End
 
 .section-two-inner {
     position: relative;
+    overflow: hidden;
 }
 .section-two-inner .sec2-bg-left {
     width: 100%;
@@ -361,12 +370,12 @@ Default btn Style End
     height: 100%;
 }
 
-.section-two-inner .tareq {
+/* .section-two-inner .tareq {
     position: absolute;
     bottom: 0%;
     left: 15%;
     height: 500px;
-}
+} */
 
 .section-two .section-content {
     display: flex;
@@ -388,6 +397,7 @@ Default btn Style End
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
+    overflow: hidden;
 }
 
 .section-three-mission .title {
@@ -498,6 +508,7 @@ Default btn Style End
 
 .section-five {
     position: relative;
+    overflow: hidden;
 }
 
 .section-five-inner .sec5-bgleft {
@@ -979,6 +990,7 @@ Portfolio Area
 .portfolio-area {
     padding-top: 50px;
     position: relative;
+    overflow: hidden;
   }
 
   .portfolio-bg .portfolio-bd-left {

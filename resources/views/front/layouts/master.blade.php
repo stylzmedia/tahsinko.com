@@ -40,8 +40,7 @@
     <link rel="stylesheet" href="{{asset('front/assets/css/magnific-popup.css')}}">
 
     <!-- Animate Min CSS -->
-    <link rel="stylesheet" href="{{asset('front/assets/css/animate.min.css')}}">
-    {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/> --}}
+    <link rel="stylesheet" href="{{asset('plugins/animate.css@4.1.1/animate.min.css')}}">
 
     <!-- Meanmenu CSS -->
     <link rel="stylesheet" href="{{asset('front/assets/css/meanmenu.css')}}">

@@ -109,13 +109,15 @@
 
                 @elseif($sec->section_design_type_id==2)
             <!-- CEO Start -->
-                <div class="section-two">
-                    <div class="container-fluid">
+            <div class="ceo-img">
+                <img src="{{asset('images/section/sec2-ceo.png')}}" alt="TAHSINKO® CEO Tarequl Islam Shopon" class="tareq move-3">
+            </div>
+            <div class="section-two">
+                    <div class="container-fluid ">
                         <div class="section-two-inner">
                             <div class="row">
                                 <div class="col-lg-4 col-md-4 m-0">
                                     <img src="{{asset('images/section/sec2-bg-left.png')}}" class="sec2-bg-left" alt="1st Trademark™ Registered® Lift Brand in Bangladesh">
-                                    <img src="{{asset('images/section/sec2-ceo.png')}}" alt="TAHSINKO® CEO Tarequl Islam Shopon" class="tareq move-3">
                                 </div>
                                 <div class="col-lg-8 col-md-8">
                                     <img src="{{asset('images/section/sec2-artwork.png')}}" class="sec2-artwork move-1" alt="1st Trademark™ Registered® Bangladeshi Lift Brand in China">
