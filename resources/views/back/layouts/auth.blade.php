@@ -31,9 +31,12 @@
 <body>
   <div class="main">
     <div class="container">
-
-        <div class="text-center pt-5">
-            <img class="pt-5" src="{{$settings_g['logo'] ?? ''}}" alt="{{$settings_g['title'] ?? ''}}">
+        <div class="row justify-content-center">
+            <div class="col-4">
+                <div class="text-center pt-5">
+                    <img class="img-fluid pt-5" src="{{$settings_g['logo'] ?? asset('images/tahsinko-lift-n-escalator.png')}}" alt="{{$settings_g['title'] ?? ''}}">
+                </div>
+            </div>
         </div>
 
         @yield('master')
@@ -46,7 +49,6 @@
 
   <script src="{{asset('back/js/vendor/modernizr-3.11.2.min.js')}}"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-  <!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script> -->
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
   <script src="{{asset('back/js/plugins.js')}}"></script>
   <script src="{{asset('back/js/main.js')}}"></script>
