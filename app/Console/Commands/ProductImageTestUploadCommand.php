@@ -35,6 +35,12 @@ class ProductImageTestUploadCommand extends Command
         $originalImageFiles = scandir($originalImageFolder);
         $originalImageFiles = array_diff($originalImageFiles, array('.', '..'));
 
+        // Create the uploads directory if it doesn't exist
+        $uploadsPath = public_path('uploads/2023/05/');
+        if (!is_dir($uploadsPath)) {
+            mkdir($uploadsPath, 0755, true);
+        }
+
         foreach ($originalImageFiles as $filename) {
             $productId = (int) substr($filename, 6, -4);
 
