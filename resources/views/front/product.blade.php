@@ -1,6 +1,6 @@
 @extends('front.layouts.master')
 @php
-    $products = \App\Models\Product::where(['status'=>1])->orderBy('position','ASC')->paginate(12);
+    $products = \App\Models\Product::where(['status'=>1])->orderBy('position','ASC')->paginate(8);
 @endphp
 @section('head')
         @include('meta::manager', [
@@ -14,9 +14,9 @@
         .header {
             position: relative;
         }
-        .cart-image img {
+        /* .cart-image img {
             height: 425px;
-        }
+        } */
     </style>
 @endsection
 
@@ -34,20 +34,19 @@
                 </div>
                 <div class="row justify-content-center">
                     @foreach($products as $product)
-                        <div class="col-lg-3 col-sm-6 mb-4">
-                            <div class="cart-box">
-                                <div class="cart-image">
-                                    <img src="{{$product->img_paths['original']}}"/>
-                                    <a class="text-center" href=" {{ route('product.single', $product->name) }}">
-                                        {{-- <a class="text-center" href="{{ route('product.single', $product->name) }}"> --}}
+                        <div class="col-lg-6 col-sm-6 mb-4">
+                            <div class="cart-box shadow rounded p-4">
+                                <div class="cart-image ">
+                                    <img src="{{$product->img_paths['original']}}" class="img-fluid"/>
+                                    {{-- <a class="text-center" href=" {{ route('product.single', $product->name) }}">
                                         <div class="feature-detail">
                                             <div class="detail-btn">Details</div> <i class="fa fa-link" ></i>
                                         </div>
-                                    </a>
+                                    </a> --}}
                                 </div>
-                                <div class="title-bar text-uppercase">
+                                {{-- <div class="title-bar text-uppercase">
                                     {{ $product->name }}
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                     @endforeach
