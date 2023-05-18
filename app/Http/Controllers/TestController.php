@@ -10,6 +10,7 @@ class TestController extends Controller
 {
     public function cacheClear(){
         Artisan::call('cache:clear');
+        Artisan::call('config:clear');
         Artisan::call('route:clear');
 
         Session::flash('success', 'Cache, Config, View, Route Clear successfully!');

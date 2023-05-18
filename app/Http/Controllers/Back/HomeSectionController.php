@@ -51,7 +51,7 @@ class HomeSectionController extends Controller
         $destination = $path . '/' . $uploadedFileName;
         $home_section += [
             'image'=> $uploadedFileName,
-            'image_path' => 'uploads/section',
+            'image_path' => 'section',
         ];
         $uploadedFile->move($path, $destination);
     }
@@ -117,7 +117,7 @@ class HomeSectionController extends Controller
 
         $home_section += [
             'image'=> $uploadedFileName,
-            'image_path' => 'uploads/section/' . $uploadedFileName,
+            'image_path' => 'section/' . $uploadedFileName,
         ];
     }
 
