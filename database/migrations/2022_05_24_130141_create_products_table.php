@@ -26,6 +26,13 @@ class CreateProductsTable extends Migration
             $table->string('pdf_file');
             $table->tinyInteger('status');
             $table->string('meta_title')->nullable();
+
+            $table->string('ceiling')->nullable();
+            $table->string('cabin_wall')->nullable();
+            $table->string('handrail')->nullable();
+            $table->string('floor')->nullable();
+            $table->string('tag')->nullable();
+
             $table->text('meta_description')->nullable();
             $table->text('meta_tags')->nullable();
             $table->timestamps();

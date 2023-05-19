@@ -41,8 +41,20 @@ class ProductImageTestUploadCommand extends Command
             mkdir($uploadsPath, 0755, true);
         }
 
-        foreach ($originalImageFiles as $filename) {
-            $productId = (int) substr($filename, 6, -4);
+        $productDetails = Storage::disk('public')->get('product-img/products-details.txt');
+
+        $productDetails = explode("\n\n", $productDetails);
+
+        foreach ($originalImageFiles as $index => $filename) {
+            $productId = $index + 1;
+
+            // Check if the file is an image
+            $imageExtensions = ['jpg', 'jpeg', 'png', 'gif', 'bmp', 'webp'];
+            $extension = strtolower(pathinfo($filename, PATHINFO_EXTENSION));
+            if (!in_array($extension, $imageExtensions)) {
+                $this->error("Unsupported image type: $filename");
+                continue; // Skip to the next iteration
+            }
 
             // Create image file paths
             $originalImagePath = public_path('product-img/' . $filename);
@@ -78,17 +90,27 @@ class ProductImageTestUploadCommand extends Command
             $mediaId = DB::table('media')->insertGetId([
                 'id' => $nextId,
                 'file_name' => $filename,
-                'year' => 2023,
-                'month' => 05,
-                'created_at' => now()
+                'year' => '2023',
+                'month' => '05',
+                'created_at' => now(),
+                'updated_at' => now(),
             ]);
 
-            // Get the filename without the extension
-            $filenameWithoutExtension = pathinfo($filename, PATHINFO_FILENAME);
+            // Get the product details for the current index
+            $productDetailIndex = $index % count($productDetails);
+            $productDetail = explode("\n", $productDetails[$productDetailIndex]);
+
+            // Extract product details
+            $productName = $productDetail[0];
+            $ceiling = trim(str_replace('Ceiling:', '', $productDetail[1]));
+            $cabinWall = trim(str_replace('Cabin Wall:', '', $productDetail[2]));
+            $handrail = trim(str_replace('Handrail:', '', $productDetail[3]));
+            $floor = trim(str_replace('Floor:', '', $productDetail[4]));
+            $tag = trim(str_replace('Tag:', '', $productDetail[5]));
 
             // Insert product record
-            DB::table('products')->insert([
-                'name' => $filenameWithoutExtension,
+            $productRecord = [
+                'name' => pathinfo($filename, PATHINFO_FILENAME),
                 'feature_type' => '0',
                 'freature_image' => $filename,
                 'image_path' => '2023/05',
@@ -96,23 +118,25 @@ class ProductImageTestUploadCommand extends Command
                 'position' => '2000',
                 'status' => '1',
                 'created_at' => now(),
+                'ceiling' => $ceiling,
+                'cabin_wall' => $cabinWall,
+                'handrail' => $handrail,
+                'floor' => $floor,
+                'tag' => $tag
+            ];
+
+            DB::table('products')->insert($productRecord);
+
+            // Insert category_product record
+            $categoryId = 1; // Replace with the actual category ID
+            DB::table('category_product')->insert([
+                'category_id' => $categoryId,
+                'product_id' => $productId
             ]);
 
-            // Update product record with media ID
-            DB::table('products')
-                ->where('id', $productId)
-                ->update(['media_id' => $mediaId]);
+            $this->info("Product image uploaded and inserted into the database: $filename");
         }
 
-        // Insert category_product records
-        $categoryId = 15;
-        DB::table('category_product')->insertUsing(['category_id', 'product_id'], function ($query) use ($categoryId) {
-            $query->select([DB::raw("$categoryId as category_id"), 'id as product_id'])
-            ->from('products')
-            ->where('status', 1);
-            });
-            $this->info('Product images uploaded successfully!');
-            return 0;
-        }
+        return 0;
+    }
 }
-
