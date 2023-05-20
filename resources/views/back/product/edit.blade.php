@@ -64,6 +64,53 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="card-body">
+                                        <div class="row live-preview">
+                                            <div class="col-lg-12">
+                                                <h5 class="d-inline-block">Specification</h5>
+                                                <button class="btn btn-success btn-sm float-right new_spc_btn" type="button"><i class="fas fa-plus"></i> New Field</button>
+
+                                                <div class="spc_inputs">
+                                                    {{-- @foreach ($user->UserKids as $kid) --}}
+                                                        <div class="row">
+                                                            <div class="col-md-6">
+                                                                <div class="form-group">
+                                                                    <label><b>Title*</b></label>
+
+                                                                    <div class="input-group">
+                                                                        <div class="input-group-prepend">
+                                                                        <button type="button" class="btn btn-danger remove_spc_field"><i class="ri-delete-bin-5-line"></i></button>
+                                                                        </div>
+
+                                                                        <input
+                                                                        type="text"
+                                                                        name="spc_title[]"
+                                                                        value=""
+                                                                        {{-- value="{{$kid->name}}"  --}}
+                                                                        class="form-control fix-rounded-right" placeholder="Title"
+                                                                        required>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <div class="form-group">
+                                                                    <label><b>Value*</b></label>
+
+                                                                    <input
+                                                                    type="text"
+                                                                    class="form-control"
+                                                                    name="spc_value[]"
+                                                                    placeholder="Value"
+                                                                    {{-- value="{{$kid->dob}}" required> --}}
+                                                                    value="" required>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    {{-- @endforeach --}}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
@@ -204,7 +251,7 @@
                     <!-- Create form end -->
 
                     {{-- Product Specification start --}}
-                    <div class="row">
+                    {{-- <div class="row">
                         <div class="col-md-8">
                             <div class="card border-light mt-3 shadow">
                                 <div class="card-header">
@@ -285,11 +332,11 @@
                                 </form>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                     {{-- Product Specification End --}}
 
                     {{-- product specification value start --}}
-                    <div class="row">
+                    {{-- <div class="row">
                         <div class="col-md-8">
                             <div class="card border-light mt-3 shadow">
                                 <div class="card-header">
@@ -383,7 +430,7 @@
                                 </form>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                     {{-- product specification value end --}}
 
                 </div>
@@ -461,6 +508,38 @@
             }
         });
 
+    </script>
+    <script>
+    $(document).on('click', '.new_spc_btn', function(){
+        let spc_html = '<div class="row">'
+                        + '<div class="col-md-6">'
+                            + '<div class="form-group">'
+                                + '<label><b>Title*</b></label>'
+
+                                + '<div class="input-group">'
+                                    + '<div class="input-group-prepend">'
+                                        + '<button type="button" class="btn btn-danger remove_spc_field"><i class="ri-delete-bin-5-line"></i></button>'
+                                    + '</div>'
+
+                                    + '<input type="text" class="form-control fix-rounded-right" name="spc_title[]" placeholder="Title" required>'
+                                + '</div>'
+                            + '</div>'
+                        + '</div>'
+                        + '<div class="col-md-6">'
+                            + '<div class="form-group">'
+                                + '<label><b>Value*</b></label>'
+
+                                + '<input type="text" class="form-control" name="spc_value[]" placeholder="Value" required>'
+                            + '</div>'
+                        + '</div>'
+                    + '</div>';
+
+        $('.spc_inputs').append(spc_html);
+    });
+
+    $(document).on('click', '.remove_spc_field', function(){
+        $(this).closest('.row').remove();
+    });
     </script>
 
 @endsection

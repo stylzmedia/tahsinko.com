@@ -41,7 +41,6 @@
                                     <div class="card-body">
                                         <div class="row live-preview">
                                             <div class="col-lg-12">
-
                                                 <div class="form-group">
                                                     <label for="name" class="form-label">Name <b
                                                             style="color: red;">*</b></label>
@@ -56,7 +55,36 @@
                                                     <textarea class="form-control" id="editor" placeholder="Enter the Description"
                                                         name="description">{{ old('description') }}</textarea>
                                                 </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row live-preview">
+                                            <div class="col-lg-12">
+                                                <h5 class="d-inline-block">Specification</h5>
+                                                <button class="btn btn-success btn-sm float-right new_spc_btn" type="button"><i class="ri-add-line"></i> New Field</button>
+                                                <div class="spc_inputs">
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label><b>Title</b></label>
+                                                                <div class="input-group">
+                                                                    <div class="input-group-prepend">
+                                                                      <button type="button" class="btn btn-danger remove_spc_field"><i class="ri-delete-bin-5-line"></i></button>
+                                                                    </div>
 
+                                                                    <input type="text" name="spc_title[]" class="form-control fix-rounded-right" placeholder="Title">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label><b>Value</b></label>
+                                                                <input type="text" class="form-control" name="spc_value[]" placeholder="Title">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -249,4 +277,39 @@
         });
 
     </script>
+
+
+<script>
+$(document).on('click', '.new_spc_btn', function(){
+    let spc_html = '<div class="row">'
+                    + '<div class="col-md-6">'
+                        + '<div class="form-group">'
+                            + '<label><b>Title*</b></label>'
+
+                            + '<div class="input-group">'
+                                + '<div class="input-group-prepend">'
+                                    + '<button type="button" class="btn btn-danger remove_spc_field"><i class="ri-delete-bin-5-line"></i></button>'
+                                + '</div>'
+
+                                + '<input type="text" class="form-control fix-rounded-right" name="spc_title[]" placeholder="Title" required>'
+                            + '</div>'
+                        + '</div>'
+                    + '</div>'
+                    + '<div class="col-md-6">'
+                        + '<div class="form-group">'
+                            + '<label><b>Value*</b></label>'
+
+                            + '<input type="text" class="form-control" name="spc_value[]" placeholder="Value" required>'
+                        + '</div>'
+                    + '</div>'
+                + '</div>';
+
+    $('.spc_inputs').append(spc_html);
+});
+
+$(document).on('click', '.remove_spc_field', function(){
+    $(this).closest('.row').remove();
+});
+</script>
+
 @endsection
