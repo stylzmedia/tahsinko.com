@@ -1,3 +1,12 @@
+<style>
+    @media only screen and (max-width: 1024px) {
+            .inner-banner .inner-image {
+            height: 100%;
+        }
+    }
+
+</style>
+
 <!-- Breadcrumb -->
     @php
     if(empty($page->breadcrumb_background)){
@@ -18,7 +27,7 @@
         <div class="container">
             <div class="inner-title text-end">
                 <h3>@if(empty($page->breadcrumb_title)){{$page->title}}@else{{$page->title}}@endif</h3>
-                <ul>
+                <ul class="d-none d-sm-block">
                     <li>
                         <i class="flaticon-fireplace"></i>
                     </li>

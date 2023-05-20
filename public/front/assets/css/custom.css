@@ -398,6 +398,7 @@ Default btn Style End
     background-position: center center;
     background-size: cover;
     overflow: hidden;
+    background-attachment: fixed;
 }
 
 .section-three-mission .title {
@@ -715,6 +716,15 @@ Default btn Style End
     letter-spacing: 2px;
 }
 
+.inner-bg {
+    background-image: url(http://127.0.0.1:8000/images/section/tm-bg.png);
+    height: 450px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    overflow: hidden;
+    background-attachment: fixed;
+}
 
 .inner-bg .tm-bg {
     position: relative;

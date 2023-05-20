@@ -21,6 +21,33 @@
             font-weight: 600;
             font-size: 20px;
         }
+        .product-description {
+            font-size: 14px;
+        }
+        @media only screen and (min-width: 1800px) {
+                .product-description {
+                font-size: 20px;
+            }
+        }
+        @media only screen and (min-width: 1440px) {
+                .product-description {
+                font-size: 13px;
+            }
+        }
+        @media only screen and (max-width: 768px) {
+                .product-description {
+                font-size: 16px;
+            }
+        }
+        @media only screen and (max-width: 426px) {
+                .product-description {
+                font-size: 16px;
+
+            }
+        }
+
+
+
     </style>
 @endsection
 
@@ -40,10 +67,10 @@
                     <div class="col-12">
                         <div class="row justify-content-center">
                             @foreach($products as $product)
-                                <div class="col-lg-6 col-sm-6 mb-4">
+                                <div class="col-lg-6 col-sm-12 mb-4">
                                     <div class="cart-box shadow rounded p-4">
                                         <div class="row">
-                                            <div class="col-7">
+                                            <div class="col-lg-7 col-sm-7 col-12">
                                                 <div class="title-bar text-uppercase">
                                                     {{ $product->name }}
                                                 </div>
@@ -85,7 +112,7 @@
                                                     </div>
                                                 </a> --}}
                                             </div>
-                                            <div class="col-5">
+                                            <div class="col-lg-5 col-sm-5 col-12">
                                                 <div class="cart-image ">
                                                     <img src="{{$product->img_paths['original']}}" class="img-fluid"/>
                                                 </div>

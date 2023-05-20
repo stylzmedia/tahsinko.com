@@ -1,98 +1,4 @@
-@media only screen and (max-width: 320px){
 
-    /* Main Slider Area CSS */
-    .carousel-inner {
-        height: 100%;
-    }
-    .carousel-item.active {
-        margin-top: 55px;
-    }
-    .carousel-inner {
-        height: 185px;
-    }
-    .section-two-inner .tareq {
-        height: 360px !important;
-    }
-    .counter-item-inner.text-center h2{
-        font-size: 28px;
-    }
-
-    .section-two-inner .sec2-bg-left {
-        height: 323px !important;
-    }
-
-    .section-five .section-five-inner {
-        height: 1760px;
-    }
-
-    .section-five .pline-item-content-down {
-        height: 136px;
-      }
-    .section-five  .pline-item-content-up, .pline-item-icon{
-        height: 136px;
-      }
-
-    .pline-item-content-down h5, .pline-item-content-up h5 {
-        font-size: 20px;
-    }
-
-    .pline-content h2 {
-        font-size: 15px !important;
-    }
-    .pline-title::before {
-        right: 28% !important;
-        width: 210px !important;
-    }
-    .pline-title::after {
-        left: -142px !important;
-        width: 220px !important;
-        top: 91px !important;
-    }
-    .pline-title h2::after {
-        right: 19% !important;
-        bottom: -10px !important;
-    }
-    .pline-title h2::before {
-        left: 17% !important;
-        top: -5px;
-    }
-
-    .feature-product .card {
-        height: 440px;
-        margin-bottom: 10px;
-    }
-
-
-    .imgBox .product {
-        width: 85%;
-    }
-
-    .team-member-name {
-        width: 265px;
-    }
-
-    .portfolio-item a img {
-        height: 100% !important;
-    }
-    .section9 .hexagon-inner {
-        padding: 123px 130px;
-    }
-    .team-member-details {
-        left: -5px;
-    }
-
-}
-
-@media only screen and (max-width: 376px){
-
-    .section-two-inner .sec2-bg-left {
-        height: 350px;
-    }
-    .section-two-inner .tareq {
-        height: 391px;
-    }
-
-}
 
 @media only screen and (max-width: 575px){
 
@@ -103,7 +9,11 @@
     .carousel-item.active {
         margin-top: 55px;
     }
-
+    .ceo-img .tareq {
+        height: 475px;
+        left: 60px;
+        margin-top: 12px;
+    }
     .section-one .bg-media .moving {
         width: 30%;
         top: 10%;
@@ -258,6 +168,114 @@
         max-width: 100% !important;
         height: 100% !important;
     }
+}
+
+@media only screen and (max-width: 376px){
+
+  .section-two-inner .sec2-bg-left {
+      height: 350px;
+  }
+  .ceo-img .tareq {
+      height: 395px;
+      left: 60px;
+      margin-top: 12px;
+  }
+
+
+}
+
+@media only screen and (max-width: 320px){
+
+  /* Main Slider Area CSS */
+  .carousel-inner {
+      height: 100%;
+  }
+  .carousel-item.active {
+      margin-top: 55px;
+  }
+  .carousel-inner {
+      height: 185px;
+  }
+
+  .ceo-img .tareq {
+      position: absolute;
+      z-index: 1;
+      margin-top: 12px;
+      height: 370px;
+      left: 25px;
+  }
+
+  .section-two-inner .tareq {
+      height: 360px !important;
+  }
+  .counter-item-inner.text-center h2{
+      font-size: 28px;
+  }
+
+  .section-two-inner .sec2-bg-left {
+      height: 323px !important;
+  }
+
+  .section-five .section-five-inner {
+      height: 1760px;
+  }
+
+  .section-five .pline-item-content-down {
+      height: 136px;
+    }
+  .section-five  .pline-item-content-up, .pline-item-icon{
+      height: 136px;
+    }
+
+  .pline-item-content-down h5, .pline-item-content-up h5 {
+      font-size: 20px;
+  }
+
+  .pline-content h2 {
+      font-size: 15px !important;
+  }
+  .pline-title::before {
+      right: 28% !important;
+      width: 210px !important;
+  }
+  .pline-title::after {
+      left: -142px !important;
+      width: 220px !important;
+      top: 91px !important;
+  }
+  .pline-title h2::after {
+      right: 19% !important;
+      bottom: -10px !important;
+  }
+  .pline-title h2::before {
+      left: 17% !important;
+      top: -5px;
+  }
+
+  .feature-product .card {
+      height: 440px;
+      margin-bottom: 10px;
+  }
+
+
+  .imgBox .product {
+      width: 85%;
+  }
+
+  .team-member-name {
+      width: 265px;
+  }
+
+  .portfolio-item a img {
+      height: 100% !important;
+  }
+  .section9 .hexagon-inner {
+      padding: 123px 130px;
+  }
+  .team-member-details {
+      left: -5px;
+  }
+
 }
 
 @media only screen and (max-width: 767px) {
@@ -535,8 +553,9 @@
   /* Main Slider Area CSS End */
   /* Inner Banner */
   .inner-banner .inner-title {
-    padding-top: 120px;
-    padding-bottom: 60px;
+    padding-bottom: 36px;
+    top: 35px;
+    right: 15px;
   }
   .inner-banner .inner-title h3 {
     font-size: 20px;
@@ -620,82 +639,7 @@
     margin-left: 0;
   }
   /* About Area CSS */
-  /* Skill Area CSS */
-  .skill-content {
-    margin-top: 0px;
-    margin-bottom: 30px;
-    max-width: 100%;
-    padding: 30px 15px 10px;
-  }
-  .progressbar-area {
-    margin-top: 20px;
-  }
-  .progressbar-area .single-progressbar {
-    margin-bottom: 30px;
-  }
-  .progressbar-area .single-progressbar h3 {
-    font-size: 16px;
-  }
-  .progressbar-area .single-progressbar .progressbar-count .pn-1 {
-    right: 30%;
-  }
-  .progressbar-area .single-progressbar .progressbar-count .pc-1 {
-    right: 31%;
-  }
-  .progressbar-area .single-progressbar .progressbar-count .pn-2 {
-    right: 15%;
-  }
-  .progressbar-area .single-progressbar .progressbar-count .pc-2 {
-    right: 16%;
-  }
-  .progressbar-area .single-progressbar .progressbar-count .pn-3 {
-    right: 3%;
-  }
-  .progressbar-area .single-progressbar .progressbar-count .pc-3 {
-    right: 5%;
-  }
-  .progressbar-area .single-progressbar .progressbar-count .pn-4 {
-    right: 8%;
-  }
-  .progressbar-area .single-progressbar .progressbar-count .pc-4 {
-    right: 9%;
-  }
-  .skill-img {
-    margin-left: 0;
-    margin-bottom: 30px;
-  }
-  .skill-content-two {
-    margin-top: 0px;
-    margin-bottom: 30px;
-    max-width: 100%;
-    padding: 30px 15px 5px 15px;
-  }
-  .skill-img-2 {
-    margin-bottom: 50px;
-    margin-left: 0;
-  }
-  .skill-img-2 img {
-    height: auto;
-  }
-  /* Skill Area CSS End */
-  /* Consultation Content */
-  .consultation-content {
-    text-align: center;
-  }
-  .consultation-content .consultation-btn {
-    margin-top: 25px;
-  }
-  .consultation-play-btn {
-    float: none;
-    text-align: center;
-    margin-bottom: 30px;
-  }
-  .consultation-play-btn .video-btn {
-    width: 85px;
-    height: 85px;
-    line-height: 85px;
-  }
-  /* Consultation Content End */
+
   /* Offer Area */
   .offer-card {
     padding: 30px 20px;
@@ -1464,6 +1408,15 @@
     height: 100px;
     }
 
+      /* CEO */
+    .ceo-img .tareq {
+        position: absolute;
+        z-index: 2;
+        margin-top: 0px;
+        height: 318px;
+        left: 116px;
+    }
+
     .section-two {
         margin-top: 60px;
         position: relative;
@@ -2036,6 +1989,15 @@
   .home-slider .owl-nav .owl-next {
     right: 35%;
   }
+    /* CEO*/
+  .ceo-img .tareq {
+    margin-top: -26px;
+    height: 368px;
+    left: 200px;
+}
+.section-two .section-content {
+  font-size: 15px;
+}
   .about-area-two::before {
     width: 100%;
   }
@@ -2075,15 +2037,7 @@
   .about-counter-area .about-counter-two span {
     font-size: 15px;
   }
-  .skill-img img {
-    height: 100%;
-  }
-  .skill-content-two {
-    padding: 70px 50px;
-  }
-  .skill-img-2 img {
-    height: 850px;
-  }
+
   .counter-title h3 {
     font-size: 28px;
   }
@@ -2171,32 +2125,23 @@
     .section2 p {
       line-height: 27px;
     }
-  }
+}
 
-  @media only screen and (min-width: 1350px) {
-    .container {
-      max-width: 1140px !important;
-    }
+@media only screen and (min-width: 1350px) {
+  .container {
+    max-width: 1140px !important;
   }
+}
 
 @media only screen and (min-width: 1400px) {
   .blog-card .content {
     padding: 30px 45px;
   }
-  .offer-item {
-    padding: 50px;
+  .ceo-img .tareq {
+    height: 560px;
   }
-  .testimonials-area .owl-nav .owl-prev {
-    left: 470px;
-  }
-  .testimonials-area .owl-nav .owl-next {
-    left: 610px;
-  }
-  .skill-content {
-    padding: 70px 120px;
-  }
-  .skill-content-two {
-    padding: 70px 120px;
+  .section-two .section-content {
+    font-size: 22px;
   }
   .contact-two-form .contact-wrap-form {
     margin-left: auto;
@@ -2248,6 +2193,7 @@
   .banner-area .owl-nav .owl-next {
     right: 145px;
   }
+
   .inner-banner .inner-image {
     height: 500px;
   }
@@ -2257,8 +2203,9 @@
   .section-two-inner .sec2-bg-left {
     width: 76%;
   }
-  .section-two-inner .tareq {
-    height: 550px;
+  .ceo-img .tareq {
+    height: 536px;
+    left: 260px;
   }
 
   .section-five .animation-line::before {

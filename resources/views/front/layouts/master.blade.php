@@ -84,7 +84,7 @@
 <!-- PreLoader End -->
 
 <!-- Top Nav Start -->
-    <div class="top-navbar d-none d-sm-block" style="background-color: #FF0000">
+    <div class="top-navbar d-sm-block" style="background-color: #FF0000">
         <div class="container">
             <div class="row">
                 <div class="col-md-8 p-2  text-white">

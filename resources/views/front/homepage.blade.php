@@ -81,7 +81,7 @@
                                     <img src="{{ asset('images/section/sec1-bg.png') }}" class="sec1-bg" alt="1st Trademark™ Registered® Lift Brand in Bangladesh" >
                                 </div>
                                 <div class="section-one-content ms-5">
-                                    <div class="section-one-inner-item">
+                                    <div class="section-one-inner-item d-none d-sm-block">
                                         <img src="{{$settings_g['logo'] ?? asset('images/tahsinko-lift-n-escalator.png')}}" class="tahsinko-logo" alt="TAHSINKO® Lift & Escalator Logo" >
                                     </div>
                                     <div class="section-one-inner-item">
@@ -386,7 +386,7 @@
                             <h1>{{ $sec->section_name }}</h1>
                         </div>
                         <div class="inner-bg">
-                            <img src="{{asset('images/section/tm-bg.png')}}" alt="1st Trademark™ Registered® Lift Brand in Bangladesh" class="tm-bg">
+                            {{-- <img src="{{asset('images/section/tm-bg.png')}}" alt="1st Trademark™ Registered® Lift Brand in Bangladesh" class="tm-bg"> --}}
                         </div>
                         <div class="row section-six-inner">
                             <div class="col-xl-6 col-lg-6 col-md-6">
