@@ -385,9 +385,12 @@
                         <div class="tm-title text-uppercase text-center mt-2">
                             <h1>{{ $sec->section_name }}</h1>
                         </div>
-                        <div class="inner-bg">
-                            {{-- <img src="{{asset('images/section/tm-bg.png')}}" alt="1st Trademark™ Registered® Lift Brand in Bangladesh" class="tm-bg"> --}}
+                        <div class="inner-bg d-none d-lg-block">
                         </div>
+                        <div class="inner-bg2 d-block d-lg-none d-sm-block d-md-block ">
+                            <img src="{{asset('images/section/tm-bg.png')}}" alt="1st Trademark™ Registered® Lift Brand in Bangladesh" class="tm-bg ">
+                        </div>
+
                         <div class="row section-six-inner">
                             <div class="col-xl-6 col-lg-6 col-md-6">
                                 <div class="flag-tm-left">
