@@ -2,17 +2,18 @@
 
 namespace App\Http\Controllers\Back;
 
+use App\Models\Product;
+use App\Models\Category;
+use App\Models\Settings;
+use App\Models\ProductMedia;
+use Illuminate\Http\Request;
+use App\Repositories\MediaRepo;
 use App\Http\Controllers\Controller;
+use App\Models\ProductSpecification;
+use Illuminate\Support\Facades\File;
+use App\Models\ProductSpecificationValue;
 use App\Http\Requests\ProductStoreRequest;
 use App\Http\Requests\ProductUpdateRequest;
-use App\Models\Category;
-use App\Repositories\MediaRepo;
-use App\Models\Product;
-use App\Models\ProductSpecification;
-use App\Models\ProductSpecificationValue;
-use App\Models\ProductMedia;
-use Illuminate\Support\Facades\File;
-use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
@@ -94,6 +95,28 @@ class ProductController extends Controller
         }
 
         return redirect()->back()->with('success-alert', 'Product created successfully.');
+    }
+
+    public function storeSpecifications(Request $request, Product $product)
+    {
+        $request->validate([
+            'spc_title.*' => 'required',
+            'spc_value.*' => 'required',
+        ]);
+
+        $specifications = [];
+        foreach ($request->spc_title as $index => $title) {
+            $specifications[] = [
+                'name' => $title,
+                'value' => $request->spc_value[$index],
+                'group' => $product->id,
+                'created_at' => now(),
+            ];
+        }
+
+        Settings::insert($specifications);
+
+        return redirect()->back()->with('success-alert', 'Specifications added successfully.');
     }
 
     /**
