@@ -31,7 +31,7 @@
         }
         @media only screen and (min-width: 1440px) {
                 .product-description {
-                font-size: 13px;
+                font-size: 16px;
             }
         }
         @media only screen and (max-width: 768px) {
@@ -84,7 +84,7 @@
                                                           </tr>
                                                           <tr>
                                                             <tr>
-                                                            <td>Cabin Wall</td>
+                                                            <td style="width: 100px">Cabin Wall</td>
                                                             <td>:</td>
                                                             <td>{{ $product->cabin_wall }}</td>
                                                           </tr>
