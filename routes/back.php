@@ -81,6 +81,9 @@ Route::middleware('auth', 'isAdmin')->group(function () {
 
     Route::get('products/category', [ProductController::class, 'category'])->name('back.product.category');
 
+    Route::post('/products/{product}/store-specifications', [ProductController::class, 'storeSpecifications'])->name('products.storeSpecifications');
+
+
     // portfolio controller
     Route::resource('portfolio', PortfolioController::class, ['as' => 'back']);
 

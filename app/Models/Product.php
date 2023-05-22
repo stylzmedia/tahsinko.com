@@ -42,6 +42,11 @@ class Product extends Model
     public function categories(){
         return $this->belongsToMany(Category::class);
     }
+
+    public function settings()
+    {
+        return $this->hasMany(Settings::class, 'group', 'id');
+    }
     /**
      * The attributes that should be cast to native types.
      *
