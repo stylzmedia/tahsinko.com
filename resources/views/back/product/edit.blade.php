@@ -64,7 +64,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="card-body">
+                                    <!-- div class="card-body">
                                         <div class="row live-preview">
                                             <div class="col-lg-12">
                                                 <h5 class="d-inline-block">Specification</h5>
@@ -110,7 +110,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </!-- -->
                                 </div>
                             </div>
 
