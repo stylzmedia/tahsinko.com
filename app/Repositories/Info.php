@@ -61,8 +61,13 @@ class Info {
         ];
 
         $template[] = [
-            'name' => 'Product',
+            'name' => 'Cabin',
             'blade' => 'product'
+        ];
+
+        $template[] = [
+            'name' => 'COP and LOP',
+            'blade' => 'cop-and-lop'
         ];
 
         $template[] = [
