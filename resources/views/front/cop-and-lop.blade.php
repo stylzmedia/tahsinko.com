@@ -6,7 +6,7 @@
             $query->where('title', $categoryName);
         })
         ->orderBy('position', 'ASC')
-        ->paginate(8);
+        ->paginate(9);
 @endphp
 
 @section('head')

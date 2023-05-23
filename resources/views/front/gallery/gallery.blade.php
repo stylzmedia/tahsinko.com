@@ -47,22 +47,25 @@
 <!-- Breadcrumb End-->
 
 
-<div class="page_wrap">
+<div class="page_wrap my-5">
     <div class="container-md">
-        <div class="card">
-            <div class="card-header">
-                <h5 class="mb-0">{{$gallery->name}}</h5>
+        <div class="">
+            <div class="gallery-title text-center text-uppercase ">
+                <h3 class="mb-0">{{$gallery->name}}</h3>
             </div>
 
-            <div class="card-body">
+            <div class="gallery-items">
                 <div class="row">
                     @foreach ($gallery->GalleryItems as $photo)
-                        <div class="col-md-6 col-lg-4">
+                    <div class="col-md-6 col-lg-4 my-2">
+                        <div class="gallery-inner shadow h-100 p-3 rounded-3">
                             <a data-fslightbox href="{{$photo->img_paths['original']}}" class="d-block mb-3" style="border-radius: 4px;overflow: hidden;">
                                 <img src="{{$photo->img_paths['original']}}" alt="{{$gallery->gallery_name}}" class="whp">
                             </a>
                         </div>
-                    @endforeach
+                    </div>
+                        @endforeach
+
                 </div>
             </div>
         </div>
@@ -71,5 +74,5 @@
 @endsection
 
 @section('footer')
-<script src="{{asset('js/fslightbox.js')}}"></script>
+<script src="{{asset('plugins/fslightbox-basic@3.4.1/fslightbox.js')}}"></script>
 @endsection

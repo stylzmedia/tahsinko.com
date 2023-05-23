@@ -48,7 +48,7 @@ class PortfolioController extends Controller
         $portfolio = new Portfolio();
         $portfolio->title = $request->title;
         $portfolio->description = $request->description;
-        $portfolio->product_id = $request->product_id;
+        // $portfolio->product_id = $request->product_id;
         $portfolio->lift_type = $request->lift_type;
         $portfolio->stop_opening = $request->stop_opening;
 
@@ -117,7 +117,7 @@ class PortfolioController extends Controller
 
         $portfolio->title = $request->title;
         $portfolio->description = $request->description;
-        $portfolio->product_id = $request->product_id;
+        // $portfolio->product_id = $request->product_id;
         $portfolio->lift_type = $request->lift_type;
         $portfolio->stop_opening = $request->stop_opening;
         $portfolio->location = $request->location;

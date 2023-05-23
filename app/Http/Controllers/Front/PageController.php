@@ -84,11 +84,12 @@ class PageController extends Controller
 
     }
 
-    public function singleProject($id){
+    public function singleProject($id)
+    {
         $project = Portfolio::where('id', $id)->first();
+        $projects = Portfolio::orderBy('id')->get();
 
-        return view('front.single-project',compact('project'));
-
+        return view('front.single-project', compact('project', 'projects'));
     }
 
 
