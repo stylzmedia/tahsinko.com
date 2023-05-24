@@ -76,6 +76,11 @@ class Info {
         ];
 
         $template[] = [
+            'name' => 'Handrail',
+            'blade' => 'handrail'
+        ];
+
+        $template[] = [
             'name' => 'Project',
             'blade' => 'project'
         ];

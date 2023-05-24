@@ -34,7 +34,6 @@
                     <li>
                         <a href="{{ route('homepage') }}">Home /</a>
                     </li>
-                    <li>Page/</li>
                     <li>{{$page->title}}</li>
                 </ul>
             </div>
