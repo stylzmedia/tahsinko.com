@@ -71,6 +71,11 @@ class Info {
         ];
 
         $template[] = [
+            'name' => 'Ceiling',
+            'blade' => 'ceiling'
+        ];
+
+        $template[] = [
             'name' => 'Project',
             'blade' => 'project'
         ];

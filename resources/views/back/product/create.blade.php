@@ -58,7 +58,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="card-body">
+                                    {{-- <div class="card-body">
                                         <div class="row live-preview">
                                             <div class="col-lg-12">
                                                 <h5 class="d-inline-block">Specification</h5>
@@ -87,7 +87,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
 
@@ -151,7 +151,7 @@
 
                                         <div class="form-group">
                                             <label for="position" class="form-label">Position</label>
-                                            <input type="text" class="form-control" id="position"
+                                            <input type="text" class="form-control" id="position" value="2000"
                                                 name="position">
                                         </div>
 
