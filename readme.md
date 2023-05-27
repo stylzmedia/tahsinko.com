@@ -19,3 +19,8 @@ https://codepen.io/petegarvin1/pen/YzWBbRx
 
 
 ALTER TABLE `pages` ADD `pdf_file` VARCHAR(191) NULL DEFAULT NULL AFTER `description`;
+
+
+
+ALTER TABLE `products` ADD `rear_wall` VARCHAR(255) NULL DEFAULT NULL AFTER `tag`, ADD `side_wall` VARCHAR(255) NULL DEFAULT NULL AFTER `rear_wall`, ADD `note` VARCHAR(255) NULL DEFAULT NULL AFTER `side_wall`, ADD `center_plate` VARCHAR(255) NULL DEFAULT NULL AFTER `note`, ADD `aux_plates` VARCHAR(255) NULL DEFAULT NULL AFTER `center_plate`, ADD `center_back` VARCHAR(255) NULL DEFAULT NULL AFTER `aux_plates`, ADD `center_side` VARCHAR(255) NULL DEFAULT NULL AFTER `center_back`;
+

@@ -34,6 +34,7 @@ Route::get('email-verify-check/{id}', [AuthController::class, 'emailVerifyCheck'
 Route::get('cache-clear',      [TestController::class, 'cacheClear'])->name('cacheClear');
 Route::get('config',           [TestController::class, 'config'])->name('config');
 Route::get('products-import',  [TestController::class, 'productsImport'])->name('productsImport');
+Route::get('product-imports', [TestController::class, 'productImports'])->name('productImports');
 
 
 Route::get('{slug}',[PageController::class, 'commonPage'])->name('common.page');

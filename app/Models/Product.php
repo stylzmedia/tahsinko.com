@@ -20,9 +20,16 @@ class Product extends Model
         'name',
         'description',
         'freature_image',
-        'video',
         'position',
-        'pdf_file',
+        'rear_wall',
+        'side_wall',
+        'note',
+        'center_plate',
+        'aux_plates',
+        'center_back',
+        'center_side',
+        'image_path',
+        'media_id',
         'status',
     ];
 

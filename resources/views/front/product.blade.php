@@ -6,6 +6,9 @@
             $query->where('title', $categoryName); })
         ->orderBy('position', 'ASC')
         ->paginate(8);
+
+    $lines = DB::table('products')->pluck('description')->toArray();
+
 @endphp
 
 @section('head')
@@ -27,9 +30,15 @@
             font-weight: 600;
             font-size: 20px;
         }
+
         .product-description {
             font-size: 14px;
+            font-variant-caps: all-small-caps;
         }
+        .product-description p {
+            color: #212529;
+        }
+
         /* lightbox */
 
         /* lightbox end */
@@ -38,12 +47,28 @@
             .product-description {
                 font-size: 20px;
             }
+            .cart-box {
+                height: 480px;
+            }
+            .cart-image img {
+                height: 430px;
+            }
         }
         @media only screen and (min-width: 1440px) {
             .product-description {
                 font-size: 13px;
             }
         }
+        @media only screen and (min-width: 1024px) {
+            .cart-box {
+                height: 410px;
+            }
+            .cart-image img {
+                height: 360px;
+            }
+        }
+
+
         @media only screen and (max-width: 768px) {
             .product-description {
                 font-size: 16px;
@@ -80,38 +105,143 @@
                                 <div class="col-lg-6 col-sm-12 mb-4">
                                     <div class="cart-box shadow rounded p-4">
                                         <div class="row">
-                                            <div class="product-description2 col-lg-7 col-sm-7 col-12">
+                                            <div class="product-description2 p-0 col-lg-7 col-sm-7 col-12">
+
                                                 <div class="title-bar text-uppercase">
                                                     {{ $product->name }}
                                                 </div>
                                                 <div class="product-description">
+                                                    @empty($product->description)
+                                                    @else
+                                                        {{ $product->description }}
+                                                    @endempty
                                                     <table class="table table-borderless">
                                                         <tbody>
-                                                            <tr>
-                                                                <td>Celling</td>
-                                                                <td>:</td>
-                                                                <td>{{ $product->ceiling }}</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td style="width: 35%">Cabin Wall</td>
-                                                                <td>:</td>
-                                                                <td>{{ $product->cabin_wall }}</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>Handrail</td>
-                                                                <td>:</td>
-                                                                <td>{{ $product->handrail }}</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>Floor</td>
-                                                                <td>:</td>
-                                                                <td>{{ $product->floor }}</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>Category</td>
-                                                                <td>:</td>
-                                                                <td>{{ $product->tag }}</td>
-                                                            </tr>
+
+                                                            @empty($product->ceiling)
+                                                                <tr>
+                                                                </tr>
+                                                            @else
+                                                                <tr>
+                                                                    <td>Celling</td>
+                                                                    <td>:</td>
+                                                                    <td>{{ $product->ceiling }}</td>
+                                                                </tr>
+                                                            @endempty
+
+                                                            @empty($product->ceiling)
+                                                                <tr>
+                                                                </tr>
+                                                            @else
+                                                                <tr>
+                                                                    <td style="width: 35%">Cabin Wall</td>
+                                                                    <td>:</td>
+                                                                    <td>{{ $product->cabin_wall }}</td>
+                                                                </tr>
+                                                            @endempty
+                                                            @empty($product->handrail)
+                                                                <tr>
+                                                                </tr>
+                                                            @else
+                                                                <tr>
+                                                                    <td>Handrail</td>
+                                                                    <td>:</td>
+                                                                    <td>{{ $product->handrail }}</td>
+                                                                </tr>
+                                                            @endempty
+                                                            @empty($product->floor)
+                                                                <tr>
+                                                                </tr>
+                                                            @else
+                                                                <tr>
+                                                                    <td>Floor</td>
+                                                                    <td>:</td>
+                                                                    <td>{{ $product->floor }}</td>
+                                                                </tr>
+                                                            @endempty
+                                                            @empty($product->tag)
+                                                                <tr>
+                                                                </tr>
+                                                            @else
+                                                                <tr>
+                                                                    <td>Category</td>
+                                                                    <td>:</td>
+                                                                    <td>{{ $product->tag }}</td>
+                                                                </tr>
+                                                            @endempty
+                                                            @empty($product->rear_wall)
+                                                                <tr>
+                                                                </tr>
+                                                            @else
+                                                                <tr>
+                                                                    <td style="width: 35%">Rear Wall</td>
+                                                                    <td>:</td>
+                                                                    <td>{{ $product->rear_wall }}</td>
+                                                                </tr>
+                                                            @endempty
+                                                            @empty($product->side_wall)
+                                                                <tr>
+                                                                </tr>
+                                                            @else
+                                                                <tr>
+                                                                    <td>Side Wall</td>
+                                                                    <td>:</td>
+                                                                    <td>{{ $product->side_wall }}</td>
+                                                                </tr>
+                                                            @endempty
+                                                            @empty($product->center_plate)
+                                                                <tr>
+                                                                </tr>
+                                                            @else
+                                                                <tr>
+                                                                    <td>Center Plate</td>
+                                                                    <td>:</td>
+                                                                    <td>{{ $product->center_plate }}</td>
+                                                                </tr>
+                                                            @endempty
+                                                            @empty($product->aux_plates)
+                                                                <tr>
+                                                                </tr>
+                                                            @else
+                                                                <tr>
+                                                                    <td>Auxiliary Plate</td>
+                                                                    <td>:</td>
+                                                                    <td>{{ $product->aux_plates }}</td>
+                                                                </tr>
+                                                            @endempty
+                                                            @empty($product->center_back)
+                                                                <tr>
+                                                                </tr>
+                                                            @else
+                                                                <tr>
+                                                                    <td>Center Back</td>
+                                                                    <td>:</td>
+                                                                    <td>{{ $product->center_back }}</td>
+                                                                </tr>
+                                                            @endempty
+                                                            @empty($product->center_side)
+                                                                <tr>
+                                                                </tr>
+                                                            @else
+                                                                <tr>
+                                                                    <td>Center Side</td>
+                                                                    <td>:</td>
+                                                                    <td>{{ $product->center_side }}</td>
+                                                                </tr>
+                                                            @endempty
+                                                            @empty($product->note)
+                                                                <tr>
+                                                                </tr>
+                                                            @else
+                                                                <tr>
+                                                                    <td>Note</td>
+                                                                    <td>:</td>
+                                                                    <td>{{ $product->note }}</td>
+                                                                </tr>
+                                                            @endempty
+
+
+
                                                         </tbody>
                                                     </table>
                                                 </div>
