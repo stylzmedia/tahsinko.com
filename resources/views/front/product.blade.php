@@ -5,7 +5,7 @@
         ->whereHas('categories', function ($query) use ($categoryName) {
             $query->where('title', $categoryName); })
         ->orderBy('position', 'ASC')
-        ->paginate(8);
+        ->paginate(12);
 
     $lines = DB::table('products')->pluck('description')->toArray();
 
@@ -34,11 +34,33 @@
         .product-description {
             font-size: 14px;
             font-variant-caps: all-small-caps;
+            line-height: 14px;
         }
         .product-description p {
             color: #212529;
         }
 
+        .product-image {
+            width: 100%;
+            overflow: hidden;
+            height: 285px;
+        }
+        .cart-box, .product-inner {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-content: space-around;
+        }
+        .short-description{
+            font-size: 20px;
+        }
+        .table {
+            --bs-table-border-color: red !important;
+        }
+        .table-bordered>:not(caption)>*>*{
+            border-width: 0 !important;
+        }
         /* lightbox */
 
         /* lightbox end */
@@ -47,9 +69,9 @@
             .product-description {
                 font-size: 20px;
             }
-            .cart-box {
+            /* .cart-box {
                 height: 480px;
-            }
+            } */
             .cart-image img {
                 height: 430px;
             }
@@ -60,9 +82,9 @@
             }
         }
         @media only screen and (min-width: 1024px) {
-            .cart-box {
+            /* .cart-box {
                 height: 410px;
-            }
+            } */
             .cart-image img {
                 height: 360px;
             }
@@ -103,19 +125,22 @@
                         <div class="row justify-content-center">
                             @foreach($products as $product)
                                 <div class="col-lg-6 col-sm-12 mb-4">
-                                    <div class="cart-box shadow rounded p-4">
+                                    <div class="cart-box h-100 shadow rounded p-4">
                                         <div class="row">
                                             <div class="product-description2 p-0 col-lg-7 col-sm-7 col-12">
 
                                                 <div class="title-bar text-uppercase">
                                                     {{ $product->name }}
                                                 </div>
-                                                <div class="product-description">
+                                                <div class="short-description product-description p-2">
                                                     @empty($product->description)
-                                                    @else
-                                                        {{ $product->description }}
+                                                        @else
+                                                            {{ $product->description }}
                                                     @endempty
-                                                    <table class="table table-borderless">
+                                                </div>
+
+                                                <div class="product-description">
+                                                    <table class="table table-bordered">
                                                         <tbody>
 
                                                             @empty($product->ceiling)
@@ -246,9 +271,18 @@
                                                     </table>
                                                 </div>
                                             </div>
-                                            <div class="col-lg-5 col-sm-5 col-12">
-                                                <div class="cart-image">
-                                                    <img src="{{$product->img_paths['original']}}" class="img-fluid lightbox-trigger" data-index="{{ $loop->index }}" />
+                                            <div class="col-lg-5 col-sm-5 col-12 product-inner">
+                                                <div class="product-image">
+                                                    <img
+                                                    src="{{$product->img_paths['original']}}"
+                                                    class="lightbox-trigger mx-auto d-block h-100"
+                                                    data-index="{{ $loop->index }}"
+                                                    srcset="{{ $product->img_paths['small'] }} 400w,
+                                                    {{ $product->img_paths['medium'] }} 800w,
+                                                    {{ $product->img_paths['original'] }} 1200w"
+                                                    sizes="(max-width: 600px) 400px,
+                                                    (max-width: 900px) 800px,
+                                                    1200px"/>
                                                 </div>
                                             </div>
                                         </div>
@@ -265,7 +299,8 @@
                             <button class="lightbox-next" disabled></button>
                         </div>
                         <div class="d-flex justify-content-center text-center">
-                            {{ $products->links() }}
+                            {{ $products->onEachSide(0)->links() }}
+                            {{-- {{ $products->links() }} --}}
                         </div>
                     </div>
                 </div>

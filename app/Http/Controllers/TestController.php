@@ -71,15 +71,19 @@ class TestController extends Controller
                 continue;
             }
             $meta = 'tahsinko-lift-cabin-';
-            // $featureImage = 'tahsinko-lift-cabin-'.$featureImage;
             $originalImagePath = $imageFolder . '/' . $featureImage;
-            // dd($featureImage);
             $smallImagePath = $uploadsPath .  '/small_'.$meta. $featureImage;
             $mediumImagePath = $uploadsPath . '/medium_'.$meta. $featureImage;
             $largeImagePath = $uploadsPath . '/large_'. $meta. $featureImage;
             $originalUploadPath = 'uploads/2023/05/'.$meta . $featureImage;
-            // dd($originalUploadPath);
+
             $image = Image::make($originalImagePath);
+
+            // Resize small image with aspect ratio
+            $image->resize(150, null, function ($constraint) {
+                $constraint->aspectRatio();
+            })->save($smallImagePath);
+
             $image->resize(150, null, function ($constraint) {
                 $constraint->aspectRatio();
             })->save($smallImagePath);
