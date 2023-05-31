@@ -5,7 +5,7 @@
         ->whereHas('categories', function ($query) use ($categoryName) {
             $query->where('title', $categoryName); })
         ->orderByRaw("SUBSTRING_INDEX(name, '-', -1) + 0 ASC")
-        ->paginate(500);
+        ->paginate(12);
 
     // $lines = DB::table('products')->pluck('description')->toArray();
 
@@ -104,7 +104,9 @@
             .lightbox-overlay{
                 display: none !important;
             }
-        }
+            .pagination {
+                --bs-pagination-padding-x: 0.6rem !important;
+            }
     </style>
 @endsection
 
@@ -184,16 +186,6 @@
                                                                     <td>{{ $product->floor }}</td>
                                                                 </tr>
                                                             @endempty
-                                                            @empty($product->tag)
-                                                                <tr>
-                                                                </tr>
-                                                            @else
-                                                                <tr>
-                                                                    <td>Category</td>
-                                                                    <td>:</td>
-                                                                    <td>{{ $product->tag }}</td>
-                                                                </tr>
-                                                            @endempty
                                                             @empty($product->rear_wall)
                                                                 <tr>
                                                                 </tr>
@@ -264,9 +256,16 @@
                                                                     <td>{{ $product->note }}</td>
                                                                 </tr>
                                                             @endempty
-
-
-
+                                                            @empty($product->tag)
+                                                                <tr>
+                                                                </tr>
+                                                            @else
+                                                                <tr>
+                                                                    <td>Category</td>
+                                                                    <td>:</td>
+                                                                    <td>{{ $product->tag }}</td>
+                                                                </tr>
+                                                            @endempty
                                                         </tbody>
                                                     </table>
                                                 </div>
@@ -299,7 +298,7 @@
                             <button class="lightbox-next" disabled></button>
                         </div>
                         <div class="d-flex justify-content-center text-center">
-                            {{ $products->onEachSide(0)->links() }}
+                            {{ $products->onEachSide(1)->links() }}
                             {{-- {{ $products->links() }} --}}
                         </div>
                     </div>

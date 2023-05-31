@@ -182,16 +182,6 @@
                                                                     <td>{{ $product->floor }}</td>
                                                                 </tr>
                                                             @endempty
-                                                            @empty($product->tag)
-                                                                <tr>
-                                                                </tr>
-                                                            @else
-                                                                <tr>
-                                                                    <td>Category</td>
-                                                                    <td>:</td>
-                                                                    <td>{{ $product->tag }}</td>
-                                                                </tr>
-                                                            @endempty
                                                             @empty($product->rear_wall)
                                                                 <tr>
                                                                 </tr>
@@ -297,7 +287,7 @@
                             <button class="lightbox-next" disabled></button>
                         </div>
                         <div class="d-flex justify-content-center text-center">
-                            {{ $products->onEachSide(0)->links() }}
+                            {{ $products->onEachSide(1)->links() }}
                             {{-- {{ $products->links() }} --}}
                         </div>
                     </div>

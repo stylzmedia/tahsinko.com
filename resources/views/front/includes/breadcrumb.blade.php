@@ -26,10 +26,10 @@
         </div>
         <div class="container">
             <div class="inner-title text-end">
-                <h3>@if(empty($page->breadcrumb_title)){{$page->title}}@else{{$page->title}}@endif</h3>
+                <h3>@if(empty($page->breadcrumb_title)){{ $page->title }}@else{{ $page->breadcrumb_title }}@endif</h3>
                 <ul class="d-none d-sm-block">
                     <li>
-                        <i class="flaticon-fireplace"></i>
+                        <i class=""></i>
                     </li>
                     <li>
                         <a href="{{ route('homepage') }}">Home /</a>

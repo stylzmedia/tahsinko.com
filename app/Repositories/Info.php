@@ -54,7 +54,8 @@ class Info {
     public static function tags(){
         return [
             "Classic",
-            "Luxury"
+            "Luxury",
+            "Prestige"
         ];
     }
 
@@ -66,8 +67,8 @@ class Info {
         ];
 
         $template[] = [
-            'name' => 'Cabin',
-            'blade' => 'product'
+            'name' => 'Elevator Cabins',
+            'blade' => 'all-cabin'
         ];
 
 
