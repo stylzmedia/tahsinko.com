@@ -1,14 +1,11 @@
 @extends('front.layouts.master')
 @php
-    $categoryName = "{$page->title}"; // replace with the category name you want to filter by
+    $seriesName = "{$page->title}"; // replace with the seriesName name you want to filter by
     $products = \App\Models\Product::where('status', 1)
-        ->whereHas('categories', function ($query) use ($categoryName) {
-            $query->where('title', $categoryName); })
+        ->whereHas('categories', function ($query) use ($seriesName) {
+            $query->where('tag', $seriesName); })
         ->orderBy('position', 'ASC')
         ->paginate(12);
-
-    $lines = DB::table('products')->pluck('description')->toArray();
-
 @endphp
 
 @section('head')

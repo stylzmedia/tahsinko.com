@@ -53,6 +53,7 @@ class ProductController extends Controller
         $product = new Product();
         $product->name = $request->name;
         $product->description = $request->description;
+        $product->tag = $request->tag;
         $product->feature_type = $request->feature_type;
         $product->video = $request->feature_video;
         $product->position = $request->position;
@@ -157,6 +158,7 @@ class ProductController extends Controller
 
         $product->name = $request->name;
         $product->description = $request->description;
+        $product->tag = $request->tag;
         $product->feature_type = $request->feature_type;
         $product->video = $request->feature_video;
         $product->position = $request->position;

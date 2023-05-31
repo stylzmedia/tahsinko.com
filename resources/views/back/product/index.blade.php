@@ -42,6 +42,7 @@
                                 <th scope="col">SL</th>
                                 <th scope="col">Title</th>
                                 <th scope="col">Category</th>
+                                <th scope="col">Series</th>
                                 <th scope="col">Status</th>
                                 <th scope="col" class="text-right">Action</th>
                               </tr>
@@ -58,6 +59,7 @@
                                                 @endif
                                             @endforeach
                                         </td>
+                                        <td>{{$product->tag}}</td>
                                         <td>
                                             @include('switcher::switch', [
                                                 'table' => 'products',

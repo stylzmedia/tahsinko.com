@@ -51,7 +51,12 @@ class Info {
         return $output;
     }
 
-
+    public static function tags(){
+        return [
+            "Classic",
+            "Luxury"
+        ];
+    }
 
     public static function pageTemplates(){
         $template = array();
@@ -63,6 +68,12 @@ class Info {
         $template[] = [
             'name' => 'Cabin',
             'blade' => 'product'
+        ];
+
+
+        $template[] = [
+            'name' => 'Cabin Series',
+            'blade' => 'cabin'
         ];
 
         $template[] = [

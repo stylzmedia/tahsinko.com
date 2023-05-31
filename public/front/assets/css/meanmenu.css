@@ -217,6 +217,9 @@
     margin: 0;
     display: block;
     color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 .main-nav nav .navbar-nav .nav-item .dropdown-menu li a:hover,
 .main-nav nav .navbar-nav .nav-item .dropdown-menu li a:focus,
@@ -233,7 +236,7 @@
 .main-nav nav .navbar-nav .nav-item .dropdown-menu li:hover .dropdown-menu {
     opacity: 1 !important;
     visibility: visible !important;
-    top: -20px !important;
+    top: -6px !important;
 }
 .main-nav nav .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu {
     position: absolute;

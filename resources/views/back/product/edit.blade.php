@@ -175,6 +175,19 @@
                                         <br>
 
                                         <div class="form-group">
+                                            <label for="tag" class="form-label">Series</label>
+                                            <select name="tag" class="form-control">
+                                                <option value="">Select Series</option>
+                                                @foreach (Info::tags() as $tag)
+                                                    <option value="{{$tag}}" {{$tag == $product->tag ? 'selected' : ''}}>{{$tag}}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+
+
+                                        <br>
+
+                                        <div class="form-group">
                                             <label class="form-label" for="pdf_file"><b>Pdf File</b></label>
                                             <input type="file" id="pdf_file" name="pdf_file"
                                                 class="pdf_input form-control">

@@ -164,21 +164,37 @@
                                         <a href="{{$item->menu_info['url']}}" class="nav-link {{$item->menu_info['url'] == url()->current() ? 'active' : ''}}"> {{ $item->menu_info['text'] }} @if(count($item->Items))<i class="fa-solid fa-chevron-down"></i>@endif</a>
 
                                         @if(count($item->Items))
-                                        <ul class="dropdown-menu">
-                                            @foreach ($item->Items as $sub_item)
-                                                <li class="nav-item">
-                                                    <a href="{{ $sub_item->menu_info['url'] }}" class="nav-link">
-                                                        {{ $sub_item->menu_info['text'] }}
-                                                    </a>
-                                                </li>
-                                            @endforeach
-                                        </ul>
+                                            <ul class="dropdown-menu">
+                                                @foreach ($item->Items as $sub_item)
+                                                    <li class="nav-item">
+                                                        <a href="{{ $sub_item->menu_info['url'] }}" class="nav-link">
+                                                            {{ $sub_item->menu_info['text'] }}
+                                                            @if(count($sub_item->Items))
+                                                                <i class="fa-solid fa-chevron-right"></i>
+                                                            @endif
+                                                        </a>
+
+                                                        @if(count($sub_item->Items))
+                                                            <ul class="dropdown-menu">
+                                                                @foreach ($sub_item->Items as $sub_sub_item)
+                                                                    <li class="nav-item">
+                                                                        <a href="{{ $sub_sub_item->menu_info['url'] }}" class="nav-link">
+                                                                            {{ $sub_sub_item->menu_info['text'] }}
+                                                                        </a>
+                                                                    </li>
+                                                                @endforeach
+                                                            </ul>
+                                                        @endif
+                                                    </li>
+                                                @endforeach
+                                            </ul>
                                         @endif
                                     </li>
                                 @endforeach
                             @endisset
                         </ul>
                     </div>
+
                 </nav>
             </div>
         </div>

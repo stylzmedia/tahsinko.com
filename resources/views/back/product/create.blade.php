@@ -141,6 +141,16 @@
                                             </select>
                                         </div>
                                         <br>
+                                        <div class="form-group">
+                                            <label for="tag" class="form-label">Series</label>
+                                            <select name="tag" class="form-control">
+                                                <option value="">Select Series</option>
+                                                @foreach (Info::tags() as $tag)
+                                                    <option value="{{$tag}}">{{$tag}}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                        <br>
 
                                         <div class="form-group">
                                             <label class="form-label" for="pdf_file"><b>Pdf File</b></label>
