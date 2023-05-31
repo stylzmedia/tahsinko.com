@@ -4,7 +4,8 @@
     $products = \App\Models\Product::where('status', 1)
         ->whereHas('categories', function ($query) use ($seriesName) {
             $query->where('tag', $seriesName); })
-        ->orderBy('position', 'ASC')
+        // ->orderBy('position', 'ASC')
+        ->orderByRaw("SUBSTRING_INDEX(name, '-', -1) + 0 ASC")
         ->paginate(12);
 @endphp
 

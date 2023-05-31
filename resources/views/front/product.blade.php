@@ -4,10 +4,10 @@
     $products = \App\Models\Product::where('status', 1)
         ->whereHas('categories', function ($query) use ($categoryName) {
             $query->where('title', $categoryName); })
-        ->orderBy('position', 'ASC')
-        ->paginate(12);
+        ->orderByRaw("SUBSTRING_INDEX(name, '-', -1) + 0 ASC")
+        ->paginate(500);
 
-    $lines = DB::table('products')->pluck('description')->toArray();
+    // $lines = DB::table('products')->pluck('description')->toArray();
 
 @endphp
 
