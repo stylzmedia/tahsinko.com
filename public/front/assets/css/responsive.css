@@ -1404,8 +1404,14 @@
     display: none;
   }
   /* Navbar CSS End */
+
+  .section-one .section-one-content .section-one-inner-item .tahsinko-logo {
+    height: 30px;
+}
+
   .section-one .section-one-content .section-one-inner-item .tm-img {
-    height: 100px;
+    height: 60px;
+    margin-bottom: 0;
     }
 
       /* CEO */

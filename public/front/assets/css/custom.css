@@ -308,13 +308,14 @@ Default btn Style End
 }
 
 .section-one .section-one-content .section-one-inner-item .tahsinko-logo {
-    height: 75px;
+    height: 50px;
 }
 
 .section-one .section-one-content .section-one-inner-item .tm-img {
     width: auto;
     height: 150px;
-    margin-top: 15%;
+    margin-top: 3%;
+    margin-bottom: 9%;
 }
 
 .section-one .section-one-media .group-img {
@@ -1678,7 +1679,7 @@ Portfolio Area
 @media only screen and (max-width: 1480px){
 
     .section-one .section-one-content .section-one-inner-item .tm-img{
-        height: 150px;
+        height: 90px;
     }
     .pline-title::before{
         right: 32%;

@@ -6,6 +6,12 @@
         'title' => ($settings_g['title'] ?? env('APP_NAME')) . ' - ' . ($settings_g['slogan'] ?? '')
     ])
 
+@php
+    $galleryId = \App\Models\Gallery::where('name', 'Section One')->value('id');
+    $galleryItems = \App\Models\GalleryItem::where('gallery_id', $galleryId)->orderBy('position', 'ASC')->get();
+    // dd($galleryItems);
+@endphp
+
 <style>
     .animate-on-scroll {
     opacity: 0;
@@ -20,6 +26,46 @@
     .counter-list .counter-item .counter-item-inner span{
         font-size: 53px;
         font-weight: 700;
+    }
+
+
+    /* .section-one .section-one-content .section-one-inner-item .tahsinko-logo {
+        height: 50px;
+    } */
+
+
+    /* .section-one .section-one-content .section-one-inner-item .tm-img {
+        height: 80px !important;
+    }
+    .section-one .section-one-content .section-one-inner-item .tm-img{
+        margin-top: 3% !important;
+        margin-bottom: 9% !important;
+    } */
+
+    .section-one-media {
+    position: relative;
+    z-index: 999;
+  }
+  .section-one-media img.slick-slide {
+    border: 5px solid red;
+    border-radius: 15px;
+}
+
+  .section-one-media .slick-next:before {
+    position: absolute;
+    right: 0;
+    top: -70px;
+    color: red;
+    font-size: 50px;
+    }
+
+    .section-one-media  .slick-prev:before {
+        position: absolute;
+        left: 0;
+        top: -70px;
+        z-index: 999;
+        color: red;
+        font-size: 50px;
     }
 </style>
 
@@ -95,7 +141,11 @@
                             <div class="col-lg-6 col-md-6">
 
                                 <div class="section-one-media">
-                                    <img src="{{ $sec->img_paths['original'] }}" class="group-img" alt="1st Trademark™ Registered® Lift Brand in Bangladesh">
+                                    <div class="section-one-slider">
+                                        @foreach ($galleryItems as $item )
+                                            <img src="{{ $item->img_paths['original'] }}" alt="{{ $item->name }}">
+                                        @endforeach
+                                    </div>
                                 </div>
                                 <div class="js-shape">
                                     <img src="{{asset('images/section/sec1-shape-1.png')}}" class="shape-1 move-1" alt="TAHSINKO® Lift & Escalator Shape-1" >
@@ -749,6 +799,18 @@ $(".team-list").slick({
     });
 </script>
 
+<script>
+
+$('.section-one-slider').slick({
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 4000,
+  mobileFirst:true,
+  infinite: true,
+  arrows: false,
+});
+</script>
 
 @endsection
 
