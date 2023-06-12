@@ -26,7 +26,7 @@
     @endphp
     <div class="inner-banner">
         <div class="inner-image" style="{{$bg_bread}}">
-            <img src="{{ $gallery->img_paths['original'] }}" alt="">
+            <img src="{{ asset('images/section/legal-inner-breadcrumb.jpg') }}" alt="">
         </div>
         <div class="container">
             <div class="inner-title text-center">

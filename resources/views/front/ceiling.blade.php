@@ -30,9 +30,10 @@
         }
 
         .cart-image {
-            height: 136px;
+            height: 200px;
             display: grid;
             align-content: space-around;
+            overflow: hidden;
         }
 
         /* lightbox  */

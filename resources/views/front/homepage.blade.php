@@ -417,7 +417,7 @@
                                     <div class="row">
                                         <div class="col-lg-12">
                                             <div class="text-center mt-5">
-                                                <a href="{{ url('page/our-projects') }}" class="default-btn">View All Products</a>
+                                                <a href="{{ url('our-projects') }}" class="default-btn">View All Products</a>
                                             </div>
                                         </div>
                                     </div>
@@ -533,7 +533,7 @@
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="text-center mt-5">
-                                        <a href="{{ url('page/our-products') }}" class="default-btn">View All Products</a>
+                                        <a href="{{ url('our-products') }}" class="default-btn">View All Products</a>
                                     </div>
                                 </div>
                             </div>
@@ -602,7 +602,7 @@
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="text-center mt-5">
-                                        <a href="{{ url('page/our-management') }}" class="default-btn">View All</a>
+                                        <a href="{{ url('our-management') }}" class="default-btn">View All</a>
                                     </div>
                                 </div>
                             </div>
@@ -649,7 +649,7 @@
                                 @endforeach
                                 <div class="col-lg-12">
                                     <div class="text-center">
-                                        <a href="{{ url('page/blog') }}" class="default-btn">View All</a>
+                                        <a href="{{ url('blog') }}" class="default-btn">View All</a>
                                     </div>
                                 </div>
                             </div>

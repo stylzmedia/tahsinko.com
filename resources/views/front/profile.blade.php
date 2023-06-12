@@ -31,7 +31,7 @@ img.object-cover {
             <div class="page-desc">
                 @if($page->media_id)
                     <div class="page-content mb-5 float-left">
-                        <img src="{{$page->img_paths['original']}}" class="h-full w-1/2 object-cover" alt="{{$page->title}}">
+                        <img src="{{asset('images/section/profile-image.jpg')}}" class="h-full w-1/2 object-cover" alt="{{$page->title}}">
                         <h3>{!! $page->short_description !!}</h3>
                         <br>
                         {!! $page->description !!}

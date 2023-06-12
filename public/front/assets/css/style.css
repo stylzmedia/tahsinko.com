@@ -2087,8 +2087,8 @@ Inner Banner
 
 .inner-banner .inner-title {
     position: absolute;
-    top: 70px;
-    right: 100px;
+    top: 215px;
+    left: 100px;
     z-index: 2;
 }
 
