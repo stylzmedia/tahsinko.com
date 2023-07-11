@@ -90,7 +90,7 @@
                             </li>
                         </ul>
 
-                        <ul class="social-link">
+                        {{-- <ul class="social-link">
                             @if(Info::Social($socials, 'facebook'))
                             <li>
                                 <a href="{{Info::Social($socials,  'facebook')}}" target="_blank">
@@ -126,7 +126,7 @@
                                 </a>
                             </li>
                             @endif
-                        </ul>
+                        </ul> --}}
 
                     </div>
                 </div>

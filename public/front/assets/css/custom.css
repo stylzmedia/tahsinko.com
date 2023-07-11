@@ -46,7 +46,7 @@ a:hover, a:focus {
   text-decoration: none;
 }
 
-h1{
+h2{
     font-family: 'HandelGo';
 }
 
@@ -712,7 +712,7 @@ Default btn Style End
 }
 
 
-.section-six h1 {
+.section-six h2 {
     font-family: 'HandelGo', sans-serif;
     letter-spacing: 2px;
 }
@@ -822,9 +822,10 @@ Default btn Style End
     height: 70px;
     align-items: center;
 }
-.section-seven .service-title h1{
+.section-seven .service-title h2{
     transform: skew(45deg);
     color: #ffff;
+    font-family: 'HandelGo';
 }
 
 
@@ -1527,9 +1528,10 @@ Portfolio Area
     align-items: center;
 }
 
-.section9 .service-title h1 {
+.section9 .service-title h2 {
     transform: skew(45deg);
     color: #ffff;
+    font-family: 'HandelGo';
 }
 
 .section9 .service-title::before {

@@ -91,10 +91,10 @@
 <section id="services">
     <div class="container">
 
-        <div class="row">
+        <div class="row ">
           <h2 class="section-heading text-center ">{{$page->breadcrumb_title}}</h2>
         </div>
-        <div class="row d-flex flex-wrap">
+        <div class="row d-flex flex-wrap justify-content-center">
             @foreach ($services as $item)
             <div class="col-md-4 mb-4">
               <div class="card text-center ">

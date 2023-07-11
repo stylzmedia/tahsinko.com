@@ -384,7 +384,7 @@
             <!-- Project Start -->
                 <div class="portfolio-area pb-70">
                     <div class="tm-title text-uppercase text-center mt-2">
-                        <h1>{{ $sec->section_name }}</h1>
+                        <h2>{{ $sec->section_name }}</h2>
                     </div>
                     <div class="container">
                         <div class="tab portfolio-tab">
@@ -417,7 +417,7 @@
                                     <div class="row">
                                         <div class="col-lg-12">
                                             <div class="text-center mt-5">
-                                                <a href="{{ url('our-projects') }}" class="default-btn">View All Products</a>
+                                                <a href="{{ url('our-projects') }}" class="default-btn">View Projects</a>
                                             </div>
                                         </div>
                                     </div>
@@ -433,7 +433,7 @@
                 <div class="section-six">
                     <div class="container-fluid">
                         <div class="tm-title text-uppercase text-center mt-2">
-                            <h1>{{ $sec->section_name }}</h1>
+                            <h2>{{ $sec->section_name }}</h2>
                         </div>
                         <div class="inner-bg d-none d-lg-block">
                         </div>
@@ -468,20 +468,13 @@
                             <div class="row justify-content-center">
                                 <div class="col-xl-4 col-lg-5 col-md-6 col-11">
                                     <div class="service-title">
-                                        <h1>{{ $sec->section_name }}</h1>
+                                        <h2>{{ $sec->section_name }}</h2>
                                     </div>
                                 </div>
                                 <div class="row service-list justify-content-center">
                                     @foreach ($services as $item )
                                     {{-- <div class="col-xl-3 col-lg-4 col-md-6"> --}}
-                                    <div class="
-                                    @if($sec->col == 2)
-                                        col-lg-6 col-md-6 col-sm-12
-                                    @elseif($sec->col == 3)
-                                        col-lg-4 col-md-6 col-sm-12
-                                    @elseif($sec->col == 4)
-                                        col-lg-3 col-md-6 col-sm-12
-                                    @endif">
+                                    <div class="col-lg-3 col-md-6 col-sm-12">
 
                                         <div class="service-item">
                                             <div class="service-item-inner text-center">
@@ -506,7 +499,7 @@
                     <div class="container">
                         <div class="inner">
                             <div class="tm-title text-uppercase text-center mt-2">
-                                <h1>{{ $sec->section_name }}</h1>
+                                <h2>{{ $sec->section_name }}</h2>
                             </div>
                             <div class="portfolio-bg">
                                 <img src="{{asset('images/section/portfolio-bd-left.png')}}" alt="Latest Products" class="portfolio-bd-left">
@@ -533,7 +526,7 @@
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="text-center mt-5">
-                                        <a href="{{ url('our-products') }}" class="default-btn">View All Products</a>
+                                        <a href="{{ url('our-products') }}" class="default-btn">View All Lift Cabin</a>
                                     </div>
                                 </div>
                             </div>
@@ -554,7 +547,7 @@
                             <div class="row justify-content-center">
                                 <div class="col-xl-4 col-lg-5 col-md-6 col-11">
                                     <div class="service-title mb-5">
-                                        <h1>Our TEAM</h1>
+                                        <h2>Our TEAM</h2>
                                     </div>
                                 </div>
                             </div>
