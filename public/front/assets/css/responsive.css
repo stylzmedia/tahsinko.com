@@ -2210,6 +2210,13 @@
   .inner-banner .inner-image {
     height: 500px;
   }
+  .inner-banner .inner-title {
+    position: absolute;
+    top: 325px;
+    left: 100px;
+    z-index: 2;
+}
+
   .section-two .section-content {
     font-size: 22px;
   }

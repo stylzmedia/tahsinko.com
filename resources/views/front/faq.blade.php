@@ -132,8 +132,12 @@
 <section class="faq my-5">
     <div class="container">
         <div class="row">
-            <div class="faq-image">
-                <img src="{{ $page->media_id ? $page->img_paths['medium'] : null }}" class="m-auto d-block" alt="{{$page->breadcrumb_title}}">
+            <div class="faq-image text-center">
+                <img
+                src="{{ $page->media_id ? $page->pdf_file : null }}"
+                class="w-75"
+                alt="{{$page->breadcrumb_title}}"
+                >
             </div>
         </div>
         <div class="fusion-text heading-box my-5" id="qa_title"><h2>{{$page->breadcrumb_title}}</h2></div>
