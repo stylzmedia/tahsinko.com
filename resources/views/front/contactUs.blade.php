@@ -80,53 +80,15 @@
                                 <span>Message:</span> <a href="mailto:{{$settings_g['email'] ?? ''}}">{{$settings_g['email'] ?? ''}}</a>
                             </li>
                             <li>
-                                <span>Phone:</span> <a href="tel:+88{{$settings_g['tel'] ?? ''}}"> {{$settings_g['tel'] ?? ''}}</a>
+                                <span>Phone:</span> <a href="tel:{{$settings_g['tel'] ?? ''}}"> {{$settings_g['tel'] ?? ''}}</a>
                             </li>
                             <li>
-                                <span>Mobile:</span> <a href="tel:+88{{$settings_g['mobile_number'] ?? ''}}"> {{$settings_g['mobile_number'] ?? ''}}</a>
+                                <span>Mobile:</span> <a href="tel:{{$settings_g['mobile_number'] ?? ''}}"> {{$settings_g['mobile_number'] ?? ''}}</a>,  <a href="tel:{{$settings_g['mobile_number2'] ?? ''}}"> {{$settings_g['mobile_number2'] ?? ''}}</a>
                             </li>
                             <li>
                                 <span>Open:</span>  Sat - Thu / 9:00 AM - 6:00 PM
                             </li>
                         </ul>
-
-                        {{-- <ul class="social-link">
-                            @if(Info::Social($socials, 'facebook'))
-                            <li>
-                                <a href="{{Info::Social($socials,  'facebook')}}" target="_blank">
-                                    <i class="fa-brands fa-square-facebook"></i>
-                                </a>
-                            </li>
-                            @endif
-                            @if(Info::Social($socials, 'linkedin'))
-                            <li>
-                                <a href="{{Info::Social($socials,  'linkedin')}}" target="_blank">
-                                    <i class="fa-brands fa-square-linkedin"></i>
-                                </a>
-                            </li>
-                            @endif
-                            @if(Info::Social($socials,  'twitter'))
-                            <li>
-                                <a href="{{Info::Social($socials,  'twitter')}}" target="_blank">
-                                    <i class="fa-brands fa-square-twitter"></i>
-                                </a>
-                            </li>
-                            @endif
-                            @if(Info::Social($socials, 'instagram'))
-                            <li>
-                                <a href="{{Info::Social($socials,  'instagram')}}" target="_blank">
-                                    <i class="fa-brands fa-square-instagram"></i>>
-                                </a>
-                            </li>
-                            @endif
-                            @if(Info::Social($socials, 'youtube'))
-                            <li>
-                                <a href="{{Info::Social($socials,  'youtube')}}" target="_blank">
-                                    <i class="fa-brands fa-square-youtube"></i>
-                                </a>
-                            </li>
-                            @endif
-                        </ul> --}}
 
                     </div>
                 </div>

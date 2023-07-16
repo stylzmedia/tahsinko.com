@@ -257,6 +257,25 @@
 
                                                         </tbody>
                                                     </table>
+
+                                                    <div class="mt-50 mb-10 shop-info-box">
+                                                        <p class="mb-10 text-danger">
+                                                            <i class="fa-solid fa-phone-volume fa-lg "></i>
+                                                            <a href="tel:{{$settings_g['mobile_number'] ?? ''}}" class="link-dark">{{$settings_g['mobile_number'] ?? ''}}</a>
+                                                        </p>
+                                                        <p class="mb-10 text-danger">
+                                                            <i class="fa-solid fa-envelope fa-lg"></i>
+                                                            <a href="mailto:{{$settings_g['email2'] ?? ''}}" class="link-dark">{{$settings_g['email2'] ?? ''}}</a>
+                                                        </p>
+                                                        @php
+                                                            $phoneNumber = str_replace(['+', ' '], '', $settings_g['mobile_number'] ?? '');
+                                                            $whatsappLink = 'https://api.whatsapp.com/send?phone=' . $phoneNumber;
+                                                        @endphp
+                                                        <p class="mb-10 text-danger">
+                                                            <i class="fa-brands fa-square-whatsapp fa-lg"></i>
+                                                            <a class="link-dark" target="_blank" href="{{ $whatsappLink }}">{{$settings_g['mobile_number'] ?? '' }}</a>
+                                                        </p>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="col-lg-5 col-sm-5 col-12 product-inner">
@@ -298,9 +317,7 @@
 @endsection
 
 @section('footer')
-<script>
 
-</script>
 <script>
     const lightboxTriggerElements = document.querySelectorAll('.lightbox-trigger');
     const lightboxOverlay = document.querySelector('.lightbox-overlay');
@@ -308,16 +325,18 @@
     const lightboxDescription = document.querySelector('.lightbox-description');
     const prevButton = document.querySelector('.lightbox-prev');
     const nextButton = document.querySelector('.lightbox-next');
+    const shopInfoBox = document.querySelector('.shop-info-box');
     let currentIndex = 0;
     let images = [];
     let descriptions = [];
+    let isLightboxOpen = false;
 
     lightboxTriggerElements.forEach(function (lightboxTriggerElement, index) {
         lightboxTriggerElement.addEventListener('click', function (event) {
             event.preventDefault();
             currentIndex = index;
             images = Array.from(document.querySelectorAll('.lightbox-trigger')).map(element => element.getAttribute('src'));
-            descriptions = Array.from(document.querySelectorAll('.cart-box .product-description2')).map(element => element.innerHTML);
+            descriptions = Array.from(document.querySelectorAll('.cart-box .product-description2' )).map(element => element.innerHTML);
 
             lightboxImage.src = lightboxTriggerElement.src;
             lightboxDescription.innerHTML = descriptions[index];
@@ -325,6 +344,8 @@
             lightboxOverlay.style.display = 'flex';
             lightboxOverlay.classList.add('opened');
 
+            toggleShopInfoBox(false); // Hide shop info box when lightbox is open
+            isLightboxOpen = true;
             updateNavigationButtons();
         });
     });
@@ -332,6 +353,7 @@
     lightboxOverlay.addEventListener('click', function (event) {
         if (
             event.target === lightboxOverlay &&
+            event.target === shopInfoBox &&
             event.target !== prevButton &&
             event.target !== nextButton
         ) {
@@ -340,41 +362,53 @@
     });
 
     prevButton.addEventListener('click', function () {
-    currentIndex = (currentIndex - 1 + images.length) % images.length;
-    showImageAtIndex(currentIndex);
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        showImageAtIndex(currentIndex);
     });
 
     nextButton.addEventListener('click', function () {
-    currentIndex = (currentIndex + 1) % images.length;
-    showImageAtIndex(currentIndex);
+        currentIndex = (currentIndex + 1) % images.length;
+        showImageAtIndex(currentIndex);
     });
 
     function showImageAtIndex(index) {
-    const imageSrc = images[index];
-    lightboxImage.src = imageSrc;
-    lightboxDescription.innerHTML = descriptions[index];
-    updateNavigationButtons();
+        const imageSrc = images[index];
+        lightboxImage.src = imageSrc;
+        lightboxDescription.innerHTML = descriptions[index];
+        updateNavigationButtons();
     }
 
     function updateNavigationButtons() {
-    prevButton.disabled = currentIndex === 0;
-    nextButton.disabled = currentIndex === images.length - 1;
+        prevButton.disabled = currentIndex === 0;
+        nextButton.disabled = currentIndex === images.length - 1;
     }
 
     function closeLightbox() {
-    lightboxDescription.classList.remove('active');
-    lightboxOverlay.style.display = 'none';
-    lightboxOverlay.classList.remove('opened');
-}
+        lightboxDescription.classList.remove('active');
+        lightboxOverlay.style.display = 'none';
+        lightboxOverlay.classList.remove('opened');
+
+        toggleShopInfoBox(true); // Show shop info box when lightbox is closed
+        isLightboxOpen = false;
+    }
 
     document.addEventListener('keydown', function (event) {
-    if (event.key === 'Escape') {
-        closeLightbox();
-    } else if (event.key === 'ArrowLeft' && !prevButton.disabled) {
-        prevButton.click();
-    } else if (event.key === 'ArrowRight' && !nextButton.disabled) {
-        nextButton.click();
-    }
+        if (event.key === 'Escape') {
+            closeLightbox();
+        } else if (event.key === 'ArrowLeft' && !prevButton.disabled) {
+            prevButton.click();
+        } else if (event.key === 'ArrowRight' && !nextButton.disabled) {
+            nextButton.click();
+        }
+    });
+
+    toggleShopInfoBox(true); // Show shop info box by default
+
+    // Hide shop info box when clicking outside the lightbox
+    document.addEventListener('click', function (event) {
+        if (!isLightboxOpen && event.target !== shopInfoBox && !shopInfoBox.contains(event.target)) {
+            toggleShopInfoBox(false);
+        }
     });
 
 </script>

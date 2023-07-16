@@ -6,6 +6,14 @@
         .form-group {
             margin-bottom: 10px;
         }
+        .address .col-form-label {
+            font-size: 14px;
+            padding: 0;
+        }
+        .col-form-label {
+            font-size: 14px;
+            padding: 0 15px;
+        }
     </style>
 @endsection
 
@@ -80,90 +88,90 @@
                                             <div class="tab-content" id="v-pills-tabContent">
                                                 <div class="tab-pane fade show active" id="v-pills-WebInfo" role="tabpanel" aria-labelledby="v-pills-WebInfo-tab">
                                                     <div class="form-group row">
-                                                        <label class="col-sm-2 col-form-label"><b>Website Title*: </b></label>
-                                                        <div class="col-sm-8">
+                                                        <label class="col-sm-3 col-form-label"><b>Website Title*: </b></label>
+                                                        <div class="col-sm-7">
                                                             <input type="text" class="form-control"name="title" value="{{$settings_g['title'] ?? env('APP_NAME')}}" placeholder="Website Title" required>
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label class="col-sm-2 col-form-label"><b>Slogan*: </b></label>
-                                                        <div class="col-sm-8">
+                                                        <label class="col-sm-3 col-form-label"><b>Slogan*: </b></label>
+                                                        <div class="col-sm-7">
                                                             <input type="text" class="form-control" name="slogan" value="{{$settings_g['slogan'] ?? ''}}" placeholder="Website Slogan" required>
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label class="col-sm-2 col-form-label"><b>Mobile Number*: </b></label>
-                                                        <div class="col-sm-8">
+                                                        <label class="col-sm-3 col-form-label"><b>Mobile Number*: </b></label>
+                                                        <div class="col-sm-7">
                                                             <input type="text" class="form-control" placeholder="Mobile Number" name="mobile_number" value="{{$settings_g['mobile_number'] ?? ''}}" required>
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label class="col-sm-2 col-form-label"><b>Telephone: </b></label>
-                                                        <div class="col-sm-8">
+                                                        <label class="col-sm-3 col-form-label"><b>Secondary Mobile Number: </b></label>
+                                                        <div class="col-sm-7">
+                                                            <input type="text" class="form-control" placeholder="Secondary Mobile Number" name="mobile_number2" value="{{$settings_g['mobile_number2'] ?? ''}}">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-sm-3 col-form-label"><b>Telephone: </b></label>
+                                                        <div class="col-sm-7">
                                                             <input type="text" class="form-control" placeholder="Tel" name="tel" value="{{$settings_g['tel'] ?? ''}}">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label class="col-sm-2 col-form-label"><b>Primary Email Address*: </b></label>
-                                                        <div class="col-sm-8">
+                                                        <label class="col-sm-3 col-form-label"><b>Primary Email Address*: </b></label>
+                                                        <div class="col-sm-7">
                                                             <input type="email" class="form-control" placeholder="Email Address" name="email" value="{{$settings_g['email'] ?? ''}}" required>
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label class="col-sm-2 col-form-label"><b>Secondary Email Address (optional): </b></label>
-                                                        <div class="col-sm-8">
+                                                        <label class="col-sm-3 col-form-label"><b>Secondary Email Address: </b></label>
+                                                        <div class="col-sm-7">
                                                             <input type="email" class="form-control" placeholder="Secondary Email Address" name="email2" value="{{$settings_g['email2'] ?? ''}}">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label class="col-sm-2 col-form-label"><b>Copyright*: </b></label>
-                                                        <div class="col-sm-8">
+                                                        <label class="col-sm-3 col-form-label"><b>Copyright*: </b></label>
+                                                        <div class="col-sm-7">
                                                             <input type="text" class="form-control" placeholder="Copyright" name="copyright" value="{{$settings_g['copyright'] ?? ''}}" required>
                                                         </div>
                                                     </div>
-                                                    <div class="row">
+                                                    <div class="row address">
                                                         <div class="col-md-10">
                                                             <div class="row">
+                                                                <div class="col-md-8">
+                                                                    <div class="form-group">
+                                                                        <label class="col-form-label"><b>Street*</b></label>
+                                                                        <input type="text" class="form-control" name="street" value="{{$settings_g['street'] ?? ''}}" required="">
+                                                                    </div>
+                                                                </div>
                                                                 <div class="col-md-4">
                                                                     <div class="form-group">
-                                                                        <label><b>City*</b></label>
+                                                                        <label class="col-form-label"><b>City*</b></label>
                                                                         <input type="text" class="form-control" name="city" value="{{$settings_g['city'] ?? ''}}" required="">
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-4">
                                                                     <div class="form-group">
-                                                                        <label><b>State*</b></label>
+                                                                        <label class="col-form-label"><b>State*</b></label>
                                                                         <input type="text" class="form-control" name="state" value="{{$settings_g['state'] ?? ''}}">
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-4">
                                                                     <div class="form-group">
-                                                                        <label><b>Country*</b></label>
+                                                                        <label class="col-form-label"><b>Zip*</b></label>
+                                                                        <input type="text" class="form-control" name="zip" value="{{$settings_g['zip'] ?? ''}}">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-4">
+                                                                    <div class="form-group">
+                                                                        <label class="col-form-label"><b>Country*</b></label>
                                                                         <input type="text" class="form-control" name="country" value="{{$settings_g['country'] ?? ''}}" required="">
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="row">
-                                                        <div class="col-md-10">
-                                                            <div class="row">
-                                                                <div class="col-md-4">
-                                                                    <div class="form-group">
-                                                                        <label><b>Zip*</b></label>
-                                                                        <input type="text" class="form-control" name="zip" value="{{$settings_g['zip'] ?? ''}}">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-md-8">
-                                                                    <div class="form-group">
-                                                                        <label><b>Street*</b></label>
-                                                                        <input type="text" class="form-control" name="street" value="{{$settings_g['street'] ?? ''}}" required="">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row">
+                                                    <div class="row address">
                                                         <div class="col-md-10">
                                                             <label><b>Google Map Embed Code*</b></label>
                                                             <textarea name="gmap" id="gmap" cols="75" rows="4">{{$settings_g['gmap'] ?? ''}}</textarea>

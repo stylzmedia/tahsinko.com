@@ -88,7 +88,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 p-2  text-white">
-                    <i class="fa-solid fa-phone-flip fa-xl"></i> <a class="text-white me-3" href="tel:+8801720397476" rel="noopener noreferrer" target="_blank"> {{$settings_g['mobile_number'] ?? ''}} </a>
+                    <i class="fa-solid fa-phone-flip fa-xl"></i> <a class="text-white" href="tel:{{$settings_g['mobile_number'] ?? ''}}" rel="noopener noreferrer"> {{$settings_g['mobile_number'] ?? ''}} </a>, <a class="text-white me-3" href="tel:{{$settings_g['mobile_number2'] ?? ''}}" rel="noopener noreferrer"> {{$settings_g['mobile_number2'] ?? ''}} </a>
                     <i class="fa-solid fa-envelope text-md fa-xl"></i> {{$settings_g['email'] ?? ''}}
                 </div>
                 <div class="col-md-4 p-2 text-white text-md-end y-1">
@@ -224,7 +224,7 @@
                                 <span> Address:</span> {{$settings_g['street'] ?? ''}}, {{$settings_g['city'] ?? ''}} - {{$settings_g['zip'] ?? ''}}, {{$settings_g['country'] ?? ''}}
                             </li>
                             <li>
-                                <span>Phone:</span><a href="tel:{{$settings_g['tel'] ?? ''}}"> {{$settings_g['tel'] ?? ''}}</a> Mobile:<a href="tel:{{$settings_g['mobile_number'] ?? ''}}"> {{$settings_g['mobile_number'] ?? ''}}</a>,
+                                <span>Phone:</span><a href="tel:{{$settings_g['tel'] ?? ''}}"> {{$settings_g['tel'] ?? ''}}</a> Mobile:<a href="tel:{{$settings_g['mobile_number'] ?? ''}}"> {{$settings_g['mobile_number'] ?? ''}}</a>, <a href="tel:{{$settings_g['mobile_number2'] ?? ''}}"> {{$settings_g['mobile_number2'] ?? ''}}</a>,
                                 <span>Email:</span> <a href="mailto:{{$settings_g['email'] ?? ''}}"></a> {{$settings_g['email'] ?? ''}}
                             </li>
                             <li>
