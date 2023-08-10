@@ -127,8 +127,14 @@
                                         <div class="row">
                                             <div class="product-description2 p-0 col-lg-7 col-sm-7 col-12">
 
-                                                <div class="title-bar text-uppercase">
+                                                <div class="title-bar text-uppercase" style="display: flex;
+                                                justify-content: space-between;
+                                                align-items: center;">
                                                     {{ $product->name }}
+                                                   <!-- Button trigger modal -->
+                                                    <button type="button" class="btn btn-primary w-auto" data-bs-toggle="modal" data-bs-target="#orderModal">
+                                                        Order Now
+                                                    </button>
                                                 </div>
                                                 <div class="short-description product-description p-2">
                                                     @empty($product->description)
@@ -314,6 +320,90 @@
             </div>
         </div>
     </section>
+
+<!-- Modal -->
+<div class="modal fade" id="orderModal" tabindex="-1" aria-labelledby="orderModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title fs-5" id="orderModalLabel">Submit your quote</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form action="" method="post">
+
+                <input type="hidden" name="product_name" value=" {{ $product->name }}">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Your Name</label>
+                            <input type="text" class="form-control form-control-sm" name="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Company/Organization (Optional)</label>
+                            <input type="text" class="form-control form-control-sm" name="organization">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Project Address</label>
+                            <input type="text" class="form-control form-control-sm" name="address" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Email Address</label>
+                            <input type="email" class="form-control form-control-sm" name="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Mobile No</label>
+                            <input type="number" class="form-control form-control-sm" name="mobile" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Stop/Opening</label>
+                            <input type="text" class="form-control form-control-sm" name="stop_opening" placeholder="10/10" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Shaft Size (Lift Core Size)</label>
+                        <input type="text" class="form-control form-control-sm" name="shaft_size" placeholder="Width x Depth" required>
+                    </div></div>
+                </div>
+
+                <div class="mb-3">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Yes">
+                        <label class="form-check-label" for="inlineRadio1">Machine Room</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="No">
+                        <label class="form-check-label" for="inlineRadio2">Machine Room Less</label>
+                      </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Head Room Height</label>
+                            <input type="text" class="form-control form-control-sm" name="head_room" placeholder="ex. 4000 mm" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">PIT</label>
+                            <input type="text" class="form-control form-control-sm" name="pit" placeholder="ex. 1500 mm"  required>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary w-auto" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary w-auto">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
 @endsection
 
 @section('footer')
