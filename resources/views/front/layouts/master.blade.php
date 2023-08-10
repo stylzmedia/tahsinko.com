@@ -299,6 +299,52 @@
 
 <!-- Script End -->
 
+<!-- Sweetalert2 -->
+<script src="{{ asset('plugins/sweetalert2@9.3.0/sweetalert2.all.min.js') }}"></script>
+
+    @if(session('success-alert'))
+        <script>
+            cAlert('success', "{{session('success-alert')}}");
+        </script>
+    @endif
+
+    @if(session('error-alert'))
+        <script>
+            cAlert('error', "{{session('error-alert')}}");
+        </script>
+    @endif
+
+    @if(session('error-alert2'))
+        <script>
+            Swal.fire(
+                'Failed!',
+                '{{session("error-alert2")}}',
+                'error'
+            )
+        </script>
+    @endif
+
+    @if(session('success-alert2'))
+        <script>
+            Swal.fire(
+                'Success!',
+                '{{session("success-alert2")}}',
+                'success'
+            )
+        </script>
+    @endif
+
+    @if(session('error-transaction'))
+        <script>
+            Swal.fire(
+                'Transaction Failed!',
+                '{{session("error-transaction")}}',
+                'error'
+            );
+
+
+        </script>
+    @endif
 @yield('footer')
 
 </body>

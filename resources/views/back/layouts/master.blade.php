@@ -507,6 +507,15 @@
                         </li>
                         @endif
 
+                        @if(auth()->user()->permission('request-contact','list'))
+                        <li class="nav-item">
+                            <a class="nav-link menu-link {{(Route::is('orders.index') || Route::is('orders.edit')) ? 'active' : ''}}" href="{{route('orders.index')}}">
+                                <i class="ri-contacts-book-line"></i> <span data-key="t-widgets">Order Request</span>
+                            </a>
+                        </li>
+                        @endif
+
+
                         {{-- @isset(auth()->user()->role->permission['permission']['admins']['list']) --}}
                         @if(auth()->user()->permission('admins','list'))
                         <li class="nav-item">

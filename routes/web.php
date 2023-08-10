@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Front\PageController;
 use App\Http\Controllers\ContactUsController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\TestController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -19,6 +20,8 @@ Route::get('product/{name}', [PageController::class, 'singleProduct'])->name('pr
 Route::get('project/{id}', [PageController::class, 'singleProject'])->name('project.single');
 
 Route::get('gallery/{gallery}', [PageController::class, 'gallery'])->name('gallery');
+
+Route::resource('orders', OrderController::class);
 
 
 // Auth Routes

@@ -133,7 +133,7 @@
                                                 align-items: center;">
                                                     {{ $product->name }}
                                                    <!-- Button trigger modal -->
-                                                    <button type="button" class="btn btn-danger w-auto order_button" data-bs-toggle="modal" data-id="{{ $product->name }}" data-bs-target="#orderModal">
+                                                    <button type="button" class="btn btn-danger w-auto order_button" data-bs-toggle="modal" data-name="{{ $product->name }}" data-id="{{ $product->id }}" data-bs-target="#orderModal">
                                                         Order Now
                                                     </button>
                                                 </div>
@@ -327,81 +327,89 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h4 class="modal-title fs-5" id="orderModalLabel">Submit your quote for <span class="text_product_name"></span> </h4>
+          <h4 class="modal-title fs-6" id="orderModalLabel">Submit your quote for <span class="text_product_name"></span> </h4>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body">
-            <form action="" method="post">
-
+        <form action="{{route('orders.store')}}" method="POST" enctype="multipart/form-data">
+        @csrf
+        <div class="modal-body" style="font-size: 12px;">
                 <input type="hidden" name="product_name" class="form_product_name" value="">
+                <input type="hidden" name="product_id" class="product_id" value="">
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="mb-3">
-                            <label for="exampleFormControlInput1" class="form-label">Your Name</label>
+                        <div class="mb-2">
+                            <label for="exampleFormControlInput1" class="form-label">Your Name</label> <span class="text-danger fw-bold">*</span>
                             <input type="text" class="form-control form-control-sm" name="name" required>
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-2">
                             <label for="exampleFormControlInput1" class="form-label">Company/Organization (Optional)</label>
-                            <input type="text" class="form-control form-control-sm" name="organization">
+                            <input type="text" class="form-control form-control-sm" name="company">
                         </div>
-                        <div class="mb-3">
-                            <label for="exampleFormControlInput1" class="form-label">Project Address</label>
+                        <div class="mb-2">
+                            <label for="exampleFormControlInput1" class="form-label">Project Address</label><span class="text-danger fw-bold">*</span>
                             <input type="text" class="form-control form-control-sm" name="address" required>
                         </div>
-                        <div class="mb-3">
-                            <label for="exampleFormControlInput1" class="form-label">Email Address</label>
+                        <div class="mb-2">
+                            <label for="exampleFormControlInput1" class="form-label">Email Address</label><span class="text-danger fw-bold">*</span>
                             <input type="email" class="form-control form-control-sm" name="email" required>
                         </div>
-                        <div class="mb-3">
-                            <label for="exampleFormControlInput1" class="form-label">Mobile No</label>
+                        <div class="mb-2">
+                            <label for="exampleFormControlInput1" class="form-label">Mobile No</label><span class="text-danger fw-bold">*</span>
                             <input type="number" class="form-control form-control-sm" name="mobile" required>
                         </div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-6">
-                        <div class="mb-3">
-                            <label for="exampleFormControlInput1" class="form-label">Stop/Opening</label>
+                    <div class="col-md-4">
+                        <div class="mb-4">
+                            <label for="exampleFormControlInput1" class="form-label">Stop/Opening</label><span class="text-danger fw-bold">*</span>
                             <input type="text" class="form-control form-control-sm" name="stop_opening" placeholder="10/10" required>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="mb-3">
+                    <div class="col-md-4">
+                        <div class="mb-2">
                         <label for="exampleFormControlInput1" class="form-label">Shaft Size (Lift Core Size)</label>
                         <input type="text" class="form-control form-control-sm" name="shaft_size" placeholder="Width x Depth" required>
-                    </div></div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="mb-2">
+                        <label for="exampleFormControlInput1" class="form-label">Capacity (Person)</label><span class="text-danger fw-bold">*</span>
+                        <input type="number" class="form-control form-control-sm" name="capacity" placeholder="8" required>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="mb-3">
+                <div class="mb-2">
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Yes">
+                        <input class="form-check-input" type="radio" name="machine_room" id="inlineRadio1" value="Machine Room">
                         <label class="form-check-label" for="inlineRadio1">Machine Room</label>
                       </div>
                       <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="No">
+                        <input class="form-check-input" type="radio" name="machine_room" id="inlineRadio2" value="Machine Room Less">
                         <label class="form-check-label" for="inlineRadio2">Machine Room Less</label>
                       </div>
                 </div>
                 <div class="row">
                     <div class="col-md-6">
-                        <div class="mb-3">
+                        <div class="mb-2">
                             <label for="exampleFormControlInput1" class="form-label">Head Room Height</label>
-                            <input type="text" class="form-control form-control-sm" name="head_room" placeholder="ex. 4000 mm" required>
+                            <input type="text" class="form-control form-control-sm" name="head_room" placeholder="ex. 4000 mm">
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <div class="mb-3">
+                        <div class="mb-2">
                             <label for="exampleFormControlInput1" class="form-label">PIT</label>
-                            <input type="text" class="form-control form-control-sm" name="pit" placeholder="ex. 1500 mm"  required>
+                            <input type="text" class="form-control form-control-sm" name="pit" placeholder="ex. 1500 mm">
                         </div>
                     </div>
                 </div>
-            </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary w-auto" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary w-auto">Submit</button>
-        </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary w-auto" data-bs-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-danger w-auto">Submit</button>
+            </div>
+        </form>
       </div>
     </div>
   </div>
@@ -411,10 +419,11 @@
 
 <script>
     $('.order_button').click(function(){
-        let project_name = $(this).data('id');
-        $('.form_product_name').val(project_name);
-        $('.text_product_name').text(project_name);
-        
+        let product_name = $(this).data('name');
+        let product_id = $(this).data('id');
+        $('.form_product_name').val(product_name);
+        $('.text_product_name').text(product_name);
+        $('.product_id').val(product_id);
     });
 
     const lightboxTriggerElements = document.querySelectorAll('.lightbox-trigger');

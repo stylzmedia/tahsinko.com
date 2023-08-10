@@ -60,7 +60,7 @@ class RequestContactController extends Controller
      */
     public function edit(Request $request, RequestContact $requestContact)
     {
-        return view('requestContact.edit', compact('requestContact'));
+        return view('back.requestContact.edit', compact('requestContact'));
     }
 
     /**
