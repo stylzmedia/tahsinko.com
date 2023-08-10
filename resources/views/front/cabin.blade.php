@@ -103,6 +103,7 @@
                 display: none !important;
             }
         }
+        .lightbox-description.active .order_button{display:none}
     </style>
 @endsection
 
@@ -132,7 +133,7 @@
                                                 align-items: center;">
                                                     {{ $product->name }}
                                                    <!-- Button trigger modal -->
-                                                    <button type="button" class="btn btn-primary w-auto" data-bs-toggle="modal" data-bs-target="#orderModal">
+                                                    <button type="button" class="btn btn-danger w-auto order_button" data-bs-toggle="modal" data-id="{{ $product->name }}" data-bs-target="#orderModal">
                                                         Order Now
                                                     </button>
                                                 </div>
@@ -326,13 +327,13 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h4 class="modal-title fs-5" id="orderModalLabel">Submit your quote</h4>
+          <h4 class="modal-title fs-5" id="orderModalLabel">Submit your quote for <span class="text_product_name"></span> </h4>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
             <form action="" method="post">
 
-                <input type="hidden" name="product_name" value="{{ $product->name }}">
+                <input type="hidden" name="product_name" class="form_product_name" value="">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="mb-3">
@@ -409,6 +410,13 @@
 @section('footer')
 
 <script>
+    $('.order_button').click(function(){
+        let project_name = $(this).data('id');
+        $('.form_product_name').val(project_name);
+        $('.text_product_name').text(project_name);
+        
+    });
+
     const lightboxTriggerElements = document.querySelectorAll('.lightbox-trigger');
     const lightboxOverlay = document.querySelector('.lightbox-overlay');
     const lightboxImage = document.querySelector('.lightbox-image');
@@ -434,19 +442,14 @@
             lightboxOverlay.style.display = 'flex';
             lightboxOverlay.classList.add('opened');
 
-            toggleShopInfoBox(false); // Hide shop info box when lightbox is open
+            // toggleShopInfoBox(false); // Hide shop info box when lightbox is open
             isLightboxOpen = true;
             updateNavigationButtons();
         });
     });
 
     lightboxOverlay.addEventListener('click', function (event) {
-        if (
-            event.target === lightboxOverlay &&
-            event.target === shopInfoBox &&
-            event.target !== prevButton &&
-            event.target !== nextButton
-        ) {
+        if (event.target === lightboxOverlay &&  event.target !== prevButton && event.target !== nextButton) {
             closeLightbox();
         }
     });
@@ -478,7 +481,7 @@
         lightboxOverlay.style.display = 'none';
         lightboxOverlay.classList.remove('opened');
 
-        toggleShopInfoBox(true); // Show shop info box when lightbox is closed
+        // toggleShopInfoBox(true); // Show shop info box when lightbox is closed
         isLightboxOpen = false;
     }
 
@@ -492,12 +495,13 @@
         }
     });
 
-    toggleShopInfoBox(true); // Show shop info box by default
+    // toggleShopInfoBox(true); // Show shop info box by default
 
     // Hide shop info box when clicking outside the lightbox
     document.addEventListener('click', function (event) {
         if (!isLightboxOpen && event.target !== shopInfoBox && !shopInfoBox.contains(event.target)) {
-            toggleShopInfoBox(false);
+            // toggleShopInfoBox(false);
+            closeLightbox();
         }
     });
 
