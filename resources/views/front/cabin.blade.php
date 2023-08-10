@@ -332,7 +332,7 @@
         <div class="modal-body">
             <form action="" method="post">
 
-                <input type="hidden" name="product_name" value=" {{ $product->name }}">
+                <input type="hidden" name="product_name" value="{{ $product->name }}">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="mb-3">
