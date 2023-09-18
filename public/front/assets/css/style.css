@@ -7161,6 +7161,12 @@ Checkout Area End
 /*=================================
 Footer Area
 ====================================*/
+
+.footer-logo{
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+}
 .footer-bg {
   background-color: #000000;
 }

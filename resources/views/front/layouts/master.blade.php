@@ -206,7 +206,7 @@
 
 
 <!-- Footer Area -->
-    <div class="footer-area footer-bg" style="padding-top: 40px;">
+    {{-- <div class="footer-area footer-bg" style="padding-top: 40px;">
         <div class="container">
             <div class="row">
                 <div class="col-lg-2 col-md-2">
@@ -232,6 +232,76 @@
                         </ul>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div> --}}
+    <div class="footer-area footer-bg" style="padding-top: 40px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2 footer-logo">
+                    <div class="footer-widget footer-widget-color">
+                        <a href="{{ route('homepage') }}" class="footer-logo">
+                            <img src="{{$settings_g['dark_logo'] ?? asset('images/tahsinko-lift-n-escalator-dark.png')}}" alt="Images">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4" style="font-size: 15px;">
+                    <div class="footer-widget footer-widget-color">
+                        <ul class="footer-list">
+                            <li> <b> Bangladesh Office</b></li>
+                            <li>Address: 102/1, Sute # 6B, West Agargaon</li>
+                            <li> Sher-E-Bngla Nagar, Dhaka - 1207, Bangladesh</li>
+                            <li> Phone:+88 02 222242057</li>
+                            <li>Mobile:+8801819 014568, +88 01815 977067</li>
+                            <li>Email:  tahsinkolift@gmail.com</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4" style="font-size: 15px;">
+                    <div class="footer-widget footer-widget-color">
+                        <ul class="footer-list">
+                            <li><b>China Office</b></li>
+                            <li>ZHEJIANG TAHSINKO ELEVATOR CO., LTD.</li>
+                            <li> No. 401-13, S9 Block Centre Park,</li>
+                            <li>No. 111 WanShun Middle Road</li>
+                            <li> NanXun Town, NanXun District, Huzhou City</li>
+                            <li>Zhejiang Province, China</li>
+                    </div>
+                </div>
+                    <div class="col-md-2" style="font-size: 15px;">
+                        <div class="footer-widget footer-widget-color">
+                            <ul class="footer-list">
+                                <li><b>Factory Address</b></li>
+                                <li>No. 998 Caidie Road, Lianshi Town,</li>
+                                <li> NanXun District, Huzhou City</li>
+                                <li>Zhejiang Province, China</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                {{-- <div class="col-lg-2 col-md-2">
+                    <div class="footer-widget footer-widget-color">
+                        <a href="{{ route('homepage') }}" class="footer-logo">
+                            <img src="{{$settings_g['dark_logo'] ?? asset('images/tahsinko-lift-n-escalator-dark.png')}}" alt="Images">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-10 col-md-10 footer-plr">
+                    <div class="footer-widget footer-widget-color">
+                        <ul class="footer-list">
+                            <li>
+                                <span> Address:</span> {{$settings_g['street'] ?? ''}}, {{$settings_g['city'] ?? ''}} - {{$settings_g['zip'] ?? ''}}, {{$settings_g['country'] ?? ''}}
+                            </li>
+                            <li>
+                                <span>Phone:</span><a href="tel:{{$settings_g['tel'] ?? ''}}"> {{$settings_g['tel'] ?? ''}}</a> Mobile:<a href="tel:{{$settings_g['mobile_number'] ?? ''}}"> {{$settings_g['mobile_number'] ?? ''}}</a>, <a href="tel:{{$settings_g['mobile_number2'] ?? ''}}"> {{$settings_g['mobile_number2'] ?? ''}}</a>,
+                                <span>Email:</span> <a href="mailto:{{$settings_g['email'] ?? ''}}"></a> {{$settings_g['email'] ?? ''}}
+                            </li>
+                            <li>
+                            </li>
+                        </ul>
+                    </div>
+                </div> --}}
             </div>
         </div>
     </div>

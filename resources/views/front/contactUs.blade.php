@@ -29,6 +29,22 @@
         height: 500px;
         overflow: hidden;
         }
+
+        .bd-address, .china-address{
+        border: 1px solid red;
+        border-radius: 15px;
+        padding: 10px;
+        }
+
+        .china-address{
+        padding-top: 22px;
+        padding-bottom: 22px;
+        }
+        .line{
+        border-left: 1px solid red;
+        position: relative;
+        right: -20px;
+        }
     </style>
 
 @endsection
@@ -60,6 +76,47 @@
 
     <!-- Contact Section -->
     <div class="contact-section pt-100 pb-70">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5 h-100">
+                    <div class="bd-address text-center">
+                        <b>Bangladesh Office </b><br>
+                        Address: 102/1, Sute # 6B, West Agargaon, <br>
+                        Sher-E-Bngla Nagar, Dhaka-1207 Dhaka, Bangladesh<br>
+                        Message: tahsinkolift@gmail.com<br>
+                        Phone: +88 02 222242057<br>
+                        Mobile: +8801819 014568, +88 01815 977067<br>
+                        Open: Sat - Thu / 9:00 AM - 6:00 PM<br>
+                    </div>
+                </div>
+                <div class="col-md-7 h-100">
+                    <div class="">
+                        <div class="row china-address text-center">
+                            <div class="col-md-7">
+                                <b>China Office</b><br>
+                                ZHEJIANG TAHSINKO ELEVATOR CO., LTD.<br>
+                                No. 401-13, S9 Block Centre Park,<br>
+                                No. 111 WanShun Middle Road<br>
+                                NanXun Town, NanXun District, Huzhou City<br>
+                                Zhejiang Province, China
+                            </div>
+                            <div class="col-md-1 line">
+                            </div>
+                            <div class="col-md-4">
+                                <b>Factory Address</b><br>
+                                No. 998 Caidie Road<br>
+                                Lianshi Town,<br>
+                                NanXun District<br>
+                                Huzhou City<br>
+                                Zhejiang Province, China
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{-- <div class="contact-section pt-100 pb-70">
         <div class="container">
             <div class="row">
                 <div class="col-lg-7 col-md-6 pr-0">
@@ -94,7 +151,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <!-- Contact Section End -->
 
     <!-- Contact Area Two -->
