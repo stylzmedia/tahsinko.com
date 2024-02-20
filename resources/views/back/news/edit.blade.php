@@ -62,12 +62,18 @@
                                             </div>
 
                                             <br>
-
+                                            <div class="form-group">
+                                                <label for="editor" class="form-label">Description <b
+                                                        style="color: red;">*</b></label>
+                                                <textarea class="form-control" id="editor"
+                                                    name="description">{{ old('description') ?? $news->description}}</textarea>
+                                            </div>
+{{--
                                             <div class="form-group">
                                                 <label for="editor" class="form-label">Description <b style="color: red;">*</b></label>
                                                 <textarea class="form-control" id="editor" placeholder="Enter the Description"
                                                     name="description">{{old('description') ?? $news->description}}</textarea>
-                                            </div>
+                                            </div> --}}
 
                                             <div class="row">
                                                 <h4 style="margin: 30px 0; text-align:center;">News Source</h2>
@@ -217,16 +223,20 @@
 @section('footer')
     <!-- summernote Editor -->
 
-    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+    <script src="https://cdn.ckeditor.com/4.15.1/standard/ckeditor.js"></script>
 
     <script>
-            // summernote editor
-            $(document).ready(function() {
-                $('#editor').summernote({
-                    height: 400,
-                });
+        // summernote editor
+        $(function() {
+            CKEDITOR.replace('editor', {
+                height: 400,
+                filebrowserUploadUrl: "{{route('imageUpload')}}?"
             });
+        });
 
+        $(document).ready(function() {
+            $('#editor').summernote();
+        });
 
         $(document).on('click', '.video_radio', function(){
             let video_type = $(this).val();
