@@ -1,4 +1,4 @@
-@extends('back.layouts.master')
+ @extends('back.layouts.master')
 @section('title', 'Edit Page')
 
 @section('master')
