@@ -143,7 +143,7 @@
                                 <div class="section-one-media">
                                     <div class="section-one-slider">
                                         @foreach ($galleryItems as $item )
-                                            <img src="{{ $item->img_paths['original'] }}" alt="{{ $item->name }}">
+                                            <img src="{{ $item->img_paths['original'] }}" alt="{{ $item->title }}">
                                         @endforeach
                                     </div>
                                 </div>

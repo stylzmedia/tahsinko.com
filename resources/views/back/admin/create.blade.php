@@ -75,7 +75,7 @@
 
                                                     <div class="col-md-6">
                                                         <label><b>Role*</b></label>
-                                                        <select class="form-select" name="role">
+                                                        <select class="form-select" name="role" required>
                                                             <option>Select Role</option>
                                                             @foreach ($roles as $item)
                                                                 @if($item->id != 1)
@@ -85,12 +85,12 @@
                                                         </select>
                                                     </div>
 
-                                                    <div class="col-md-6">
+                                                    {{-- <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label for=""><b>Address</b></label>
                                                             <textarea class="form-control" name="address" id="" rows="5">{{old('address')}}</textarea>
                                                         </div>
-                                                    </div>
+                                                    </div> --}}
                                                 </div>
                                             </div>
                                         </div>
