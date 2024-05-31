@@ -65,7 +65,7 @@
                     class="flex flex-col overflow-hidden bg-white rounded-md shadow-lg max md:flex-row md:flex-1 lg:max-w-screen-md">
                     <div
                         class="p-4 py-6 text-white bg-sky-400 md:w-80 md:flex-shrink-0 md:flex md:flex-col md:items-center md:justify-evenly">
-                        @if ($settings_g['logo'])
+                        @if ($settings_g['logo'] ?? null)
                             <div class="my-3 flex justify-center items-center bg-white">
                                 <a href="{{ route('homepage') }}"><img class=" w-48"
                                         src="{{ $settings_g['logo'] ?? '' }}" alt=""></a>

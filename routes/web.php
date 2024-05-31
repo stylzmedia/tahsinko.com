@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Front\PageController;
 use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\SitemapController;
 use App\Http\Controllers\TestController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -32,10 +33,18 @@ Route::get('email-verify/{id}', [AuthController::class, 'emailVerify'])->name('e
 Route::get('resend-email-verify/{id}', [AuthController::class, 'resendVerifyLink'])->name('resendVerifyLink');
 Route::get('email-verify-check/{id}', [AuthController::class, 'emailVerifyCheck'])->name('emailVerifyCheck');
 
+// Custom Sitemap
+Route::get('sitemap.xml', [SitemapController::class, 'index'])->name('sitemap.index');
+Route::prefix('sitemap')->group(function() {
+    Route::get('articles.xml', [SitemapController::class, 'articles'])->name('sitemap.articles');
+    // Route::get('article-categories.xml', [SitemapController::class, 'articleCategories'])->name('sitemap.article.categories');
+    Route::get('projects.xml', [SitemapController::class, 'projects'])->name('sitemap.projects');
+    Route::get('pages.xml', [SitemapController::class, 'pages'])->name('sitemap.pages');
+});
 
 // Test Routes
 Route::get('cache-clear',      [TestController::class, 'cacheClear'])->name('cacheClear');
-// Route::get('config',           [TestController::class, 'config'])->name('config');
+Route::get('config',           [TestController::class, 'config'])->name('config');
 // Route::get('products-import',  [TestController::class, 'productsImport'])->name('productsImport');
 // Route::get('product-imports', [TestController::class, 'productImports'])->name('productImports');
 
